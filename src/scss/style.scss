@@ -28,22 +28,26 @@ $red: #e20707;
 // html
 html.lock,
 html.lock body {
-  overflow: hidden;
-  touch-action: none;
+    overflow: hidden;
+    touch-action: none;
 }
 html,
 body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 // main
 main {
-  position: relative;
+    position: relative;
 }
 
 .wrapper {
-  margin: 0 auto;
-  max-width: 1920px;
+    margin: 0 auto;
+    max-width: 1920px;
+}
+
+section {
+    margin-bottom: 20rem;
 }
 
 // --------------------------------------------------------------------------
