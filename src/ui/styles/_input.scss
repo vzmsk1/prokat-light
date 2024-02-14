@@ -2,61 +2,92 @@ input[type='text'],
 input[type='email'],
 input[type='tel'],
 textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 textarea:focus,
 input:focus {
-  outline: none;
+    outline: none;
 }
 
 .input {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.1rem;
 
-  // .input__field
+    // .input__field
 
-  &__field {
-    padding-bottom: 2rem;
-    padding-right: 2rem;
-    display: block;
-    width: 100%;
-    line-height: 1;
-    border-bottom: 1px solid $gray;
-    transition: border-bottom 0.3s ease;
+    &__field {
+        padding-bottom: 2rem;
+        padding-right: 2rem;
+        display: block;
+        width: 100%;
+        line-height: 1;
+        border-bottom: 0.1rem solid $gray;
+        transition: border-bottom 0.3s ease;
 
-    &::placeholder {
-      color: $gray;
-      transition: color 0.3s ease;
+        &::placeholder {
+            color: $gray;
+            transition: color 0.3s ease;
+        }
+
+        @media (max-width: 48em) {
+            padding-bottom: 3.2rem;
+            padding-right: 3.2rem;
+        }
     }
 
-    @media (max-width: 48em) {
-      padding-bottom: 3.2rem;
-      padding-right: 3.2rem;
-    }
-  }
+    &__textarea {
+        resize: none;
+        padding-right: 2rem;
+        display: block;
+        width: 100%;
+        line-height: 1;
+        border-bottom: 0.1rem solid $gray;
+        transition: border-bottom 0.3s ease;
 
-  // .input__hint
+        &::placeholder {
+            color: $gray;
+            transition: color 0.3s ease;
+        }
+    }
 
-  &__hint {
-    display: none;
-    color: $red;
-  }
+    // .input__hint
 
-  &._has-focus {
-    .input__field {
-      border-bottom: 1px solid $white;
+    &__hint {
+        display: none;
+        color: $red;
     }
-  }
-  &._has-error {
-    .input__field {
-      border-bottom: 1px solid $red;
+
+    &._has-focus {
+        .input__field {
+            border-bottom: 1px solid $white;
+        }
     }
-    .input__hint {
-      display: inline-block;
+    &._has-error {
+        .input__field {
+            border-bottom: 1px solid $red;
+        }
+        .input__textarea {
+            border-bottom: 1px solid $red;
+        }
+        .input__hint {
+            display: inline-block;
+        }
     }
-  }
+}
+
+.textarea {
+    &._has-focus {
+        .input__textarea {
+            border-bottom: 0.1rem solid $white;
+        }
+    }
+    &._has-error {
+        .input__textarea {
+            border-bottom: 1px solid $red;
+        }
+    }
 }

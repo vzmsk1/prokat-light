@@ -1,49 +1,83 @@
-<footer class="footer">
+<section class="contacts">
     <div class="container">
-        <div class="footer__inner">
-            <div class="footer__main">
-                <div class="footer__main-left">
-                    <div class="footer__logo">
-                        <a href="#"><img src="../assets/images/logo.png" alt="" /></a>
-                    </div>
-                    <p>Прокат автомобилей в городе Южно-сахалинске</p>
-                </div>
-                <nav class="footer__main-block">
-                    <p>Меню</p>
-                    <ul>
-                        <li><a href="/">Парк автомобилей</a></li>
-                        <li><a href="/">Условия</a></li>
-                        <li><a href="/">Акции</a></li>
-                        <li><a href="/">Контакты</a></li>
-                    </ul>
-                </nav>
-                <div class="footer__main-block">
-                    <p>Контакты</p>
-                    <ul>
-                        <li><a href="mailto:prokat-light@bk.ru">prokat-light@bk.ru</a></li>
-                        <li><a href="tel:89248820330">+7 (924) 882-03-30</a></li>
-                        <li>г. Южно-Сахалинск, ул Ленина 395А, офис 3</li>
-                    </ul>
-                </div>
-                <div class="footer__main-subscription">
-                    <form action="/">
-                        <div class="input">
-                            <input
-                                data-validate
-                                data-required
-                                autocomplete="off"
-                                type="tel"
-                                name="form[]"
-                                placeholder="номер телефона"
-                                class="input__field"
-                            />
-                            <span class="input__hint txt txt_14">Введите корректный номер</span>
+        <div class="contacts__inner">
+            <h2 class="contacts__title h h_2">Свяжитесь с нами</h2>
+            <div class="contacts__wrapper">
+                <article class="contact-form contacts__form">
+                    <form class="contact-form__inner">
+                        <h3 class="contact-form__title h h_3">Оставьте заявку</h3>
+                        <div class="contact-form__wrapper">
+                            <div class="input">
+                                <input
+                                    data-validate
+                                    data-required
+                                    autocomplete="off"
+                                    type="text"
+                                    name="form[]"
+                                    placeholder="фио"
+                                    class="input__field"
+                                />
+                                <span class="input__hint txt txt_14">Введите корректный ФИО</span>
+                            </div>
+                            <div class="input">
+                                <input
+                                    data-validate
+                                    data-required
+                                    autocomplete="off"
+                                    type="tel"
+                                    name="form[]"
+                                    placeholder="номер телефона"
+                                    class="input__field"
+                                />
+                                <span class="input__hint txt txt_14">Введите корректный номер</span>
+                            </div>
+                            <div class="input">
+                                <input
+                                    data-validate
+                                    data-required
+                                    autocomplete="off"
+                                    type="email"
+                                    name="form[]"
+                                    placeholder="e-mail"
+                                    class="input__field"
+                                />
+                                <span class="input__hint txt txt_14">Введите корректный e-mail</span>
+                            </div>
+                            <div class="textarea">
+                                <textarea
+                                    name="form[]"
+                                    autocomplete="off"
+                                    placeholder="Ваше сообщение"
+                                    class="input__textarea"
+                                ></textarea>
+                            </div>
                         </div>
-                        <button type="submit" class="btn">
-                            <span class="btn__txt">Отправить заявку</span>
-                        </button>
+                        <div class="contact-form__footer">
+                            <p>Отправляя заявку, Вы соглашаетесь на обработку своих данных</p>
+                            <div class="contact-form__btn">
+                                <button type="submit" class="btn">
+                                    <span class="btn__txt">Отправить заявку</span>
+                                </button>
+                            </div>
+                        </div>
                     </form>
-                    <div class="footer__social social">
+                </article>
+                <div class="contacts__footer">
+                    <div class="contacts__info">
+                        <ul>
+                            <li><span>E-mail</span></li>
+                            <li><a href="mailto:prokat-light@bk.ru">prokat-light@bk.ru</a></li>
+                        </ul>
+                        <ul>
+                            <li><span>Телефон</span></li>
+                            <li><a href="tel:89248820330">+7 (924) 882-03-30</a></li>
+                        </ul>
+                        <ul>
+                            <li><span>Адрес</span></li>
+                            <li>г. Южно-Сахалинск, ул Ленина 395А, офис 3</li>
+                        </ul>
+                    </div>
+                    <div class="social">
                         <div>
                             <a href="#" target="_blank" class="icon icon_white">
                                 <svg
@@ -102,19 +136,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer__bottom">
-                <ul>
-                    <li>&copy; 2016-2023 Права защищены</li>
-                    <li>Положение об обработке и защите персональных данных сотрудников</li>
-                    <li class="rd-logo">
-                        <div class="rd-logo__icon">
-                            <img src="../assets/images/RD-logo.svg" alt="" />
-                        </div>
-                        <p>Разработано Request Design</p>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
-</footer>
+    <div class="contacts__map" id="contacts-map"></div>
+</section>

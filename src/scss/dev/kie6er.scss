@@ -1,0 +1,45 @@
+@import '../sections/contact';
+
+.rd-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 140%;
+    color: $gray;
+    // .rd-logo__icon
+    &__icon {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+}
+.social {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+[class*='--map-copyrights'] {
+    display: none !important;
+}
+
+[class*='--main-engine-container'] {
+    filter: contrast(60%) grayscale(100%) invert(100%);
+}
+
+.marker {
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+
+    svg:last-child {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        filter: blur(0.2rem);
+        transform: translate(-50%, -50%);
+    }
+}
