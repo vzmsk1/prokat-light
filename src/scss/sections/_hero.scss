@@ -1,23 +1,22 @@
 .hero {
     position: relative;
+    margin-bottom: 11.5rem;
     min-height: 110.6rem;
     overflow: hidden;
 
     @media (max-width: 48em) {
-        min-height: 138rem;
+        margin-bottom: 30rem;
+        min-height: 132rem;
     }
 
     // .hero__content
 
     &__content {
         position: relative;
-
-        @media (min-width: 48em) {
-            bottom: -100%;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(100%);
-        }
+        bottom: -100%;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100%);
 
         // .hero__content_front
 
@@ -128,11 +127,11 @@
     &__car {
         width: 109%;
         justify-self: center;
-        transform: translateX(-2rem);
+        transform: translate(-1.5rem, 0.5rem);
 
         @media (min-width: 48em) {
             width: 102rem;
-            transform: translate(0rem, 9.5rem) scale(0);
+            transform: translate(0rem, 9.5rem);
         }
     }
 
@@ -140,6 +139,7 @@
 
     &__car-image {
         object-fit: contain;
+        transform: scale(0);
     }
 
     // .hero__anchor
@@ -158,10 +158,6 @@
         position: absolute;
         left: 0;
 
-        @media (min-width: 48em) {
-            transform: translateY(-100%);
-        }
-
         // .hero__mountains_front
 
         &_front {
@@ -170,13 +166,13 @@
             left: -17.6rem;
             width: 117%;
             height: 93%;
+            transform: translateY(-100%);
 
             @media (max-width: 48em) {
-                bottom: 11rem;
-                left: 44%;
+                bottom: 0;
+                left: -8rem;
                 width: 112%;
-                height: 63%;
-                transform: translateX(-50%);
+                height: 69%;
             }
         }
 
@@ -185,18 +181,16 @@
         &_back {
             top: 0;
             width: 100%;
-            height: 100%;
+            height: 93%;
+            background-image: url(./assets/images/bg/mountains-back.webp);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 0 -29rem;
+            clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
 
-            .hero__mountains-image {
-                object-position: -41rem -30rem;
-            }
-
-            @media (min-width: 48em) {
-                opacity: 0;
-                visibility: hidden;
-                .hero__mountains-image {
-                    object-position: 0 -30rem;
-                }
+            @media (max-width: 48em) {
+                background-position: -40rem -16rem;
             }
         }
     }
