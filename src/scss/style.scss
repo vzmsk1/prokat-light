@@ -50,6 +50,10 @@ main {
     max-width: 1920px;
 }
 
+section {
+    margin-bottom: 20rem;
+}
+
 ._desktop-only {
     @media (max-width: 48em) {
         display: none;
