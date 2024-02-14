@@ -12,6 +12,10 @@ $gray: #6f6f6f;
 $orange: #ff6c01;
 $red: #e20707;
 
+:root {
+    --opacity: 0;
+}
+
 // ---------------------------------- fonts ---------------------------------
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,regular,500,600,700,900&display=swap);
@@ -33,7 +37,7 @@ html.lock body {
 }
 html,
 body {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 // main

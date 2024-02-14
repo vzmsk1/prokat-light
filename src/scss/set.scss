@@ -1,64 +1,64 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 html {
-  font-family: 'Roboto'; // шрифт по умолчанию по сайту
-  font-size: 0.5208335vw; // на разрешении 1920 0.520835vw === 10px
-  font-style: normal;
-  font-weight: normal;
-  -webkit-animation: bugfix infinite 1s;
-  line-height: 1.2;
-  margin: 0;
-  height: 100%;
-  padding: 0;
+    font-family: 'Roboto'; // шрифт по умолчанию по сайту
+    font-size: 0.5208335vw; // на разрешении 1920 0.520835vw === 10px
+    font-style: normal;
+    font-weight: normal;
+    -webkit-animation: bugfix infinite 1s;
+    line-height: 1.2;
+    margin: 0;
+    height: 100%;
+    padding: 0;
 }
 
 body {
-  font-style: normal;
-  font-weight: normal;
-  -webkit-animation: bugfix infinite 1s;
-  line-height: 1.2;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-size: 1.8rem;
-  color: $white; // цвет по умолчанию текста по сайту
-  background-color: $bgColor;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-animation: bugfix infinite 1s;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 1.8rem;
+    color: $white; // цвет по умолчанию текста по сайту
+    background-color: $bgColor;
 }
 
 input,
 textarea {
-  -webkit-animation: bugfix infinite 1s;
-  line-height: inherit;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  border: none;
-  color: inherit;
+    -webkit-animation: bugfix infinite 1s;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: inherit;
 }
 a {
-  color: unset;
+    color: unset;
 }
 a,
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 button,
 input,
 a,
 textarea {
-  outline: none;
-  cursor: pointer;
-  font: inherit;
-  &:focus {
     outline: none;
-  }
-  &:active {
-    outline: none;
-  }
+    cursor: pointer;
+    font: inherit;
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        outline: none;
+    }
 }
 
 h1,
@@ -67,83 +67,90 @@ h3,
 h4,
 h5,
 h6 {
-  font: inherit;
-  margin: 0;
-  padding: 0;
+    font: inherit;
+    margin: 0;
+    padding: 0;
 }
 p {
-  margin-top: 0;
-  margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 img {
-  width: 100%;
-  height: auto;
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 button {
-  border: none;
-  color: inherit;
-  font: inherit;
-  text-align: inherit;
-  padding: 0;
-  background-color: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    padding: 0;
+    background-color: transparent;
 }
 ul {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 ul li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section {
+    margin-bottom: 20rem;
+    @media (max-width: 48em) {
+        margin-bottom: 24rem;
+    }
 }
 
 .container {
-  width: 164rem;
-  margin: 0 auto;
+    width: 164rem;
+    margin: 0 auto;
 }
 
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type='number'] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 svg,
 img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 @media (min-width: 1920px) {
-  html {
-    font-size: 10px;
-  }
+    html {
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 48em) {
-  html {
-    font-size: 5px;
-    font-size: 1.5625vw;
-    font-size: calc((100 / 375) * 5vw); // где 375 это ширина моб версии макета
-    -webkit-text-size-adjust: none;
-  }
+    html {
+        font-size: 5px;
+        font-size: 1.5625vw;
+        font-size: calc((100 / 375) * 5vw); // где 375 это ширина моб версии макета
+        -webkit-text-size-adjust: none;
+    }
 
-  body {
-    font-size: 3rem;
-    -webkit-text-size-adjust: none;
-  }
+    body {
+        font-size: 3rem;
+        -webkit-text-size-adjust: none;
+    }
 
-  .container {
-    padding: 0 2rem; // в моб версии отступ от края задаем для всех контейнеров, а там где не нужно можем точечно убрать
-    width: 100%;
-  }
+    .container {
+        padding: 0 2rem; // в моб версии отступ от края задаем для всех контейнеров, а там где не нужно можем точечно убрать
+        width: 100%;
+    }
 }

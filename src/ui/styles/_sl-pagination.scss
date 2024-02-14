@@ -1,0 +1,31 @@
+.sl-pagination {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+
+    .swiper-pagination-bullet {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        width: 4.4rem;
+        height: 0.2rem;
+        background-color: $white;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        cursor: pointer;
+        &::after {
+            content: attr(data-index);
+            transform: translateX(calc(100% + 1rem)) scale(0);
+            transition: transform 0.3s ease;
+        }
+
+        &.swiper-pagination-bullet-active {
+            background-color: $orange;
+            transform: scaleX(1.55);
+            transform-origin: left;
+
+            &::after {
+                transform: translateX(calc(100% + 1rem)) scale(1);
+            }
+        }
+    }
+}
