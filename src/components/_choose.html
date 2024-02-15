@@ -1,9 +1,15 @@
-<section class="choose">
+<section data-scroll data-scroll-offset="550" class="choose">
     <div class="choose__container container">
         <div class="choose__info">
-            <p id="chooseItemText" class="choose__text txt txt_caps"></p>
-            <div class="choose__pagination sl-pagination"></div>
-            <ul class="choose__list">
+            <p
+                data-tr="fadeUp"
+                data-tr-speed="1s"
+                data-tr-delay="1s"
+                id="chooseItemText"
+                class="choose__text txt txt_caps"
+            ></p>
+            <div data-da=".choose__carousel,768,last" data-tr="fadeIn" data-tr-speed="1.5s" class="choose__pagination sl-pagination sl-pagination_mm"></div>
+            <ul data-tr="fadeIn" data-tr-speed="1.5s" data-tr-delay="1.5s" class="choose__list">
                 <li class="choose__info-item info-item">
                     <div class="info-item__icon icon _no-hover">
                         <svg
@@ -192,40 +198,49 @@
 в районы с грунтовым покрытием"
                         data-price="6 300"
                         data-pledge="20 000"
-                        class="choose__slide slide-choose slide-choose_f swiper-slide"
+                        data-heading="toyota prado"
+                        class="choose__slide slide-choose swiper-slide"
                     >
-                        <div class="slide-choose__image-wrap">
+                        <div data-tr="fadeIn" data-tr-speed="1.5s" class="slide-choose__image-wrap">
                             <img
+                                data-tr="zoomout"
+                                data-tr-speed="1s"
+                                data-tr-delay="1s"
                                 src="./assets/images/cars/9D257GS-DG.webp"
                                 alt=""
                                 class="slide-choose__image"
                             />
                         </div>
-                        <div class="slide-choose__heading h">toyota prado</div>
                     </div>
 
                     <div
                         data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием 2"
+в районы с грунтовым покрытием"
                         data-price="6 400"
                         data-pledge="20 500"
-                        class="choose__slide slide-choose slide-choose_s swiper-slide"
+                        data-heading="toyota prado"
+                        class="choose__slide slide-choose swiper-slide"
                     >
-                        <div class="slide-choose__image-wrap">
+                        <div
+                            data-tr="fadeUp"
+                            data-tr-speed="1s"
+                            data-tr-delay="1s"
+                            class="slide-choose__image-wrap"
+                        >
                             <img
                                 src="./assets/images/cars/9DDFG7FG-ACF.webp"
                                 alt=""
                                 class="slide-choose__image"
                             />
                         </div>
-                        <div class="slide-choose__heading h">toyota prado</div>
                     </div>
 
                     <div
                         data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием 3"
+в районы с грунтовым покрытием"
                         data-price="7 300"
                         data-pledge="21 000"
+                        data-heading="toyota prado"
                         class="choose__slide slide-choose swiper-slide"
                     >
                         <div class="slide-choose__image-wrap">
@@ -235,14 +250,14 @@
                                 class="slide-choose__image"
                             />
                         </div>
-                        <div class="slide-choose__heading h">toyota prado</div>
                     </div>
 
                     <div
                         data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием 4"
+в районы с грунтовым покрытием"
                         data-price="5 300"
                         data-pledge="25 000"
+                        data-heading="toyota prado"
                         class="choose__slide slide-choose swiper-slide"
                     >
                         <div class="slide-choose__image-wrap">
@@ -252,11 +267,21 @@
                                 class="slide-choose__image"
                             />
                         </div>
-                        <div class="slide-choose__heading h">toyota prado</div>
                     </div>
                 </div>
             </div>
-            <div class="choose__sl-navigation">
+            <div
+                    class="choose__heading-wrap">
+                <span
+                    id="chooseItemHeading"
+                    data-tr="fadeUp"
+                    data-tr-speed="1s"
+                    data-tr-delay="1s"
+                    class="choose__heading h"
+                >
+            </div>
+            </span>
+            <div data-tr="fadeIn" data-tr-speed="1.5s" data-tr-delay="1.5s" class="choose__sl-navigation">
                 <button type="button" class="choose__sl-arr choose__sl-arr_prev icon icon_white">
                     <svg
                         width="22"
@@ -324,7 +349,13 @@
             </div>
         </div>
         <div class="choose__aside">
-            <button type="button" class="choose__characteristics">
+            <button
+                data-tr="fadeUp"
+                data-tr-speed="1s"
+                data-tr-delay="1s"
+                type="button"
+                class="choose__characteristics"
+            >
                 <span class="choose__characteristics-icon icon">
                     <svg
                         width="45"
@@ -377,7 +408,7 @@
                 </span>
                 <span class="choose__characteristics-txt">Характеристики</span>
             </button>
-            <a href="#" class="choose__btn btn">
+            <a data-tr="fadeIn" data-tr-speed="1.5s" data-tr-delay="1.5s" href="#" class="choose__btn btn">
                 <span class="btn__txt">перейти к выбору</span>
             </a>
         </div>
