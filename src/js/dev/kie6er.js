@@ -1,7 +1,11 @@
 import $ from 'jquery';
+import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
 
 $(document).ready(function () {
     $('.contacts').length > 0 ? initMap() : null;
+    !!$('.condition').length && conditionSlider();
 });
 
 const markers = [
@@ -63,4 +67,32 @@ function changeMarkers(content, marker) {
     markers.forEach((el) => (el.active = false));
     marker.active = true;
     $(content).addClass('active');
+}
+
+function remToPx(remValue) {
+    // Получаем текущий базовый размер шрифта (font-size) из элемента <html>
+    var htmlFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+    // Переводим значение из rem в px
+    var pxValue = remValue * htmlFontSize;
+
+    // Округляем значение до целых пикселей (по желанию)
+    return Math.round(pxValue) + 'px';
+}
+
+function conditionSlider() {
+    new Swiper('.condition__slider', {
+        modules: [Navigation],
+        speed: 800,
+        navigation: {
+            nextEl: '.condition__slider-next',
+            prevEl: '.condition__slider-prev'
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 7,
+                spaceBetween: `${remToPx(7.4)}`
+            }
+        }
+    });
 }

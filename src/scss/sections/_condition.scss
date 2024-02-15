@@ -1,0 +1,173 @@
+.condition {
+    // .condition__inner
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+    }
+    // .condition__content
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 9rem;
+        &-top {
+            position: relative;
+
+            &::after,
+            &::before {
+                content: '';
+                width: 50%;
+                height: 0.2rem;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: -2;
+            }
+
+            &::after {
+                left: 0;
+                background: linear-gradient(90deg, rgba(151, 151, 151, 0) 0%, #ff6c01 100%);
+            }
+
+            &::before {
+                right: 0;
+                background: linear-gradient(90deg, #ff6c01 0%, rgba(151, 151, 151, 0) 100%);
+            }
+        }
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 13.6rem;
+        }
+    }
+    // .condition__icon
+    &__icon {
+        position: relative;
+        &-bg {
+            width: 99%;
+            height: 99%;
+            border-radius: 50%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: $bgColor;
+        }
+    }
+    // .condition__info-block
+    &__info {
+        &-block {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 39.9rem);
+            justify-content: space-between;
+            margin-bottom: 6rem;
+        }
+        &-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            max-width: 37.9rem;
+        }
+        &-title {
+            font-weight: 500;
+            font-size: 3.2rem;
+            line-height: 140%;
+            color: $white;
+        }
+        &-text {
+            font-size: 1.8rem;
+            line-height: 140%;
+            color: $gray;
+        }
+        &-bg {
+            position: absolute;
+            height: 12.3rem;
+            right: 0;
+            top: -6rem;
+            z-index: -1;
+        }
+        &-read {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border: 0.1rem solid #24272a;
+            padding: 3.7rem 10rem;
+            p {
+                font-weight: 500;
+                font-size: 3.2rem;
+                line-height: 140%;
+                color: $white;
+            }
+        }
+    }
+    // .condition__footer
+    &__footer {
+        padding: 5.8rem 0;
+        background-color: #24272a;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: url('../../assets/images/sections/condition/light-gray-concrete-wall.png') center /
+                cover no-repeat;
+
+            top: 0;
+            left: 0;
+            z-index: 0;
+            mix-blend-mode: color-burn;
+        }
+        .container {
+            position: relative;
+        }
+    }
+    // .condition__slider
+    &__slider.swiper {
+        width: 135.2rem;
+        margin: 0 auto;
+        position: static;
+    }
+    // .condition__slider-wrapper
+    &__slider-wrapper.swiper-wrapper {
+        z-index: 3;
+    }
+    // .condition__slider-slide
+    &__slider-slide.swiper-slide {
+        width: 13rem;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2.3rem;
+
+        p {
+            // font-family: 'Gilroy';
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: $white;
+        }
+    }
+    // .condition__slider-navigation
+    &__slider-navigation {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+}
