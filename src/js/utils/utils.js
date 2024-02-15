@@ -291,3 +291,29 @@ export const removeClasses = (array, className) => {
 export const setInnerContent = (content, container) => {
     if (content && container) container.innerHTML = content;
 };
+
+/**
+ * sets attribute to an element / collection of elements
+ * @param {HTMLCollection | HTMLElement} arr
+ * @param {string} attr
+ * @param {string} val
+ */
+export const setAttr = (arr, attr, val) => {
+    if (arr.length) {
+        arr.forEach((item) => {
+            item.setAttribute(attr, val);
+        });
+    }
+};
+
+/**
+ * sets transition duration to item / collection of items
+ * @param {HTMLCollection | HTMLElement} arr
+ */
+export const setCssProperty = (arr, property, dataset) => {
+    if (arr.length) {
+        arr.forEach((item) => {
+            item.style[property] = item.dataset[dataset];
+        });
+    }
+};

@@ -19,6 +19,7 @@
 
     &__container {
         padding: 3.2rem 0;
+        padding-top: 2.5rem;
         display: grid;
         grid-template-columns: 5fr 2fr 5fr;
         align-items: center;
@@ -44,7 +45,7 @@
     &__logo {
         justify-self: center;
         width: 8.5rem;
-        transform: translate(1rem, -0.5rem);
+        transform: translate(0.9rem, -0.3rem);
 
         @media (max-width: 48em) {
             width: 12.4rem;

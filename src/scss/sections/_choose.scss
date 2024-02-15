@@ -18,7 +18,7 @@
         flex-direction: column;
 
         @media (max-width: 48em) {
-            margin-bottom: 15.6rem;
+            margin-bottom: 16.6rem;
         }
     }
 
@@ -37,10 +37,11 @@
     // .choose__pagination
 
     &__pagination {
-        margin-bottom: 13rem;
+        align-self: center;
 
-        @media (max-width: 48em) {
-            display: none;
+        @media (min-width: 48em) {
+            margin-bottom: 13.6rem;
+            align-self: flex-start;
         }
     }
 
@@ -53,7 +54,7 @@
         transform: translateY(-0.5rem);
 
         @media (max-width: 48em) {
-            row-gap: 5.2rem;
+            row-gap: 4.6rem;
             transform: none;
         }
     }
@@ -76,29 +77,59 @@
         margin-bottom: 8rem;
         display: flex;
         flex-direction: column;
-        row-gap: 8rem;
         min-width: 0;
         width: 100%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: -11rem;
+            left: -11rem;
+            width: 120rem;
+            height: 180rem;
+            background-image: url(./assets/images/bg/white-gradient.webp);
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+
+            @media (max-width: 48em) {
+                top: -14rem;
+                left: -9rem;
+                margin-bottom: 12.6rem;
+                width: 174rem;
+                height: 63rem;
+                opacity: 1;
+            }
+        }
 
         @media (min-width: 48em) {
             margin-bottom: 0;
             padding-top: 14rem;
             padding-left: 5rem;
             justify-self: center;
-            justify-content: space-between;
-            row-gap: 0.8rem;
 
-            &::before {
-                content: '';
-                position: absolute;
-                top: -11rem;
-                left: -11rem;
-                width: 120rem;
-                height: 180rem;
-                background-image: url(./assets/images/bg/white-gradient.webp);
-                background-size: contain;
-                background-repeat: no-repeat;
-                opacity: var(--opacity);
+            &:not(&._is-animating) {
+                .is-inview & {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &:not(&._prev-slide) {
+                &._is-animating {
+                    .choose__heading-wrap {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            &._prev-slide {
+                &::before {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -116,6 +147,12 @@
                 width: 77rem;
             }
         }
+
+        @media (min-width: 48em) {
+            &._is-animating {
+                pointer-events: none;
+            }
+        }
     }
 
     // .choose__wrapper
@@ -123,7 +160,7 @@
     &__wrapper {
         @media (min-width: 48em) {
             position: static;
-            min-height: 43rem;
+            min-height: 30rem;
         }
     }
 
@@ -147,20 +184,34 @@
                     z-index: 2;
                     opacity: 1;
                     transform: scale(1);
-                    .slide-choose__heading {
-                        display: block;
+
+                    &:not(._prev-slide &) {
+                        transition-delay: 0.5s;
                     }
                 }
 
                 &.swiper-slide-prev {
                     transform: scale(0.4);
+                    opacity: 0;
+                    transition: opacity 0.3s ease, transform 0.7s ease;
+
+                    &:not(._prev-slide &) {
+                        transition: opacity 0.3s ease 1s, transform 0.7s ease;
+                    }
+                    ._prev-slide & {
+                        display: none;
+                    }
                 }
 
                 &.swiper-slide-next {
                     z-index: 2;
                     opacity: 1;
-                    transform: scale(0.4) translate(166rem, -6rem);
+                    transform: scale(0.33) translate(199rem, 2rem);
                     cursor: pointer;
+
+                    &:not(._prev-slide &) {
+                        transition-delay: 0.5s;
+                    }
                 }
             }
         }
@@ -176,9 +227,7 @@
         transform: translate(-2.5rem, -0.3rem);
 
         @media (max-width: 48em) {
-            width: 100%;
-            column-gap: 3.2rem;
-            transform: none;
+            display: none;
         }
     }
 
@@ -238,12 +287,13 @@
 
         @media (min-width: 48em) {
             margin-bottom: auto;
+            margin-top: -1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
+            align-self: center;
             row-gap: 1.6rem;
             text-align: center;
-            transform: translate(-6rem, -1rem);
         }
     }
 
@@ -279,10 +329,46 @@
 
     &__btn {
         align-self: flex-end;
+        transform: translateY(-0.4rem);
 
         @media (max-width: 48em) {
+            padding: 3rem 8rem;
             align-self: stretch;
             width: 100%;
+            .btn__txt {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    // .choose__heading
+
+    &__heading {
+        font-size: 4.8rem;
+        line-height: 120%;
+
+        @media (min-width: 48em) {
+            font-size: 7rem;
+        }
+    }
+
+    // .choose__heading-wrap
+
+    &__heading-wrap {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 12.4rem;
+        transform: translate(-1rem, 0.3rem);
+        transition: opacity 0.4s ease;
+
+        ._prev-slide & {
+            opacity: 1;
+        }
+
+        @media (max-width: 48em) {
+            margin-bottom: 3.4rem;
+            align-self: center;
+            transform: translateY(-3rem);
         }
     }
 }
@@ -303,7 +389,7 @@
 
         @media (max-width: 48em) {
             margin-bottom: 0.6rem;
-            width: 66rem;
+            width: 65rem;
             transform: translateX(2.5rem);
         }
     }
@@ -312,19 +398,6 @@
 
     &__image {
         object-fit: contain;
-    }
-
-    // .slide-choose__heading
-
-    &__heading {
-        font-size: 4.8rem;
-        line-height: 120%;
-
-        @media (min-width: 48em) {
-            display: none;
-            font-size: 6.7rem;
-            transform: translateY(-2rem);
-        }
     }
 }
 
