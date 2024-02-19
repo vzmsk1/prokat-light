@@ -7,6 +7,9 @@ import * as utils from './utils/utils.js';
 // hamburger menu
 // utils.menuInit();
 
+// showmore
+utils.showmore();
+
 // ---------------------------------- libs ----------------------------------
 
 // dynamic dom

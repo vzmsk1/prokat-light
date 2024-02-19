@@ -5,8 +5,11 @@
         .advantages__head,
         .advantages__body {
             display: grid;
-            grid-template-columns: repeat(2, 6fr);
-            column-gap: 1.8rem;
+
+            @media (min-width: 48em) {
+                grid-template-columns: repeat(2, 6fr);
+                column-gap: 1.8rem;
+            }
         }
     }
 
@@ -14,6 +17,10 @@
 
     &__head {
         margin-bottom: 6.8rem;
+
+        @media (max-width: 48em) {
+            margin-bottom: 8.8rem;
+        }
     }
 
     // .advantages__heading-wrap
@@ -21,6 +28,10 @@
     &__heading-wrap {
         display: flex;
         flex-direction: column;
+
+        @media (max-width: 48em) {
+            margin-bottom: 8rem;
+        }
     }
 
     // .advantages__subtitle
@@ -28,6 +39,10 @@
     &__subtitle {
         margin-bottom: 1.8rem;
         color: $gray;
+
+        @media (max-width: 48em) {
+            margin-bottom: 3.2rem;
+        }
     }
 
     // .advantages__heading
@@ -42,6 +57,12 @@
         max-width: 79rem;
         line-height: 137%;
         color: $gray;
+
+        @media (max-width: 48em) {
+            padding-top: 0;
+            max-width: none;
+            line-height: 145%;
+        }
     }
 
     // .advantages__body
@@ -53,6 +74,11 @@
 
     &__content {
         padding-top: 12.8rem;
+
+        @media (max-width: 48em) {
+            padding-top: 0;
+            margin-bottom: 10.6rem;
+        }
     }
 
     // .advantages__list
@@ -60,32 +86,36 @@
     &__list {
         display: flex;
         flex-direction: column;
-        row-gap: 4rem;
+        row-gap: 4.5rem;
 
-        .info-item {
-            column-gap: 3.2rem;
+        @media (min-width: 48em) {
+            row-gap: 4rem;
 
-            &__text {
-                max-width: 35.9rem;
-                line-height: 130%;
-            }
+            .info-item {
+                column-gap: 3.2rem;
 
-            &:first-child {
-                .icon svg {
-                    width: 3.5rem;
-                    height: 3.5rem;
+                &__text {
+                    max-width: 35.9rem;
+                    line-height: 130%;
                 }
-            }
-            &:nth-child(2) {
-                .icon svg {
-                    width: 4.2rem;
-                    height: 4.2rem;
+
+                &:first-child {
+                    .icon svg {
+                        width: 3.5rem;
+                        height: 3.5rem;
+                    }
                 }
-            }
-            &:nth-child(3) {
-                .icon svg {
-                    width: 3rem;
-                    height: 3rem;
+                &:nth-child(2) {
+                    .icon svg {
+                        width: 4.2rem;
+                        height: 4.2rem;
+                    }
+                }
+                &:nth-child(3) {
+                    .icon svg {
+                        width: 3rem;
+                        height: 3rem;
+                    }
                 }
             }
         }
@@ -97,6 +127,20 @@
         .info-item__text {
             max-width: 41.9rem;
         }
+        @media (max-width: 48em) {
+            .info-item__text {
+                line-height: 143%;
+                max-width: 54.5rem;
+            }
+        }
+    }
+
+    // .advantages__showmore-btn
+
+    &__showmore-btn {
+        @media (max-width: 48em) {
+            margin-top: 3.5rem;
+        }
     }
 
     // .advantages__speedometer-wrap
@@ -105,6 +149,11 @@
         width: 80rem;
         height: 50rem;
         background: linear-gradient(171.21deg, #ff6c01 -149.9%, #ff6c0100 90.05%);
+
+        @media (max-width: 48em) {
+            width: 68.4rem;
+            height: 52rem;
+        }
     }
 }
 
@@ -116,6 +165,10 @@
     &__wrap {
         height: 50rem;
         overflow: visible;
+
+        @media (max-width: 48em) {
+            height: 52rem;
+        }
     }
 
     // .speedometer__needle
@@ -123,6 +176,10 @@
     &__needle {
         width: 2.1rem;
         height: 12.5rem;
+
+        g {
+            transform: matrix(-0.00103, -1, 1, -0.00103, -12.0927, 377.24);
+        }
     }
 
     // .speedometer__curve
@@ -133,6 +190,13 @@
         left: 8.2rem;
         width: 67.5rem;
         height: 45.4rem;
+
+        @media (max-width: 48em) {
+            bottom: -0.5rem;
+            left: 8.5rem;
+            width: 57rem;
+            height: 38.6rem;
+        }
     }
 
     // .speedometer__progress
@@ -155,7 +219,20 @@
         path {
             stroke: url(#speedometerProgressGradient);
             stroke-width: 163px;
+            stroke-dasharray: 4632, 4634;
+            stroke-dashoffset: 4633;
             // transition: stroke-dasharray 2s ease, stroke-dashoffset 2s ease;
+        }
+
+        @media (max-width: 48em) {
+            top: 4.5rem;
+            right: 16rem;
+            padding-top: 20rem;
+            width: 36.6rem;
+
+            path {
+                stroke-width: 120px;
+            }
         }
     }
 
@@ -167,6 +244,29 @@
         height: 57rem;
         overflow: hidden;
         transform: translate(-2rem, 3rem);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            right: -1.2rem;
+            width: 13rem;
+            height: 42.6rem;
+            background-image: url(./assets/images/bg/speedometer-scale.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        @media (max-width: 48em) {
+            height: 47rem;
+
+            &::after {
+                bottom: -2rem;
+                right: 8.7rem;
+                width: 12rem;
+                height: 35.7rem;
+            }
+        }
     }
 
     // .speedometer__num
@@ -284,6 +384,89 @@
             bottom: -4rem;
             right: 5.1rem;
         }
+
+        @media (max-width: 48em) {
+            font-size: 1.6rem;
+
+            &_0 {
+                bottom: -5rem;
+                left: 4.8rem;
+            }
+
+            &_1 {
+                bottom: 11.8rem;
+                left: 1rem;
+
+                &::after {
+                    top: -3.5rem;
+                    left: 6.8rem;
+                    height: 9.5rem;
+                }
+            }
+
+            &_2 {
+                bottom: 28.4rem;
+                left: 5.3rem;
+
+                &::after {
+                    top: -0.4rem;
+                    left: 5.9rem;
+                    height: 9.5rem;
+                }
+            }
+
+            &_3 {
+                left: 17.2rem;
+                top: 3.5rem;
+
+                &::after {
+                    top: 2.3rem;
+                    left: 4rem;
+                    height: 9.5rem;
+                }
+            }
+
+            &_4 {
+                top: -0.8rem;
+                left: 34.5rem;
+
+                &::after {
+                    top: 3rem;
+                    left: 0.5rem;
+                    height: 9.7rem;
+                }
+            }
+
+            &_5 {
+                top: 3.5rem;
+                right: 26.9rem;
+
+                &::after {
+                    height: 9.5rem;
+                }
+            }
+
+            &_6 {
+                top: 16.3rem;
+                right: 15rem;
+
+                &::after {
+                    top: 0.1rem;
+                    left: -5.4rem;
+                    height: 9.5rem;
+                }
+            }
+
+            &_7 {
+                bottom: 11.5rem;
+                right: 11rem;
+            }
+
+            &_8 {
+                bottom: -5rem;
+                right: 14.5rem;
+            }
+        }
     }
 
     // .speedometer__nums
@@ -307,6 +490,12 @@
         align-items: center;
         row-gap: 3.4rem;
         text-align: center;
+
+        @media (max-width: 48em) {
+            bottom: 0.8rem;
+            left: 22.3rem;
+            row-gap: 3.2rem;
+        }
     }
 
     // .speedometer__score
@@ -315,6 +504,11 @@
         font-size: 11.2rem;
         line-height: 110%;
         text-transform: uppercase;
+
+        @media (max-width: 48em) {
+            width: 26rem;
+            font-size: 9.6rem;
+        }
     }
 
     // .speedometer__text
@@ -324,5 +518,11 @@
         font-size: 3.2rem;
         line-height: 140%;
         transform: translateX(0.8rem);
+
+        @media (max-width: 48em) {
+            font-size: 3.7rem;
+            max-width: 24rem;
+            transform: none;
+        }
     }
 }

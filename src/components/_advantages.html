@@ -1,16 +1,24 @@
-<section data-scroll data-scroll-offset="550" class="advantages">
+<section data-scroll data-scroll-offset="550" class="advantages _is-pinned">
     <div class="advantages__container container">
         <div class="advantages__head">
             <div class="advantages__heading-wrap">
                 <span class="advantages__subtitle subtitle subtitle_sm">О компании</span>
                 <span class="advantages__heading h h_2">создаем эмоции вместе</span>
             </div>
-            <p class="advantages__text">
-                В сервисах проката автомобиля возможен выбор машины любой марки, модели или цвета. В наши дни
-                разнообразие весьма велико, – настолько, что позволяет сделать идеальный выбор. На нашем сайте
-                возможна аренда машин на различных условиях, удобных для клиентов. Например, при большом стаже
-                вождения доступны дополнительные опции при прокате авто.
-            </p>
+            <div data-showmore="mm" class="advantages__showmore">
+                <div data-showmore-content="18" class="advantages__showmore-content">
+                    <p class="advantages__text">
+                        В сервисах проката автомобиля возможен выбор машины любой марки, модели или цвета. В
+                        наши дни разнообразие весьма велико, – настолько, что позволяет сделать идеальный
+                        выбор. На нашем сайте возможна аренда машин на различных условиях, удобных для
+                        клиентов. Например, при большом стаже вождения доступны дополнительные опции при
+                        прокате авто.
+                    </p>
+                </div>
+                <button hidden data-showmore-button type="button" class="advantages__showmore-btn link">
+                    <span>Развернуть</span><span>Свернуть</span>
+                </button>
+            </div>
         </div>
         <div class="advantages__body">
             <div class="advantages__content">
@@ -121,7 +129,7 @@
                         <div class="info-item__content">
                             <span class="info-item__subtitle subtitle">30+ автомобилей в автопарке</span>
                             <p class="info-item__text">
-                                Самые популярные марки автомобилей, подходящие под любые типы поездок
+                                Самые популярные марки авто, подходящие под любые типы поездок
                             </p>
                         </div>
                     </li>
@@ -238,6 +246,7 @@
             <div class="advantages__speedometer speedometer">
                 <div class="speedometer__inner">
                     <svg
+                        data-viewbox="700,500,812,612"
                         class="speedometer__wrap"
                         viewBox="0 0 700 500"
                         fill="none"
@@ -250,6 +259,7 @@
                             stroke-opacity="0.1"
                             stroke-width="1.4286"
                         />
+
                         <svg class="speedometer__needle">
                             <g id="speedometerNeedle">
                                 <path

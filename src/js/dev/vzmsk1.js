@@ -1,20 +1,55 @@
 import LocomotiveScroll from 'locomotive-scroll';
 import gsap from 'gsap';
-import { MotionPathPlugin } from 'gsap/all';
+import { MotionPathPlugin, ScrollTrigger } from 'gsap/all';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
-// import LazyLinePainter from 'lazy-line-painter';
 import Vivus from 'vivus';
 
 import { setInnerContent, setCssProperty } from '../utils/utils';
 
 // --------------------------------------------------------------------------
 
-gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
+gsap.defaults({
+    duration: 1
+});
 
-document.addEventListener('DOMContentLoaded', function () {
-    const mm = window.matchMedia('(max-width: 768px)');
+const mm = window.matchMedia('(max-width: 768px)');
+const locoScroll = new LocomotiveScroll({
+    el: document.querySelector('._smooth-scroll'),
+    smooth: true
+});
+
+window.addEventListener('load', function () {
+    const changeViewboxData = () => {
+        if (document.querySelector('.speedometer__wrap')) {
+            const wrap = document.querySelector('.speedometer__wrap');
+            const [deskW, deskH, mobW, mobH] = wrap.dataset.viewbox.trim().split(',');
+            wrap.setAttribute('viewBox', mm.matches ? `0 0 ${mobW} ${mobH}` : `0 0 ${deskW} ${deskH}`);
+        }
+    };
+    changeViewboxData();
+
+    /**
+     * initializes anchors
+     */
+    const initAnchors = () => {
+        const anchors = document.querySelectorAll('[data-scroll-to]');
+
+        if (anchors.length) {
+            anchors.forEach((anchor) => {
+                anchor.addEventListener('click', function () {
+                    locoScroll.scrollTo(anchor.dataset.scrollTo, {
+                        duration: 2.5,
+                        offset: -40,
+                        immediate: false
+                    });
+                });
+            });
+        }
+    };
+    initAnchors();
 
     /**
      * initializes sliders
@@ -52,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 pagination: {
                     el: '.choose__pagination',
                     type: 'bullets',
-                    clickable: mm ? true : false,
+                    clickable: mm.matches ? true : false,
                     renderBullet: function (index, className) {
                         const indx = index >= 10 ? index : '0' + ++index;
                         return `<span class="${className}" data-index="${indx}"></span>`;
@@ -90,38 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     initSliders();
 
-    mm.addEventListener('change', initSliders);
-});
-window.addEventListener('load', function () {
-    const locoScroll = new LocomotiveScroll({
-        el: document.querySelector('._smooth-scroll'),
-        smooth: true
-    });
-
-    /**
-     * initializes anchors
-     */
-    const initAnchors = () => {
-        const anchors = document.querySelectorAll('[data-scroll-to]');
-
-        if (anchors.length) {
-            anchors.forEach((anchor) => {
-                anchor.addEventListener('click', function () {
-                    locoScroll.scrollTo(anchor.dataset.scrollTo, {
-                        duration: 2.5,
-                        offset: -40,
-                        immediate: false
-                    });
-                });
-            });
-        }
-    };
-    initAnchors();
-
-    setCssProperty(document.querySelectorAll('[data-tr-speed]'), 'transitionDuration', 'trSpeed');
-    setCssProperty(document.querySelectorAll('[data-tr-delay]'), 'transitionDelay', 'trDelay');
-});
-window.requestAnimationFrame(function () {
     /**
      * initializes hero animation
      */
@@ -176,65 +179,68 @@ window.requestAnimationFrame(function () {
                     },
                     1.5
                 );
-            // .to(
-            //     '.hero__car img',
-            //     {
-            //         scale: 1,
-            //         duration: 2
-            //     },
-            //     1.5
-            // )
         }
     };
-    initHeroAnim();
 
     /**
      * animates speedometer
      */
     const animateSpeedometer = () => {
-        gsap.from('#speedometerScore', {
-            textContent: 0,
-            duration: 2,
-            snap: { textContent: 1 }
-        });
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: '.advantages',
+                start: 'top 200',
+                once: true,
+                onEnter: () => {
+                    new Vivus('speedometerProgress', {
+                        type: 'sync',
+                        start: 'manual',
+                        duration: 100,
+                        delay: 0,
+                        onReady: function (vivus) {
+                            vivus.stop();
+                            vivus.reset();
+                            setTimeout(() => {
+                                vivus.el.querySelector('path').style.transition =
+                                    'stroke-dasharray 2s ease, stroke-dashoffset 2s ease';
+                                vivus.setFrameProgress(0.18);
 
-        gsap.to('#speedometerNeedle', {
-            motionPath: {
-                path: '#speedometerPath',
-                align: '#speedometerPath',
-                alignOrigin: [0.5, 0.1],
-                autoRotate: true,
-                start: 0.13, // 0.13
-                end: 0.375 // 0.87
-            },
-            duration: 2
-        });
+                                gsap.to('#speedometerNeedle', {
+                                    motionPath: {
+                                        path: '#speedometerPath',
+                                        align: '#speedometerPath',
+                                        alignOrigin: [0.5, 0.1],
+                                        autoRotate: true,
+                                        start: 0.13, // 0.13
+                                        end: 0.29 // 0.87
+                                    },
+                                    duration: 1.1,
+                                    delay: 0.8
+                                });
 
-        const speedometerProgress = new Vivus('speedometerProgress', {
-            type: 'sync',
-            start: 'manual',
-            duration: 100,
-            delay: 0,
-            onReady: function (myVivus) {
-                myVivus.stop();
-                myVivus.reset();
-                setTimeout(() => {
-                    myVivus.el.querySelector('path').style.transition =
-                        'stroke-dasharray 2s ease, stroke-dashoffset 2s ease';
-                    myVivus.setFrameProgress(1);
-                }, 500);
+                                gsap.from('#speedometerScore', {
+                                    textContent: 0,
+                                    duration: 1.1,
+                                    delay: 0.8,
+                                    snap: { textContent: 1 }
+                                });
+                            }, 0);
+                        }
+                    });
+                }
             }
         });
-
-        // setTimeout(() => {
-        //     speedometerProgress.setFrameProgress(0.2);
-        // }, 0);
-
-        // const speedometerProgress = new LazyLinePainter(document.getElementById('speedometerProgress'));
-        // speedometerProgress.erase();
-        // setTimeout(() => {
-        //     speedometerProgress.progress(0.2);
-        // }, 3000);
     };
-    animateSpeedometer();
+
+    window.requestAnimationFrame(function () {
+        initHeroAnim();
+        animateSpeedometer();
+    });
+
+    setCssProperty(document.querySelectorAll('[data-tr-speed]'), 'transitionDuration', 'trSpeed');
+    setCssProperty(document.querySelectorAll('[data-tr-delay]'), 'transitionDelay', 'trDelay');
+    mm.addEventListener('change', function () {
+        initSliders();
+        changeViewboxData();
+    });
 });
