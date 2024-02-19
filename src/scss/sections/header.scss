@@ -6,6 +6,11 @@
     width: 100%;
     will-change: contents;
 
+    @media (min-width: 48em) {
+        transform: translateY(-100%);
+        transition: all 1s ease;
+    }
+
     .icon {
         @media (max-width: 48em) {
             width: 10.4rem;

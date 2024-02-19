@@ -132,23 +132,11 @@ window.addEventListener('load', function () {
         if (document.querySelector('.hero')) {
             const tl = gsap.timeline();
 
-            tl.fromTo(
-                '.hero__mountains_front',
-                { translateY: '-100%' },
-                {
-                    translateY: 0,
-                    duration: 3
-                }
-            )
-                .fromTo(
-                    '.hero__mountains_back',
-                    { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)' },
-                    {
-                        clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0 100%)',
-                        duration: 3
-                    },
-                    0
-                )
+            tl.to('.hero', {
+                '--y': 0,
+                delay: 0.5,
+                duration: 4
+            })
                 .fromTo(
                     '.hero__content',
                     { translateY: '100%' },
@@ -168,16 +156,14 @@ window.addEventListener('load', function () {
                     },
                     1.5
                 )
-                .fromTo(
+                .to(
                     '.header',
                     {
-                        translateY: '-100%'
-                    },
-                    {
                         translateY: 0,
-                        duration: 2
+                        duration: 1.5,
+                        opacity: 1
                     },
-                    1.5
+                    3
                 );
         }
     };
@@ -186,50 +172,52 @@ window.addEventListener('load', function () {
      * animates speedometer
      */
     const animateSpeedometer = () => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '.advantages',
-                start: 'top 200',
-                once: true,
-                onEnter: () => {
-                    new Vivus('speedometerProgress', {
-                        type: 'sync',
-                        start: 'manual',
-                        duration: 100,
-                        delay: 0,
-                        onReady: function (vivus) {
-                            vivus.stop();
-                            vivus.reset();
-                            setTimeout(() => {
-                                vivus.el.querySelector('path').style.transition =
-                                    'stroke-dasharray 2s ease, stroke-dashoffset 2s ease';
-                                vivus.setFrameProgress(0.18);
+        if (document.getElementById('speedometerProgress')) {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.advantages',
+                    start: 'top 200',
+                    once: true,
+                    onEnter: () => {
+                        new Vivus('speedometerProgress', {
+                            type: 'sync',
+                            start: 'manual',
+                            duration: 100,
+                            delay: 0,
+                            onReady: function (vivus) {
+                                vivus.stop();
+                                vivus.reset();
+                                setTimeout(() => {
+                                    vivus.el.querySelector('path').style.transition =
+                                        'stroke-dasharray 2s ease, stroke-dashoffset 2s ease';
+                                    vivus.setFrameProgress(0.18);
 
-                                gsap.to('#speedometerNeedle', {
-                                    motionPath: {
-                                        path: '#speedometerPath',
-                                        align: '#speedometerPath',
-                                        alignOrigin: [0.5, 0.1],
-                                        autoRotate: true,
-                                        start: 0.13, // 0.13
-                                        end: 0.29 // 0.87
-                                    },
-                                    duration: 1.1,
-                                    delay: 0.8
-                                });
+                                    gsap.to('#speedometerNeedle', {
+                                        motionPath: {
+                                            path: '#speedometerPath',
+                                            align: '#speedometerPath',
+                                            alignOrigin: [0.5, 0.1],
+                                            autoRotate: true,
+                                            start: 0.13, // 0.13
+                                            end: 0.29 // 0.87
+                                        },
+                                        duration: 1.1,
+                                        delay: 0.8
+                                    });
 
-                                gsap.from('#speedometerScore', {
-                                    textContent: 0,
-                                    duration: 1.1,
-                                    delay: 0.8,
-                                    snap: { textContent: 1 }
-                                });
-                            }, 0);
-                        }
-                    });
+                                    gsap.from('#speedometerScore', {
+                                        textContent: 0,
+                                        duration: 1.1,
+                                        delay: 0.8,
+                                        snap: { textContent: 1 }
+                                    });
+                                }, 0);
+                            }
+                        });
+                    }
                 }
-            }
-        });
+            });
+        }
     };
 
     window.requestAnimationFrame(function () {
