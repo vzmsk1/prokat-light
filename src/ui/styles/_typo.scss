@@ -17,7 +17,7 @@
     &_2 {
         font-size: 5.2rem;
         line-height: 130%;
-        letter-spacing: 2%;
+        letter-spacing: 0.1rem;
 
         @media (max-width: 48em) {
             font-size: 4rem;
@@ -41,8 +41,20 @@
     font-size: 2.4rem;
     line-height: 140%;
 
+    &_sm {
+        font-size: 2rem;
+        line-height: 98%;
+        text-transform: uppercase;
+        color: $gray;
+    }
+
     @media (max-width: 48em) {
         font-size: 3.6rem;
+
+        &_sm {
+            font-size: 3.2rem;
+            line-height: 105%;
+        }
     }
 }
 

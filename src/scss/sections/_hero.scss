@@ -14,6 +14,7 @@
     &__content {
         position: relative;
         bottom: 0;
+        will-change: contents;
 
         // .hero__content_front
 
@@ -153,6 +154,7 @@
     &__mountains {
         position: absolute;
         left: 0;
+        will-change: contents;
 
         // .hero__mountains_front
 
