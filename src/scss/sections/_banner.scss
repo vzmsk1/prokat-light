@@ -68,14 +68,9 @@
 
     &__subtitle {
         margin-bottom: 4rem;
-        font-size: 2rem;
-        line-height: 98%;
-        text-transform: uppercase;
-        color: $gray;
 
         @media (max-width: 48em) {
             margin-bottom: 5rem;
-            font-size: 3.2rem;
         }
     }
 

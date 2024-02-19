@@ -1,12 +1,17 @@
 import LocomotiveScroll from 'locomotive-scroll';
 import gsap from 'gsap';
+import { MotionPathPlugin } from 'gsap/all';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
+// import LazyLinePainter from 'lazy-line-painter';
+import Vivus from 'vivus';
 
 import { setInnerContent, setCssProperty } from '../utils/utils';
 
 // --------------------------------------------------------------------------
+
+gsap.registerPlugin(MotionPathPlugin);
 
 document.addEventListener('DOMContentLoaded', function () {
     const mm = window.matchMedia('(max-width: 768px)');
@@ -87,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     mm.addEventListener('change', initSliders);
 });
-
 window.addEventListener('load', function () {
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector('._smooth-scroll'),
@@ -183,4 +187,54 @@ window.requestAnimationFrame(function () {
         }
     };
     initHeroAnim();
+
+    /**
+     * animates speedometer
+     */
+    const animateSpeedometer = () => {
+        gsap.from('#speedometerScore', {
+            textContent: 0,
+            duration: 2,
+            snap: { textContent: 1 }
+        });
+
+        gsap.to('#speedometerNeedle', {
+            motionPath: {
+                path: '#speedometerPath',
+                align: '#speedometerPath',
+                alignOrigin: [0.5, 0.1],
+                autoRotate: true,
+                start: 0.13, // 0.13
+                end: 0.375 // 0.87
+            },
+            duration: 2
+        });
+
+        const speedometerProgress = new Vivus('speedometerProgress', {
+            type: 'sync',
+            start: 'manual',
+            duration: 100,
+            delay: 0,
+            onReady: function (myVivus) {
+                myVivus.stop();
+                myVivus.reset();
+                setTimeout(() => {
+                    myVivus.el.querySelector('path').style.transition =
+                        'stroke-dasharray 2s ease, stroke-dashoffset 2s ease';
+                    myVivus.setFrameProgress(1);
+                }, 500);
+            }
+        });
+
+        // setTimeout(() => {
+        //     speedometerProgress.setFrameProgress(0.2);
+        // }, 0);
+
+        // const speedometerProgress = new LazyLinePainter(document.getElementById('speedometerProgress'));
+        // speedometerProgress.erase();
+        // setTimeout(() => {
+        //     speedometerProgress.progress(0.2);
+        // }, 3000);
+    };
+    animateSpeedometer();
 });

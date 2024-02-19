@@ -1,0 +1,328 @@
+.advantages {
+    // .advantages__container
+
+    &__container {
+        .advantages__head,
+        .advantages__body {
+            display: grid;
+            grid-template-columns: repeat(2, 6fr);
+            column-gap: 1.8rem;
+        }
+    }
+
+    // .advantages__head
+
+    &__head {
+        margin-bottom: 6.8rem;
+    }
+
+    // .advantages__heading-wrap
+
+    &__heading-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .advantages__subtitle
+
+    &__subtitle {
+        margin-bottom: 1.8rem;
+        color: $gray;
+    }
+
+    // .advantages__heading
+
+    &__heading {
+    }
+
+    // .advantages__text
+
+    &__text {
+        padding-top: 3.8rem;
+        max-width: 79rem;
+        line-height: 137%;
+        color: $gray;
+    }
+
+    // .advantages__body
+
+    &__body {
+    }
+
+    // .advantages__content
+
+    &__content {
+        padding-top: 12.8rem;
+    }
+
+    // .advantages__list
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4rem;
+
+        .info-item {
+            column-gap: 3.2rem;
+
+            &__text {
+                max-width: 35.9rem;
+                line-height: 130%;
+            }
+
+            &:first-child {
+                .icon svg {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                }
+            }
+            &:nth-child(2) {
+                .icon svg {
+                    width: 4.2rem;
+                    height: 4.2rem;
+                }
+            }
+            &:nth-child(3) {
+                .icon svg {
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
+        }
+    }
+
+    // .advantages__list-item
+
+    &__list-item {
+        .info-item__text {
+            max-width: 41.9rem;
+        }
+    }
+
+    // .advantages__speedometer-wrap
+
+    &__speedometer-wrap {
+        width: 80rem;
+        height: 50rem;
+        background: linear-gradient(171.21deg, #ff6c01 -149.9%, #ff6c0100 90.05%);
+    }
+}
+
+.speedometer {
+    position: relative;
+
+    // .speedometer__wrap
+
+    &__wrap {
+        height: 50rem;
+        overflow: visible;
+    }
+
+    // .speedometer__needle
+
+    &__needle {
+        width: 2.1rem;
+        height: 12.5rem;
+    }
+
+    // .speedometer__curve
+
+    &__curve {
+        position: absolute;
+        bottom: 0.5rem;
+        left: 8.2rem;
+        width: 67.5rem;
+        height: 45.4rem;
+    }
+
+    // .speedometer__progress
+
+    &__progress {
+        position: absolute;
+        z-index: -1;
+        height: 0;
+        top: 6.8rem;
+        right: 8rem;
+        padding-top: 30rem;
+        width: 40.8rem;
+        transform: scaleX(-1);
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: visible;
+        }
+        path {
+            stroke: url(#speedometerProgressGradient);
+            stroke-width: 163px;
+            // transition: stroke-dasharray 2s ease, stroke-dashoffset 2s ease;
+        }
+    }
+
+    // .speedometer__inner
+
+    &__inner {
+        position: relative;
+        width: 80rem;
+        height: 57rem;
+        overflow: hidden;
+        transform: translate(-2rem, 3rem);
+    }
+
+    // .speedometer__num
+
+    &__num {
+        position: absolute;
+        font-size: 2rem;
+        line-height: 140%;
+        color: rgba(255, 255, 255, 0.3);
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            height: 11.3rem;
+            width: 0.14rem;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &:first-child,
+        &:last-child {
+            &::after {
+                content: none;
+            }
+        }
+
+        &_0 {
+            bottom: -4rem;
+            left: 4.1rem;
+        }
+
+        &_1 {
+            bottom: 15.8rem;
+            left: -0.5rem;
+
+            &::after {
+                top: -4rem;
+                left: 8rem;
+                height: 11rem;
+                transform: rotate(90deg);
+            }
+        }
+
+        &_2 {
+            bottom: 35.4rem;
+            left: 5rem;
+
+            &::after {
+                top: -0.4rem;
+                left: 6.9rem;
+                transform: rotate(121deg);
+            }
+        }
+
+        &_3 {
+            left: 19rem;
+            top: 4rem;
+
+            &::after {
+                top: 2.7rem;
+                left: 4.5rem;
+                transform: rotate(150deg);
+            }
+        }
+
+        &_4 {
+            top: -1.2rem;
+            left: 39.2rem;
+
+            &::after {
+                top: 3.3rem;
+                left: 0.5rem;
+                height: 12rem;
+                transform: rotate(180deg);
+            }
+        }
+
+        &_5 {
+            top: 4rem;
+            right: 20rem;
+
+            &::after {
+                top: 2.6rem;
+                left: -3.3rem;
+                height: 12.5rem;
+                transform: rotate(29deg);
+            }
+        }
+
+        &_6 {
+            top: 18.8rem;
+            right: 6rem;
+
+            &::after {
+                top: -0.8rem;
+                left: -6.3rem;
+                height: 12.5rem;
+                transform: rotate(60deg);
+            }
+        }
+
+        &_7 {
+            bottom: 15.5rem;
+            right: 1.1rem;
+
+            &::after {
+                top: -3.8rem;
+                left: -6.6rem;
+                height: 11rem;
+                transform: rotate(90deg);
+            }
+        }
+
+        &_8 {
+            bottom: -4rem;
+            right: 5.1rem;
+        }
+    }
+
+    // .speedometer__nums
+
+    &__nums {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    // .speedometer__text-wrap
+
+    &__text-wrap {
+        position: absolute;
+        bottom: 10.2rem;
+        left: 20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 3.4rem;
+        text-align: center;
+    }
+
+    // .speedometer__score
+
+    &__score {
+        font-size: 11.2rem;
+        line-height: 110%;
+        text-transform: uppercase;
+    }
+
+    // .speedometer__text
+
+    &__text {
+        font-weight: 500;
+        font-size: 3.2rem;
+        line-height: 140%;
+        transform: translateX(0.8rem);
+    }
+}
