@@ -135,16 +135,25 @@ window.addEventListener('load', function () {
             tl.to('.hero', {
                 '--y': 0,
                 delay: 0.5,
-                duration: 4
+                duration: 3.5
             })
+                .fromTo(
+                    '.hero__bg',
+                    { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)' },
+                    {
+                        clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0 100%)',
+                        duration: 3.5
+                    },
+                    0.6
+                )
                 .fromTo(
                     '.hero__content',
                     { translateY: '100%' },
                     {
                         translateY: 0,
-                        duration: 2.5
+                        duration: 2
                     },
-                    1
+                    1.2
                 )
                 .fromTo(
                     '.hero__content',
@@ -152,7 +161,7 @@ window.addEventListener('load', function () {
                     {
                         opacity: 1,
                         visibility: 'visible',
-                        duration: 0.5
+                        duration: 1
                     },
                     1.5
                 )

@@ -3,43 +3,27 @@
     margin-bottom: 12.5rem;
     min-height: 110.6rem;
     overflow: hidden;
-    --y: -100%;
+    --y: -110%;
 
-    &::before,
     &::after {
         content: '';
         position: absolute;
+        z-index: 5;
+        bottom: 0;
+        left: -16rem;
+        width: 110%;
+        height: 92%;
+        background-image: url(./assets/images/bg/mountains-front.webp);
         background-size: cover;
         background-repeat: no-repeat;
         will-change: contents;
-        transform: translateY(var(--y)) translate3d(0, 0, 0);
-    }
-
-    &::after {
-        z-index: 5;
-        bottom: -1rem;
-        left: -8rem;
-        width: 105%;
-        height: 92%;
-        background-image: url(./assets/images/bg/mountains-front.webp);
+        transform: translateY(var(--y));
         @media (max-width: 48em) {
             bottom: 0;
-            left: -8rem;
-            width: 112%;
+            left: -52rem;
+            width: 176%;
             height: 69%;
-        }
-    }
-
-    &::before {
-        top: 0;
-        left: -2rem;
-        width: 102%;
-        height: 93%;
-        background-image: url(./assets/images/bg/mountains-back.webp);
-        background-attachment: fixed;
-        background-position: 0 -29rem;
-        @media (max-width: 48em) {
-            background-position: -40rem -16rem;
+            background-image: url(./assets/images/bg/mountains-front-mobile.webp);
         }
     }
 
@@ -48,12 +32,40 @@
         min-height: 132rem;
     }
 
+    // .hero__bg
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: -2rem;
+        width: 102%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        background-image: url(./assets/images/bg/mountains-back.webp);
+        background-attachment: fixed;
+        background-position: 0 -29rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        will-change: contents;
+        filter: blur(0.5rem);
+
+        @media (max-width: 48em) {
+            width: 104%;
+            background-position: -45rem -21rem;
+        }
+    }
+
     // .hero__content
 
     &__content {
         position: relative;
         bottom: 0;
         will-change: contents;
+
+        @media (min-width: 48em) {
+            opacity: 0;
+            visibility: hidden;
+        }
 
         // .hero__content_front
 
