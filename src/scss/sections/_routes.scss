@@ -14,7 +14,8 @@ $num-of-tabs: 4;
 
                 + .routes__tabs-button {
                     .routes__tabs-content-path {
-                        animation: fadeIn 5s;
+                        animation: fadeIn 5s forwards;
+                        animation-delay: 1.5s;
                     }
                 }
             }
@@ -35,9 +36,15 @@ $num-of-tabs: 4;
         }
 
         &:nth-of-type(1) {
+            & + .routes__tabs-button {
+                &::before {
+                    opacity: 1;
+                }
+            }
+
             ~ .routes__tabs-line {
                 + .routes__tabs-map {
-                    transform: scale(5.5) translate(20.5rem, -8.5rem) rotate(6deg);
+                    transform: scale(5.5) translate(21rem, -8.5rem) rotate(6deg);
                 }
             }
         }
@@ -45,23 +52,39 @@ $num-of-tabs: 4;
         &:nth-of-type(2) {
             ~ .routes__tabs-line {
                 + .routes__tabs-map {
-                    transform: scale(1) translate(0, 0) rotate(0);
+                    transform: scale(1.55) translate(-1.5rem, -3.5rem) rotate(0deg);
+
+                    + .routes__tabs-overlay {
+                        opacity: 0;
+                    }
                 }
             }
         }
 
         &:nth-of-type(3) {
+            & + .routes__tabs-button {
+                &::before {
+                    opacity: 1;
+                }
+            }
+
             ~ .routes__tabs-line {
                 + .routes__tabs-map {
-                    transform: scale(3);
+                    transform: scale(2.45) translate(12rem, -8rem) rotate(7deg);
                 }
             }
         }
 
         &:nth-of-type(4) {
+            & + .routes__tabs-button {
+                &::before {
+                    opacity: 1;
+                }
+            }
+
             ~ .routes__tabs-line {
                 + .routes__tabs-map {
-                    transform: scale(1);
+                    transform: scale(5.3) translate(20.5rem, -8.5rem) rotate(6.5deg);
                 }
             }
         }
@@ -69,6 +92,8 @@ $num-of-tabs: 4;
 }
 
 .routes {
+    user-select: none;
+
     &__title {
         text-align: center;
         margin-bottom: 6rem;
@@ -80,6 +105,7 @@ $num-of-tabs: 4;
         height: 77.1rem;
         display: flex;
         flex-direction: column;
+        position: relative;
 
         &-wrapper {
             display: flex;
@@ -119,18 +145,6 @@ $num-of-tabs: 4;
             width: 13.5rem;
             text-align: center;
 
-            &::before {
-                @include pseudo {
-                    opacity: 0;
-                    right: -69rem;
-                    top: -30rem;
-                    width: 75.5rem;
-                    height: 100rem;
-                    background: linear-gradient(270deg, #191c20 70%, rgba(25, 28, 32, 0) 100%);
-                    transition: 0.3s opacity ease;
-                }
-            }
-
             label {
                 transition: 1s color ease;
                 font-weight: 400;
@@ -140,16 +154,46 @@ $num-of-tabs: 4;
                 color: $gray;
                 position: relative;
                 cursor: pointer;
+                z-index: 10;
+
+                &:hover {
+                    color: $orange;
+                }
             }
 
             &:nth-of-type(1) {
                 .routes__tabs-content-path {
                     top: 24rem;
-                    left: 5rem;
+                    left: 4rem;
+                    width: 39.1rem;
+                    height: 39.7rem;
                 }
+            }
 
-                &::before {
-                    opacity: 1;
+            &:nth-of-type(2) {
+                .routes__tabs-content-path {
+                    top: 11rem;
+                    left: -15rem;
+                    width: 75.5rem;
+                    height: 40.4rem;
+                }
+            }
+
+            &:nth-of-type(3) {
+                .routes__tabs-content-path {
+                    top: 16rem;
+                    left: -21rem;
+                    width: 62.3rem;
+                    height: 32.4rem;
+                }
+            }
+
+            &:nth-of-type(4) {
+                .routes__tabs-content-path {
+                    width: 22.9rem;
+                    height: 38.3rem;
+                    top: 22rem;
+                    left: 17rem;
                 }
             }
         }
@@ -166,10 +210,22 @@ $num-of-tabs: 4;
             display: none;
             position: absolute;
             inset: 0;
-            z-index: -1;
 
             &-path {
                 position: absolute;
+                opacity: 0;
+            }
+
+            &-text {
+                font-size: 2rem;
+                line-height: 140%;
+                text-transform: uppercase;
+                position: absolute;
+                left: -55rem;
+                top: 11rem;
+                max-width: 36rem;
+                text-align: start;
+                z-index: 10;
             }
         }
 
@@ -177,7 +233,7 @@ $num-of-tabs: 4;
             position: absolute;
             bottom: -52rem;
             z-index: -1;
-            transition: 1s transform ease;
+            transition: 2s transform ease;
 
             img {
                 height: 100%;
@@ -218,6 +274,79 @@ $num-of-tabs: 4;
                     font-weight: 400;
                     font-size: 1.8rem;
                     color: $gray;
+                }
+            }
+        }
+
+        &-overlay {
+            position: absolute;
+            opacity: 1;
+            right: -68rem;
+            top: -30rem;
+            width: 99.5rem;
+            height: 100rem;
+            background: linear-gradient(270deg, #191c20 40%, rgba(25, 28, 32, 0) 100%);
+            transition: 1s opacity ease;
+        }
+
+        &-attractions {
+            position: absolute;
+            right: 0;
+            max-width: 39.5rem;
+            width: 100%;
+            top: 11rem;
+
+            &-title {
+                font-weight: 500;
+                font-size: 3.2rem;
+                line-height: 140%;
+                margin-bottom: 3.2rem;
+                display: block;
+            }
+
+            &-swiper {
+                margin-bottom: 4rem;
+
+                &-text {
+                    display: none;
+                }
+
+                figure {
+                    @include sizes(100%, 29rem);
+                    user-select: none;
+
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            &-navigation {
+                display: flex;
+                align-items: center;
+                gap: 1.6rem;
+            }
+
+            &-text {
+                font-size: 1.8rem;
+                line-height: 140%;
+                color: $gray;
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+                transition:
+                    opacity 1s ease,
+                    visibility 1s ease;
+                margin-bottom: 5.2rem;
+                min-height: 12.5rem;
+
+                &._visible {
+                    opacity: 1;
+                    visibility: visible;
                 }
             }
         }
