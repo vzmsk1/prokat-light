@@ -1,0 +1,46 @@
+[data-showmore] {
+    [data-showmore-button] {
+        span {
+            position: relative;
+            font-weight: 500;
+            line-height: 110%;
+
+            &:last-child {
+                display: none;
+            }
+
+            @media (max-width: 48em) {
+                font-size: 3.2rem;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: calc(100% + 0.8rem);
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    &._showmore-active {
+        [data-showmore-button] span {
+            display: none;
+            &:last-child {
+                display: inline-block;
+            }
+        }
+    }
+}
+[data-showmore='mm'] {
+    @media (min-width: 48em) {
+        [data-showmore-content] {
+            max-height: none;
+        }
+        [data-showmore-button] {
+            display: none;
+        }
+    }
+}

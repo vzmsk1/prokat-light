@@ -3,10 +3,56 @@
     margin-bottom: 12.5rem;
     min-height: 110.6rem;
     overflow: hidden;
+    --y: -110%;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 5;
+        bottom: 0;
+        left: -16rem;
+        width: 110%;
+        height: 92%;
+        background-image: url(./assets/images/bg/mountains-front.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        will-change: contents;
+        transform: translateY(var(--y));
+        @media (max-width: 48em) {
+            bottom: 0;
+            left: -52rem;
+            width: 176%;
+            height: 69%;
+            background-image: url(./assets/images/bg/mountains-front-mobile.webp);
+        }
+    }
 
     @media (max-width: 48em) {
         margin-bottom: 30rem;
         min-height: 132rem;
+    }
+
+    // .hero__bg
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: -2rem;
+        width: 102%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        background-image: url(./assets/images/bg/mountains-back.webp);
+        background-attachment: fixed;
+        background-position: 0 -29rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        will-change: contents;
+        filter: blur(0.5rem);
+
+        @media (max-width: 48em) {
+            width: 104%;
+            background-position: -45rem -21rem;
+        }
     }
 
     // .hero__content
@@ -14,6 +60,12 @@
     &__content {
         position: relative;
         bottom: 0;
+        will-change: contents;
+
+        @media (min-width: 48em) {
+            opacity: 0;
+            visibility: hidden;
+        }
 
         // .hero__content_front
 
@@ -145,58 +197,6 @@
 
         @media (max-width: 48em) {
             display: none;
-        }
-    }
-
-    // .hero__mountains
-
-    &__mountains {
-        position: absolute;
-        left: 0;
-
-        // .hero__mountains_front
-
-        &_front {
-            z-index: 5;
-            bottom: -1rem;
-            left: -8rem;
-            width: 105%;
-            height: 92%;
-
-            @media (max-width: 48em) {
-                bottom: 0;
-                left: -8rem;
-                width: 112%;
-                height: 69%;
-            }
-        }
-
-        // .hero__mountains_back
-
-        &_back {
-            top: 0;
-            left: -2rem;
-            width: 102%;
-            height: 93%;
-            background-image: url(./assets/images/bg/mountains-back.webp);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: 0 -29rem;
-
-            &::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.2);
-            }
-
-            @media (max-width: 48em) {
-                background-position: -40rem -16rem;
-            }
         }
     }
 
