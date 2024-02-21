@@ -31,7 +31,20 @@ $num-of-tabs: 4;
             }
 
             .routes__tabs-content {
-                display: block;
+                visibility: visible;
+
+                .routes__tabs-attractions {
+                    visibility: visible;
+                    animation: fadeIn 3s forwards;
+                    animation-delay: 1s;
+
+                    &-text {
+                        &._visible {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
             }
         }
 
@@ -44,7 +57,11 @@ $num-of-tabs: 4;
 
             ~ .routes__tabs-line {
                 + .routes__tabs-map {
-                    transform: scale(5.5) translate(21rem, -8.5rem) rotate(6deg);
+                    transform: scale(5.5) translate(20.7rem, -8.5rem) rotate(6deg);
+
+                    @include small-tablet {
+                        transform: scale(4.4) translate(28rem, -4.5rem) rotate(6deg);
+                    }
                 }
             }
         }
@@ -99,6 +116,12 @@ $num-of-tabs: 4;
         margin-bottom: 6rem;
         position: relative;
         z-index: 10;
+        letter-spacing: 0.05rem;
+
+        @include small-tablet {
+            margin-bottom: 8rem;
+            text-align: start;
+        }
     }
 
     &__tabs {
@@ -106,6 +129,10 @@ $num-of-tabs: 4;
         display: flex;
         flex-direction: column;
         position: relative;
+
+        @include small-tablet {
+            height: 160rem;
+        }
 
         &-wrapper {
             display: flex;
@@ -115,12 +142,22 @@ $num-of-tabs: 4;
             width: 100%;
             margin: 0 auto;
 
+            @include small-tablet {
+                max-width: 98%;
+                margin: initial;
+                justify-content: flex-start;
+            }
+
             &::after {
                 @include pseudo {
                     top: 3rem;
                     z-index: -1;
                     width: 100%;
                     border: 0.1rem solid $gray;
+
+                    @include small-tablet {
+                        top: 6rem;
+                    }
                 }
             }
 
@@ -145,6 +182,11 @@ $num-of-tabs: 4;
             width: 13.5rem;
             text-align: center;
 
+            @include small-tablet {
+                padding: 0 4.8rem;
+                width: 21rem;
+            }
+
             label {
                 transition: 1s color ease;
                 font-weight: 400;
@@ -156,6 +198,10 @@ $num-of-tabs: 4;
                 cursor: pointer;
                 z-index: 10;
 
+                @include small-tablet {
+                    font-size: 3.2rem;
+                }
+
                 &:hover {
                     color: $orange;
                 }
@@ -164,9 +210,16 @@ $num-of-tabs: 4;
             &:nth-of-type(1) {
                 .routes__tabs-content-path {
                     top: 24rem;
-                    left: 4rem;
-                    width: 39.1rem;
+                    left: 5rem;
+                    width: 36.1rem;
                     height: 39.7rem;
+
+                    @include small-tablet{
+                        height: 46rem;
+                        width: 41rem;
+                        top: 48rem;
+                        left: 18rem;
+                    }
                 }
             }
 
@@ -204,28 +257,22 @@ $num-of-tabs: 4;
             border: 0.3rem solid $orange;
             transition: 1s left ease;
             width: 13.5rem;
+
+            @include small-tablet {
+                top: 5.8rem;
+                border-width: 0.6rem;
+                width: 17rem;
+            }
         }
 
         &-content {
-            display: none;
+            visibility: hidden;
             position: absolute;
             inset: 0;
 
             &-path {
                 position: absolute;
                 opacity: 0;
-            }
-
-            &-text {
-                font-size: 2rem;
-                line-height: 140%;
-                text-transform: uppercase;
-                position: absolute;
-                left: -55rem;
-                top: 11rem;
-                max-width: 36rem;
-                text-align: start;
-                z-index: 10;
             }
         }
 
@@ -241,11 +288,43 @@ $num-of-tabs: 4;
         }
 
         &-info {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+
+            &-text {
+                font-size: 2rem;
+                line-height: 140%;
+                text-transform: uppercase;
+                position: absolute;
+                left: 0;
+                top: 0;
+                max-width: 36rem;
+                text-align: start;
+                z-index: 10;
+                margin-top: 9rem;
+
+                @include small-tablet {
+                    font-size: 3.2rem;
+                    line-height: 140%;
+                    position: initial;
+                    max-width: 58rem;
+                    margin-top: 10rem;
+                }
+            }
+
             &-list {
                 display: flex;
                 flex-direction: column;
                 gap: 3.2rem;
                 margin-top: auto;
+
+                @include small-tablet{
+                    gap: 4rem;
+                    margin-bottom: 8rem;
+                }
             }
 
             &-item {
@@ -253,9 +332,17 @@ $num-of-tabs: 4;
                 align-items: center;
                 gap: 1.6rem;
 
+                @include small-tablet{
+                    gap: 2.4rem;
+                }
+
                 &-designation {
                     @include sizes(2.4rem, 2.4rem);
                     background: var(--color);
+
+                    @include small-tablet{
+                        @include sizes(3.2rem, 3.2rem);
+                    }
                 }
 
                 &-text {
@@ -268,13 +355,25 @@ $num-of-tabs: 4;
                     font-weight: 500;
                     font-size: 2rem;
                     line-height: 140%;
+
+                    @include small-tablet{
+                        font-size: 3.6rem;
+                    }
                 }
 
                 &-description {
                     font-weight: 400;
                     font-size: 1.8rem;
                     color: $gray;
+
+                    @include small-tablet{
+                        font-size: 3rem;
+                    }
                 }
+            }
+
+            &-button {
+                width: 100%;
             }
         }
 
@@ -287,14 +386,23 @@ $num-of-tabs: 4;
             height: 100rem;
             background: linear-gradient(270deg, #191c20 40%, rgba(25, 28, 32, 0) 100%);
             transition: 1s opacity ease;
+
+            @include small-tablet {
+                top: -5rem;
+                background: linear-gradient(270deg, #191c20 60%, rgba(25, 28, 32, 0) 100%);
+            }
         }
 
         &-attractions {
             position: absolute;
-            right: 0;
+            right: -55rem;
             max-width: 39.5rem;
             width: 100%;
             top: 11rem;
+            z-index: 10;
+            visibility: hidden;
+            opacity: 0;
+            text-align: start;
 
             &-title {
                 font-weight: 500;
@@ -305,7 +413,9 @@ $num-of-tabs: 4;
             }
 
             &-swiper {
-                margin-bottom: 4rem;
+                .swiper-wrapper {
+                    margin-bottom: 4rem;
+                }
 
                 &-text {
                     display: none;
@@ -343,10 +453,11 @@ $num-of-tabs: 4;
                     visibility 1s ease;
                 margin-bottom: 5.2rem;
                 min-height: 12.5rem;
+                text-align: start;
 
-                &._visible {
-                    opacity: 1;
+                &._shown {
                     visibility: visible;
+                    opacity: 1;
                 }
             }
         }

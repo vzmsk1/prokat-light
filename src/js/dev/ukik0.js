@@ -4,9 +4,14 @@ import { remToPx } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', () => {
     function fade(activeSlide) {
-        const text = document.querySelector('.routes__tabs-attractions-text');
+        if (!activeSlide) return
+
+        const parent = activeSlide.closest('.routes__tabs-attractions');
+
+        const text = parent.querySelector('.routes__tabs-attractions-text');
 
         text.classList.remove('_visible');
+        text.classList.remove('_shown');
 
         setTimeout(() => {
             text.classList.add('_visible');
@@ -14,52 +19,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     }
 
-    const routesSwiper = new Swiper('.routes__tabs-attractions-swiper', {
-        modules: [Navigation],
-        slidesPerView: 1,
-        spaceBetween: remToPx(4),
-        speed: 1500,
-        allowTouchMove: false,
-        navigation: {
-            prevEl: '.routes__tabs-attractions-navigation .swiper-button-prev',
-            nextEl: '.routes__tabs-attractions-navigation .swiper-button-next'
-        },
-        on: {
-            slideChange: ({ activeIndex, slides }) => {
-                fade(slides[activeIndex]);
-                setActiveRadioByIndex(activeIndex);
+    function showText(activeSlide) {
+        if (!activeSlide) return
+
+        const parent = activeSlide.closest('.routes__tabs-attractions');
+
+        const text = parent.querySelector('.routes__tabs-attractions-text');
+
+        text.innerHTML = activeSlide.querySelector('.routes__tabs-attractions-swiper-text').textContent;
+
+        text.classList.add('_shown');
+    }
+
+    Array.from(document.querySelectorAll('.routes__tabs-attractions-swiper')).forEach((swiper) => {
+        new Swiper(swiper, {
+            modules: [Navigation],
+            slidesPerView: 1,
+            spaceBetween: remToPx(4),
+            speed: 1500,
+            allowTouchMove: false,
+            navigation: {
+                prevEl: swiper.querySelector('.swiper-button-prev'),
+                nextEl: swiper.querySelector('.swiper-button-next')
             },
-            init: ({ activeIndex, slides }) => {
-                fade(slides[activeIndex]);
+            on: {
+                slideChange: ({ activeIndex, slides }) => {
+                    fade(slides[activeIndex]);
+                },
+                init: ({ activeIndex, slides }) => {
+                    showText(slides[activeIndex]);
+                }
             }
-        }
-    });
-
-    Array.from(document.querySelectorAll('.routes__tabs-wrapper input[type="radio"]')).forEach((input) => {
-        input.addEventListener('change', () => {
-            const index = currentActiveRadioIndex();
-
-            routesSwiper.slideTo(index);
         });
     });
-
-    function currentActiveRadioIndex() {
-        const inputs = document.querySelectorAll('.routes__tabs-wrapper input[type="radio"]');
-
-        for (let i = 0; i < inputs.length; i++) {
-            if (inputs[i].checked) {
-                return i;
-            }
-        }
-
-        return -1;
-    }
-
-    function setActiveRadioByIndex(index) {
-        const radioInputs = document.querySelectorAll('.routes__tabs-wrapper input[type="radio"]');
-
-        radioInputs.forEach((input, i) => {
-            input.checked = i === index;
-        });
-    }
 });
