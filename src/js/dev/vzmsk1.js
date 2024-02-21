@@ -238,8 +238,8 @@ window.addEventListener('load', function () {
                     scrollTrigger: {
                         trigger: '.home-page__3d-scroll',
                         pin: true,
-                        scrub: true,
-                        end: '+=2500'
+                        scrub: 0.1,
+                        start: 'top top'
                     }
                 })
                 .to('.banner', {
