@@ -45,13 +45,33 @@ main {
     position: relative;
 }
 
+section {
+    margin-bottom: 20rem;
+}
+
 .wrapper {
     margin: 0 auto;
     max-width: 1920px;
 }
 
-section {
-    margin-bottom: 20rem;
+.home-page__3d-scroll {
+    @media (min-width: 48em) {
+        position: relative;
+        min-height: 105vh;
+
+        section {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            overflow: auto;
+            transform: translate(-50%, -50%);
+
+            &:not(:first-child) {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0;
+            }
+        }
+    }
 }
 
 ._desktop-only {

@@ -229,6 +229,46 @@ window.addEventListener('load', function () {
         }
     };
 
+    setTimeout(() => {
+        ScrollTrigger.refresh();
+
+        gsap.matchMedia().add('(min-width: 768px)', () => {
+            const tl = gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: '.home-page__3d-scroll',
+                        pin: true,
+                        scrub: true,
+                        end: '+=2500'
+                    }
+                })
+                .to('.banner', {
+                    scale: 0.8,
+                    opacity: 0,
+                    stagger: 1
+                })
+                .to('.advantages', {
+                    scale: 1,
+                    opacity: 1,
+                    stagger: 1
+                })
+                .to('.advantages', {
+                    scale: 0.8,
+                    opacity: 0,
+                    stagger: 1
+                })
+                .to('.author', {
+                    scale: 1,
+                    opacity: 1,
+                    stagger: 1
+                });
+
+            return () => {
+                tl.kill();
+            };
+        });
+    }, 1000);
+
     window.requestAnimationFrame(function () {
         initHeroAnim();
         animateSpeedometer();
