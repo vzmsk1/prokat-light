@@ -63,7 +63,6 @@ section {
             position: absolute;
             top: 50%;
             left: 50%;
-            overflow: auto;
             transform: translate(-50%, -50%);
 
             &:not(:first-child) {
