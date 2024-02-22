@@ -26,9 +26,8 @@ window.addEventListener('load', function () {
     const initSmoothScroll = () => {
         const locoScroll = new LocomotiveScroll({
             el: document.querySelector('._smooth-scroll'),
-            smooth: true,
-            wheelMultiplier: 0.1,
-        });
+            smooth: true});
+
         const initAnchors = () => {
             const anchors = document.querySelectorAll('[data-scroll-to]');
 
@@ -45,6 +44,24 @@ window.addEventListener('load', function () {
             }
         };
         initAnchors();
+
+        ScrollTrigger.scrollerProxy("._smooth-scroll", {
+            scrollTop(value) {
+                return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+            }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+            getBoundingClientRect() {
+                return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+            },
+            pinType: document.querySelector("._smooth-scroll").style.transform ? "transform" : "fixed"
+        });
+
+        locoScroll.on('scroll', (args) => {
+            ScrollTrigger.update()
+
+            gsap.to(document.body, {'--scrollY': `${args.scroll.y}px`})
+
+        });
+
     }
     if (!document.querySelector('.hero')) initSmoothScroll()
 
@@ -328,6 +345,6 @@ window.addEventListener('load', function () {
         changeViewboxData();
     });
 });
-window.addEventListener('scroll', function() {
-    gsap.to(document.body, {'--scrollY': `${this.scrollY}px`})
-})
+// window.addEventListener('scroll', function(e) {
+//     gsap.to(document.body, {'--scrollY': `${this.scrollY}px`})
+// })

@@ -18,13 +18,12 @@
         left: -16rem;
         width: 110%;
         height: 92%;
-        will-change: contents;
 
 
         img {
             height: 100%;
             object-fit: cover;
-            transform: translate3d(0, calc(var(--scrollY) / 2), 0);
+            transform: translate3d(0, calc(var(--scrollY) / 4), 0);
             will-change: contents;
         }
 
@@ -48,7 +47,7 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.2);
         background-image: url(./assets/images/bg/hero-bg.webp);
-        background-attachment: fixed;
+        transform: translate3d(0, calc(var(--scrollY) / 2), 0);
         background-position: 0 -29rem;
         background-size: cover;
         background-repeat: no-repeat;
@@ -115,7 +114,7 @@
     &__subtitle {
         max-width: 43rem;
         font-size: 3.2rem;
-        transform: translate3d(0, calc(var(--scrollY) / 2), 0);
+        transform: translate3d(0, calc(var(--scrollY) * 0.5), 0);
         will-change: contents;
 
 
@@ -130,7 +129,7 @@
     &__heading {
         margin-bottom: 4rem;
         max-width: 105rem;
-        transform: translate3d(0, calc(var(--scrollY) / 2), 0);
+        transform: translate3d(0, calc(var(--scrollY) * 0.5), 0);
         will-change: contents;
 
 
@@ -154,7 +153,7 @@
     &__heading-txt {
         margin-bottom: 3.2rem;
         line-height: 110%;
-        transform: translate3d(0, calc(var(--scrollY) / 2), 0);
+        transform: translate3d(0, calc(var(--scrollY) * 0.5), 0);
         will-change: contents;
 
 
@@ -207,7 +206,7 @@
 
     &__car-image {
         object-fit: contain;
-        transform: translate3d(0, calc(var(--scrollY) / 2), 0);
+        transform: translate3d(0, calc(var(--scrollY) / 3), 0);
         will-change: contents;
     }
 
