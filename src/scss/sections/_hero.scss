@@ -115,6 +115,8 @@
     &__subtitle {
         max-width: 43rem;
         font-size: 3.2rem;
+        transform: translate3d(0, calc(var(--scrollY) / 2), 0);
+        will-change: contents;
 
 
         @media (max-width: 48em) {
@@ -128,6 +130,8 @@
     &__heading {
         margin-bottom: 4rem;
         max-width: 105rem;
+        transform: translate3d(0, calc(var(--scrollY) / 2), 0);
+        will-change: contents;
 
 
         span {
@@ -150,6 +154,8 @@
     &__heading-txt {
         margin-bottom: 3.2rem;
         line-height: 110%;
+        transform: translate3d(0, calc(var(--scrollY) / 2), 0);
+        will-change: contents;
 
 
         @media (max-width: 48em) {
@@ -201,7 +207,7 @@
 
     &__car-image {
         object-fit: contain;
-        transform: translate3d(0, calc(var(--scrollY) / 2.5), 0);
+        transform: translate3d(0, calc(var(--scrollY) / 2), 0);
         will-change: contents;
     }
 
