@@ -206,7 +206,7 @@
 
     &__car-image {
         object-fit: contain;
-        transform: translate3d(0, calc(var(--scrollY) / 3), 0);
+        transform: translate3d(0, calc(var(--scrollY) / 5), 0);
         will-change: contents;
     }
 
