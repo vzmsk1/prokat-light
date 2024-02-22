@@ -1,36 +1,42 @@
 .hero {
     position: relative;
-    margin-bottom: 12.5rem;
+    margin-bottom: 22rem;
     min-height: 110.6rem;
     overflow: hidden;
-    --y: -110%;
 
-    &::after {
-        content: '';
+    @media (max-width: 48em) {
+        margin-bottom: 33rem;
+        min-height: 132rem;
+    }
+
+    // .hero__mountains
+
+    &__mountains {
         position: absolute;
         z-index: 5;
         bottom: 0;
         left: -16rem;
         width: 110%;
         height: 92%;
-        background-image: url(./assets/images/bg/mountains-front.webp);
-        background-size: cover;
-        background-repeat: no-repeat;
         will-change: contents;
-        transform: translateY(var(--y));
+
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            transform: translate3d(0, calc(var(--scrollY) / 2), 0);
+            will-change: contents;
+        }
+
+
         @media (max-width: 48em) {
             bottom: 0;
-            left: -52rem;
+            left: -33rem;
             width: 176%;
             height: 69%;
-            background-image: url(./assets/images/bg/mountains-front-mobile.webp);
         }
     }
 
-    @media (max-width: 48em) {
-        margin-bottom: 30rem;
-        min-height: 132rem;
-    }
 
     // .hero__bg
 
@@ -41,7 +47,7 @@
         width: 102%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.2);
-        background-image: url(./assets/images/bg/mountains-back.webp);
+        background-image: url(./assets/images/bg/hero-bg.webp);
         background-attachment: fixed;
         background-position: 0 -29rem;
         background-size: cover;
@@ -70,7 +76,7 @@
         // .hero__content_front
 
         &_front {
-            z-index: 6;
+            z-index: 7;
 
             @media (min-width: 48em) {
                 .hero__container {
@@ -110,6 +116,7 @@
         max-width: 43rem;
         font-size: 3.2rem;
 
+
         @media (max-width: 48em) {
             max-width: 56rem;
             font-size: 3.6rem;
@@ -121,6 +128,7 @@
     &__heading {
         margin-bottom: 4rem;
         max-width: 105rem;
+
 
         span {
             display: block;
@@ -142,6 +150,7 @@
     &__heading-txt {
         margin-bottom: 3.2rem;
         line-height: 110%;
+
 
         @media (max-width: 48em) {
             margin-bottom: 3.4rem;
@@ -174,9 +183,13 @@
     // .hero__car
 
     &__car {
+        position: absolute;
+        z-index: 6;
+        bottom: 0;
+        left: 50%;
         width: 109%;
-        justify-self: center;
-        transform: translate(-1.5rem, 0.5rem);
+        transform: translateX(-50%);
+
 
         @media (min-width: 48em) {
             width: 102rem;
@@ -188,22 +201,19 @@
 
     &__car-image {
         object-fit: contain;
+        transform: translate3d(0, calc(var(--scrollY) / 2.5), 0);
+        will-change: contents;
     }
 
     // .hero__anchor
 
     &__anchor {
         justify-self: end;
+        grid-column: 3/4;
 
         @media (max-width: 48em) {
             display: none;
         }
     }
 
-    // .hero__mountains-image
-
-    &__mountains-image {
-        height: 100%;
-        object-fit: cover;
-    }
 }

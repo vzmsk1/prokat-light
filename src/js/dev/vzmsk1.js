@@ -12,16 +12,45 @@ import { setInnerContent, setCssProperty } from '../utils/utils';
 
 gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 gsap.defaults({
-    duration: 1
+    duration: 1,
+    ease: "circ.out",
 });
 
 const mm = window.matchMedia('(max-width: 768px)');
-const locoScroll = new LocomotiveScroll({
-    el: document.querySelector('._smooth-scroll'),
-    smooth: true
-});
+
 
 window.addEventListener('load', function () {
+    /**
+     * initializes smooth scroll on page
+     */
+    const initSmoothScroll = () => {
+        const locoScroll = new LocomotiveScroll({
+            el: document.querySelector('._smooth-scroll'),
+            smooth: true,
+            wheelMultiplier: 0.1,
+        });
+        const initAnchors = () => {
+            const anchors = document.querySelectorAll('[data-scroll-to]');
+
+            if (anchors.length) {
+                anchors.forEach((anchor) => {
+                    anchor.addEventListener('click', function () {
+                        locoScroll.scrollTo(anchor.dataset.scrollTo, {
+                            duration: 2.5,
+                            offset: -40,
+                            immediate: false
+                        });
+                    });
+                });
+            }
+        };
+        initAnchors();
+    }
+    if (!document.querySelector('.hero')) initSmoothScroll()
+
+    /**
+     * changes viewbox attribute on screen size
+     */
     const changeViewboxData = () => {
         if (document.querySelector('.speedometer__wrap')) {
             const wrap = document.querySelector('.speedometer__wrap');
@@ -30,26 +59,6 @@ window.addEventListener('load', function () {
         }
     };
     changeViewboxData();
-
-    /**
-     * initializes anchors
-     */
-    const initAnchors = () => {
-        const anchors = document.querySelectorAll('[data-scroll-to]');
-
-        if (anchors.length) {
-            anchors.forEach((anchor) => {
-                anchor.addEventListener('click', function () {
-                    locoScroll.scrollTo(anchor.dataset.scrollTo, {
-                        duration: 2.5,
-                        offset: -40,
-                        immediate: false
-                    });
-                });
-            });
-        }
-    };
-    initAnchors();
 
     /**
      * initializes sliders
@@ -130,19 +139,23 @@ window.addEventListener('load', function () {
      */
     const initHeroAnim = () => {
         if (document.querySelector('.hero')) {
+            document.documentElement.classList.add('lock')
+
             const tl = gsap.timeline();
 
-            tl.to('.hero', {
-                '--y': 0,
+            tl.fromTo('.hero__mountains', {
+                translateY: '-110%',
+            }, {
+                translateY: 0,
                 delay: 0.5,
-                duration: 3.5
+                duration: 3.3
             })
                 .fromTo(
                     '.hero__bg',
                     { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)' },
                     {
                         clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0 100%)',
-                        duration: 3.5
+                        duration: 3.3
                     },
                     0.6
                 )
@@ -161,19 +174,37 @@ window.addEventListener('load', function () {
                     {
                         opacity: 1,
                         visibility: 'visible',
-                        duration: 1
+                        duration: 1,
+                        onStart: () => {
+                            document.querySelector('header').classList.add('_is-visible')
+                            setTimeout(() => {
+                                document.documentElement.classList.remove('lock')
+                                initSmoothScroll()
+                            }, 2000)
+                        },
                     },
-                    1.5
+                    2
                 )
-                .to(
-                    '.header',
-                    {
-                        translateY: 0,
-                        duration: 1.5,
-                        opacity: 1
-                    },
-                    3
-                );
+                .fromTo('.hero__list, .hero__anchor', {
+                    scale: 0.2,
+                    transformOrigin: '50% 50%',
+                }, {
+                    scale: 1
+                }, 2)
+                .fromTo('.hero__car', {
+                    opacity: 0,
+                    scale: 0.2,
+                    translateY: '20rem',
+                    translateX: '-50%',
+                    transformOrigin: '50% 50%',
+                }, {
+                    opacity: 1,
+                    translateY: 0,
+                    scale: 1
+                }, 2)
+              .to('.choose', {
+                  '--groundOpacity': 1
+              }, 3)
         }
     };
 
@@ -281,3 +312,6 @@ window.addEventListener('load', function () {
         changeViewboxData();
     });
 });
+window.addEventListener('scroll', function() {
+    gsap.to(document.body, {'--scrollY': `${this.scrollY}px`})
+})
