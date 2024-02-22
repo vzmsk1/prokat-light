@@ -83,10 +83,9 @@ window.addEventListener('load', function () {
                 setInnerContent(heading, headingCnt);
             };
 
-            new Swiper('.choose__slider', {
+            const chooseSlider = new Swiper('.choose__slider', {
                 modules: [Navigation, Pagination],
                 observer: true,
-                loop: true,
                 slideToClickedSlide: true,
                 spaceBetween: 30,
                 navigation: {
@@ -130,6 +129,23 @@ window.addEventListener('load', function () {
                     }
                 }
             });
+
+            // const tl = gsap.timeline({
+            //     scrollTrigger: {
+            //         trigger: '.choose',
+            //         pin: true,
+            //         scrub: true,
+            //         end: '+=2000',
+            //         onUpdate: self => {
+            //             if (self.progress < 0.2) chooseSlider.slideTo(0)
+            //             if (self.progress >= 0.2) chooseSlider.slideTo(1)
+            //             if (self.progress >= 0.4) chooseSlider.slideTo(2)
+            //             if (self.progress >= 0.6) chooseSlider.slideTo(3)
+            //             if (self.progress >= 0.8) chooseSlider.slideTo(4)
+            //         }
+            //     }
+            // })
+
         }
     };
     initSliders();
