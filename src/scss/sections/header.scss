@@ -6,9 +6,16 @@
     width: 100%;
     will-change: contents;
 
+
     @media (min-width: 48em) {
-        transform: translateY(-100%);
-        transition: all 1s ease;
+        .home-page & {
+            transform: translateY(-110%);
+            &._is-visible {
+                transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+                transform: translate3d(0, calc(var(--scrollY) * -1), 0);
+            }
+        }
+
     }
 
     .icon {
@@ -76,29 +83,9 @@
 
     // .header__link
 
-    &__link {
-        font-weight: 500;
-        transition: color 0.3s ease;
-
-        &_lang {
-            text-transform: uppercase;
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                color: #dad7d7;
-            }
-        }
-    }
-
-    // .header__tel
-
+    .header__nav .header__link,
     &__tel {
         position: relative;
-        font-size: 2.4rem;
-        font-weight: 700;
-        line-height: 110%;
-        color: $orange;
         transition: color 0.3s ease;
 
         &::after {
@@ -111,17 +98,40 @@
             background-color: $white;
             transform: scaleX(0);
             transform-origin: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        &:active {
+            color: $orange;
+            &::after {
+                background-color: $orange;
+            }
         }
 
         @media (any-hover: hover) {
             &:hover {
-                color: $white;
                 &::after {
                     transform: scaleX(1);
                 }
             }
         }
+    }
+
+
+    &__link {
+        font-weight: 500;
+
+        &_lang {
+            text-transform: uppercase;
+        }
+    }
+
+    // .header__tel
+
+    &__tel {
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 110%;
 
         @media (max-width: 48em) {
             .icon svg {
@@ -137,6 +147,59 @@
         svg {
             width: 4.8rem;
             height: 2.4rem;
+        }
+    }
+
+    // .header__select-lang
+
+    &__select-lang {
+        @media (max-width: 48em) {
+            display: none;
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+
+.select-lang {
+
+    // .select__body
+
+    .select__body {
+        position: relative;
+    }
+
+    // .select__content
+
+    .select__content {
+        display: block;
+        width: 3.2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    // .select__options
+
+    .select__options {
+        padding: 0.6rem 0;
+        position: absolute;
+        top: calc(100% + 2rem);
+        left: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateX(-50%);
+    }
+
+    // .select__option
+
+    .select__option {
+        padding: 0.6rem 1.6rem;
+        display: block;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+
+        &._is-selected {
+            color: $orange;
         }
     }
 }

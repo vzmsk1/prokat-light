@@ -430,14 +430,3 @@ export const setAttr = (arr, attr, val) => {
     }
 };
 
-/**
- * sets transition duration to item / collection of items
- * @param {HTMLCollection | HTMLElement} arr
- */
-export const setCssProperty = (arr, property, dataset) => {
-    if (arr.length) {
-        arr.forEach((item) => {
-            item.style[property] = item.dataset[dataset];
-        });
-    }
-};

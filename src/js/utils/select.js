@@ -1,5 +1,5 @@
-import SimpleBar from 'simplebar';
-import 'simplebar/dist/simplebar.css';
+// import SimpleBar from 'simplebar';
+// import 'simplebar/dist/simplebar.css';
 import { _slideUp, _slideDown, _slideToggle } from './utils.js';
 
 // --------------------------------------------------------------------------
@@ -197,14 +197,6 @@ export class Select {
       this.classes.OPTIONS
     ).relativeSel;
     options.innerHTML = this.getOptions(relativeSel);
-    window.addEventListener('resize', function () {
-      _this.getOptions(relativeSel);
-    });
-    if (relativeSelOptions.querySelector('[selected]')) {
-      options
-        .querySelector(`.${this.classes.OPTION}`)
-        .classList.add(this.classes.IS_SELECTED);
-    }
   }
   // disable select
   disableSelect(select, relativeSel) {
@@ -550,10 +542,7 @@ export class Select {
   }
   // get option
   getOption(option, relativeSel) {
-    const selections =
-      option.selected && relativeSel.multiple
-        ? ` ${this.classes.IS_SELECTED}`
-        : '';
+    const selections = option.selected ? ` ${this.classes.IS_SELECTED}` : '';
     const showSelection =
       option.selected &&
       !relativeSel.hasAttribute('data-show-selection') &&

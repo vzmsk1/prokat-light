@@ -1,35 +1,137 @@
+// locomotive scroll
 import LocomotiveScroll from 'locomotive-scroll';
+
+// gsap
 import gsap from 'gsap';
-import { MotionPathPlugin, ScrollTrigger } from 'gsap/all';
+import { MotionPathPlugin, ScrollTrigger, Observer } from 'gsap/all';
+
+// swiper
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
+
+// vivus
 import Vivus from 'vivus';
 
-import { setInnerContent, setCssProperty } from '../utils/utils';
+// utils
+import { setInnerContent, bodyLock, bodyUnlock, bodyLockStatus } from '../utils/utils';
 
 // --------------------------------------------------------------------------
 
-gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
-gsap.defaults({
-    duration: 1
+// locomotive scroll instance
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector('._smooth-scroll'),
+  smooth: true,
+  multiplier: 1.2,
 });
 
-const mm = window.matchMedia('(max-width: 768px)');
-const locoScroll = new LocomotiveScroll({
-    el: document.querySelector('._smooth-scroll'),
-    smooth: true
+/**
+ * hero animation
+ */
+const animateHero = () => {
+  if (document.querySelector('.hero')) {
+    document.documentElement.classList.add('lock')
+    locoScroll.stop()
+
+    const tl = gsap.timeline();
+
+    tl.fromTo('.hero__mountains', {
+      translateY: '-110%',
+    }, {
+      translateY: 0,
+      delay: 0.5,
+      duration: 3
+    })
+      .fromTo(
+        '.hero__bg',
+        { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)' },
+        {
+          clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0 100%)',
+          duration: 3
+        },
+        0.6
+      )
+      .fromTo(
+        '.hero__content',
+        { translateY: '100%' },
+        {
+          translateY: 0,
+          duration: 2
+        },
+        1.2
+      )
+      .fromTo(
+        '.hero__content',
+        { opacity: 0, visibility: 'hidden' },
+        {
+          opacity: 1,
+          visibility: 'visible',
+          duration: 1,
+          onStart: () => {
+            document.querySelector('header').classList.add('_is-visible')
+            setTimeout(() => {
+              document.documentElement.classList.remove('lock')
+              locoScroll.start()
+            }, 2000)
+          },
+        },
+        2
+      )
+      .fromTo('.hero__list, .hero__anchor', {
+        scale: 0.2,
+        transformOrigin: '50% 50%',
+      }, {
+        scale: 1
+      }, 2)
+      .fromTo('.hero__car', {
+        opacity: 0,
+        scale: 0.2,
+        translateY: '20rem',
+        translateX: '-50%',
+        transformOrigin: '50% 50%',
+      }, {
+        opacity: 1,
+        translateY: 0,
+        scale: 1
+      }, 2)
+      .to('.choose', {
+        '--groundOpacity': 1
+      }, 3)
+  }
+};
+
+// loader
+if (document.querySelector('.loader') && bodyLockStatus) {
+  const percentVal = document.getElementById('percentVal')
+  let percent = 0
+  const incrementProgress = () => {
+    percent += 1;
+    percentVal.innerText = `${percent}`
+    if (percent < 100) {
+      window.requestAnimationFrame(incrementProgress);
+    } else {
+      document.documentElement.classList.add('_is-loaded')
+      bodyUnlock()
+
+      animateHero();
+    }
+  }
+  bodyLock()
+
+  window.requestAnimationFrame(incrementProgress);
+}
+
+// gsap plugins & defaults
+gsap.registerPlugin(MotionPathPlugin, ScrollTrigger, Observer);
+gsap.defaults({
+    duration: 1,
+    ease: "circ.out",
 });
 
 window.addEventListener('load', function () {
-    const changeViewboxData = () => {
-        if (document.querySelector('.speedometer__wrap')) {
-            const wrap = document.querySelector('.speedometer__wrap');
-            const [deskW, deskH, mobW, mobH] = wrap.dataset.viewbox.trim().split(',');
-            wrap.setAttribute('viewBox', mm.matches ? `0 0 ${mobW} ${mobH}` : `0 0 ${deskW} ${deskH}`);
-        }
-    };
-    changeViewboxData();
+
+  // media query (mobile)
+  const mm = window.matchMedia('(max-width: 768px)');
 
     /**
      * initializes anchors
@@ -51,137 +153,226 @@ window.addEventListener('load', function () {
     };
     initAnchors();
 
+    // locomotive scroll integration with scroll trigger
+    ScrollTrigger.scrollerProxy("._smooth-scroll", {
+        scrollTop(value) {
+            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+            return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+        },
+        pinType: document.querySelector("._smooth-scroll").style.transform ? "transform" : "fixed"
+    });
+
     /**
-     * initializes sliders
+     * sets slide content
+     * @param swiper
      */
-    const initSliders = () => {
-        if (document.querySelector('.choose__slider')) {
-            const textCnt = document.getElementById('chooseItemText');
-            const priceCnt = document.getElementById('chooseItemPrice');
-            const pledgeCnt = document.getElementById('chooseItemPledge');
-            const headingCnt = document.getElementById('chooseItemHeading');
+    const setSlideContent = (swiper) => {
+        const activeSlide = swiper.slides[swiper.activeIndex];
 
-            const setContent = (swiper) => {
-                const activeSlide = swiper.slides[swiper.activeIndex];
-                const text = activeSlide.dataset.text;
-                const price = activeSlide.dataset.price;
-                const pledge = activeSlide.dataset.pledge;
-                const heading = activeSlide.dataset.heading;
+        setInnerContent(activeSlide.dataset.text, document.getElementById('chooseItemText'));
+        setInnerContent(activeSlide.dataset.price, document.getElementById('chooseItemPrice'));
+        setInnerContent(activeSlide.dataset.pledge, document.getElementById('chooseItemPledge'));
+        setInnerContent(activeSlide.dataset.heading, document.getElementById('chooseItemHeading'));
+    };
 
-                setInnerContent(text, textCnt);
-                setInnerContent(price, priceCnt);
-                setInnerContent(pledge, pledgeCnt);
-                setInnerContent(heading, headingCnt);
-            };
+    /**
+     * sets prev & next classes to slides
+     * @param swiper
+     */
+    const setSlidesClasses = (swiper) => {
+        swiper.slides.forEach((slide, i) => {
+            slide.classList.remove('_is-next')
+            slide.classList.remove('_is-prev')
 
-            new Swiper('.choose__slider', {
-                modules: [Navigation, Pagination],
-                observer: true,
-                loop: true,
-                slideToClickedSlide: true,
-                spaceBetween: 30,
-                navigation: {
-                    nextEl: '.choose__sl-arr_next',
-                    prevEl: '.choose__sl-arr_prev'
-                },
-                pagination: {
-                    el: '.choose__pagination',
-                    type: 'bullets',
-                    clickable: mm.matches ? true : false,
-                    renderBullet: function (index, className) {
-                        const indx = index >= 10 ? index : '0' + ++index;
-                        return `<span class="${className}" data-index="${indx}"></span>`;
-                    }
-                },
-                on: {
-                    init: (swiper) => {
-                        setContent(swiper);
-                    },
-                    slideChangeTransitionStart: (swiper) => {
-                        swiper.el.parentElement.classList.add('_is-animating');
-                        setTimeout(() => {
-                            swiper.el.parentElement.classList.remove('_is-animating');
-                            swiper.animating = false;
-                        }, 1000);
-                    },
-                    slidePrevTransitionStart: (swiper) => {
-                        swiper.el.parentElement.classList.add('_prev-slide');
-                        setTimeout(() => {
-                            swiper.el.parentElement.classList.remove('_prev-slide');
-                        }, 1000);
-                    },
-                    slideChange: (swiper) => {
-                        setContent(swiper);
-                    }
-                },
-                breakpoints: {
-                    768: {
-                        spaceBetween: 0,
-                        virtualTranslate: true
-                    }
+            if (i > swiper.activeIndex) {
+                slide.classList.add('_is-next')
+            } else if (i < swiper.activeIndex) {
+                slide.classList.add('_is-prev')
+            }
+        })
+    }
+
+    // locomotive scroll event
+    locoScroll.on('scroll', (args) => {
+        ScrollTrigger.update()
+
+        gsap.to(document.body, {'--scrollY': `${args.scroll.y}px`})
+    });
+
+    // scroll trigger integration with locomotive scroll
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    ScrollTrigger.defaults({ scroller: "._smooth-scroll" });
+    ScrollTrigger.refresh()
+    ScrollTrigger.update()
+
+    /**
+     * changes viewbox attribute vars
+     */
+    const changeViewboxData = () => {
+        if (document.querySelector('.speedometer__wrap')) {
+            const wrap = document.querySelector('.speedometer__wrap');
+            const [deskW, deskH, mobW, mobH] = wrap.dataset.viewbox.trim().split(',');
+            wrap.setAttribute('viewBox', mm.matches ? `0 0 ${mobW} ${mobH}` : `0 0 ${deskW} ${deskH}`);
+        }
+    };
+    changeViewboxData();
+
+    /**
+     * choose section animation
+     */
+    const animateChooseSection = () => {
+        if (document.querySelector('.choose')) {
+
+          const section = document.querySelector('.choose')
+          const chooseSlider = new Swiper('.choose__slider', {
+            modules: [Navigation, Pagination],
+            observer: true,
+            slideToClickedSlide: true,
+            spaceBetween: 30,
+            navigation: {
+              nextEl: '.choose__sl-arr_next',
+              prevEl: '.choose__sl-arr_prev'
+            },
+            pagination: {
+              el: '.choose__pagination',
+              type: 'bullets',
+              clickable: mm.matches ? true : false,
+              renderBullet: function (index, className) {
+                const indx = index >= 10 ? index : '0' + ++index;
+                return `<span class="${className}" data-index="${indx}"></span>`;
+              }
+            },
+            on: {
+              init: (swiper) => {
+                setSlideContent(swiper);
+                if (!mm.matches) setSlidesClasses(swiper)
+              },
+              slideChangeTransitionStart: (swiper) => {
+                setSlideContent(swiper);
+                if (!mm.matches) {
+                  setSlidesClasses(swiper)
+                  swiper.el.parentElement.classList.add('_is-animating');
+
+                  setTimeout(() => {
+                    swiper.el.parentElement.classList.remove('_is-animating');
+                    swiper.animating = false;
+                  }, 600);
                 }
-            });
-        }
-    };
-    initSliders();
+              },
+              slidePrevTransitionStart: (swiper) => {
+                if (!mm.matches) {
+                  swiper.el.parentElement.classList.add('_prev-slide');
 
-    /**
-     * initializes hero animation
-     */
-    const initHeroAnim = () => {
-        if (document.querySelector('.hero')) {
-            const tl = gsap.timeline();
+                  setTimeout(() => {
+                    swiper.el.parentElement.classList.remove('_prev-slide');
+                  }, 1000);
+                }
+              },
+              reachEnd: (swiper) => {
+                if (!mm.matches) {
+                  setTimeout(() => {
+                    bodyUnlock()
+                    locoScroll.start()
+                    swiper.el.closest('section').classList.add('_is-passed')
+                  }, 600)
+                }
+              },
+            },
+            breakpoints: {
+              768: {
+                spaceBetween: 0,
+                preventInteractionOnTransition: true,
+                virtualTranslate: true
+              }
+            }
+          });
 
-            tl.to('.hero', {
-                '--y': 0,
-                delay: 0.5,
-                duration: 3.5
-            })
-                .fromTo(
-                    '.hero__bg',
-                    { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)' },
-                    {
-                        clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0 100%)',
-                        duration: 3.5
+          gsap.matchMedia().add("(min-width: 768px)", () => {
+            const isPassed = () => {
+              return section.classList.contains('_is-passed')
+            }
+            const handleObserver = () => {
+
+              if (!isPassed()) {
+                locoScroll.scrollTo(section)
+                setTimeout(() => {
+                  locoScroll.stop()
+                  bodyLock()
+
+                  ScrollTrigger.observe({
+                    target: '.choose',
+                    type: "wheel,touch",
+                    tolerance: 280,
+                    id: 'chooseSection',
+                    onUp: () => chooseSlider.slidePrev(),
+                    onDown: (e) => {
+                      if (e.deltaY === 0) {
+                        setTimeout(() => {
+                          chooseSlider.slideNext()
+                        }, 500)
+                      } else {
+                        chooseSlider.slideNext()
+                      }
                     },
-                    0.6
-                )
-                .fromTo(
-                    '.hero__content',
-                    { translateY: '100%' },
-                    {
-                        translateY: 0,
-                        duration: 2
-                    },
-                    1.2
-                )
-                .fromTo(
-                    '.hero__content',
-                    { opacity: 0, visibility: 'hidden' },
-                    {
-                        opacity: 1,
-                        visibility: 'visible',
-                        duration: 1
-                    },
-                    1.5
-                )
-                .to(
-                    '.header',
-                    {
-                        translateY: 0,
-                        duration: 1.5,
-                        opacity: 1
-                    },
-                    3
-                );
+                  })
+                }, 500)
+              }
+
+            }
+
+            gsap.set('.choose__slide.swiper-slide-active .slide-choose__image', {scale: 1.2, translateY: '7rem'})
+
+            const tl = gsap.timeline({
+              defaults: {
+                duration: 1.5,
+                ease: "power2.out",
+              },
+              scrollTrigger: {
+                trigger: '.choose',
+                scroller: '._smooth-scroll',
+                start: 'top 35%',
+                onEnter: () => {
+                  if (!isPassed()) {
+                    locoScroll.scrollTo(section)
+                    locoScroll.stop()
+                    bodyLock()
+                  }
+                },
+                onUpdate: () => {
+                  if (isPassed()) {
+                    Observer.getById('chooseSection').kill()
+                    tl.kill()
+                  }
+                }
+              },
+            }).fromTo('.choose__slide.swiper-slide-active .slide-choose__image, .choose__pagination',
+              {opacity: 0}, {opacity: 1})
+              .to('.choose', {'--whiteGradientOpacity': 1}, 0).fromTo(`.choose__slide.swiper-slide-next .slide-choose__image, 
+            #chooseItemText, .choose__characteristics, #chooseItemHeading`, {
+                opacity: 0,
+                translateY: '7rem'
+              }, {
+                opacity: 1,
+                translateY: 0,
+              }, 2)
+              .to('.choose__slide.swiper-slide-active .slide-choose__image',
+                {scale: 1, translateY: 0}, 2)
+              .fromTo('.choose__sl-navigation, .choose__btn, .choose__list', {opacity: 0}, {opacity: 1,
+                onStart: () => handleObserver()}, 3)
+          })
         }
-    };
+      }
+    animateChooseSection()
 
     /**
      * animates speedometer
      */
     const animateSpeedometer = () => {
         if (document.getElementById('speedometerProgress')) {
+          gsap.set('.speedometer__text-wrap', {opacity: 0})
+
             gsap.timeline({
                 scrollTrigger: {
                     trigger: '.advantages',
@@ -198,7 +389,7 @@ window.addEventListener('load', function () {
                                 vivus.reset();
                                 setTimeout(() => {
                                     vivus.el.querySelector('path').style.transition =
-                                        'stroke-dasharray 2s ease, stroke-dashoffset 2s ease';
+                                      'stroke-dasharray 2s ease, stroke-dashoffset 2s ease';
                                     vivus.setFrameProgress(0.18);
 
                                     gsap.to('#speedometerNeedle', {
@@ -211,15 +402,18 @@ window.addEventListener('load', function () {
                                             end: 0.29 // 0.87
                                         },
                                         duration: 1.1,
-                                        delay: 0.8
+                                        delay: 0.9
                                     });
 
                                     gsap.from('#speedometerScore', {
                                         textContent: 0,
                                         duration: 1.1,
                                         delay: 0.8,
-                                        snap: { textContent: 1 }
-                                    });
+                                        snap: { textContent: 1 },
+                                    })
+
+                                    gsap.to('.speedometer__text-wrap', {opacity: 1,
+                                      delay: 0.8,})
                                 }, 0);
                             }
                         });
@@ -228,16 +422,10 @@ window.addEventListener('load', function () {
             });
         }
     };
+    animateSpeedometer();
 
-    window.requestAnimationFrame(function () {
-        initHeroAnim();
-        animateSpeedometer();
-    });
-
-    setCssProperty(document.querySelectorAll('[data-tr-speed]'), 'transitionDuration', 'trSpeed');
-    setCssProperty(document.querySelectorAll('[data-tr-delay]'), 'transitionDelay', 'trDelay');
+    // listen to media query
     mm.addEventListener('change', function () {
-        initSliders();
         changeViewboxData();
     });
 });

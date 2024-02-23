@@ -29,8 +29,8 @@ import './utils/tabs.js';
 // // accordion
 // import './utils/accordion.js';
 
-// // select
-// import './utils/select.js';
+// select
+import './utils/select.js';
 
 // // modals
 // import './utils/modals.js';

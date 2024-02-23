@@ -10,6 +10,7 @@
         width: 4.4rem;
         height: 0.2rem;
         background-color: $white;
+        //cursor: pointer;
         transition: transform 0.3s ease, background-color 0.3s ease;
         &::after {
             content: attr(data-index);

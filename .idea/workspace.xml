@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f4601fd0-39e0-436c-bd29-f24c106a33b0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/bg/ground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/bg/hero-bg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/bg/mountains-mobile.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/bg/mountains.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/components/loader/wheel-shadow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/components/loader/wheel.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/loader.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/sections/loader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/bg/mountains-back.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/bg/mountains-front-mobile.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/bg/mountains-front.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_choose.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_choose.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_hero.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/utils/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/dev/vzmsk1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/dev/vzmsk1.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_choose.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_choose.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/styles/_sl-pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_sl-pagination.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2cgMYS5KB1VN8cZGodgWiz3DrXC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging Dima-M",
+    "last_opened_file_path": "/Users/annavyazemskaya/Documents/web/2024/prokat-light",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/annavyazemskaya/Documents",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f4601fd0-39e0-436c-bd29-f24c106a33b0" name="Changes" comment="" />
+      <created>1708528816026</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708528816026</updated>
+      <workItem from="1708528818423" duration="563000" />
+      <workItem from="1708529537262" duration="399000" />
+      <workItem from="1708529954014" duration="122000" />
+      <workItem from="1708530090023" duration="177000" />
+      <workItem from="1708530312793" duration="385000" />
+      <workItem from="1708530769537" duration="237000" />
+      <workItem from="1708531110994" duration="294000" />
+      <workItem from="1708531453540" duration="63000" />
+      <workItem from="1708531529805" duration="196000" />
+      <workItem from="1708531743671" duration="94000" />
+      <workItem from="1708531880194" duration="44000" />
+      <workItem from="1708532023901" duration="526000" />
+      <workItem from="1708532620541" duration="76000" />
+      <workItem from="1708532709819" duration="121000" />
+      <workItem from="1708542862792" duration="73000" />
+      <workItem from="1708542971656" duration="376000" />
+      <workItem from="1708543378351" duration="998000" />
+      <workItem from="1708544465467" duration="127000" />
+      <workItem from="1708544612816" duration="101000" />
+      <workItem from="1708544732821" duration="91000" />
+      <workItem from="1708544840192" duration="1516000" />
+      <workItem from="1708580425711" duration="1081000" />
+      <workItem from="1708581772538" duration="194000" />
+      <workItem from="1708581982255" duration="828000" />
+      <workItem from="1708582828777" duration="26603000" />
+      <workItem from="1708621929109" duration="274000" />
+      <workItem from="1708622230816" duration="522000" />
+      <workItem from="1708622781846" duration="758000" />
+      <workItem from="1708623563699" duration="347000" />
+      <workItem from="1708623928788" duration="10826000" />
+      <workItem from="1708635358286" duration="101000" />
+      <workItem from="1708635482684" duration="124000" />
+      <workItem from="1708635625823" duration="1452000" />
+      <workItem from="1708671131632" duration="3947000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
