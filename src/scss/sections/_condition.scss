@@ -3,13 +3,18 @@
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: 8rem;
     }
+    // .condition__head
+    &__head {
+        margin-bottom: 6rem;
+    }
+
     // .condition__content
     &__content {
+        margin-bottom: 5rem;
         display: flex;
         flex-direction: column;
-        gap: 9rem;
+        gap: 5rem;
         &-top {
             position: relative;
 
@@ -64,7 +69,7 @@
             display: grid;
             grid-template-columns: repeat(3, 39.9rem);
             justify-content: space-between;
-            margin-bottom: 6rem;
+            margin-bottom: 5rem;
         }
         &-item {
             position: relative;
@@ -109,7 +114,7 @@
     }
     // .condition__footer
     &__footer {
-        padding: 5.8rem 0;
+        padding: 4rem 0;
         background-color: #24272a;
         position: relative;
 

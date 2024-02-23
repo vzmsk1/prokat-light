@@ -26,7 +26,7 @@ async function initMap() {
     const map = new YMap(document.getElementById('contacts-map'), {
         location: {
             center: [37.588144, 55.733842],
-            zoom: 12
+            zoom: 12,
         }
     });
     map.addChild(new YMapDefaultSchemeLayer());

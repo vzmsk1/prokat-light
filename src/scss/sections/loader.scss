@@ -1,122 +1,124 @@
 .loader {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: $bgColor;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-
-  ._is-loaded & {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  &__content {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    row-gap: 9.4rem;
+    width: 100vw;
+    height: 100vh;
+    background-color: $bgColor;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
 
-    @media (max-width: 48em) {
-      row-gap: 10.4rem;
+    ._is-loaded & {
+        opacity: 0;
+        visibility: hidden;
     }
-  }
 
-  &__icon-wrap {
-    position: relative;
-    animation: wheelBounce 1.6s infinite;
-    transform-origin: center;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 9.4rem;
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: calc(100% + 1.2rem);
-      left: 50%;
-      width: 18.8rem;
-      height: 5rem;
-      background-image: url("./assets/images/components/loader/wheel-shadow.svg");
-      background-size: contain;
-      background-repeat: no-repeat;
-      animation: wheelShadowBounce 1.6s infinite;
-
-      @media (max-width: 48em) {
-        top: calc(100% + 2.4rem);
-        width: 21rem;
-        height: 9rem;
-      }
+        @media (max-width: 48em) {
+            row-gap: 10.4rem;
+        }
     }
-  }
 
-  &__icon-inner {
-    width: 24.8rem;
-    transform-origin: center;
-    animation: wheelRotate 1.6s infinite;
+    &__icon-wrap {
+        position: relative;
+        animation: wheelBounce 1.6s infinite;
+        transform-origin: center;
 
-    @media (max-width: 48em) {
-      width: 20.4rem;
+        &::after {
+            content: '';
+            position: absolute;
+            top: calc(100% + 1.2rem);
+            left: 50%;
+            width: 18.8rem;
+            height: 5rem;
+            background-image: url('./assets/images/components/loader/wheel-shadow.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: wheelShadowBounce 1.6s infinite;
+
+            @media (max-width: 48em) {
+                top: calc(100% + 2.4rem);
+                width: 21rem;
+                height: 9rem;
+            }
+        }
     }
-  }
 
-  &__icon {}
+    &__icon-inner {
+        width: 24.8rem;
+        transform-origin: center;
+        animation: wheelRotate 1.6s infinite;
 
-  &__progress {
-    span {}
-  }
+        @media (max-width: 48em) {
+            width: 20.4rem;
+        }
+    }
+
+    &__icon {
+    }
+
+    &__progress {
+        span {
+        }
+    }
 }
-
 
 @keyframes wheelRotate {
-
-  0% {
-    transform: rotate(0);
-    animation-timing-function: cubic-bezier(0.17,0.84,0.44,1);
-  }
-  50% {
-    transform: rotate(180deg);
-    animation-timing-function: cubic-bezier(0.76,0.05,0.86,0.06);
-  }
-  100% {
-    transform: rotate(360deg);
-    animation-timing-function: cubic-bezier(0.17,0.84,0.44,1);
-  }
+    0% {
+        transform: rotate(0);
+        animation-timing-function: cubic-bezier(0.17, 0.84, 0.44, 1);
+    }
+    50% {
+        transform: rotate(180deg);
+        animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+    }
+    100% {
+        transform: rotate(360deg);
+        animation-timing-function: cubic-bezier(0.17, 0.84, 0.44, 1);
+    }
 }
 @keyframes wheelBounce {
-  0% {
-    transform: translateY(-4rem);
-    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
-  }
+    0% {
+        transform: translateY(-4rem);
+        animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+    }
 
-  45% {
-    transform: translateY(4rem);
-    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  }
+    45% {
+        transform: translateY(4rem);
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    }
 
-  100% {
-    transform: translateY(-4rem);
-    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
-  }
+    100% {
+        transform: translateY(-4rem);
+        animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+    }
 }
 @keyframes wheelShadowBounce {
-  0% {
-    transform: translateZ(-2rem) translateX(-50%) scale(1.3);
-    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
-    opacity: .05;
-  }
+    0% {
+        transform: translateZ(-2rem) translateX(-50%) scale(1.3);
+        animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+        opacity: 0.05;
+    }
 
-  45% {
-    transform: translateZ(0) translateX(-50%) ;
-    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-    opacity: .3;
-  }
+    45% {
+        transform: translateZ(0) translateX(-50%);
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        opacity: 0.3;
+    }
 
-  100% {
-    transform: translateZ(-2rem) translateX(-50%)  scale(1.3);
-    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
-    opacity: .05;
-  }
+    100% {
+        transform: translateZ(-2rem) translateX(-50%) scale(1.3);
+        animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+        opacity: 0.05;
+    }
 }

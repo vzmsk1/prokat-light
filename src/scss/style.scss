@@ -54,25 +54,6 @@ section {
     max-width: 1920px;
 }
 
-.home-page__3d-scroll {
-    @media (min-width: 48em) {
-        position: relative;
-        min-height: 105vh;
-
-        section {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-            &:not(:first-child) {
-                transform: translate(-50%, -50%) scale(1.2);
-                opacity: 0;
-            }
-        }
-    }
-}
-
 ._desktop-only {
     @media (max-width: 48em) {
         display: none;
@@ -81,6 +62,41 @@ section {
 ._mobile-only {
     @media (min-width: 48em) {
         display: none;
+    }
+}
+
+.three-scroll {
+    @media (min-width: 48em) {
+        position: relative;
+        z-index: 10;
+        margin-bottom: 20rem;
+        height: 110vh;
+        perspective: 1000rem;
+
+        section {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%) translateY(-50%);
+            background-color: $bgColor;
+            overflow: hidden;
+
+            &:not(&._is-visible) {
+                transform: translateX(-50%) translateY(-50%) translateZ(80rem);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+
+            &._is-prev {
+                transform: translateX(-50%) translateY(-50%) translateZ(-80rem);
+            }
+        }
+
+        &__spacer {
+            height: 30rem;
+        }
     }
 }
 

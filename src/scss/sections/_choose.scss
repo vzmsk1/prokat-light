@@ -1,5 +1,7 @@
 .choose {
     position: relative;
+    padding-top: 0;
+    margin-bottom: 29rem;
     --groundOpacity: 0;
     --whiteGradientOpacity: 0;
 
@@ -16,14 +18,13 @@
         background-repeat: no-repeat;
         opacity: var(--groundOpacity);
 
-
         @media (max-width: 48em) {
-          top: -84.2rem;
+            top: -84.2rem;
         }
     }
 
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         z-index: 6;
         top: -5.5rem;
@@ -39,11 +40,8 @@
         }
     }
 
-
-    @media (max-width: 48em) {
-        margin-bottom: 29rem;
-    }
     @media (min-width: 48em) {
+        margin-bottom: 0rem;
         padding-top: 22rem;
     }
 
@@ -76,10 +74,12 @@
     &__text {
         margin-bottom: 17.3rem;
         max-width: 38rem;
+        min-height: 8.5rem;
 
         @media (max-width: 48em) {
             margin-bottom: 7.5rem;
             max-width: 62rem;
+            min-height: auto;
         }
     }
 
@@ -134,6 +134,12 @@
         flex-direction: column;
         min-width: 0;
         width: 100%;
+
+        ._is-passed & {
+            &::before {
+                opacity: 1;
+            }
+        }
 
         &::before {
             content: '';
@@ -221,7 +227,9 @@
                 height: 100%;
                 opacity: 0;
                 pointer-events: none;
-                transition: transform 0.5s ease, opacity 0.3s ease;
+                transition:
+                    transform 0.5s ease,
+                    opacity 0.3s ease;
 
                 &:not(&.swiper-slide-prev, &.swiper-slide-active, &.swiper-slide-next) {
                     opacity: 0;
@@ -240,10 +248,14 @@
                 &._is-prev {
                     transform: scale(0.4);
                     opacity: 0;
-                    transition: opacity 0.3s ease, transform 0.5s ease;
+                    transition:
+                        opacity 0.3s ease,
+                        transform 0.5s ease;
 
                     &:not(._prev-slide &) {
-                        transition: opacity 0.3s ease 1s, transform 0.5s ease;
+                        transition:
+                            opacity 0.3s ease 1s,
+                            transform 0.5s ease;
                     }
                     ._prev-slide & {
                         display: none;
@@ -397,7 +409,7 @@
         user-select: none;
 
         @media (min-width: 48em) {
-            font-size: 7rem;
+            font-size: 6rem;
         }
     }
 
@@ -407,8 +419,9 @@
         position: relative;
         z-index: 2;
         margin-bottom: 12.4rem;
-        max-width: 80rem;
-        transform: translate(-1rem, 0.3rem);
+        width: 90rem;
+        transform: translate(-7rem, 0.3rem);
+        text-align: center;
         transition: opacity 0.3s ease;
 
         ._prev-slide & {

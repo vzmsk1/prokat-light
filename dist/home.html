@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8" />
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://api-maps.yandex.ru/v3/?apikey=24d298f1-151c-4481-9e4a-235c4db16ee9&lang=ru_RU"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Главная</title>
-<script defer src="main.js"></script></head>
-<body>
-<div class="wrapper home-page">
-    <header class="header">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://api-maps.yandex.ru/v3/?apikey=24d298f1-151c-4481-9e4a-235c4db16ee9&lang=ru_RU"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+        <title>Главная</title>
+    <script defer src="main.js"></script></head>
+    <body>
+        <div class="wrapper home-page">
+            <header class="header">
     <div class="header__container container">
         <button type="button" class="header__hamburger icon">
             <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,8 +48,8 @@
     </div>
 </header>
 
-    <main class="_smooth-scroll">
-        <section class="hero">
+            <main class="_smooth-scroll">
+                <section class="hero">
     <div class="hero__content hero__content_back">
         <div class="hero__container container">
             <span class="hero__heading-txt txt txt_caps">LIGHT RENTAL CARS</span>
@@ -101,7 +101,7 @@
     <div class="hero__bg"></div>
 </section>
 
-        <section class="choose">
+                <section class="choose">
     <div class="choose__container container">
         <div class="choose__info">
             <p id="chooseItemText" class="choose__text txt txt_caps"></p>
@@ -159,44 +159,43 @@
             <div class="choose__slider swiper">
                 <div class="choose__wrapper swiper-wrapper">
                     <div data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием" data-price="6 300" data-pledge="20 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
+                      в районы с грунтовым покрытием" data-price="8 300" data-pledge="30 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
                         <div class="slide-choose__image-wrap">
                             <img src="./assets/images/cars/9D257GS-DG.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
 
                     <div data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием" data-price="6 400" data-pledge="20 500" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
+                      в районы с грунтовым покрытием" data-price="6 900" data-pledge="30 000" data-heading="lexus rx 350" class="choose__slide slide-choose swiper-slide">
                         <div class="slide-choose__image-wrap">
                             <img src="./assets/images/cars/9DDFG7FG-ACF.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
 
                     <div data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием" data-price="7 300" data-pledge="21 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
+                      в районы с грунтовым покрытием" data-price="4 900" data-pledge="20 000" data-heading="subaru forester" class="choose__slide slide-choose swiper-slide">
                         <div class="slide-choose__image-wrap">
-                            <img src="./assets/images/cars/9D257GS-DG.webp" alt="" class="slide-choose__image">
+                            <img src="./assets/images/cars/9DHJFG-ACF.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
 
                     <div data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием" data-price="5 300" data-pledge="25 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
+                      в районы с асфальтированным покрытием" data-price="1 534" data-pledge="10 000" data-heading="HYUNDAI SOLARIs" class="choose__slide slide-choose swiper-slide">
                         <div class="slide-choose__image-wrap">
-                            <img src="./assets/images/cars/9DDFG7FG-ACF.webp" alt="" class="slide-choose__image">
+                            <img src="./assets/images/cars/9DHJFG-AREF.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
 
                     <div data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием" data-price="6 300" data-pledge="20 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
+                      в районы с бездорожьем" data-price="4 500" data-pledge="20 000" data-heading="suzuki jimny" class="choose__slide slide-choose swiper-slide">
                         <div class="slide-choose__image-wrap">
-                            <img src="./assets/images/cars/9D257GS-DG.webp" alt="" class="slide-choose__image">
+                            <img src="./assets/images/cars/6ODHJFG-AREF.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="choose__heading-wrap">
-                <span id="chooseItemHeading" class="choose__heading h">
-                </span>
+                <span id="chooseItemHeading" class="choose__heading h"> </span>
             </div>
             <div class="choose__sl-navigation">
                 <button type="button" class="choose__sl-arr choose__sl-arr_prev icon icon_white">
@@ -238,7 +237,8 @@
     </div>
 </section>
 
-        <section class="banner">
+                <div class="three-scroll">
+                    <section class="banner _is-visible">
     <a href="#" class="banner__inner">
         <div class="banner__container container">
             <div class="banner__content">
@@ -258,7 +258,7 @@
     </a>
 </section>
 
-        <section data-scroll="" data-scroll-offset="550" class="advantages _is-pinned">
+                    <section data-scroll="" class="advantages">
     <div class="advantages__container container">
         <div class="advantages__head">
             <div class="advantages__heading-wrap">
@@ -392,7 +392,7 @@
     </div>
 </section>
 
-        <section class="author">
+                    <section data-scroll="" class="author">
     <div class="container">
         <div class="author__inner">
             <div class="author__left">
@@ -440,9 +440,9 @@
     </div>
 </section>
 
-        <section class="condition">
+                    <section data-scroll="" class="condition">
     <div class="condition__inner">
-        <div class="container">
+        <div class="condition__head container">
             <h2 class="h h_2">Условия проката</h2>
         </div>
         <div class="condition__content">
@@ -658,7 +658,9 @@
     </div>
 </section>
 
-        <section class="contacts">
+                    <div class="three-scroll__spacer _desktop-only"></div>
+                </div>
+                <section class="contacts">
     <div class="container">
         <div class="contacts__inner">
             <h2 class="contacts__title h h_2">Свяжитесь с нами</h2>
@@ -737,8 +739,8 @@
     <div class="contacts__map" id="contacts-map"></div>
 </section>
 
-    </main>
-    <div class="loader">
+            </main>
+            <div class="loader">
   <div class="loader__content">
     <div class="loader__icon-wrap">
       <div class="loader__icon-inner"><img src="./assets/images/components/loader/wheel.webp" alt="" class="loader__icon"></div>
@@ -746,7 +748,7 @@
     <div class="loader__progress h h_2"><span id="percentVal">0</span>%</div>
   </div>
 </div>
-    <footer class="footer">
+            <footer class="footer">
     <div class="container">
         <div class="footer__inner">
             <div class="footer__main">
@@ -823,8 +825,8 @@
     </div>
 </footer>
 
-    
-    <div style="position: absolute; top: 0; left: 0; transform: translate(-100%, -100%)">
+            
+            <div style="position: absolute; top: 0; left: 0; transform: translate(-100%, -100%)">
     <svg xmlns="http://www.w3.org/2000/svg" width="300%" height="300%">
         <linearGradient id="speedometerProgressGradient" x1="42%" y1="0%" x2="58%" y2="100%">
             <stop offset="0%" style="stop-color: rgb(255, 108, 1); stop-opacity: 1"></stop>
@@ -845,6 +847,6 @@
     </svg>
 </div>
 
-</div>
-</body>
+        </div>
+    </body>
 </html>
