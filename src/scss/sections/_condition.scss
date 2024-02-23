@@ -3,6 +3,8 @@
         overflow: hidden;
     }
 
+    &
+
     &__pagination {
         @include small-tablet{
             justify-content: center;
@@ -26,6 +28,10 @@
         display: flex;
         flex-direction: column;
         gap: 3rem;
+
+        @include small-tablet{
+            margin-top: 1rem;
+        }
 
         &-top {
             position: relative;

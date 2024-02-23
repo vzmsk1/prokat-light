@@ -6,8 +6,24 @@
             background: url('./assets/images/sections/footer/background.webp') no-repeat;
             background-size: cover;
             inset: 0;
-            top: -21rem;
-            z-index: -1;
+            top: -15rem;
+            z-index: -3;
+
+            @include small-tablet{
+                background: url('./assets/images/sections/footer/background-mobile.webp') no-repeat;
+                top: -36rem;
+                background-size: 100% 100%;
+                left: 0rem;
+            }
+        }
+    }
+
+    &::before {
+        @include pseudo {
+            inset: 0;
+            top: -50rem;
+            z-index: -2;
+            background: linear-gradient(360deg, rgba(25, 28, 32, 0) 30.92%, #191c20 100%);
         }
     }
     // .footer__inner
@@ -16,6 +32,10 @@
         flex-direction: column;
         gap: 5rem;
         padding: 2.6rem 0 6.6rem;
+
+        @include small-tablet{
+            padding: 3.6rem 0 6.6rem;
+        }
     }
     // .footer__main
     &__main {

@@ -4,11 +4,12 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        padding: 7rem 0 5.3rem;
+        padding: 7rem 0;
 
         @include small-tablet{
             flex-direction: column-reverse;
             padding-top: 15rem;
+            padding-bottom: 2rem;
         }
     }
     // .author__left
