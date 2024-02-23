@@ -18,20 +18,12 @@ import { setInnerContent, bodyLock, bodyUnlock, bodyLockStatus, removeClasses } 
 
 // --------------------------------------------------------------------------
 
-// locomotive scroll instance
-const locoScroll = new LocomotiveScroll({
-    el: document.querySelector('._smooth-scroll'),
-    smooth: true,
-    multiplier: 1.2
-});
-
 /**
  * hero animation
  */
 const animateHero = () => {
     if (document.querySelector('.hero')) {
-        document.documentElement.classList.add('lock');
-        locoScroll.stop();
+        bodyLock()
 
         const tl = gsap.timeline();
 
@@ -74,8 +66,7 @@ const animateHero = () => {
                     onStart: () => {
                         document.querySelector('header').classList.add('_is-visible');
                         setTimeout(() => {
-                            document.documentElement.classList.remove('lock');
-                            locoScroll.start();
+                            bodyUnlock()
                         }, 2000);
                     }
                 },
@@ -155,6 +146,17 @@ window.addEventListener('load', function () {
     // media query (mobile)
     const mm = window.matchMedia('(max-width: 768px)');
 
+
+    // locomotive scroll instance
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector('._smooth-scroll'),
+        smooth: true,
+        multiplier: 1.2
+    });
+    setTimeout(() => {
+        locoScroll.update();
+    }, 5000);
+
     /**
      * initializes anchors
      */
@@ -229,6 +231,7 @@ window.addEventListener('load', function () {
     // scroll trigger integration with locomotive scroll
     ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
     ScrollTrigger.defaults({ scroller: '._smooth-scroll' });
+
 
     /**
      * changes viewbox attribute vars
