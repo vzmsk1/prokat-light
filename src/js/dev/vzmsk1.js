@@ -14,7 +14,7 @@ import 'swiper/css';
 import Vivus from 'vivus';
 
 // utils
-import { setInnerContent, bodyLock, bodyUnlock, bodyLockStatus, removeClasses } from '../utils/utils';
+import { setInnerContent, bodyLock, bodyUnlock, bodyLockStatus } from '../utils/utils';
 
 // --------------------------------------------------------------------------
 
@@ -156,6 +156,49 @@ window.addEventListener('load', function () {
     setTimeout(() => {
         locoScroll.update();
     }, 5000);
+
+
+    /**
+     * initializes hamburger menu
+     */
+    const menuInit = () => {
+        if (document.querySelector('.header__hamburger')) {
+            document.addEventListener('click', function (e) {
+                if (bodyLockStatus && e.target.closest('.header__hamburger')) {
+                    menuToggle()
+                }
+            });
+        }
+    };
+    menuInit()
+    /**
+     * opens hamburger menu
+     */
+    const menuOpen = () => {
+        bodyLock();
+        locoScroll.stop()
+        document.documentElement.classList.add('_menu-opened');
+    };
+    /**
+     * closes hamburger menu
+     */
+    const menuClose = () => {
+        bodyUnlock();
+        locoScroll.start()
+        document.documentElement.classList.remove('_menu-opened');
+    };
+    /**
+     * opens / closes hamburger menu=
+     */
+    const menuToggle = () => {
+        if (bodyLockStatus) {
+            if (document.documentElement.classList.contains('_menu-opened')) {
+                menuClose()
+            } else {
+                menuOpen()
+            }
+        }
+    }
 
     /**
      * initializes anchors
@@ -567,6 +610,10 @@ window.addEventListener('load', function () {
     // listen to media query
     mm.addEventListener('change', function () {
         changeViewboxData();
+
+        if (!mm.matches) {
+            menuClose()
+        }
     });
 
     setTimeout(() => {

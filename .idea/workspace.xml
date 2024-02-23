@@ -72,13 +72,13 @@
       <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/routes/routes-slide-image.webp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/home.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_advantages.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_advantages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_author.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_author.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_condition.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_condition.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/styles/_icon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_icon.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
