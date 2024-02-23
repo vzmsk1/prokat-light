@@ -1,20 +1,65 @@
 .footer {
+    position: relative;
+
+    &::after {
+        @include pseudo {
+            background: url('./assets/images/sections/footer/background.webp') no-repeat;
+            background-size: cover;
+            inset: 0;
+            top: -15rem;
+            z-index: -3;
+
+            @include small-tablet{
+                background: url('./assets/images/sections/footer/background-mobile.webp') no-repeat;
+                top: -36rem;
+                background-size: 100% 100%;
+                left: 0rem;
+            }
+        }
+    }
+
+    &::before {
+        @include pseudo {
+            inset: 0;
+            top: -50rem;
+            z-index: -2;
+            background: linear-gradient(360deg, rgba(25, 28, 32, 0) 30.92%, #191c20 100%);
+        }
+    }
     // .footer__inner
     &__inner {
         display: flex;
         flex-direction: column;
         gap: 5rem;
         padding: 2.6rem 0 6.6rem;
+
+        @include small-tablet{
+            padding: 3.6rem 0 6.6rem;
+        }
     }
     // .footer__main
     &__main {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 12rem;
+
+        @include small-tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 6.4rem;
+        }
+
         &-left {
             display: flex;
             flex-direction: column;
             gap: 5rem;
+
+            @include small-tablet {
+                flex-direction: row;
+                gap: 4rem;
+                align-items: center;
+                margin-bottom: 1.6rem;
+            }
 
             p {
                 font-size: 1.8rem;
@@ -22,6 +67,13 @@
                 text-transform: uppercase;
                 color: $gray;
                 max-width: 90%;
+
+                @include small-tablet {
+                    font-size: 3rem;
+                    line-height: 130%;
+                    text-transform: uppercase;
+                    max-width: 100%;
+                }
             }
         }
         &-block {
@@ -30,10 +82,27 @@
             gap: 2rem;
             font-size: 1.8rem;
 
+            @include small-tablet {
+                gap: 4rem;
+
+                &:nth-of-type(2) {
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3.2rem;
+                        max-width: 80%;
+                    }
+                }
+            }
+
             p {
                 line-height: 110%;
                 text-transform: uppercase;
                 color: $gray;
+
+                @include small-tablet {
+                    font-size: 3rem;
+                }
             }
 
             ul {
@@ -41,9 +110,19 @@
                 flex-direction: column;
                 gap: 2rem;
 
+                @include small-tablet {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 3.2rem 1.2rem;
+                }
+
                 li {
                     line-height: 140%;
                     color: $white;
+
+                    @include small-tablet {
+                        font-size: 3rem;
+                    }
                 }
             }
         }
@@ -53,24 +132,70 @@
             flex-direction: column;
             gap: 3.8rem;
 
+            @include small-tablet {
+                width: 100%;
+                gap: 6.4rem;
+                margin-top: -3rem;
+            }
+
             form {
                 display: flex;
                 flex-direction: column;
                 gap: 2.4rem;
+
+                @include small-tablet {
+                    gap: 4.8rem;
+                }
             }
 
+            input,
             input::placeholder {
+                font-size: 1.8rem;
+                line-height: 133%;
+                letter-spacing: 0.08em;
                 text-transform: uppercase;
+                color: $gray;
+
+                @include small-tablet {
+                    font-size: 3rem;
+                    line-height: 160%;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                }
             }
         }
     }
     // .footer__logo
     &__logo {
         width: 11.5rem;
+
+        @include small-tablet {
+            @include sizes(12rem, 13.8rem);
+
+            img {
+                height: 100%;
+            }
+        }
     }
     &__social {
         gap: 1.6rem;
         align-self: flex-end;
+
+        @include small-tablet {
+            order: -1;
+            gap: 2.4rem;
+            align-self: flex-start;
+
+            .icon {
+                width: 10.4rem;
+                height: 10.4rem;
+
+                svg {
+                    width: 3.2rem;
+                    height: 3.2rem;
+                }
+            }
+        }
     }
     // .footer__bottom
     &__bottom {
@@ -82,10 +207,36 @@
         padding-top: 2rem;
         border-top: 0.1rem solid $gray;
 
+        @include small-tablet {
+            margin-top: 3rem;
+            padding-top: 3.2rem;
+        }
+
         ul {
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            @include small-tablet {
+                flex-direction: column;
+                gap: 2.4rem;
+                align-items: flex-start;
+            }
+
+            li a {
+                font-size: 1.8rem;
+                line-height: 140%;
+                color: $gray;
+                transition: 0.3s color ease;
+
+                @include small-tablet {
+                    font-size: 2.8rem;
+                }
+
+                &:hover {
+                    color: $white;
+                }
+            }
         }
     }
 }

@@ -5,58 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4601fd0-39e0-436c-bd29-f24c106a33b0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/bg/ground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/bg/hero-bg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/bg/mountains-mobile.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/bg/mountains.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/components/loader/wheel-shadow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/components/loader/wheel.webp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/loader.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/scss/sections/loader.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/fonts/DrukTextWideCyr_medium.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/fonts/DrukWide_medium.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/fonts/Gilroy_bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/RD-logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/bg/btn-gradient-white.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/bg/btn-gradient.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/bg/concrete.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/bg/ground.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/bg/hero-bg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/bg/mountains-mobile.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/bg/mountains.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/bg/speedometer-scale.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/bg/track.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/bg/white-gradient.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/cars/0DGG67-DA.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/cars/9D257AFE-02FB.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/cars/9D257GS-DG.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/cars/9DDFG7FG-ACF.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/components/contact-form/contact-form-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/components/contact-form/contact-form-bg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/components/speedometer/needle.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/logo.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/author/author-portrait.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/author/author-portrait.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/author/author-tag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/author/author-tag.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/3.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/lexus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/lexus.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/light-gray-concrete-wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/light-gray-concrete-wall.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/prado.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/prado.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/suzuki.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/suzuki.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/bg/mountains-back.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/bg/mountains-front-mobile.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/bg/mountains-front.webp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/_choose.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_choose.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_hero.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/utils/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/select.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/dev/vzmsk1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/dev/vzmsk1.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/sections/_choose.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_choose.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/sections/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/styles/_sl-pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_sl-pagination.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,26 +56,29 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2cgMYS5KB1VN8cZGodgWiz3DrXC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/annavyazemskaya/Documents/web/2024/prokat-light&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/annavyazemskaya/Documents&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging Dima-M",
+    "last_opened_file_path": "/Users/annavyazemskaya/Documents/web/2024/prokat-light",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/annavyazemskaya/Documents",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
