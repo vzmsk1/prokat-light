@@ -101,12 +101,12 @@
     <div class="hero__bg"></div>
 </section>
 
-        <section data-scroll="" data-scroll-offset="550" class="choose">
+        <section class="choose">
     <div class="choose__container container">
         <div class="choose__info">
-            <p data-tr="fadeUp" data-tr-speed="1s" data-tr-delay="1s" id="chooseItemText" class="choose__text txt txt_caps"></p>
-            <div data-da=".choose__carousel,768,last" data-tr="fadeIn" data-tr-speed="1.5s" class="choose__pagination sl-pagination sl-pagination_mm"></div>
-            <ul data-tr="fadeIn" data-tr-speed="1.5s" data-tr-delay="1.5s" class="choose__list">
+            <p id="chooseItemText" class="choose__text txt txt_caps"></p>
+            <div data-da=".choose__carousel,768,last" class="choose__pagination sl-pagination sl-pagination_mm"></div>
+            <ul class="choose__list">
                 <li class="choose__info-item info-item">
                     <div class="info-item__icon icon _no-hover">
                         <svg width="41" height="38" viewBox="0 0 41 38" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,14 +160,14 @@
                 <div class="choose__wrapper swiper-wrapper">
                     <div data-text="На данном авто, возможен выезд
 в районы с грунтовым покрытием" data-price="6 300" data-pledge="20 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
-                        <div data-tr="fadeIn" data-tr-speed="1.5s" class="slide-choose__image-wrap">
-                            <img data-tr="zoomout" data-tr-speed="1s" data-tr-delay="1s" src="./assets/images/cars/9D257GS-DG.webp" alt="" class="slide-choose__image">
+                        <div class="slide-choose__image-wrap">
+                            <img src="./assets/images/cars/9D257GS-DG.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
 
                     <div data-text="На данном авто, возможен выезд
 в районы с грунтовым покрытием" data-price="6 400" data-pledge="20 500" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
-                        <div data-tr="fadeUp" data-tr-speed="1s" data-tr-delay="1s" class="slide-choose__image-wrap">
+                        <div class="slide-choose__image-wrap">
                             <img src="./assets/images/cars/9DDFG7FG-ACF.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
@@ -188,17 +188,17 @@
 
                     <div data-text="На данном авто, возможен выезд
 в районы с грунтовым покрытием" data-price="6 300" data-pledge="20 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
-                        <div data-tr="fadeIn" data-tr-speed="1.5s" class="slide-choose__image-wrap">
-                            <img data-tr="zoomout" data-tr-speed="1s" data-tr-delay="1s" src="./assets/images/cars/9D257GS-DG.webp" alt="" class="slide-choose__image">
+                        <div class="slide-choose__image-wrap">
+                            <img src="./assets/images/cars/9D257GS-DG.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="choose__heading-wrap">
-                <span id="chooseItemHeading" data-tr="fadeUp" data-tr-speed="1s" data-tr-delay="1s" class="choose__heading h">
-            </span></div>
-            
-            <div data-tr="fadeIn" data-tr-speed="1.5s" data-tr-delay="1.5s" class="choose__sl-navigation">
+                <span id="chooseItemHeading" class="choose__heading h">
+                </span>
+            </div>
+            <div class="choose__sl-navigation">
                 <button type="button" class="choose__sl-arr choose__sl-arr_prev icon icon_white">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -218,7 +218,7 @@
             </div>
         </div>
         <div class="choose__aside">
-            <button data-tr="fadeUp" data-tr-speed="1s" data-tr-delay="1s" type="button" class="choose__characteristics">
+            <button type="button" class="choose__characteristics">
                 <span class="choose__characteristics-icon icon">
                     <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M28 22C28 18.9624 25.5376 16.5 22.5 16.5C19.4624 16.5 17 18.9624 17 22C17 25.0376 19.4624 27.5 22.5 27.5C25.5376 27.5 28 25.0376 28 22Z" stroke="#FF6C01" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -231,7 +231,7 @@
                 </span>
                 <span class="choose__characteristics-txt">Характеристики</span>
             </button>
-            <a data-tr="fadeIn" data-tr-speed="1.5s" data-tr-delay="1.5s" href="#" class="choose__btn btn">
+            <a href="#" class="choose__btn btn">
                 <span class="btn__txt">перейти к выбору</span>
             </a>
         </div>
@@ -738,6 +738,14 @@
 </section>
 
     </main>
+    <div class="loader">
+  <div class="loader__content">
+    <div class="loader__icon-wrap">
+      <div class="loader__icon-inner"><img src="./assets/images/components/loader/wheel.webp" alt="" class="loader__icon"></div>
+    </div>
+    <div class="loader__progress h h_2"><span id="percentVal">0</span>%</div>
+  </div>
+</div>
     <footer class="footer">
     <div class="container">
         <div class="footer__inner">

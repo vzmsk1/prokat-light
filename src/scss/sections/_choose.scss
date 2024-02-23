@@ -1,12 +1,13 @@
 .choose {
     position: relative;
     --groundOpacity: 0;
+    --whiteGradientOpacity: 0;
 
     &::before {
         content: '';
         position: absolute;
         z-index: 6;
-        top: -77.2rem;
+        top: -55.2rem;
         left: 0;
         width: 100%;
         height: 62rem;
@@ -25,7 +26,7 @@
         content: "";
         position: absolute;
         z-index: 6;
-        top: -25.5rem;
+        top: -5.5rem;
         left: 0;
         width: 100%;
         height: 13.5rem;
@@ -41,6 +42,9 @@
 
     @media (max-width: 48em) {
         margin-bottom: 29rem;
+    }
+    @media (min-width: 48em) {
+        padding-top: 22rem;
     }
 
     // .choose__container
@@ -142,8 +146,7 @@
             background-image: url(./assets/images/bg/white-gradient.webp);
             background-size: contain;
             background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            opacity: var(--whiteGradientOpacity);
 
             @media (max-width: 48em) {
                 top: -14rem;
@@ -160,14 +163,6 @@
             padding-top: 14rem;
             padding-left: 5rem;
             justify-self: center;
-
-            &:not(&._is-animating) {
-                .is-inview & {
-                    &::before {
-                        opacity: 1;
-                    }
-                }
-            }
 
             &:not(&._prev-slide) {
                 &._is-animating {
@@ -226,10 +221,10 @@
                 height: 100%;
                 opacity: 0;
                 pointer-events: none;
-                transition: transform 0.7s ease, opacity 0.3s ease;
+                transition: transform 0.5s ease, opacity 0.3s ease;
 
                 &:not(&.swiper-slide-prev, &.swiper-slide-active, &.swiper-slide-next) {
-                    transform: scale(0.4) translate(295rem, 18rem);
+                    opacity: 0;
                 }
 
                 &.swiper-slide-active {
@@ -238,29 +233,32 @@
                     transform: scale(1);
 
                     &:not(._prev-slide &) {
-                        transition-delay: 0.5s;
+                        transition-delay: 0.2s;
                     }
                 }
 
-                &.swiper-slide-prev {
+                &._is-prev {
                     transform: scale(0.4);
                     opacity: 0;
-                    transition: opacity 0.3s ease, transform 0.7s ease;
+                    transition: opacity 0.3s ease, transform 0.5s ease;
 
                     &:not(._prev-slide &) {
-                        transition: opacity 0.3s ease 1s, transform 0.7s ease;
+                        transition: opacity 0.3s ease 1s, transform 0.5s ease;
                     }
                     ._prev-slide & {
                         display: none;
                     }
                 }
 
-                &.swiper-slide-next {
-                    z-index: 2;
-                    opacity: 1;
+                &._is-next {
                     transform: scale(0.33) translate(199rem, 2rem);
                     pointer-events: all;
                     cursor: pointer;
+
+                    &.swiper-slide-next {
+                        z-index: 2;
+                        opacity: 1;
+                    }
 
                     &:not(._prev-slide &) {
                         transition-delay: 0.5s;
@@ -393,6 +391,7 @@
     // .choose__heading
 
     &__heading {
+        display: block;
         font-size: 4.8rem;
         line-height: 120%;
         user-select: none;
@@ -408,8 +407,9 @@
         position: relative;
         z-index: 2;
         margin-bottom: 12.4rem;
+        max-width: 80rem;
         transform: translate(-1rem, 0.3rem);
-        transition: opacity 0.4s ease;
+        transition: opacity 0.3s ease;
 
         ._prev-slide & {
             opacity: 1;
@@ -418,6 +418,7 @@
         @media (max-width: 48em) {
             margin-bottom: 3.4rem;
             align-self: center;
+            max-width: none;
             transform: translateY(-3rem);
         }
     }
