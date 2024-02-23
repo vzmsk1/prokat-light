@@ -4,7 +4,7 @@
             <h2 class="h h_2">Условия проката</h2>
         </div>
         <div class="condition__content">
-            <div class="condition__content-top">
+            <div class="condition__content-top _desktop-only">
                 <div class="container">
                     <div class="condition__content-wrapper">
                         <div class="condition__icon">
@@ -142,40 +142,73 @@
             </div>
             <div class="condition__content-main">
                 <div class="container">
-                    <div class="condition__info-block">
-                        <div class="condition__info-item">
-                            <p class="condition__info-title">Возраст для аренды легковых автомобилей</p>
-                            <p class="condition__info-text">
-                                Возраст должен составлять не менее 25 лет для аренды легковых автомобилей
-                                эконом и среднего класса;
-                            </p>
-                            <div class="condition__info-bg">
-                                <img src="../assets/images/sections/condition/1.svg" alt="" />
-                            </div>
-                        </div>
-                        <div class="condition__info-item">
-                            <p class="condition__info-title">Возраст для аренды внедорожников</p>
-                            <p class="condition__info-text">
-                                На внедорожники и автомобили бизнес класса возрастное ограничение не менее 30
-                                лет
-                            </p>
-                            <div class="condition__info-bg">
-                                <img src="../assets/images/sections/condition/2.svg" alt="" />
-                            </div>
-                        </div>
-                        <div class="condition__info-item">
-                            <p class="condition__info-title">Стаж вождения автомобиля</p>
-                            <p class="condition__info-text">
-                                Стаж вождения человека, который будет пользоваться прокатом должен составлять
-                                не менее 3 лет
-                            </p>
-                            <div class="condition__info-bg">
-                                <img src="../assets/images/sections/condition/3.svg" alt="" />
-                            </div>
-                        </div>
+                    <div class="swiper condition-info-swiper">
+                        <ul class="swiper-wrapper condition__info-block">
+                            <li class="swiper-slide">
+                                <div class="condition__info-item">
+                                    <figure class="condition__info-item-icon _mobile-only">
+                                        <img src="../assets/images/sections/condition/item-icon.svg" alt="" />
+                                    </figure>
+
+                                    <div class="condition__info-item-text-content">
+                                        <p class="condition__info-title">
+                                            Возраст для аренды легковых автомобилей
+                                        </p>
+                                        <p class="condition__info-text">
+                                            Возраст должен составлять не менее 25 лет для аренды легковых
+                                            автомобилей эконом и среднего класса;
+                                        </p>
+                                    </div>
+                                    <div class="condition__info-bg">
+                                        <img src="./assets/images/sections/condition/1.svg" alt="" />
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="condition__info-item">
+                                    <figure class="condition__info-item-icon _mobile-only">
+                                        <img src="../assets/images/sections/condition/item-icon.svg" alt="" />
+                                    </figure>
+
+                                    <div class="condition__info-item-text-content">
+                                        <p class="condition__info-title">Возраст для аренды внедорожников</p>
+                                        <p class="condition__info-text">
+                                            На внедорожники и автомобили бизнес класса возрастное ограничение
+                                            не менее 30 лет
+                                        </p>
+                                    </div>
+                                    <div class="condition__info-bg">
+                                        <img src="./assets/images/sections/condition/2.svg" alt="" />
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="condition__info-item">
+                                    <figure class="condition__info-item-icon _mobile-only">
+                                        <img src="../assets/images/sections/condition/item-icon.svg" alt="" />
+                                    </figure>
+
+                                    <div class="condition__info-item-text-content">
+                                        <p class="condition__info-title">Стаж вождения автомобиля</p>
+                                        <p class="condition__info-text">
+                                            Стаж вождения человека, который будет пользоваться прокатом должен
+                                            составлять не менее 3 лет
+                                        </p>
+                                    </div>
+                                    <div class="condition__info-bg">
+                                        <img src="./assets/images/sections/condition/3.svg" alt="" />
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
+
+                    <div class="condition__pagination sl-pagination sl-pagination_mm _mobile-only">
+                    </div>
+
                     <div class="condition__info-read">
-                        <p>Прочитай про все условия пользования нашими автомобилями</p>
+                        <p class="_desktop-only">Прочитай про все условия пользования нашими автомобилями</p>
+                        <p class="_mobile-only">Прочитай про все условия пользования нашими авто</p>
                         <a href="/" class="btn">
                             <span class="btn__txt">все условия проката</span>
                         </a>
@@ -207,39 +240,27 @@
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
-                                <img src="../assets/images/sections/condition/lexus.png" alt="" />
+                                <img src="../assets/images/sections/condition/subaru.png" alt="" />
                             </div>
-                            <p>LEXUS RX 350</p>
+                            <p>SUBARU FORESTER</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
-                                <img src="../assets/images/sections/condition/suzuki.png" alt="" />
+                                <img src="../assets/images/sections/condition/hyndai.png" alt="" />
                             </div>
-                            <p>SUZUKI JIMNY</p>
+                            <p>HYUNDAI SOLARIS</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
-                                <img src="../assets/images/sections/condition/prado.png" alt="" />
+                                <img src="../assets/images/sections/condition/toyota.png" alt="" />
                             </div>
-                            <p>TLC PRADO 19</p>
+                            <p>TOYOTA FIELDER</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
-                                <img src="../assets/images/sections/condition/lexus.png" alt="" />
+                                <img src="../assets/images/sections/condition/toyota-v2.png" alt="" />
                             </div>
-                            <p>LEXUS RX 350</p>
-                        </a>
-                        <a href="#" class="condition__slider-slide swiper-slide">
-                            <div class="condition__slider-image">
-                                <img src="../assets/images/sections/condition/suzuki.png" alt="" />
-                            </div>
-                            <p>SUZUKI JIMNY</p>
-                        </a>
-                        <a href="#" class="condition__slider-slide swiper-slide">
-                            <div class="condition__slider-image">
-                                <img src="../assets/images/sections/condition/prado.png" alt="" />
-                            </div>
-                            <p>TLC PRADO 19</p>
+                            <p>TOYOTA C-HR</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
@@ -258,9 +279,33 @@
                                 <img src="../assets/images/sections/condition/prado.png" alt="" />
                             </div>
                             <p>TLC PRADO 19</p>
+                        </a>
+                        <a href="#" class="condition__slider-slide swiper-slide">
+                            <div class="condition__slider-image">
+                                <img src="../assets/images/sections/condition/subaru.png" alt="" />
+                            </div>
+                            <p>SUBARU FORESTER</p>
+                        </a>
+                        <a href="#" class="condition__slider-slide swiper-slide">
+                            <div class="condition__slider-image">
+                                <img src="../assets/images/sections/condition/hyndai.png" alt="" />
+                            </div>
+                            <p>HYUNDAI SOLARIS</p>
+                        </a>
+                        <a href="#" class="condition__slider-slide swiper-slide">
+                            <div class="condition__slider-image">
+                                <img src="../assets/images/sections/condition/toyota.png" alt="" />
+                            </div>
+                            <p>TOYOTA FIELDER</p>
+                        </a>
+                        <a href="#" class="condition__slider-slide swiper-slide">
+                            <div class="condition__slider-image">
+                                <img src="../assets/images/sections/condition/toyota-v2.png" alt="" />
+                            </div>
+                            <p>TOYOTA C-HR</p>
                         </a>
                     </div>
-                    <div class="condition__slider-navigation">
+                    <div class="condition__slider-navigation _desktop-only">
                         <button class="icon icon_white condition__slider-prev">
                             <svg
                                 width="22"
@@ -326,6 +371,9 @@
                             </svg>
                         </button>
                     </div>
+                </div>
+
+                <div class="condition__footer-pagination sl-pagination sl-pagination_mm">
                 </div>
             </div>
         </div>

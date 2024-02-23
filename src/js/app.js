@@ -15,6 +15,9 @@ utils.showmore();
 // dynamic dom
 import './libs/dd';
 
+// swiper
+import './libs/sipwer';
+
 // ------------------------------- components -------------------------------
 
 // forms

@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 
 $(document).ready(function () {
@@ -81,16 +81,30 @@ function remToPx(remValue) {
 
 function conditionSlider() {
     new Swiper('.condition__slider', {
-        modules: [Navigation],
-        speed: 800,
+        modules: [Navigation, Pagination],
+        speed: 1200,
         navigation: {
             nextEl: '.condition__slider-next',
             prevEl: '.condition__slider-prev'
         },
         breakpoints: {
+            0: {
+                centeredSlides: true,
+                slidesPerView: 1.9,
+                loop: true,
+                spaceBetween: 0,
+                pagination: {
+                    el: '.condition__footer-pagination',
+                    type: 'bullets',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return `<span class="${className}"></span>`;
+                    }
+                }
+            },
             768: {
                 slidesPerView: 7,
-                spaceBetween: `${remToPx(7.4)}`
+                spaceBetween: `${remToPx(7.35)}`
             }
         }
     });

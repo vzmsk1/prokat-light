@@ -4,7 +4,13 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        padding: 4rem 0 5.3rem;
+        padding: 7rem 0;
+
+        @include small-tablet{
+            flex-direction: column-reverse;
+            padding-top: 15rem;
+            padding-bottom: 2rem;
+        }
     }
     // .author__left
     &__left {
@@ -14,6 +20,13 @@
     &__portrait {
         width: 64.4rem;
         height: 84.5rem;
+
+        @include small-tablet{
+            width: 60.4rem;
+            height: 79.2rem;
+            margin-left: 8rem;
+            margin-top: 12rem;
+        }
 
         img {
             height: 100%;
@@ -28,6 +41,12 @@
         z-index: -1;
         top: -6rem;
         left: 5.5rem;
+
+        @include small-tablet{
+            width: 65rem;
+            top: 7rem;
+            left: 11.5rem;
+        }
     }
     // .author__right
     &__right {
@@ -44,6 +63,11 @@
         gap: 2rem;
 
         margin-bottom: 6rem;
+
+        @include small-tablet{
+            gap: 3.2rem;
+            margin-bottom: 6.4rem;
+        }
     }
     // .author__subtitle
     &__subtitle {
@@ -51,23 +75,41 @@
         line-height: 110%;
         text-transform: uppercase;
         color: $gray;
+
+        @include small-tablet{
+            font-size: 3.2rem;
+        }
     }
     // .author__info
     &__info {
         display: flex;
         align-items: flex-start;
-        gap: 4rem;
+        gap: 5rem;
 
         margin-bottom: 13.3rem;
 
+        @include small-tablet{
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 0;
+        }
+
         li {
             max-width: 38rem;
+
+            @include small-tablet{
+                max-width: 100%;
+            }
         }
 
         p {
             font-size: 1.8rem;
             line-height: 140%;
             color: $gray;
+
+            @include small-tablet{
+                font-size: 3rem;
+            }
 
             span {
                 color: $white;
@@ -76,10 +118,20 @@
                 margin-bottom: 2rem;
             }
         }
+
+        &-btn {
+            @include small-tablet{
+                margin-top: 6rem;
+            }
+        }
     }
     // .author__tag
     &__tag {
         width: 46rem;
         align-self: flex-end;
+
+        @include small-tablet{
+            display: none;
+        }
     }
 }
