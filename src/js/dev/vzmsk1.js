@@ -18,12 +18,27 @@ import { setInnerContent, bodyLock, bodyUnlock, bodyLockStatus } from '../utils/
 
 // --------------------------------------------------------------------------
 
+// media query (mobile)
+const mm = window.matchMedia('(max-width: 768px)');
+
+// locomotive scroll instance
+const locoScroll = new LocomotiveScroll({
+    el: document.querySelector('._smooth-scroll'),
+    smooth: true,
+    multiplier: mm.matches ? 1.1 : 0.6,
+    smoothMobile: true,
+    smartphone: {
+        smooth: true,
+    }
+});
+
 /**
  * hero animation
  */
 const animateHero = () => {
     if (document.querySelector('.hero')) {
         bodyLock()
+        locoScroll.stop()
 
         const tl = gsap.timeline();
 
@@ -68,6 +83,7 @@ const animateHero = () => {
                         document.querySelector('header').classList.add('_is-visible');
                         setTimeout(() => {
                             bodyUnlock()
+                            locoScroll.start()
                         }, 2000);
                     }
                 },
@@ -112,11 +128,16 @@ const animateHero = () => {
 };
 
 // loader
-if (document.querySelector('.loader') && bodyLockStatus) {
+if (document.querySelector('.loader')) {
     const percentVal = document.getElementById('percentVal');
     let num = 0
     const imgs = document.images
     const len = imgs.length
+
+    locoScroll.stop()
+    setTimeout(() => {
+        bodyLock()
+    }, 0)
 
     const imgLoad = (img) => {
 
@@ -127,7 +148,6 @@ if (document.querySelector('.loader') && bodyLockStatus) {
                 imgLoad(document.images[num]);	}
             else{
                 percentVal.textContent= "100%";
-                    bodyUnlock();
                     document.documentElement.classList.add('_is-loaded');
 
                     setTimeout(() => {
@@ -138,7 +158,6 @@ if (document.querySelector('.loader') && bodyLockStatus) {
         },100)
 
         }
-
         imgLoad(document.images[num]);
 }
 
@@ -150,24 +169,6 @@ gsap.defaults({
 });
 
 window.addEventListener('load', function () {
-    // media query (mobile)
-    const mm = window.matchMedia('(max-width: 768px)');
-
-
-    // locomotive scroll instance
-    const locoScroll = new LocomotiveScroll({
-        el: document.querySelector('._smooth-scroll'),
-        smooth: true,
-        multiplier: mm.matches ? 0.9 : 0.6,
-        smoothMobile: true,
-        smartphone: {
-            smooth: true,
-        }
-    });
-    setTimeout(() => {
-        locoScroll.update()
-    }, 5000);
-
 
     /**
      * initializes hamburger menu
@@ -543,8 +544,6 @@ window.addEventListener('load', function () {
                     const activeIndex = curTarget === sections.length ? sections.length - 1 : curTarget;
                     const prevIndex = activeIndex - 1 > 0 ? activeIndex - 1 : 0;
 
-                    console.log(sections, activeIndex)
-
                     sections.forEach((child, i) => {
                         child.classList.remove('_is-prev', '_is-next', '_is-visible');
 
@@ -616,8 +615,10 @@ window.addEventListener('load', function () {
                 if (document.querySelector('.choose'))
                     document.querySelector('.choose').classList.add('_is-passed');
 
-                bodyUnlock();
-                locoScroll.start();
+                if (document.documentElement.classList.contains('_is-loaded')) {
+                    bodyUnlock();
+                    locoScroll.start();
+                }
             });
             gsap.matchMedia().revert();
         }
