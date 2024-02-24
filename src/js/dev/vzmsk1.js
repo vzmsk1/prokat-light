@@ -43,9 +43,10 @@ const animateHero = () => {
                 { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)' },
                 {
                     clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0 100%)',
-                    duration: 2.5
+                    duration: 3,
+                    delay: 0.5,
                 },
-                0.6
+                0
             )
             .fromTo(
                 '.hero__content',
@@ -115,20 +116,40 @@ if (document.querySelector('.loader') && bodyLockStatus) {
     const percentVal = document.getElementById('percentVal');
     let percent = 0;
 
+    const imgs = document.images
+    const len = imgs.length
+    let counter = 0;
+
+    const incrementCounter = () => {
+        counter++;
+        if ( counter === len ) {
+            document.onreadystatechange = function() {
+                if (document.readyState === "complete") {
+                    bodyUnlock();
+                    document.documentElement.classList.add('_is-loaded');
+
+                    setTimeout(() => {
+                        document.querySelector('.loader').remove();
+                    }, 600);
+
+                    animateHero();
+                }
+            }
+        }
+    }
+
+    [].forEach.call( imgs, function( img ) {
+        if(img.complete)
+            incrementCounter();
+        else
+            img.addEventListener( 'load', incrementCounter, false );
+    } );
+
     const incrementProgress = () => {
         percent += 1;
         percentVal.innerText = `${percent}`;
         if (percent < 100) {
             window.requestAnimationFrame(incrementProgress);
-        } else {
-            document.documentElement.classList.add('_is-loaded');
-            bodyUnlock();
-
-            setTimeout(() => {
-                document.querySelector('.loader').remove();
-            }, 600);
-
-            animateHero();
         }
     };
     bodyLock();
@@ -152,10 +173,14 @@ window.addEventListener('load', function () {
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector('._smooth-scroll'),
         smooth: true,
-        multiplier: 1
+        multiplier: mm.matches ? 0.9 : 0.6,
+        smoothMobile: true,
+        smartphone: {
+            smooth: true,
+        }
     });
     setTimeout(() => {
-        locoScroll.update();
+        locoScroll.update()
     }, 5000);
 
 
@@ -245,7 +270,7 @@ window.addEventListener('load', function () {
 
         setTimeout(() => {
             setInnerContent(activeSlide.dataset.heading, document.getElementById('chooseItemHeading'));
-        }, 400);
+        }, mm.matches ? 600 : 400);
     };
 
     /**
@@ -300,6 +325,7 @@ window.addEventListener('load', function () {
                 observer: true,
                 slideToClickedSlide: true,
                 spaceBetween: 30,
+                speed: 600,
                 navigation: {
                     nextEl: '.choose__sl-arr_next',
                     prevEl: '.choose__sl-arr_prev'
@@ -320,15 +346,16 @@ window.addEventListener('load', function () {
                     },
                     slideChangeTransitionStart: (swiper) => {
                         setSlideContent(swiper);
+
+                        swiper.el.parentElement.classList.add('_is-animating')
+
+                        setTimeout(() => {
+                            swiper.el.parentElement.classList.remove('_is-animating');
+                            swiper.animating = false;
+                        }, 600)
+
                         if (!mm.matches) {
                             setSlidesClasses(swiper);
-                            swiper.el.parentElement.classList.add('_is-animating');
-
-                            setTimeout(() => {
-                                swiper.el.parentElement.classList.remove('_is-animating');
-                                swiper.animating = false;
-                            }, 600);
-
                             swiper.el.querySelector('.swiper-wrapper').style.removeProperty('transform');
                         }
                     },

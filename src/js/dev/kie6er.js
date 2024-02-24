@@ -27,7 +27,8 @@ async function initMap() {
         location: {
             center: [37.588144, 55.733842],
             zoom: 12,
-        }
+        },
+        behaviors: ['drag']
     });
     map.addChild(new YMapDefaultSchemeLayer());
     map.addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }));

@@ -173,18 +173,18 @@
             }
         }
 
+
+        &._is-animating {
+            .choose__heading-wrap {
+                opacity: 0;
+            }
+        }
+
         @media (min-width: 48em) {
             margin-bottom: 0;
             padding-top: 14rem;
             padding-left: 5rem;
             justify-self: center;
-
-
-            &._is-animating {
-                .choose__heading-wrap {
-                    opacity: 0;
-                }
-            }
         }
     }
 
@@ -437,6 +437,7 @@
             align-self: center;
             max-width: none;
             transform: translateY(-3rem);
+            transition: opacity 0.6s ease;
         }
     }
 }
