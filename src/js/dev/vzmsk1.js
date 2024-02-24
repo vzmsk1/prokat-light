@@ -114,47 +114,32 @@ const animateHero = () => {
 // loader
 if (document.querySelector('.loader') && bodyLockStatus) {
     const percentVal = document.getElementById('percentVal');
-    let percent = 0;
-
+    let num = 0
     const imgs = document.images
     const len = imgs.length
-    let counter = 0;
 
-    const incrementCounter = () => {
-        counter++;
-        if ( counter === len ) {
-            document.onreadystatechange = function() {
-                if (document.readyState === "complete") {
+    const imgLoad = (img) => {
+
+        setTimeout (function(){
+            percentVal.textContent=  Math.ceil((num)/(len)*100)+"%";
+            num ++;
+            if(num < len){
+                imgLoad(document.images[num]);	}
+            else{
+                percentVal.textContent= "100%";
                     bodyUnlock();
                     document.documentElement.classList.add('_is-loaded');
 
                     setTimeout(() => {
-                        document.querySelector('.loader').remove();
-                    }, 600);
+                        document.querySelector('.loader').remove();}, 600);
 
                     animateHero();
-                }
             }
+        },100)
+
         }
-    }
 
-    [].forEach.call( imgs, function( img ) {
-        if(img.complete)
-            incrementCounter();
-        else
-            img.addEventListener( 'load', incrementCounter, false );
-    } );
-
-    const incrementProgress = () => {
-        percent += 1;
-        percentVal.innerText = `${percent}`;
-        if (percent < 100) {
-            window.requestAnimationFrame(incrementProgress);
-        }
-    };
-    bodyLock();
-
-    window.requestAnimationFrame(incrementProgress);
+        imgLoad(document.images[num]);
 }
 
 // gsap plugins & defaults
