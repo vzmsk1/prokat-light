@@ -170,6 +170,11 @@ gsap.defaults({
 
 window.addEventListener('load', function () {
 
+    // fix footer cut off
+    setTimeout(() => {
+        locoScroll.update()
+    }, 5000)
+
     /**
      * initializes hamburger menu
      */

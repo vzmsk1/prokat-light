@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4601fd0-39e0-436c-bd29-f24c106a33b0" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/fonts/DrukTextWideCyr_medium.woff2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/fonts/DrukWide_medium.woff2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/fonts/Gilroy_bold.woff" beforeDir="false" />
@@ -73,8 +72,6 @@
       <change beforePath="$PROJECT_DIR$/dist/home.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/dev/kie6er.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/kie6er.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +157,7 @@
       <workItem from="1708635482684" duration="124000" />
       <workItem from="1708635625823" duration="1452000" />
       <workItem from="1708671131632" duration="3947000" />
-      <workItem from="1708787353779" duration="5777000" />
+      <workItem from="1708787353779" duration="5982000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
