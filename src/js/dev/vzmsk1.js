@@ -35,7 +35,7 @@ const animateHero = () => {
             {
                 translateY: 0,
                 delay: 0.5,
-                duration: 3
+                duration: 2.5
             }
         )
             .fromTo(
@@ -43,7 +43,7 @@ const animateHero = () => {
                 { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)' },
                 {
                     clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0 100%)',
-                    duration: 3
+                    duration: 2.5
                 },
                 0.6
             )
@@ -52,9 +52,9 @@ const animateHero = () => {
                 { translateY: '100%' },
                 {
                     translateY: 0,
-                    duration: 2
+                    duration: 1.8
                 },
-                1.2
+                0.8
             )
             .fromTo(
                 '.hero__content',
@@ -70,7 +70,7 @@ const animateHero = () => {
                         }, 2000);
                     }
                 },
-                2
+                1.5
             )
             .fromTo(
                 '.hero__list, .hero__anchor',
@@ -81,11 +81,12 @@ const animateHero = () => {
                 {
                     scale: 1
                 },
-                2
+                1.5
             )
             .fromTo(
                 '.hero__car',
                 {
+                    duration: 0.5,
                     opacity: 0,
                     scale: 0.2,
                     translateY: '20rem',
@@ -97,14 +98,14 @@ const animateHero = () => {
                     translateY: 0,
                     scale: 1
                 },
-                2
+                1.5
             )
             .to(
                 '.choose',
                 {
                     '--groundOpacity': 1
                 },
-                3
+                1.5
             );
     }
 };
@@ -151,7 +152,7 @@ window.addEventListener('load', function () {
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector('._smooth-scroll'),
         smooth: true,
-        multiplier: 1.2
+        multiplier: 1
     });
     setTimeout(() => {
         locoScroll.update();
@@ -244,7 +245,7 @@ window.addEventListener('load', function () {
 
         setTimeout(() => {
             setInnerContent(activeSlide.dataset.heading, document.getElementById('chooseItemHeading'));
-        }, 300);
+        }, 400);
     };
 
     /**
@@ -326,7 +327,7 @@ window.addEventListener('load', function () {
                             setTimeout(() => {
                                 swiper.el.parentElement.classList.remove('_is-animating');
                                 swiper.animating = false;
-                            }, 500);
+                            }, 600);
 
                             swiper.el.querySelector('.swiper-wrapper').style.removeProperty('transform');
                         }
@@ -346,7 +347,7 @@ window.addEventListener('load', function () {
                                 bodyUnlock();
                                 locoScroll.start();
                                 swiper.el.closest('section').classList.add('_is-passed');
-                            }, 500);
+                            }, 600);
                         }
                     }
                 },
@@ -427,7 +428,7 @@ window.addEventListener('load', function () {
                         .fromTo(
                             '.choose__slide.swiper-slide-active .slide-choose__image, .choose__pagination',
                             { opacity: 0 },
-                            { opacity: 1 }
+                            { opacity: 1},
                         )
                         .to('.choose', { '--whiteGradientOpacity': 1 }, 0)
                         .fromTo(
@@ -441,18 +442,18 @@ window.addEventListener('load', function () {
                                 opacity: 1,
                                 translateY: 0
                             },
-                            2
+                            1.2
                         )
                         .to(
                             '.choose__slide.swiper-slide-active .slide-choose__image',
                             { scale: 1, translateY: 0 },
-                            2
+                            1.2
                         )
                         .fromTo(
                             '.choose__sl-navigation, .choose__btn, .choose__list',
                             { opacity: 0 },
                             { opacity: 1, onStart: () => handleObserver() },
-                            3
+                            2
                         );
                 }
             });
@@ -491,13 +492,13 @@ window.addEventListener('load', function () {
                                 start: 0.13, // 0.13
                                 end: 0.29 // 0.87
                             },
-                            duration: 1.1,
-                            delay: 0.9
+                            duration: 1.3,
+                            delay: 0.85
                         });
 
                         gsap.from('#speedometerScore', {
                             textContent: 0,
-                            duration: 1.1,
+                            duration: 0.62,
                             delay: 0.8,
                             snap: { textContent: 1 }
                         });
@@ -513,9 +514,11 @@ window.addEventListener('load', function () {
      */
     const init3DScroll = () => {
         const section = document.querySelector('.three-scroll');
-        const children = Array.from(section.children);
 
         if (section) {
+            const children = Array.from(section.children);
+            const sections = children.slice(0, -1);
+
             gsap.matchMedia().add('(min-width: 768px)', () => {
                 ScrollTrigger.refresh();
                 ScrollTrigger.update();
@@ -524,10 +527,13 @@ window.addEventListener('load', function () {
                     : null;
 
                 const setProgressClasses = (_this) => {
-                    const activeIndex = children.indexOf(_this.targets()[0]);
+                    const curTarget = children.indexOf(_this.targets()[0])
+                    const activeIndex = curTarget === sections.length ? sections.length - 1 : curTarget;
                     const prevIndex = activeIndex - 1 > 0 ? activeIndex - 1 : 0;
 
-                    children.forEach((child, i) => {
+                    console.log(sections, activeIndex)
+
+                    sections.forEach((child, i) => {
                         child.classList.remove('_is-prev', '_is-next', '_is-visible');
 
                         if (i < activeIndex) {
@@ -537,7 +543,7 @@ window.addEventListener('load', function () {
                         }
                     });
 
-                    _this.targets()[0].classList.add('_is-visible');
+                    sections[activeIndex].classList.add('_is-visible');
                 };
 
                 const tl = gsap
@@ -555,7 +561,6 @@ window.addEventListener('load', function () {
                             each: 6,
                             onStart() {
                                 const activeIndex = children.indexOf(this.targets()[0]);
-
                                 if (
                                     activeIndex === 1 &&
                                     !document.querySelector('.speedometer._is-complete')

@@ -55,7 +55,7 @@
     }
 
     &__icon-inner {
-        width: 24.8rem;
+        width: 20.7rem;
         transform-origin: center;
         animation: wheelRotate 1.6s infinite;
 
@@ -68,8 +68,7 @@
     }
 
     &__progress {
-        span {
-        }
+        user-select: none;
     }
 }
 

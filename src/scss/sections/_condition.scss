@@ -3,8 +3,6 @@
         overflow: hidden;
     }
 
-    &
-
     &__pagination {
         @include small-tablet{
             justify-content: center;
@@ -224,10 +222,14 @@
                 .condition__slider-image {
                     transform: scale(1.1);
                 }
+                .condition__slider-heading {
+                    color: $orange;
+                }
             }
 
-            p {
+            .condition__slider-heading {
                 white-space: nowrap;
+                transition: color 0.3s ease;
 
                 @include small-tablet{
                     font-weight: 700;
