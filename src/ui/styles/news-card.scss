@@ -1,0 +1,82 @@
+.news-card {
+    a {
+        background: $bgColor;
+        position: relative;
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: 0.3s box-shadow ease;
+
+        &:hover {
+            box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &__image {
+        height: 37.4rem;
+        position: relative;
+
+        &::after {
+            @include pseudo {
+                inset: 0;
+                bottom: -0.1rem;
+                right: -0.1rem;
+                background: linear-gradient(180deg, rgba(25, 28, 32, 0) 36.37%, #191c20 85.18%);
+            }
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        padding: 0 0.7rem 0 2rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        margin-top: -9rem;
+        height: 100%;
+    }
+
+    &__category {
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 110%;
+        text-transform: uppercase;
+        color: $orange;
+        display: block;
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 3.2rem;
+        line-height: 140%;
+        margin-bottom: 2rem;
+        display: block;
+        font-family: 'Druk Wide Cyr';
+    }
+
+    &__description {
+        font-size: 1.8rem;
+        line-height: 140%;
+        color: $gray;
+
+        &:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+
+        &:last-of-type {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__link {
+        margin-top: auto;
+        width: fit-content;
+    }
+}

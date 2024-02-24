@@ -1,5 +1,7 @@
 import '../scss/style.scss';
 
+window.$ = window.jQuery = require('jquery');
+
 // ---------------------------------- utils ---------------------------------
 
 import * as utils from './utils/utils.js';

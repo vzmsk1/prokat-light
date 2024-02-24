@@ -1,0 +1,45 @@
+.promotion {
+    margin-bottom: 24rem;
+
+    &__title {
+        margin-bottom: 8rem;
+    }
+
+    &__poster {
+        position: relative;
+        padding: 3.6rem 3.6rem 3.6rem 3.9rem;
+
+        &-info {
+            max-width: 63.4rem;
+        }
+
+        &-image {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+
+        &-title {
+            font-weight: 500;
+            font-size: 3.2rem;
+            line-height: 140%;
+            text-transform: uppercase;
+            margin-bottom: 3.6rem;
+        }
+
+        &-description {
+            font-size: 1.8rem;
+            line-height: 140%;
+            color: $gray;
+            margin-bottom: 2.4rem;
+            max-width: 56.3rem;
+        }
+
+        &-condition {
+            font-size: 1.8rem;
+            line-height: 140%;
+            margin-bottom: 6rem;
+            display: block;
+        }
+    }
+}

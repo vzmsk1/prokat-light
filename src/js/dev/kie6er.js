@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import $ from 'jquery';
 import 'swiper/css';
 
 $(document).ready(function () {

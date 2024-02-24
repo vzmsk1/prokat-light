@@ -53,6 +53,12 @@ section {
 .wrapper {
     margin: 0 auto;
     max-width: 1920px;
+
+    &:not(.home-page) {
+        main {
+            padding-top: 20rem;
+        }
+    }
 }
 
 .home-page__3d-scroll {
