@@ -1,0 +1,52 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    margin-bottom: 6.5rem;
+  }
+
+  &__fields {
+    margin-bottom: 6.8rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+
+    .textarea textarea {
+      height: 9.2rem;
+    }
+
+    @media (max-width: 48em) {
+      margin-bottom: 4rem;
+      row-gap: 6.4rem;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 48em) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    margin-bottom: 6.4rem;
+    max-width: 51rem;
+    color: $gray;
+
+    @media (min-width: 48em) {
+      margin-bottom: 0;
+      max-width: 24.6rem;
+    }
+  }
+
+  &__btn {
+    @media (max-width: 48em) {
+      width: 100%;
+    }
+  }
+}

@@ -1183,23 +1183,24 @@
             <div class="contacts__map" id="contacts-map"></div>
             <div class="contacts__wrapper">
                 <article class="contact-form contacts__form">
-                    <form class="contact-form__inner">
+                    <form data-dev="" action="#" class="contact-form__inner">
                         <h3 class="contact-form__title h h_3">Оставьте заявку</h3>
                         <div class="contact-form__wrapper">
                             <div class="input">
                                 <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="фио" class="input__field">
-                                <span class="input__hint txt txt_14">Введите корректный ФИО</span>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                             <div class="input">
-                                <input data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
-                                <span class="input__hint txt txt_14">Введите корректный номер</span>
+                                <input data-tel-mask="" data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                             <div class="input">
                                 <input data-validate="" data-required="" autocomplete="off" type="email" name="form[]" placeholder="e-mail" class="input__field">
-                                <span class="input__hint txt txt_14">Введите корректный e-mail</span>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
-                            <div class="textarea">
-                                <textarea name="form[]" autocomplete="off" placeholder="Ваше сообщение" class="input__textarea"></textarea>
+                            <div class="input textarea">
+                                <textarea data-validate="" data-required="" name="form[]" autocomplete="off" placeholder="Ваше сообщение" class="input__textarea"></textarea>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                         </div>
                         <div class="contact-form__footer">
@@ -1292,10 +1293,9 @@
                     </ul>
                 </div>
                 <div class="footer__main-subscription">
-                    <form action="/">
+                    <form data-dev="" action="#">
                         <div class="input">
-                            <input data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
-                            <span class="input__hint txt txt_14">Введите корректный номер</span>
+                            <input data-tel-mask="" data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
                         </div>
                         <button type="submit" class="btn">
                             <span class="btn__txt">Отправить заявку</span>
