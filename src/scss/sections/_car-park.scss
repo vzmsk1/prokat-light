@@ -1,0 +1,71 @@
+.car-park {
+  padding-top: 22.4rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__head {
+    margin-bottom: 8rem;
+  }
+
+  &__heading {
+    &.h {
+      letter-spacing: 0.18rem;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content-head {
+    margin-bottom: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+  }
+
+  &__sort {
+    display: flex;
+    column-gap: 2rem;
+
+    .dropdown {
+      flex: 0 0 53.4rem;
+      width: 53.4rem;
+    }
+  }
+
+  &__filters-btn {
+    flex: 0 0 10.7rem;
+    width: 10.7rem;
+    height: 10.7rem;
+
+    svg {
+      flex: 0 0 3.2rem;
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__items {
+    margin-bottom: 6rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+    row-gap: 10rem;
+  }
+
+  &__showmore-btn {
+    align-self: center;
+  }
+}

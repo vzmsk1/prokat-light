@@ -148,12 +148,14 @@ if (document.querySelector('.loader')) {
                 imgLoad(document.images[num]);	}
             else{
                 percentVal.textContent= "100%";
-                    document.documentElement.classList.add('_is-loaded');
 
-                    setTimeout(() => {
-                        document.querySelector('.loader').remove();}, 600);
+                        document.documentElement.classList.add('_is-loaded');
 
-                    animateHero();
+                        setTimeout(() => {
+                            document.querySelector('.loader').remove();
+                        }, 600);
+
+                        animateHero();
             }
         },100)
 
