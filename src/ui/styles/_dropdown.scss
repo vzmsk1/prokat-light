@@ -23,6 +23,10 @@
     .simplebar-track.simplebar-vertical {
       width: 0.2rem;
       background-color: rgba(194, 194, 194, 0.25);
+
+      @media (max-width: 48em) {
+        width: 0.4rem;
+      }
     }
     .simplebar-scrollbar {
       background-color: $orange;
@@ -33,6 +37,10 @@
 
     &__title {
       padding-right: 0.7rem;
+
+      @media (max-width: 48em) {
+        padding-right: 1.6rem;
+      }
     }
 
     &__value {
@@ -42,6 +50,11 @@
           padding-left: 0.5rem;
           font-size: 2rem;
           text-transform: uppercase;
+
+          @media (max-width: 48em) {
+            padding-left: 0;
+            font-size: 3rem;
+          }
         }
       }
     }
@@ -70,15 +83,31 @@
         background-repeat: no-repeat;
         transition: transform 0.3s ease;
       }
+
+      @media (max-width: 48em) {
+        padding-bottom: 3.2rem;
+
+        &::after {
+          flex: 0 0 0 3.2rem;
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+      }
     }
 
     &__options {
       position: absolute;
+      z-index: 2;
       top: calc(100% + 1.2rem);
       left: 0;
       padding: 2rem;
       width: 100%;
       background-color: rgba(36, 39, 42, 1);
+
+      @media (max-width: 48em) {
+        top: calc(100% + 1.6rem);
+        padding: 3.2rem;
+      }
     }
 
     &__option {
@@ -94,6 +123,10 @@
 
       &:not(&:last-child) {
         margin-bottom: 1.6rem;
+
+        @media (max-width: 48em) {
+          margin-bottom: 2.2rem;
+        }
       }
     }
   }

@@ -1,6 +1,10 @@
 .car-park {
   padding-top: 22.4rem;
 
+  @media (max-width: 48em) {
+    padding-top: 23rem;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -8,6 +12,7 @@
 
   &__head {
     margin-bottom: 8rem;
+
   }
 
   &__heading {
@@ -22,21 +27,37 @@
   }
 
   &__content-head {
-    margin-bottom: 8rem;
+    margin-bottom: 10.4rem;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    column-gap: 2rem;
+    flex-direction: column;
+
+    @media (min-width: 48em) {
+      margin-bottom: 8rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
   }
 
   &__sort {
     display: flex;
-    column-gap: 2rem;
+    gap: 2rem;
 
     .dropdown {
       flex: 0 0 53.4rem;
       width: 53.4rem;
+    }
+
+    @media (max-width: 48em) {
+      flex-direction: column;
+      gap: 4rem;
+
+      .dropdown {
+        flex: 1 1 auto;
+        width: 100%;
+      }
     }
   }
 
@@ -49,6 +70,22 @@
       flex: 0 0 3.2rem;
       width: 3.2rem;
       height: 3.2rem;
+    }
+
+    @media (max-width: 48em) {
+      position: fixed;
+      z-index: 10;
+      right: 2rem;
+      bottom: 4rem;
+      flex: 0 0 12.8rem;
+      width: 12.8rem;
+      height: 12.8rem;
+
+      svg {
+        flex: 0 0 5.2rem;
+        width: 5.2rem;
+        height: 5.2rem;
+      }
     }
   }
 
@@ -63,6 +100,13 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2rem;
     row-gap: 10rem;
+
+    @media (max-width: 48em) {
+      margin-bottom: 8rem;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3.2rem;
+      row-gap: 6.4rem;
+    }
   }
 
   &__showmore-btn {
