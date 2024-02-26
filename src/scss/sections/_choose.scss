@@ -1,5 +1,7 @@
 .choose {
     position: relative;
+    padding-top: 0;
+    margin-bottom: 29rem;
     --groundOpacity: 0;
     --whiteGradientOpacity: 0;
 
@@ -16,14 +18,13 @@
         background-repeat: no-repeat;
         opacity: var(--groundOpacity);
 
-
         @media (max-width: 48em) {
-          top: -84.2rem;
+            top: -84.2rem;
         }
     }
 
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         z-index: 6;
         top: -5.5rem;
@@ -39,11 +40,8 @@
         }
     }
 
-
-    @media (max-width: 48em) {
-        margin-bottom: 29rem;
-    }
     @media (min-width: 48em) {
+        margin-bottom: 0rem;
         padding-top: 22rem;
     }
 
@@ -76,10 +74,12 @@
     &__text {
         margin-bottom: 17.3rem;
         max-width: 38rem;
+        min-height: 8.5rem;
 
         @media (max-width: 48em) {
             margin-bottom: 7.5rem;
             max-width: 62rem;
+            min-height: auto;
         }
     }
 
@@ -135,6 +135,20 @@
         min-width: 0;
         width: 100%;
 
+        ._is-passed & {
+            &:not(&._is-animating) {
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &._is-animating {
+            &::before {
+                opacity: 0;
+            }
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -147,6 +161,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             opacity: var(--whiteGradientOpacity);
+            transition: opacity 0.4s ease;
 
             @media (max-width: 48em) {
                 top: -14rem;
@@ -158,25 +173,18 @@
             }
         }
 
+
+        &._is-animating {
+            .choose__heading-wrap {
+                opacity: 0;
+            }
+        }
+
         @media (min-width: 48em) {
             margin-bottom: 0;
             padding-top: 14rem;
             padding-left: 5rem;
             justify-self: center;
-
-            &:not(&._prev-slide) {
-                &._is-animating {
-                    .choose__heading-wrap {
-                        opacity: 0;
-                    }
-                }
-            }
-
-            &._prev-slide {
-                &::before {
-                    opacity: 1;
-                }
-            }
         }
     }
 
@@ -221,7 +229,9 @@
                 height: 100%;
                 opacity: 0;
                 pointer-events: none;
-                transition: transform 0.5s ease, opacity 0.3s ease;
+                transition:
+                    transform 0.6s ease,
+                    opacity 0.3s ease;
 
                 &:not(&.swiper-slide-prev, &.swiper-slide-active, &.swiper-slide-next) {
                     opacity: 0;
@@ -232,18 +242,25 @@
                     opacity: 1;
                     transform: scale(1);
 
-                    &:not(._prev-slide &) {
                         transition-delay: 0.2s;
+
+                    ._prev-slide & {
+                        transition: transform 0.6s ease 0.3s, opacity 0.3s ease;
                     }
+
                 }
 
                 &._is-prev {
                     transform: scale(0.4);
                     opacity: 0;
-                    transition: opacity 0.3s ease, transform 0.5s ease;
+                    transition:
+                        opacity 0.3s ease,
+                        transform 0.6s ease;
 
                     &:not(._prev-slide &) {
-                        transition: opacity 0.3s ease 1s, transform 0.5s ease;
+                        transition:
+                            opacity 0.3s ease 1s,
+                            transform 0.6s ease;
                     }
                     ._prev-slide & {
                         display: none;
@@ -254,6 +271,9 @@
                     transform: scale(0.33) translate(199rem, 2rem);
                     pointer-events: all;
                     cursor: pointer;
+                    transition:
+                            transform 0.6s ease,
+                            opacity 0.3s ease;
 
                     &.swiper-slide-next {
                         z-index: 2;
@@ -330,7 +350,7 @@
                     }
                     svg path {
                         fill: none;
-                        stroke: $white;
+                        stroke: $orange;
                     }
                 }
             }
@@ -397,7 +417,7 @@
         user-select: none;
 
         @media (min-width: 48em) {
-            font-size: 7rem;
+            font-size: 6rem;
         }
     }
 
@@ -407,19 +427,17 @@
         position: relative;
         z-index: 2;
         margin-bottom: 12.4rem;
-        max-width: 80rem;
-        transform: translate(-1rem, 0.3rem);
-        transition: opacity 0.3s ease;
-
-        ._prev-slide & {
-            opacity: 1;
-        }
+        width: 90rem;
+        transform: translate(-7rem, 0.3rem);
+        text-align: center;
+        transition: opacity 0.4s ease;
 
         @media (max-width: 48em) {
             margin-bottom: 3.4rem;
             align-self: center;
             max-width: none;
             transform: translateY(-3rem);
+            transition: opacity 0.6s ease;
         }
     }
 }

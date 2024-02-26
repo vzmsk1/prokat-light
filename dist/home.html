@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8" />
-    <script src="https://api-maps.yandex.ru/v3/?apikey=24d298f1-151c-4481-9e4a-235c4db16ee9&lang=ru_RU"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Главная</title>
-<script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
-<body>
-<div class="wrapper home-page">
-    <header class="header">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://api-maps.yandex.ru/v3/?apikey=24d298f1-151c-4481-9e4a-235c4db16ee9&lang=ru_RU"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+        <title>Главная</title>
+    <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+    <body>
+        <div class="wrapper home-page _smooth-scroll">
+            <header class="header">
     <div class="header__container container">
         <button type="button" class="header__hamburger icon">
             <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,6 +22,16 @@
                 <line x1="0.75" y1="13.25" x2="23.25" y2="13.25" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="square"></line>
             </svg>
         </button>
+        <button type="button" class="header__hamburger header__hamburger_close icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.1998 0.799805L0.799805 15.1998" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M0.799805 0.799805L15.1998 15.1998" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.1998 0.799805L0.799805 15.1998" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M0.799805 0.799805L15.1998 15.1998" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </button>
         <nav class="header__nav">
             <a href="#" class="header__link txt">Парк автомобилей</a>
             <a href="#" class="header__link txt">Условия</a>
@@ -32,8 +42,8 @@
             <a href="#" class="header__link txt">Контакты</a>
             <div class="header__select-lang select-lang">
                 <select data-show-selection="">
-                    <option value="1">ru</option>
-                    <option value="2" selected="">eng</option>
+                    <option value="1" selected="">ru</option>
+                    <option value="2">eng</option>
                 </select>
             </div>
             <a href="tel:74242490725" class="header__tel"><span class="_desktop-only">+7 (4242) 490-725</span><span class="header__tel-icon icon">
@@ -45,10 +55,43 @@
                     </svg> </span></a>
         </div>
     </div>
+    <div class="header__menu menu-header">
+        <nav class="menu-header__nav">
+            <a href="#" class="menu-header__nav-link h h_3">Парк автомобилей</a>
+            <a href="#" class="menu-header__nav-link h h_3">Условия</a>
+            <a href="#" class="menu-header__nav-link h h_3">Акции</a>
+            <a href="#" class="menu-header__nav-link h h_3">Контакты</a>
+        </nav>
+        <ul class="menu-header__contacts">
+            <li class="menu-header__icon-wrap">
+                <a href="#" target="_blank" class="menu-header__icon icon icon_white">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.8932 17C4.05996 17 0.162399 12.1201 0 4H3.42286C3.53529 9.95996 6.05871 12.4845 8.05747 13.005V4H11.2805V9.14014C13.2542 8.91892 15.3279 6.57658 16.0275 4H19.2505C18.9869 5.33629 18.4614 6.60153 17.7069 7.71661C16.9524 8.83168 15.9852 9.77259 14.8657 10.4805C16.1153 11.1273 17.2191 12.0428 18.1041 13.1666C18.9891 14.2904 19.6353 15.597 20 17H16.4522C16.1248 15.7814 15.4594 14.6905 14.5394 13.8641C13.6194 13.0376 12.4858 12.5125 11.2805 12.3544V17H10.8932V17Z" fill="#FF6C01"></path>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.8932 17C4.05996 17 0.162399 12.1201 0 4H3.42286C3.53529 9.95996 6.05871 12.4845 8.05747 13.005V4H11.2805V9.14014C13.2542 8.91892 15.3279 6.57658 16.0275 4H19.2505C18.9869 5.33629 18.4614 6.60153 17.7069 7.71661C16.9524 8.83168 15.9852 9.77259 14.8657 10.4805C16.1153 11.1273 17.2191 12.0428 18.1041 13.1666C18.9891 14.2904 19.6353 15.597 20 17H16.4522C16.1248 15.7814 15.4594 14.6905 14.5394 13.8641C13.6194 13.0376 12.4858 12.5125 11.2805 12.3544V17H10.8932V17Z" fill="#FF6C01"></path>
+                    </svg>
+                </a>
+            </li>
+            <li class="menu-header__icon-wrap">
+                <a href="#" target="_blank" class="menu-header__icon icon icon_white">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.0732 2.91667C15.1916 1.04167 12.6829 0 10.0348 0C4.52961 0 0.0696853 4.44444 0.0696853 9.93056C0.0696853 11.6667 0.557491 13.4028 1.39373 14.8611L0 20L5.29617 18.6111C6.75958 19.375 8.36237 19.7917 10.0348 19.7917C15.5401 19.7917 20 15.3472 20 9.86111C19.9303 7.29167 18.9547 4.79167 17.0732 2.91667ZM14.8432 13.4722C14.6341 14.0278 13.6585 14.5833 13.1707 14.6528C12.7526 14.7222 12.1951 14.7222 11.6376 14.5833C11.2892 14.4444 10.8014 14.3056 10.2439 14.0278C7.73519 12.9861 6.13241 10.4861 5.99303 10.2778C5.85366 10.1389 4.94774 8.95833 4.94774 7.70833C4.94774 6.45833 5.57491 5.90278 5.78397 5.625C5.99303 5.34722 6.27178 5.34722 6.48084 5.34722C6.62021 5.34722 6.82927 5.34722 6.96864 5.34722C7.10801 5.34722 7.31707 5.27778 7.52613 5.76389C7.73519 6.25 8.22299 7.5 8.29268 7.56944C8.36237 7.70833 8.36237 7.84722 8.29268 7.98611C8.22299 8.125 8.15331 8.26389 8.01393 8.40278C7.87456 8.54167 7.73519 8.75 7.6655 8.81944C7.52613 8.95833 7.38676 9.09722 7.52613 9.30555C7.6655 9.58333 8.15331 10.3472 8.91986 11.0417C9.89547 11.875 10.662 12.1528 10.9408 12.2917C11.2195 12.4306 11.3589 12.3611 11.4983 12.2222C11.6376 12.0833 12.1254 11.5278 12.2648 11.25C12.4042 10.9722 12.6132 11.0417 12.8223 11.1111C13.0314 11.1806 14.2857 11.8056 14.4948 11.9444C14.7735 12.0833 14.9129 12.1528 14.9826 12.2222C15.0523 12.4306 15.0523 12.9167 14.8432 13.4722Z" fill="#FF6C01"></path>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.0732 2.91667C15.1916 1.04167 12.6829 0 10.0348 0C4.52961 0 0.0696853 4.44444 0.0696853 9.93056C0.0696853 11.6667 0.557491 13.4028 1.39373 14.8611L0 20L5.29617 18.6111C6.75958 19.375 8.36237 19.7917 10.0348 19.7917C15.5401 19.7917 20 15.3472 20 9.86111C19.9303 7.29167 18.9547 4.79167 17.0732 2.91667ZM14.8432 13.4722C14.6341 14.0278 13.6585 14.5833 13.1707 14.6528C12.7526 14.7222 12.1951 14.7222 11.6376 14.5833C11.2892 14.4444 10.8014 14.3056 10.2439 14.0278C7.73519 12.9861 6.13241 10.4861 5.99303 10.2778C5.85366 10.1389 4.94774 8.95833 4.94774 7.70833C4.94774 6.45833 5.57491 5.90278 5.78397 5.625C5.99303 5.34722 6.27178 5.34722 6.48084 5.34722C6.62021 5.34722 6.82927 5.34722 6.96864 5.34722C7.10801 5.34722 7.31707 5.27778 7.52613 5.76389C7.73519 6.25 8.22299 7.5 8.29268 7.56944C8.36237 7.70833 8.36237 7.84722 8.29268 7.98611C8.22299 8.125 8.15331 8.26389 8.01393 8.40278C7.87456 8.54167 7.73519 8.75 7.6655 8.81944C7.52613 8.95833 7.38676 9.09722 7.52613 9.30555C7.6655 9.58333 8.15331 10.3472 8.91986 11.0417C9.89547 11.875 10.662 12.1528 10.9408 12.2917C11.2195 12.4306 11.3589 12.3611 11.4983 12.2222C11.6376 12.0833 12.1254 11.5278 12.2648 11.25C12.4042 10.9722 12.6132 11.0417 12.8223 11.1111C13.0314 11.1806 14.2857 11.8056 14.4948 11.9444C14.7735 12.0833 14.9129 12.1528 14.9826 12.2222C15.0523 12.4306 15.0523 12.9167 14.8432 13.4722Z" fill="#FF6C01"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <button type="button" class="menu-header__btn btn">
+            <span class="btn__txt">отправить заявку</span>
+        </button>
+    </div>
 </header>
 
-    <main class="_smooth-scroll">
-        <section class="hero">
+            <main>
+                <section class="hero">
     <div class="hero__content hero__content_back">
         <div class="hero__container container">
             <span class="hero__heading-txt txt txt_caps">LIGHT RENTAL CARS</span>
@@ -100,7 +143,7 @@
     <div class="hero__bg"></div>
 </section>
 
-        <section class="choose">
+                <section class="choose">
     <div class="choose__container container">
         <div class="choose__info">
             <p id="chooseItemText" class="choose__text txt txt_caps"></p>
@@ -158,44 +201,43 @@
             <div class="choose__slider swiper">
                 <div class="choose__wrapper swiper-wrapper">
                     <div data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием" data-price="6 300" data-pledge="20 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
+                      в районы с грунтовым покрытием" data-price="8 300" data-pledge="30 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
                         <div class="slide-choose__image-wrap">
                             <img src="./assets/images/cars/9D257GS-DG.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
 
                     <div data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием" data-price="6 400" data-pledge="20 500" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
+                      в районы с грунтовым покрытием" data-price="6 900" data-pledge="30 000" data-heading="lexus rx 350" class="choose__slide slide-choose swiper-slide">
                         <div class="slide-choose__image-wrap">
                             <img src="./assets/images/cars/9DDFG7FG-ACF.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
 
                     <div data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием" data-price="7 300" data-pledge="21 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
+                      в районы с грунтовым покрытием" data-price="4 900" data-pledge="20 000" data-heading="subaru forester" class="choose__slide slide-choose swiper-slide">
                         <div class="slide-choose__image-wrap">
-                            <img src="./assets/images/cars/9D257GS-DG.webp" alt="" class="slide-choose__image">
+                            <img src="./assets/images/cars/9DHJFG-ACF.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
 
                     <div data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием" data-price="5 300" data-pledge="25 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
+                      в районы с асфальтированным покрытием" data-price="1 534" data-pledge="10 000" data-heading="HYUNDAI SOLARIs" class="choose__slide slide-choose swiper-slide">
                         <div class="slide-choose__image-wrap">
-                            <img src="./assets/images/cars/9DDFG7FG-ACF.webp" alt="" class="slide-choose__image">
+                            <img src="./assets/images/cars/9DHJFG-AREF.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
 
                     <div data-text="На данном авто, возможен выезд
-в районы с грунтовым покрытием" data-price="6 300" data-pledge="20 000" data-heading="toyota prado" class="choose__slide slide-choose swiper-slide">
+                      в районы с бездорожьем" data-price="4 500" data-pledge="20 000" data-heading="suzuki jimny" class="choose__slide slide-choose swiper-slide">
                         <div class="slide-choose__image-wrap">
-                            <img src="./assets/images/cars/9D257GS-DG.webp" alt="" class="slide-choose__image">
+                            <img src="./assets/images/cars/6ODHJFG-AREF.webp" alt="" class="slide-choose__image">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="choose__heading-wrap">
-                <span id="chooseItemHeading" class="choose__heading h">
-                </span>
+                <span id="chooseItemHeading" class="choose__heading h"> </span>
             </div>
             <div class="choose__sl-navigation">
                 <button type="button" class="choose__sl-arr choose__sl-arr_prev icon icon_white">
@@ -237,7 +279,8 @@
     </div>
 </section>
 
-        <section class="banner">
+                <div class="three-scroll">
+                    <section class="banner _is-visible">
     <a href="#" class="banner__inner">
         <div class="banner__container container">
             <div class="banner__content">
@@ -257,7 +300,7 @@
     </a>
 </section>
 
-        <section data-scroll="" data-scroll-offset="550" class="advantages _is-pinned">
+                    <section class="advantages">
     <div class="advantages__container container">
         <div class="advantages__head">
             <div class="advantages__heading-wrap">
@@ -391,7 +434,7 @@
     </div>
 </section>
 
-        <section class="author">
+                    <section class="author">
     <div class="container">
         <div class="author__inner">
             <div class="author__left">
@@ -472,9 +515,9 @@
     </div>
 </section>
 
-        <section class="condition">
+                    <section class="condition">
     <div class="condition__inner">
-        <div class="container">
+        <div class="condition__head container">
             <h2 class="h h_2">Условия проката</h2>
         </div>
         <div class="condition__content">
@@ -630,85 +673,85 @@
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/lexus.webp" alt="">
                             </div>
-                            <p>LEXUS RX 350</p>
+                            <p class="condition__slider-heading">LEXUS RX 350</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/suzuki.webp" alt="">
                             </div>
-                            <p>SUZUKI JIMNY</p>
+                            <p class="condition__slider-heading">SUZUKI JIMNY</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/prado.webp" alt="">
                             </div>
-                            <p>TLC PRADO 19</p>
+                            <p class="condition__slider-heading">TLC PRADO 19</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/subaru.webp" alt="">
                             </div>
-                            <p>SUBARU FORESTER</p>
+                            <p class="condition__slider-heading">SUBARU FORESTER</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/hyndai.webp" alt="">
                             </div>
-                            <p>HYUNDAI SOLARIS</p>
+                            <p class="condition__slider-heading">HYUNDAI SOLARIS</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/toyota.webp" alt="">
                             </div>
-                            <p>TOYOTA FIELDER</p>
+                            <p class="condition__slider-heading">TOYOTA FIELDER</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/toyota-v2.webp" alt="">
                             </div>
-                            <p>TOYOTA C-HR</p>
+                            <p class="condition__slider-heading">TOYOTA C-HR</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/lexus.webp" alt="">
                             </div>
-                            <p>LEXUS RX 350</p>
+                            <p class="condition__slider-heading">LEXUS RX 350</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/suzuki.webp" alt="">
                             </div>
-                            <p>SUZUKI JIMNY</p>
+                            <p class="condition__slider-heading">SUZUKI JIMNY</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/prado.webp" alt="">
                             </div>
-                            <p>TLC PRADO 19</p>
+                            <p class="condition__slider-heading">TLC PRADO 19</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/subaru.webp" alt="">
                             </div>
-                            <p>SUBARU FORESTER</p>
+                            <p class="condition__slider-heading">SUBARU FORESTER</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/hyndai.webp" alt="">
                             </div>
-                            <p>HYUNDAI SOLARIS</p>
+                            <p class="condition__slider-heading">HYUNDAI SOLARIS</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/toyota.webp" alt="">
                             </div>
-                            <p>TOYOTA FIELDER</p>
+                            <p class="condition__slider-heading">TOYOTA FIELDER</p>
                         </a>
                         <a href="#" class="condition__slider-slide swiper-slide">
                             <div class="condition__slider-image">
                                 <img src="../assets/images/sections/condition/toyota-v2.webp" alt="">
                             </div>
-                            <p>TOYOTA C-HR</p>
+                            <p class="condition__slider-heading">TOYOTA C-HR</p>
                         </a>
                     </div>
                     <div class="condition__slider-navigation _desktop-only">
@@ -738,30 +781,426 @@
     </div>
 </section>
 
-        <section class="contacts">
+                    <div class="three-scroll__spacer _desktop-only"></div>
+                </div>
+                <section class="routes">
+    <div class="container">
+        <div class="routes__content">
+            <h2 class="routes__title h h_2">Маршруты и ограничения по проезду</h2>
+
+            <div class="routes__tabs">
+                <div class="routes__tabs-wrapper">
+                    <input checked="" id="tab-1" name="tab" type="radio">
+                    <div class="routes__tabs-button">
+                        <label for="tab-1">юг</label>
+                        <div class="routes__tabs-content">
+                            <figure class="routes__tabs-content-path">
+                                <img src="./assets/images/sections/routes/path-1.svg" alt="" class="_desktop-only">
+                                <img src="./assets/images/sections/routes/path-1-m.svg" alt="" class="_mobile-only">
+                            </figure>
+
+                            <div class="routes__tabs-attractions _desktop-only">
+                                <span class="routes__tabs-attractions-title"> Достопримечательности </span>
+
+                                <p class="routes__tabs-attractions-text">
+
+                                </p>
+
+                                <div class="swiper routes__tabs-attractions-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
+                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
+                                                города Корсаков и тд
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, quia?
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, quis.
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
+                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
+                                                города Корсаков и тд
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="routes__tabs-attractions-navigation">
+                                        <button type="button" class="swiper-button-prev icon icon_white">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="swiper-button-next icon icon_white">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="tab-2" name="tab" type="radio">
+                    <div class="routes__tabs-button">
+                        <label for="tab-2">север</label>
+                        <div class="routes__tabs-content">
+                            <figure class="routes__tabs-content-path">
+                                <img src="./assets/images/sections/routes/path-2.svg" alt="">
+                            </figure>
+
+                            <div class="routes__tabs-attractions _desktop-only">
+                                <span class="routes__tabs-attractions-title"> Достопримечательности </span>
+
+                                <p class="routes__tabs-attractions-text">
+
+                                </p>
+
+                                <div class="swiper routes__tabs-attractions-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
+                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
+                                                города Корсаков и тд
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, quia?
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, quis.
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
+                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
+                                                города Корсаков и тд
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="routes__tabs-attractions-navigation">
+                                        <button type="button" class="swiper-button-prev icon icon_white">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="swiper-button-next icon icon_white">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="tab-3" name="tab" type="radio">
+                    <div class="routes__tabs-button">
+                        <label for="tab-3">запад</label>
+                        <div class="routes__tabs-content">
+                            <figure class="routes__tabs-content-path">
+                                <img src="./assets/images/sections/routes/path-3.svg" alt="">
+                            </figure>
+
+                            <div class="routes__tabs-attractions _desktop-only">
+                                <span class="routes__tabs-attractions-title"> Достопримечательности </span>
+
+                                <p class="routes__tabs-attractions-text">
+
+                                </p>
+
+                                <div class="swiper routes__tabs-attractions-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
+                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
+                                                города Корсаков и тд
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, quia?
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, quis.
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
+                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
+                                                города Корсаков и тд
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="routes__tabs-attractions-navigation">
+                                        <button type="button" class="swiper-button-prev icon icon_white">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="swiper-button-next icon icon_white">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="tab-4" name="tab" type="radio">
+                    <div class="routes__tabs-button">
+                        <label for="tab-4">восток</label>
+                        <div class="routes__tabs-content">
+                            <figure class="routes__tabs-content-path">
+                                <img src="./assets/images/sections/routes/path-4.svg" alt="">
+                            </figure>
+
+                            <div class="routes__tabs-attractions _desktop-only">
+                                <span class="routes__tabs-attractions-title"> Достопримечательности </span>
+
+                                <p class="routes__tabs-attractions-text">
+
+                                </p>
+
+                                <div class="swiper routes__tabs-attractions-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
+                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
+                                                города Корсаков и тд
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, quia?
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, quis.
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img src="./assets/images/sections/routes/routes-slide-image.webp" alt="">
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
+                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
+                                                города Корсаков и тд
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="routes__tabs-attractions-navigation">
+                                        <button type="button" class="swiper-button-prev icon icon_white">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="swiper-button-next icon icon_white">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="routes__tabs-line"></div>
+
+                    <figure class="routes__tabs-map">
+                        <img src="./assets/images/sections/routes/routes-map.svg" alt="">
+                    </figure>
+
+                    <div class="routes__tabs-overlay"></div>
+                </div>
+
+                <div class="routes__tabs-info">
+                    <p class="routes__tabs-info-text _desktop-only">
+                        Оптимальный тип автомобиля
+                        для данного маршрута
+                        внедорожник Suzuki Jimny
+                    </p>
+
+                    <p class="routes__tabs-info-text _mobile-only">
+                        Оптимальный тип автомобиля –
+                        внедорожник Suzuki Jimny
+                    </p>
+
+                    <ul class="routes__tabs-info-list">
+                        <li class="routes__tabs-info-item">
+                            <span style="--color: #ff6c01" class="routes__tabs-info-item-designation"> </span>
+
+                            <div class="routes__tabs-info-item-text">
+                                <strong class="routes__tabs-info-item-title"> Асфальтированные дороги </strong>
+
+                                <p class="routes__tabs-info-item-description">легковые и кроссоверы</p>
+                            </div>
+                        </li>
+                        <li class="routes__tabs-info-item">
+                            <span style="--color: #fff" class="routes__tabs-info-item-designation"> </span>
+
+                            <div class="routes__tabs-info-item-text">
+                                <strong class="routes__tabs-info-item-title"> Грунтовые дороги </strong>
+
+                                <p class="routes__tabs-info-item-description">кроссоверы и внедорожники</p>
+                            </div>
+                        </li>
+                        <li class="routes__tabs-info-item">
+                            <span style="--color: #838383" class="routes__tabs-info-item-designation"> </span>
+
+                            <div class="routes__tabs-info-item-text">
+                                <strong class="routes__tabs-info-item-title"> Бездорожье </strong>
+
+                                <p class="routes__tabs-info-item-description">внедорожник SUZUKI JIMNY</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <button class="routes__tabs-info-button btn _mobile-only">
+                        <span class="btn__txt">Достопримечательности</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+                <section class="contacts">
     <div class="container">
         <div class="contacts__inner">
             <h2 class="contacts__title h h_2">Свяжитесь с нами</h2>
             <div class="contacts__map" id="contacts-map"></div>
             <div class="contacts__wrapper">
                 <article class="contact-form contacts__form">
-                    <form class="contact-form__inner">
+                    <form data-dev="" action="#" class="contact-form__inner">
                         <h3 class="contact-form__title h h_3">Оставьте заявку</h3>
                         <div class="contact-form__wrapper">
                             <div class="input">
                                 <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="фио" class="input__field">
-                                <span class="input__hint txt txt_14">Введите корректный ФИО</span>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                             <div class="input">
-                                <input data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
-                                <span class="input__hint txt txt_14">Введите корректный номер</span>
+                                <input data-tel-mask="" data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                             <div class="input">
                                 <input data-validate="" data-required="" autocomplete="off" type="email" name="form[]" placeholder="e-mail" class="input__field">
-                                <span class="input__hint txt txt_14">Введите корректный e-mail</span>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
-                            <div class="textarea">
-                                <textarea name="form[]" autocomplete="off" placeholder="Ваше сообщение" class="input__textarea"></textarea>
+                            <div class="input textarea">
+                                <textarea data-validate="" data-required="" name="form[]" autocomplete="off" placeholder="Ваше сообщение" class="input__textarea"></textarea>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                         </div>
                         <div class="contact-form__footer">
@@ -817,16 +1256,16 @@
     </div>
 </section>
 
-    </main>
-    <div class="loader">
+            </main>
+            <div class="loader">
   <div class="loader__content">
     <div class="loader__icon-wrap">
       <div class="loader__icon-inner"><img src="./assets/images/components/loader/wheel.webp" alt="" class="loader__icon"></div>
     </div>
-    <div class="loader__progress h h_2"><span id="percentVal">0</span>%</div>
+    <div class="loader__progress h h_2"><span id="percentVal">0</span></div>
   </div>
 </div>
-    <footer class="footer">
+            <footer class="footer">
     <div class="container">
         <div class="footer__inner">
             <div class="footer__main">
@@ -854,10 +1293,9 @@
                     </ul>
                 </div>
                 <div class="footer__main-subscription">
-                    <form action="/">
+                    <form data-dev="" action="#">
                         <div class="input">
-                            <input data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
-                            <span class="input__hint txt txt_14">Введите корректный номер</span>
+                            <input data-tel-mask="" data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
                         </div>
                         <button type="submit" class="btn">
                             <span class="btn__txt">Отправить заявку</span>
@@ -908,8 +1346,8 @@
     </div>
 </footer>
 
-    
-    <div style="position: absolute; top: 0; left: 0; transform: translate(-100%, -100%)">
+            
+            <div style="position: absolute; top: 0; left: 0; transform: translate(-100%, -100%)">
     <svg xmlns="http://www.w3.org/2000/svg" width="300%" height="300%">
         <linearGradient id="speedometerProgressGradient" x1="42%" y1="0%" x2="58%" y2="100%">
             <stop offset="0%" style="stop-color: rgb(255, 108, 1); stop-opacity: 1"></stop>
@@ -930,6 +1368,6 @@
     </svg>
 </div>
 
-</div>
-</body>
+        </div>
+    </body>
 </html>

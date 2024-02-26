@@ -1,0 +1,26 @@
+.showmore-btn {
+  display: flex;
+  align-items: center;
+  column-gap: 1.6rem;
+  color: $orange;
+
+  &::after {
+    content: "";
+    flex: 0 0 2rem;
+    width: 2rem;
+    height: 2rem;
+    background-image: url(./assets/images/icons/arr-orange.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: 48em) {
+    column-gap: 3.2rem;
+
+    &::after {
+      flex: 0 0 3.2rem;
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+}

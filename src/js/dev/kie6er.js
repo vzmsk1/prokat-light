@@ -1,10 +1,9 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-import $ from 'jquery';
 import 'swiper/css';
 
 $(document).ready(function () {
-    $('.contacts').length > 0 ? initMap() : null;
+    $('#contacts-map').length ? initMap() : null;
     !!$('.condition').length && conditionSlider();
 });
 
@@ -27,8 +26,9 @@ async function initMap() {
     const map = new YMap(document.getElementById('contacts-map'), {
         location: {
             center: [37.588144, 55.733842],
-            zoom: 12
-        }
+            zoom: 12,
+        },
+        behaviors: ['drag']
     });
     map.addChild(new YMapDefaultSchemeLayer());
     map.addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }));

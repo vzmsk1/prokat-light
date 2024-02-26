@@ -68,6 +68,9 @@
     // .advantages__body
 
     &__body {
+        @media (min-width: 48em) {
+            padding-bottom: 8rem;
+        }
     }
 
     // .advantages__content
@@ -495,6 +498,11 @@
             bottom: 0.8rem;
             left: 22.3rem;
             row-gap: 3.2rem;
+        }
+
+        @media (min-width: 48em) {
+            opacity: 0;
+            visibility: hidden;
         }
     }
 

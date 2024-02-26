@@ -1,5 +1,5 @@
-// import SimpleBar from 'simplebar';
-// import 'simplebar/dist/simplebar.css';
+import SimpleBar from 'simplebar';
+import 'simplebar/dist/simplebar.css';
 import { _slideUp, _slideDown, _slideToggle } from './utils.js';
 
 // --------------------------------------------------------------------------
@@ -197,6 +197,19 @@ export class Select {
       this.classes.OPTIONS
     ).relativeSel;
     options.innerHTML = this.getOptions(relativeSel);
+
+    setTimeout(() => {
+      if (relativeSel.hasAttribute('data-sel-empty')) {
+        console.log(options, options.querySelectorAll(this.classes.OPTION))
+        options.querySelectorAll(`.${this.classes.OPTION}`).forEach(option => {
+          option.selected = false
+          option.classList.remove(_this.classes.IS_SELECTED)
+          console.log(option, option.selected)
+        })
+      }
+
+    }, 0)
+
   }
   // disable select
   disableSelect(select, relativeSel) {
@@ -342,9 +355,6 @@ export class Select {
           .setAttribute('selected', 'selected');
       });
       if (!option.classList.contains(this.classes.IS_SELECTED)) {
-        console.log(
-          relativeSel.querySelector(`option[value="${option.dataset.optVal}"]`)
-        );
         relativeSel
           .querySelector(`option[value="${option.dataset.optVal}"]`)
           .removeAttribute('selected');

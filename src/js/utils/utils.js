@@ -141,39 +141,6 @@ export const showmore = () => {
     }
 };
 
-/**
- * initializes hamburger menu
- */
-export const menuInit = () => {
-    if (document.querySelector('.hamburger')) {
-        document.addEventListener('click', function (e) {
-            if (bodyLockStatus && e.target.closest('.hamburger')) {
-                menuOpen();
-            } else if (
-                bodyLockStatus &&
-                document.documentElement.classList.contains('_menu-opened') &&
-                (e.target.closest('.menu__close-btn') || !e.target.closest('.menu'))
-            ) {
-                menuClose();
-            }
-        });
-    }
-};
-/**
- * opens hamburger menu
- */
-export const menuOpen = () => {
-    bodyLock();
-    document.documentElement.classList.add('_menu-opened');
-};
-/**
- * closes hamburger menu
- */
-export const menuClose = () => {
-    bodyUnlock();
-    document.documentElement.classList.remove('_menu-opened');
-};
-
 // body lock
 export let bodyLockStatus = true;
 /**
