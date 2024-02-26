@@ -1,5 +1,99 @@
 .contacts {
     position: relative;
+
+    .rental-page & {
+        .contacts__title {
+            margin-left: auto;
+
+            @include small-tablet {
+                margin-left: initial;
+            }
+        }
+
+        .contact-form {
+            margin-right: auto;
+            margin-top: 0;
+            min-height: initial;
+
+            @include small-tablet {
+                margin-top: 11rem;
+
+                &__title {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+        .contacts__map {
+            top: 13rem;
+        }
+
+        .contacts__wrapper {
+            gap: 1rem;
+        }
+
+        .contact-form__inner {
+            min-height: initial;
+            gap: 4.5rem;
+            padding-bottom: 9.3rem;
+
+            &::after {
+                z-index: -1;
+            }
+        }
+
+        .contact-form__file {
+            position: relative;
+            margin-bottom: 2.8rem;
+            min-height: 4.8rem;
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 1.2rem;
+                cursor: pointer;
+
+                img {
+                    width: 4.4rem;
+                    height: 4.4rem;
+                }
+
+                span {
+                    font-weight: 400;
+                    font-size: 1.8rem;
+                    line-height: 133%;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: $gray;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+            }
+
+            input {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border-width: 0;
+            }
+        }
+
+        .contacts__footer {
+            flex-direction: row-reverse;
+
+            @include small-tablet {
+                flex-direction: column;
+            }
+        }
+    }
+
     // .contacts__inner
     &__inner {
         display: flex;
@@ -10,7 +104,7 @@
         text-transform: uppercase;
         font-weight: 500;
 
-        @include small-tablet{
+        @include small-tablet {
             margin-bottom: 8rem;
             font-weight: 500;
             font-size: 4rem;
@@ -26,8 +120,8 @@
         gap: 4rem;
         position: relative;
 
-        &::after{
-            @include pseudo{
+        &::after {
+            @include pseudo {
                 z-index: -1;
                 width: 18.6rem;
                 height: 9.6rem;
@@ -36,10 +130,17 @@
                 border-radius: 50%;
                 filter: blur(7.9rem);
                 background: #ffffff;
+
+                @include small-tablet {
+                    right: 14rem;
+                    filter: blur(11.9rem);
+                    bottom: auto;
+                    top: 76rem;
+                }
             }
         }
 
-        @include small-tablet{
+        @include small-tablet {
             flex-direction: column-reverse;
             gap: 12rem;
         }
@@ -50,7 +151,7 @@
         align-items: center;
         justify-content: space-between;
 
-        @include small-tablet{
+        @include small-tablet {
             flex-direction: column;
             gap: 4.8rem;
         }
@@ -61,7 +162,7 @@
         align-items: flex-start;
         gap: 4rem;
 
-        @include small-tablet{
+        @include small-tablet {
             flex-direction: column;
             gap: 4.8rem;
         }
@@ -74,7 +175,7 @@
             flex-direction: column;
             gap: 1.6rem;
 
-            @include small-tablet{
+            @include small-tablet {
                 max-width: 85%;
                 gap: 2.4rem;
             }
@@ -84,7 +185,7 @@
                 line-height: 140%;
                 color: $white;
 
-                @include small-tablet{
+                @include small-tablet {
                     font-weight: 500;
                     font-size: 3.6rem;
                     line-height: 140%;
@@ -99,7 +200,7 @@
                     text-transform: uppercase;
                     color: $gray;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         font-weight: 400;
                         font-size: 3.2rem;
                         line-height: 110%;
@@ -118,7 +219,7 @@
         align-self: flex-end;
         margin-top: -3rem;
 
-        @include small-tablet{
+        @include small-tablet {
             align-self: flex-start;
             margin-top: 0;
         }
@@ -131,9 +232,10 @@
         top: 12rem;
         height: 58rem;
         background-color: $gray;
-        z-index: 0;
-        
-        @include small-tablet{
+        z-index: 1;
+        cursor: grab;
+
+        @include small-tablet {
             position: initial;
             height: 109rem;
             margin-bottom: 7rem;
@@ -149,7 +251,7 @@
     // .contact-form__inner
 
     &__btn {
-        @include small-tablet{
+        @include small-tablet {
             width: 100%;
 
             button {
@@ -159,7 +261,7 @@
         }
     }
 
-    @include small-tablet{
+    @include small-tablet {
         width: 100%;
     }
 
@@ -202,9 +304,7 @@
         position: relative;
         z-index: 1;
 
-
-
-        @include small-tablet{
+        @include small-tablet {
             gap: 7.5rem;
         }
 
@@ -212,7 +312,7 @@
         textarea::placeholder {
             text-transform: uppercase;
 
-            @include small-tablet{
+            @include small-tablet {
                 font-size: 3rem;
                 line-height: 160%;
                 letter-spacing: 0.08em;
@@ -223,7 +323,7 @@
         textarea {
             height: 9.2rem;
 
-            @include small-tablet{
+            @include small-tablet {
                 height: 14rem;
             }
         }
@@ -234,7 +334,7 @@
         align-items: center;
         justify-content: space-between;
 
-        @include small-tablet{
+        @include small-tablet {
             flex-direction: column;
             align-items: flex-start;
             gap: 6.4rem;
@@ -249,7 +349,7 @@
 
             max-width: 24.6rem;
 
-            @include small-tablet{
+            @include small-tablet {
                 max-width: 85%;
                 font-weight: 400;
                 font-size: 2.8rem;

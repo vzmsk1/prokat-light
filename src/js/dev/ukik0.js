@@ -1,10 +1,9 @@
 import Swiper from 'swiper';
-import { EffectFade, Navigation, Thumbs } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import { remToPx } from '../utils/utils';
-
 document.addEventListener('DOMContentLoaded', () => {
     function fade(activeSlide) {
-        if (!activeSlide) return
+        if (!activeSlide) return;
 
         const parent = activeSlide.closest('.routes__tabs-attractions');
 
@@ -18,9 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
             text.innerHTML = activeSlide.querySelector('.routes__tabs-attractions-swiper-text').textContent;
         }, 500);
     }
-
     function showText(activeSlide) {
-        if (!activeSlide) return
+        if (!activeSlide) return;
 
         const parent = activeSlide.closest('.routes__tabs-attractions');
 
@@ -51,5 +49,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+    });
+
+    function setActiveClass(selector) {
+        if (!document.querySelector(selector)) return;
+
+        const items = document.querySelectorAll(selector);
+
+        items.forEach((item) => {
+            item.addEventListener('click', () => {
+                removeActiveClass();
+
+                item.classList.add('--active');
+            });
+        });
+
+        function removeActiveClass() {
+            items.forEach((item) => item.classList.remove('--active'));
+        }
+    }
+
+    setActiveClass('.news__navigation-item');
+    setActiveClass('.news__filters-item');
+
+    $('.contact-form__file-input').bind('change', function () {
+        const filename = $(this).val();
+
+        if (/^\s*$/.test(filename)) {
+            $('.contact-form__file label span').text(
+                'Прикрепите документы (договор проката, водительское удостоверение,\n' +
+                    '                                    паспорт)'
+            );
+
+            return;
+        }
+
+        $('.contact-form__file label span').text(filename.replace('C:\\fakepath\\', ''));
     });
 });

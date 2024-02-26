@@ -202,8 +202,10 @@ $num-of-tabs: 4;
                     font-size: 3.2rem;
                 }
 
-                &:hover {
-                    color: $orange;
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: $orange;
+                    }
                 }
             }
 
@@ -214,7 +216,7 @@ $num-of-tabs: 4;
                     width: 36.1rem;
                     height: 39.7rem;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         height: 46rem;
                         width: 41rem;
                         top: 48rem;
@@ -321,7 +323,7 @@ $num-of-tabs: 4;
                 gap: 3.2rem;
                 margin-top: auto;
 
-                @include small-tablet{
+                @include small-tablet {
                     gap: 4rem;
                     margin-bottom: 8rem;
                 }
@@ -332,7 +334,7 @@ $num-of-tabs: 4;
                 align-items: center;
                 gap: 1.6rem;
 
-                @include small-tablet{
+                @include small-tablet {
                     gap: 2.4rem;
                 }
 
@@ -340,7 +342,7 @@ $num-of-tabs: 4;
                     @include sizes(2.4rem, 2.4rem);
                     background: var(--color);
 
-                    @include small-tablet{
+                    @include small-tablet {
                         @include sizes(3.2rem, 3.2rem);
                     }
                 }
@@ -356,7 +358,7 @@ $num-of-tabs: 4;
                     font-size: 2rem;
                     line-height: 140%;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         font-size: 3.6rem;
                     }
                 }
@@ -366,7 +368,7 @@ $num-of-tabs: 4;
                     font-size: 1.8rem;
                     color: $gray;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         font-size: 3rem;
                     }
                 }
