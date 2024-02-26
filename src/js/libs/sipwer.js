@@ -48,4 +48,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    resizableSwiper('.popular-promotions-swiper', {
+        modules: [Pagination],
+        slidesPerView: 1,
+        speed: 1200,
+        spaceBetween: remToPx(4.8),
+        pagination: {
+            el: '.popular__pagination',
+            type: 'bullets',
+            renderBullet: function (index, className) {
+                return `<span class="${className}"></span>`;
+            }
+        }
+    });
 });

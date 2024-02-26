@@ -6,13 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f4601fd0-39e0-436c-bd29-f24c106a33b0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_condition.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_condition.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_news.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_news.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_routes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_routes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/styles/news-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/news-card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sections/promotion/banner-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_popular-promotions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_popular-promotions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_promotion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_promotion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/libs/sipwer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/libs/sipwer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news-detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/news-detailed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_popular.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_popular.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_promotion.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_promotion.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +99,8 @@
       <workItem from="1708671131632" duration="3947000" />
       <workItem from="1708780564431" duration="9071000" />
       <workItem from="1708804274319" duration="1000" />
-      <workItem from="1708960366269" duration="2000000" />
+      <workItem from="1708960366269" duration="2069000" />
+      <workItem from="1708963753585" duration="1660000" />
     </task>
     <servers />
   </component>

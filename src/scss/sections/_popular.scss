@@ -2,5 +2,24 @@
     &__title {
         margin-bottom: 6rem;
         max-width: 77.2rem;
+
+        @include small-tablet {
+            margin-bottom: 7rem;
+            max-width: 100%;
+        }
+    }
+
+    .news__articles {
+        @include small-tablet {
+            flex-direction: row;
+            gap: 0;
+            margin-bottom: 6rem;
+        }
+    }
+
+    &__pagination {
+        @include small-tablet {
+            justify-content: center;
+        }
     }
 }
