@@ -5,26 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4601fd0-39e0-436c-bd29-f24c106a33b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/_popular-promotions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/_promotion.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/news-detailed.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/sections/_popular.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/sections/_promotion.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/news-card.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/styles/news-card.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/dev/kie6er.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/kie6er.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/dev/ukik0.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/ukik0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/dev/ukik0.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/dev/ukik0.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_contact.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_condition.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_condition.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/sections/_news.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_news.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_routes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_routes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/footer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/styles/ui.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/ui.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/styles/news-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/news-card.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,22 +39,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Dima-M",
-    "last_opened_file_path": "/Users/annavyazemskaya/Documents/web/2024/prokat-light",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "D:\\Work\\Gulp\\prokat-light\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Dima-M&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/annavyazemskaya/Documents/web/2024/prokat-light&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Work\\Gulp\\prokat-light\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -109,7 +97,9 @@
       <workItem from="1708635482684" duration="124000" />
       <workItem from="1708635625823" duration="1452000" />
       <workItem from="1708671131632" duration="3947000" />
-      <workItem from="1708780564431" duration="8815000" />
+      <workItem from="1708780564431" duration="9071000" />
+      <workItem from="1708804274319" duration="1000" />
+      <workItem from="1708960366269" duration="2000000" />
     </task>
     <servers />
   </component>

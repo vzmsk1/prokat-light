@@ -2,10 +2,22 @@
     &__title {
         text-align: center;
         margin-bottom: 6rem;
+
+        @include small-tablet {
+            text-align: start;
+            margin-bottom: 7rem;
+        }
     }
 
     &__navigation {
         margin-bottom: 8rem;
+
+        @include small-tablet {
+            overflow-x: scroll;
+            margin-right: -2.4rem;
+
+            @include hideScrollbar;
+        }
 
         &-list {
             display: flex;
@@ -15,12 +27,26 @@
             width: fit-content;
             margin: 0 auto;
 
+            @include small-tablet {
+                margin: initial;
+                margin-bottom: 3.2rem;
+                width: 100%;
+                padding-bottom: 0rem;
+                gap: 8rem;
+            }
+
             &::after {
                 @include pseudo {
                     bottom: 0;
                     width: 100%;
                     height: 0.2rem;
                     background: $gray;
+
+                    @include small-tablet {
+                        bottom: -3.3rem;
+                        height: 0.6rem;
+                        width: calc(100% + 5.5rem);
+                    }
                 }
             }
         }
@@ -35,8 +61,17 @@
                 text-transform: uppercase;
                 color: $gray;
 
-                &:hover {
-                    color: $gray-secondary;
+                @include small-tablet {
+                    padding: 0 2.4rem;
+                    font-size: 3.2rem;
+                    line-height: 110%;
+                    white-space: nowrap;
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: $gray-secondary;
+                    }
                 }
 
                 &::after {
@@ -49,6 +84,11 @@
                         opacity: 0;
                         left: 0;
                         z-index: 1;
+
+                        @include small-tablet {
+                            bottom: -3.5rem;
+                            height: 0.6rem;
+                        }
                     }
                 }
             }
@@ -68,14 +108,32 @@
     &__filters {
         margin-bottom: 4rem;
 
+        @include small-tablet {
+            margin-bottom: 6.4rem;
+            overflow-x: scroll;
+            margin-right: -2.4rem;
+
+            @include hideScrollbar;
+        }
+
         &-list {
             display: flex;
             align-items: center;
             gap: 3.2rem;
+
+            @include small-tablet {
+                gap: 6.4rem;
+            }
         }
 
         &-item {
             color: $gray;
+
+            @include small-tablet {
+                &:last-child {
+                    padding-right: 2.4rem;
+                }
+            }
 
             button {
                 font-weight: 500;
@@ -83,8 +141,16 @@
                 line-height: 140%;
                 transition: 0.3s color ease;
 
-                &:hover {
-                    color: $white;
+                @include small-tablet {
+                    font-size: 3rem;
+                    line-height: 110%;
+                    white-space: nowrap;
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: $white;
+                    }
                 }
             }
 
@@ -100,15 +166,28 @@
         gap: 6rem 2rem;
         margin-bottom: 6rem;
 
+        @include small-tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 4.8rem;
+            margin-bottom: 8rem;
+        }
+
         &-button {
             display: flex;
             align-items: center;
             gap: 1.6rem;
             margin: 0 auto;
 
-            &:hover {
-                img {
-                    transform: rotate(-90deg);
+            @include small-tablet {
+                gap: 3.2rem;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    img {
+                        transform: rotate(-90deg);
+                    }
                 }
             }
 
@@ -117,11 +196,20 @@
                 font-size: 1.8rem;
                 line-height: 140%;
                 color: $orange;
+
+                @include small-tablet {
+                    font-size: 3rem;
+                    line-height: 110%;
+                }
             }
 
             img {
                 @include sizes(2rem, 2rem);
                 transition: 0.3s transform ease;
+
+                @include small-tablet {
+                    @include sizes(3.2rem, 3.2rem);
+                }
             }
         }
     }
