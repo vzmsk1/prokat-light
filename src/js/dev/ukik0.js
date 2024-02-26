@@ -71,4 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setActiveClass('.news__navigation-item');
     setActiveClass('.news__filters-item');
+
+    $('.contact-form__file-input').bind('change', function () {
+        const filename = $(this).val();
+
+        if (/^\s*$/.test(filename)) {
+            $('.contact-form__file label span').text(
+                'Прикрепите документы (договор проката, водительское удостоверение,\n' +
+                    '                                    паспорт)'
+            );
+
+            return;
+        }
+
+        $('.contact-form__file label span').text(filename.replace('C:\\fakepath\\', ''));
+    });
 });

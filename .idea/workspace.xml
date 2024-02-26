@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4601fd0-39e0-436c-bd29-f24c106a33b0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/_contact-rental.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/_rental.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rental-conditions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/sections/_rental.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/sections/promotion/banner-image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_popular-promotions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_popular-promotions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_promotion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_promotion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/libs/sipwer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/libs/sipwer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news-detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/news-detailed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_popular.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_popular.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_promotion.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_promotion.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/dev/ukik0.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/ukik0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/dev/ukik0.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/dev/ukik0.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_contact.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +101,7 @@
       <workItem from="1708780564431" duration="9071000" />
       <workItem from="1708804274319" duration="1000" />
       <workItem from="1708960366269" duration="2069000" />
-      <workItem from="1708963753585" duration="1660000" />
+      <workItem from="1708963753585" duration="10680000" />
     </task>
     <servers />
   </component>
