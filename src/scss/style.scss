@@ -70,32 +70,52 @@ section {
         position: relative;
         z-index: 10;
         margin-bottom: 20rem;
-        height: 110vh;
+        height: 100vh;
         perspective: 1000rem;
 
         section {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
+            height: 100%;
             transform: translateX(-50%) translateY(-50%);
             background-color: $bgColor;
             overflow: hidden;
-
-            &:not(&._is-visible) {
-                transform: translateX(-50%) translateY(-50%) translateZ(80rem);
-                opacity: 0;
-                visibility: hidden;
-                pointer-events: none;
-            }
-
-            &._is-prev {
-                transform: translateX(-50%) translateY(-50%) translateZ(-80rem);
-            }
         }
 
-        &__spacer {
-            height: 5rem;
+        &__swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        &__wrapper {
+            perspective: 1000rem;
+        }
+
+        .swiper-slide {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateZ(80rem);
+            transition:
+                transform 0.6s ease,
+                opacity 0.6s ease,
+                visibility 0.6s ease;
+
+            &._is-prev {
+                transform: translateY(-40%) translateZ(-80rem);
+            }
+
+            &._is-next {
+                transform: translateY(40%) translateZ(80rem);
+            }
+
+            &.swiper-slide-active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateZ(0);
+            }
         }
     }
 }

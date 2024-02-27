@@ -7,6 +7,9 @@ import * as utils from './utils/utils.js';
 // showmore
 utils.showmore();
 
+// inputmask
+utils.initInputMask();
+
 // ---------------------------------- libs ----------------------------------
 
 // dynamic dom
@@ -38,3 +41,4 @@ import './dev/vzmsk1.js';
 import './dev/markusDM.js';
 import './dev/ukik0.js';
 import './dev/kie6er.js';
+import { addInputMask } from './utils/utils.js';

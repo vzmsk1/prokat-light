@@ -7,11 +7,14 @@
     width: 7rem;
     height: 7rem;
     border-radius: 50%;
-    box-shadow: inset 0 -0.16rem 0.8rem rgba(255, 168, 0, 0.48),
+    box-shadow:
+        inset 0 -0.16rem 0.8rem rgba(255, 168, 0, 0.48),
         inset 0.32rem 0.32rem 0.16rem rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(0.5rem);
     overflow: hidden;
-    transition: background-color 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
 
     &::before,
     &::after {
@@ -41,7 +44,8 @@
     }
 
     &_white {
-        box-shadow: inset 0 -0.16rem 0.8rem rgba(255, 255, 255, 0.48),
+        box-shadow:
+            inset 0 -0.16rem 0.8rem rgba(255, 255, 255, 0.48),
             inset 0.32rem 0.32rem 0.16rem rgba(255, 255, 255, 0.1);
 
         svg path {
@@ -62,7 +66,8 @@
     }
 
     &._is-disabled {
-        box-shadow: inset 0 -0.16rem 0.8rem rgba(173, 173, 173, 0.48),
+        box-shadow:
+            inset 0 -0.16rem 0.8rem rgba(173, 173, 173, 0.48),
             inset 0.32rem 0.32rem 0.16rem rgba(255, 255, 255, 0.1);
 
         svg path {
@@ -102,7 +107,9 @@
 
     &:not(&._is-disabled, &._no-hover) {
         &:active {
-            box-shadow: inset 0 -0.16rem 0.8rem #9E4504, inset 0.32rem 0.32rem 0.16rem #FF6C00;
+            box-shadow:
+                inset 0 -0.16rem 0.8rem #9e4504,
+                inset 0.32rem 0.32rem 0.16rem #ff6c00;
             &::after {
                 opacity: 1;
                 background: rgba(255, 108, 1, 1);
@@ -132,12 +139,14 @@
         width: 13rem;
         height: 13rem;
 
-        box-shadow: inset 0 -0.48rem 2.4rem rgba(255, 168, 0, 0.48),
+        box-shadow:
+            inset 0 -0.48rem 2.4rem rgba(255, 168, 0, 0.48),
             inset 0.96rem 0.96rem 0.48rem rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(1.4rem);
 
         &_white {
-            box-shadow: inset 0 -0.48rem 2.4rem rgba(255, 255, 255, 0.48),
+            box-shadow:
+                inset 0 -0.48rem 2.4rem rgba(255, 255, 255, 0.48),
                 inset 0.96rem 0.96rem 0.48rem rgba(255, 255, 255, 0.1);
         }
 
