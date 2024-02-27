@@ -2,6 +2,7 @@ import $ from 'jquery';
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 import { remToPx } from '../utils/utils';
+
 document.addEventListener('DOMContentLoaded', () => {
     function fade(activeSlide) {
         if (!activeSlide) return;
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         text.classList.remove('_shown');
 
         setTimeout(() => {
-            text.classList.add('_visible');
+            text.classList.add('_shown');
             text.innerHTML = activeSlide.querySelector('.routes__tabs-attractions-swiper-text').textContent;
         }, 500);
     }
@@ -87,4 +88,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
         $('.contact-form__file label span').text(filename.replace('C:\\fakepath\\', ''));
     });
+
+    if (document.querySelector('.routes')) {
+        document.querySelectorAll('.routes__tabs-navigation button').forEach((button) => {
+            button.addEventListener('click', () => {
+                const elements = Array.from(document.querySelectorAll('.routes__tabs-navigation button'));
+
+                elements.forEach((element, index) => {
+                    setTimeout(() => {
+                        if (element.classList.contains('_is-active')) {
+                            animateMap(index + 1);
+                        }
+                    }, 0);
+                });
+            });
+        });
+    }
+
+    function animateMap(index) {
+        if (window.innerWidth < 768) return;
+
+        const map = document.querySelector('.routes__tabs-map');
+        const overlay = document.querySelector('.routes__tabs-overlay');
+
+        switch (index) {
+            case 1:
+                map.style.transform = 'scale(1.75) translate(62.7rem, -33.5rem) rotate(6deg)';
+                overlay.style.opacity = 1;
+                break;
+            case 2:
+                map.style.transform = 'rotate(0deg) scale(0.51) translate(-2.3rem, -40.5rem)';
+                overlay.style.opacity = 0;
+                break;
+            case 3:
+                map.style.transform = 'rotate(5deg) scale(.8) translate(29.7rem, -46.5rem)';
+                overlay.style.opacity = 1;
+                break;
+
+            default:
+                overlay.style.opacity = 1;
+                map.style.transform = 'rotate(7deg) scale(1.75) translate(57.7rem, -41.5rem)';
+        }
+    }
 });
