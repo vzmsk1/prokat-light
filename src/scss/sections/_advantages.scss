@@ -91,6 +91,11 @@
         flex-direction: column;
         row-gap: 4.5rem;
 
+        .info-item__text {
+            line-height: 143%;
+            max-width: 54.5rem;
+        }
+
         @media (min-width: 48em) {
             row-gap: 4rem;
 
@@ -98,8 +103,12 @@
                 column-gap: 3.2rem;
 
                 &__text {
-                    max-width: 35.9rem;
+                    max-width: 34.9rem;
                     line-height: 130%;
+                }
+
+                &__subtitle {
+                    max-width: 34.6rem;
                 }
 
                 &:first-child {
@@ -127,15 +136,6 @@
     // .advantages__list-item
 
     &__list-item {
-        .info-item__text {
-            max-width: 41.9rem;
-        }
-        @media (max-width: 48em) {
-            .info-item__text {
-                line-height: 143%;
-                max-width: 54.5rem;
-            }
-        }
     }
 
     // .advantages__showmore-btn
@@ -480,6 +480,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        user-select: none;
     }
 
     // .speedometer__text-wrap
@@ -493,6 +494,7 @@
         align-items: center;
         row-gap: 3.4rem;
         text-align: center;
+        user-select: none;
 
         @media (max-width: 48em) {
             bottom: 0.8rem;
@@ -500,10 +502,8 @@
             row-gap: 3.2rem;
         }
 
-        @media (min-width: 48em) {
-            opacity: 0;
-            visibility: hidden;
-        }
+        opacity: 0;
+        visibility: hidden;
     }
 
     // .speedometer__score

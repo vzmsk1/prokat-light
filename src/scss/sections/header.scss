@@ -6,7 +6,6 @@
     width: 100%;
     will-change: contents;
 
-
     @media (max-width: 48em) {
         ._menu-opened & {
             &::before {
@@ -30,8 +29,6 @@
         }
     }
 
-
-
     @media (min-width: 48em) {
         .home-page & {
             transform: translateY(-110%);
@@ -40,9 +37,7 @@
                 transform: translate3d(0, calc(var(--scrollY) * -1), 0);
             }
         }
-
     }
-
 
     // .header__container
 
@@ -52,7 +47,6 @@
         display: grid;
         grid-template-columns: 5fr 2fr 5fr;
         align-items: center;
-
 
         .icon {
             @media (min-width: 48em) {
@@ -128,7 +122,9 @@
             background-color: $white;
             transform: scaleX(0);
             transform-origin: center;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease;
         }
 
         &:active {
@@ -148,7 +144,6 @@
             }
         }
     }
-
 
     &__link {
         font-weight: 500;
@@ -186,19 +181,21 @@
         }
 
         @media (max-width: 48em) {
-            &_close {
+            span:last-child {
                 display: none;
 
-                &.icon svg {
+                svg {
                     width: 3rem;
                     height: 3rem;
                 }
             }
             ._menu-opened & {
-                display: none;
-               &_close {
-                   display: inline-flex;
-               }
+                span {
+                    display: none;
+                }
+                span:last-child {
+                    display: inline-flex;
+                }
             }
         }
     }
@@ -215,7 +212,6 @@
 // --------------------------------------------------------------------------
 
 .select-lang {
-
     // .select__body
 
     .select__body {
@@ -274,7 +270,10 @@
     opacity: 0;
     visibility: hidden;
     transform: translateX(-110%);
-    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    transition:
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 
     ._menu-opened & {
         transform: translateX(0);

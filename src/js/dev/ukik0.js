@@ -1,8 +1,7 @@
+import $ from 'jquery';
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 import { remToPx } from '../utils/utils';
-
-import $ from 'jquery';
 
 document.addEventListener('DOMContentLoaded', () => {
     function fade(activeSlide) {

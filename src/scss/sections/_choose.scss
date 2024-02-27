@@ -1,9 +1,15 @@
 .choose {
     position: relative;
     padding-top: 0;
-    margin-bottom: 29rem;
+    margin-bottom: 20rem;
     --groundOpacity: 0;
     --whiteGradientOpacity: 0;
+
+    &._is-active {
+        &::before {
+            opacity: 1;
+        }
+    }
 
     &::before {
         content: '';
@@ -41,13 +47,30 @@
     }
 
     @media (min-width: 48em) {
-        margin-bottom: 0rem;
         padding-top: 22rem;
     }
 
     // .choose__container
 
     &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .choose__head
+
+    &__head {
+        margin-bottom: 8rem;
+
+        @media (min-width: 48em) {
+            margin-bottom: 6rem;
+            text-align: center;
+        }
+    }
+
+    // .choose__body
+
+    &__body {
         position: relative;
         z-index: 7;
         display: grid;
@@ -89,7 +112,7 @@
         align-self: center;
 
         @media (min-width: 48em) {
-            margin-bottom: 13.6rem;
+            margin-bottom: 21rem;
             align-self: flex-start;
         }
     }
@@ -109,7 +132,7 @@
 
         @media (min-width: 48em) {
             .info-item__subtitle {
-                max-width: 21.6rem;
+                max-width: 22.6rem;
             }
         }
     }
@@ -119,8 +142,8 @@
     &__info-item {
         &:nth-child(2) {
             svg {
-                width: 4rem;
-                height: 4rem;
+                width: 3rem;
+                height: 3rem;
             }
         }
     }
@@ -134,6 +157,15 @@
         flex-direction: column;
         min-width: 0;
         width: 100%;
+
+        ._is-hovered & {
+            &::before {
+                opacity: 0;
+            }
+            &::after {
+                opacity: 1;
+            }
+        }
 
         ._is-passed & {
             &:not(&._is-animating) {
@@ -149,7 +181,8 @@
             }
         }
 
-        &::before {
+        &::before,
+        &::after {
             content: '';
             position: absolute;
             z-index: -1;
@@ -157,10 +190,8 @@
             left: -11rem;
             width: 120rem;
             height: 180rem;
-            background-image: url(./assets/images/bg/white-gradient.webp);
             background-size: contain;
             background-repeat: no-repeat;
-            opacity: var(--whiteGradientOpacity);
             transition: opacity 0.4s ease;
 
             @media (max-width: 48em) {
@@ -169,10 +200,18 @@
                 margin-bottom: 12.6rem;
                 width: 174rem;
                 height: 63rem;
-                opacity: 1;
             }
         }
 
+        &::before {
+            background-image: url(./assets/images/bg/white-gradient.webp);
+            opacity: var(--whiteGradientOpacity);
+        }
+
+        &::after {
+            opacity: 0;
+            background-image: url(./assets/images/bg/orange-gradient.svg);
+        }
 
         &._is-animating {
             .choose__heading-wrap {
@@ -185,6 +224,65 @@
             padding-top: 14rem;
             padding-left: 5rem;
             justify-self: center;
+
+            ._reverse:not(&._is-end) ._is-prev,
+            &._is-end._reverse ._is-prev {
+                transition:
+                    opacity 0.3s ease,
+                    transform 0.6s ease 0.3s;
+            }
+
+            ._is-end._forward ._next-active,
+            ._is-end._reverse ._next-active {
+                transform: scale(0.33) translate(199rem, 2rem);
+                opacity: 1;
+            }
+
+            ._is-end._forward {
+                ._next-active {
+                    transition:
+                        opacity 0.3s ease,
+                        transform 0.6s ease;
+                }
+            }
+
+            ._is-end._reverse {
+                ._is-prev:not(._is-prev._next-active) {
+                    transform: scale(0.4);
+                    opacity: 0;
+                }
+                .swiper-slide._next-active {
+                    transition: transform 0.6s ease;
+                }
+            }
+
+            ._is-beginning._forward,
+            ._is-beginning._reverse {
+                ._prev-active {
+                    transform: scale(0.4);
+                    opacity: 0;
+                }
+            }
+
+            ._is-beginning._forward {
+                ._prev-active {
+                    transition:
+                        opacity 0.3s ease 0.6s,
+                        transform 0.6s ease;
+                }
+                ._next-active {
+                    transition: opacity 0.3s ease 0.3s;
+                }
+            }
+        }
+
+        @media (max-width: 48em) {
+            &::before {
+                opacity: 1;
+            }
+            &::after {
+                content: none;
+            }
         }
     }
 
@@ -230,59 +328,30 @@
                 opacity: 0;
                 pointer-events: none;
                 transition:
-                    transform 0.6s ease,
-                    opacity 0.3s ease;
-
-                &:not(&.swiper-slide-prev, &.swiper-slide-active, &.swiper-slide-next) {
-                    opacity: 0;
-                }
+                    opacity 0.3s ease,
+                    transform 0.6s ease;
 
                 &.swiper-slide-active {
                     z-index: 2;
+                    pointer-events: all;
                     opacity: 1;
                     transform: scale(1);
-
-                        transition-delay: 0.2s;
-
-                    ._prev-slide & {
-                        transition: transform 0.6s ease 0.3s, opacity 0.3s ease;
-                    }
-
                 }
 
                 &._is-prev {
                     transform: scale(0.4);
                     opacity: 0;
                     transition:
-                        opacity 0.3s ease,
+                        opacity 0.3s ease 1s,
                         transform 0.6s ease;
-
-                    &:not(._prev-slide &) {
-                        transition:
-                            opacity 0.3s ease 1s,
-                            transform 0.6s ease;
-                    }
-                    ._prev-slide & {
-                        display: none;
-                    }
                 }
 
                 &._is-next {
                     transform: scale(0.33) translate(199rem, 2rem);
-                    pointer-events: all;
-                    cursor: pointer;
-                    transition:
-                            transform 0.6s ease,
-                            opacity 0.3s ease;
-
-                    &.swiper-slide-next {
-                        z-index: 2;
-                        opacity: 1;
-                    }
-
-                    &:not(._prev-slide &) {
-                        transition-delay: 0.5s;
-                    }
+                }
+                &.swiper-slide-next:not(._is-beginning &, ._is-end &),
+                &._next-active {
+                    opacity: 1;
                 }
             }
         }
@@ -371,13 +440,13 @@
     // .choose__characteristics-icon
 
     &__characteristics-icon {
-        flex: 0 0 10.7rem;
-        width: 10.7rem;
-        height: 10.7rem;
+        flex: 0 0 9.7rem;
+        width: 9.7rem;
+        height: 9.7rem;
 
         svg {
-            width: 4.5rem;
-            height: 4.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
 
             path {
                 transition: stroke 0.3s ease;
@@ -400,7 +469,7 @@
 
     &__btn {
         align-self: flex-end;
-        transform: translateY(-0.4rem);
+        transform: translateY(-9rem);
 
         @media (max-width: 48em) {
             align-self: stretch;

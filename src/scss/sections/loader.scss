@@ -9,14 +9,6 @@
     width: 100vw;
     height: 100vh;
     background-color: $bgColor;
-    transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-
-    ._is-loaded & {
-        opacity: 0;
-        visibility: hidden;
-    }
 
     &__content {
         display: flex;

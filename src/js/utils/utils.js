@@ -1,3 +1,7 @@
+import Inputmask from 'inputmask';
+
+// --------------------------------------------------------------------------
+
 /**
  * set hash to url
  * @param {string} hash
@@ -397,3 +401,17 @@ export const setAttr = (arr, attr, val) => {
     }
 };
 
+/**
+ * init input mask
+ */
+export const initInputMask = () => {
+    const maskElements = document.querySelectorAll('[data-tel-mask]');
+
+    if (maskElements.length) {
+        maskElements.forEach((maskElement) => {
+            Inputmask({ mask: '+7 (999) 999-9999', showMaskOnHover: false, jitMasking: true }).mask(
+                maskElement
+            );
+        });
+    }
+};
