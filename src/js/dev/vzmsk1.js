@@ -51,7 +51,9 @@ class HomePage {
             reverseSl: '_reverse',
             forwardSl: '_forward',
             active: '_is-active',
-            hovered: '_is-hovered'
+            hovered: '_is-hovered',
+            beginning: '_is-beginning',
+            end: '_is-end'
         };
 
         // special utils methods
@@ -72,12 +74,20 @@ class HomePage {
         };
         this.setSlideClasses = (swiper) => {
             swiper.slides.forEach((slide, i) => {
-                slide.classList.remove('_is-next', '_is-prev');
+                slide.classList.remove('_is-next', '_is-prev', '_prev-active', '_next-active');
 
                 if (i > swiper.activeIndex) {
                     slide.classList.add('_is-next');
                 } else if (i < swiper.activeIndex) {
                     slide.classList.add('_is-prev');
+                }
+                if (swiper.isEnd) {
+                    swiper.slides[0].classList.add('_next-active');
+                    swiper.slides[swiper.slides.length - 2].classList.add('_prev-active');
+                }
+                if (swiper.activeIndex === 0) {
+                    swiper.slides[1].classList.add('_next-active');
+                    swiper.slides[swiper.slides.length - 1].classList.add('_prev-active');
                 }
             });
         };
@@ -281,6 +291,9 @@ class HomePage {
                             setTimeout(() => {
                                 _this.unlockScroll();
                                 _this.initHamburgerMenu(_this);
+                                if (mm.matches) {
+                                    document.querySelector('.choose').classList.add(_this.classes.active);
+                                }
                             }, 2000);
                         }
                     },
@@ -293,7 +306,8 @@ class HomePage {
                         transformOrigin: '50% 50%'
                     },
                     {
-                        scale: 1
+                        scale: 1,
+                        translateY: mm.matches ? 0 : '-6rem'
                     },
                     1.5
                 )
@@ -398,14 +412,31 @@ class HomePage {
 
         if (section) {
             const carousel = section.querySelector('.choose__carousel');
+            const prevArr = document.querySelector('.choose__sl-arr_prev');
+            const nextArr = document.querySelector('.choose__sl-arr_next');
+            const controlStateClasses = (addClass, removeClass) => {
+                carousel.classList.add(addClass);
+                carousel.classList.remove(removeClass);
+            };
+            const getData = (swiper) => {
+                return {
+                    prevSl: swiper.previousIndex,
+                    activeSl: swiper.activeIndex,
+                    slidesLen: swiper.slides.length,
+                    isReversed: swiper.previousIndex === 0 && swiper.isEnd && !mm.matches,
+                    isBeginning: swiper.activeIndex === 0
+                };
+            };
             const slider = new Swiper('.choose__slider', {
                 modules: [Navigation, Pagination],
                 observer: true,
                 spaceBetween: 30,
                 speed: SPEED,
+                allowTouchMove: true,
+                rewind: true,
                 navigation: {
-                    nextEl: '.choose__sl-arr_next',
-                    prevEl: '.choose__sl-arr_prev'
+                    nextEl: nextArr,
+                    prevEl: prevArr
                 },
                 pagination: {
                     el: '.choose__pagination',
@@ -420,39 +451,81 @@ class HomePage {
                     768: {
                         spaceBetween: 0,
                         preventInteractionOnTransition: true,
-                        virtualTranslate: true
+                        virtualTranslate: true,
+                        allowTouchMove: false
                     }
                 },
                 on: {
                     init: (swiper) => {
                         setSlideContent(swiper);
                         if (!mm.matches) _this.setSlideClasses(swiper);
+
+                        nextArr.addEventListener('click', function () {
+                            if (swiper.activeIndex === swiper.slides.length - 1) {
+                                swiper.slideTo(0);
+                            }
+                        });
                     },
                     slideChangeTransitionStart: (swiper) => {
-                        setSlideContent(swiper);
-                        _this.delayClass(carousel, _this.classes.anim, SPEED, swiper);
+                        const { ...data } = getData(swiper);
 
+                        // set slide content
+                        setSlideContent(swiper);
+                        // add is animating class
+                        _this.delayClass(carousel, _this.classes.anim, SPEED, swiper);
+                        // remove all state classes
+                        carousel.classList.remove(_this.classes.beginning, _this.classes.end);
+
+                        // if it's a desktop screen, then reset state classes and remove swiper wrapper styling
                         if (!mm.matches) {
                             _this.setSlideClasses(swiper);
                             swiper.wrapperEl.style.removeProperty('transform');
-                        }
-                    },
-                    slidePrevTransitionStart: (swiper) => {
-                        if (!mm.matches) {
-                            _this.delayClass(carousel, _this.classes.reverseSl, SPEED);
+
+                            // is beginning
+                            if (data.isBeginning) {
+                                carousel.classList.add(_this.classes.beginning);
+                            }
+                            // leading
+                            if (data.isReversed || (data.isBeginning && data.prevSl !== data.slidesLen - 1)) {
+                                controlStateClasses(_this.classes.reverseSl, _this.classes.forwardSl);
+                            }
+                            // reversed
+                            if (
+                                (data.prevSl === data.slidesLen - 2 && swiper.isEnd) ||
+                                (data.isBeginning && data.prevSl === data.slidesLen - 1) ||
+                                (!swiper.isEnd && data.activeSl !== 0)
+                            ) {
+                                controlStateClasses(_this.classes.forwardSl, _this.classes.reverseSl);
+                            }
+                            // is end
+                            if (swiper.isEnd) {
+                                carousel.classList.add(_this.classes.end);
+                                setTimeout(() => {
+                                    _this.unlockScroll();
+                                    section.classList.add(_this.classes.active);
+                                    nextArr.removeAttribute('disabled');
+                                }, SPEED);
+                            }
                         }
                     },
                     slideNextTransitionStart: (swiper) => {
-                        if (!mm.matches) {
-                            _this.delayClass(carousel, _this.classes.forwardSl, SPEED);
+                        if (
+                            !_this.isActive(section) &&
+                            !mm.matches &&
+                            swiper.activeIndex !== 0 &&
+                            !swiper.isEnd
+                        ) {
+                            _this.delayClass(nextArr, _this.classes.active, SPEED, swiper);
                         }
                     },
-                    reachEnd: (swiper) => {
-                        if (!mm.matches) {
-                            setTimeout(() => {
-                                _this.unlockScroll();
-                                section.classList.add(_this.classes.active);
-                            }, SPEED);
+                    slidePrevTransitionStart: (swiper) => {
+                        if (
+                            !_this.isActive(section) &&
+                            !mm.matches &&
+                            swiper.activeIndex !== 0 &&
+                            !swiper.isEnd
+                        ) {
+                            _this.delayClass(prevArr, _this.classes.active, SPEED, swiper);
                         }
                     }
                 }
@@ -551,9 +624,7 @@ class HomePage {
                 }
             });
 
-            if (mm.matches) {
-                section.classList.add(_this.classes.active);
-            } else {
+            if (!mm.matches) {
                 section.addEventListener('mouseover', function (e) {
                     if (e.target.closest('.swiper-slide-active') || e.target.closest('.choose__heading')) {
                         section.classList.add(_this.classes.hovered);

@@ -65,10 +65,18 @@
         }
     }
 
+    &.choose__sl-arr_prev.swiper-button-disabled {
+        pointer-events: none;
+        svg path {
+            stroke: $gray;
+        }
+    }
+
     &._is-disabled {
         box-shadow:
             inset 0 -0.16rem 0.8rem rgba(173, 173, 173, 0.48),
             inset 0.32rem 0.32rem 0.16rem rgba(255, 255, 255, 0.1);
+        //pointer-events: none;
 
         svg path {
             fill: $gray;
@@ -106,6 +114,7 @@
     }
 
     &:not(&._is-disabled, &._no-hover) {
+        &._is-active,
         &:active {
             box-shadow:
                 inset 0 -0.16rem 0.8rem #9e4504,

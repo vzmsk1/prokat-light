@@ -121,6 +121,10 @@ $num-of-tabs: 4;
         }
     }
 
+    @include small-tablet {
+        margin-bottom: 15rem;
+    }
+
     &__title {
         text-align: center;
         margin-bottom: 6rem;
