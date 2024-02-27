@@ -29,6 +29,7 @@ input:focus {
         transition: border-bottom 0.3s ease;
 
         &::placeholder {
+            text-transform: uppercase;
             color: $gray;
             transition: color 0.3s ease;
         }
@@ -49,6 +50,7 @@ input:focus {
         transition: border-bottom 0.3s ease;
 
         &::placeholder {
+            text-transform: uppercase;
             color: $gray;
             transition: color 0.3s ease;
         }
@@ -57,8 +59,13 @@ input:focus {
     // .input__hint
 
     &__hint {
-        display: none;
+        position: absolute;
+        top: calc(100% + 0.8rem);
+        left: 0;
         color: $red;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
     &._has-focus {
@@ -74,7 +81,8 @@ input:focus {
             border-bottom: 1px solid $red;
         }
         .input__hint {
-            display: inline-block;
+            opacity: 1;
+            visibility: visible;
         }
     }
 }

@@ -13,6 +13,9 @@ import 'swiper/css';
 // vivus
 import Vivus from 'vivus';
 
+// inputmask
+import Inputmask from 'inputmask';
+
 // utils
 import { setInnerContent, bodyLock, bodyUnlock, bodyLockStatus } from '../utils/utils';
 
@@ -26,9 +29,9 @@ const locoScroll = new LocomotiveScroll({
     el: document.querySelector('._smooth-scroll'),
     smooth: true,
     multiplier: mm.matches ? 1.1 : 0.6,
-    smoothMobile: true,
+    smoothMobile: document.querySelector('.home-page') ? true : false,
     smartphone: {
-        smooth: true,
+        smooth: document.querySelector('.home-page') ? true : false,
     }
 });
 
@@ -148,17 +151,17 @@ if (document.querySelector('.loader')) {
                 imgLoad(document.images[num]);	}
             else{
                 percentVal.textContent= "100%";
-                    document.documentElement.classList.add('_is-loaded');
+                document.documentElement.classList.add('_is-loaded');
 
-                    setTimeout(() => {
-                        document.querySelector('.loader').remove();}, 600);
+                setTimeout(() => {
+                    document.querySelector('.loader').remove();}, 600);
 
-                    animateHero();
+                animateHero();
             }
         },100)
 
-        }
-        imgLoad(document.images[num]);
+    }
+    imgLoad(document.images[num]);
 }
 
 // gsap plugins & defaults
@@ -169,6 +172,19 @@ gsap.defaults({
 });
 
 window.addEventListener('load', function () {
+    /**
+     * add input mask
+     */
+    const addInputMask = () => {
+        if (document.querySelectorAll('[data-tel-mask]').length) {
+            document.querySelectorAll('[data-tel-mask]').forEach((telInput) => {
+                Inputmask({ mask: '+7 (999) 999-9999', showMaskOnHover: false, jitMasking: true }).mask(
+                    telInput
+                );
+            });
+        }
+    };
+    addInputMask();
 
     // fix footer cut off
     setTimeout(() => {

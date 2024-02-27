@@ -1,10 +1,9 @@
-import $ from 'jquery';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 
 $(document).ready(function () {
-    $('.contacts').length > 0 ? initMap() : null;
+    $('#contacts-map').length ? initMap() : null;
     !!$('.condition').length && conditionSlider();
 });
 

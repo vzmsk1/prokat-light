@@ -1,0 +1,134 @@
+.dropdown {
+
+  .select {
+    position: relative;
+
+    &._is-opened {
+      .select__title {
+        &::after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    &._is-filled {
+      .select__value._has-label::before {
+        display: none;
+      }
+      .select__content {
+        display: block;
+      }
+    }
+
+    .simplebar-track.simplebar-vertical {
+      width: 0.2rem;
+      background-color: rgba(194, 194, 194, 0.25);
+
+      @media (max-width: 48em) {
+        width: 0.4rem;
+      }
+    }
+    .simplebar-scrollbar {
+      background-color: $orange;
+    }
+    .simplebar-scrollbar:before {
+      border-radius: 0;
+    }
+
+    &__title {
+      padding-right: 0.7rem;
+
+      @media (max-width: 48em) {
+        padding-right: 1.6rem;
+      }
+    }
+
+    &__value {
+      &._has-label {
+        &::before {
+          content: attr(data-sel-label);
+          padding-left: 0.5rem;
+          font-size: 2rem;
+          text-transform: uppercase;
+
+          @media (max-width: 48em) {
+            padding-left: 0;
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+
+    &__content {
+      display: none;
+      text-transform: uppercase;
+    }
+
+    &__title {
+      padding-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 2rem;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+
+      &::after {
+        content: '';
+        flex: 0 0 2.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-image: url(./assets/images/icons/arr.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: transform 0.3s ease;
+      }
+
+      @media (max-width: 48em) {
+        padding-bottom: 3.2rem;
+
+        &::after {
+          flex: 0 0 0 3.2rem;
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+      }
+    }
+
+    &__options {
+      position: absolute;
+      z-index: 2;
+      top: calc(100% + 1.2rem);
+      left: 0;
+      padding: 2rem;
+      width: 100%;
+      background-color: rgba(36, 39, 42, 1);
+
+      @media (max-width: 48em) {
+        top: calc(100% + 1.6rem);
+        padding: 3.2rem;
+      }
+    }
+
+    &__option {
+      display: block;
+      width: 100%;
+      line-height: 133%;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+
+      &._is-selected {
+        color: $orange;
+      }
+
+      &:not(&:last-child) {
+        margin-bottom: 1.6rem;
+
+        @media (max-width: 48em) {
+          margin-bottom: 2.2rem;
+        }
+      }
+    }
+  }
+
+}

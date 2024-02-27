@@ -7,7 +7,6 @@
     will-change: contents;
 
 
-
     @media (max-width: 48em) {
         ._menu-opened & {
             &::before {
@@ -140,9 +139,11 @@
         }
 
         @media (any-hover: hover) {
-            &:hover {
-                &::after {
-                    transform: scaleX(1);
+            &:not(&._is-active) {
+                &:hover {
+                    &::after {
+                        transform: scaleX(1);
+                    }
                 }
             }
         }
@@ -154,6 +155,10 @@
 
         &_lang {
             text-transform: uppercase;
+        }
+
+        &._is-active {
+            color: $orange;
         }
     }
 
@@ -221,7 +226,6 @@
 
     .select__content {
         display: block;
-        width: 3.2rem;
         font-weight: 500;
         text-transform: uppercase;
     }
