@@ -14,7 +14,8 @@ import 'swiper/css';
 import Vivus from 'vivus';
 
 // utils
-import { setInnerContent, bodyLock, bodyUnlock, bodyLockStatus } from '../utils/utils';
+import { setInnerContent, bodyLock, bodyUnlock, bodyLockStatus, remToPx } from '../utils/utils';
+import { modules } from '../modules';
 
 // gsap plugins & defaults
 gsap.registerPlugin(MotionPathPlugin, ScrollTrigger, Observer);
@@ -37,10 +38,10 @@ class HomePage {
         this.locoScroll = new LocomotiveScroll({
             el: this.scroller,
             smooth: true,
-            multiplier: mm.matches ? 1.1 : 0.6,
-            smoothMobile: true,
+            multiplier: 0.6,
+            smoothMobile: false,
             smartphone: {
-                smooth: true
+                smooth: false
             }
         });
 
@@ -135,6 +136,20 @@ class HomePage {
             mm.addEventListener('change', function () {
                 if (!mm.matches) {
                     closeMenu();
+                    _this.locoScroll.update();
+                    setTimeout(() => {
+                        if (modules.modal) {
+                            const modals = document.querySelectorAll('.modal');
+
+                            if (modals.length) {
+                                modals.forEach((modal) => {
+                                    modal.classList.remove('modal_show');
+                                    _this.docElement.classList.remove('modal-show');
+                                    _this.unlockScroll();
+                                });
+                            }
+                        }
+                    }, 0);
                 }
             });
         }
@@ -535,26 +550,24 @@ class HomePage {
              * handle gsap observer
              */
             const handleObserver = () => {
-                setTimeout(() => {
-                    _this.lockScroll();
+                _this.lockScroll();
 
-                    ScrollTrigger.observe({
-                        target: section,
-                        type: 'wheel,touch',
-                        tolerance: 280,
-                        id: ID,
-                        onUp: () => slider.slidePrev(),
-                        onDown: (e) => {
-                            if (e.deltaY === 0) {
-                                setTimeout(() => {
-                                    slider.slideNext();
-                                }, 500);
-                            } else {
+                ScrollTrigger.observe({
+                    target: section,
+                    type: 'wheel,touch',
+                    tolerance: 280,
+                    id: ID,
+                    onUp: () => slider.slidePrev(),
+                    onDown: (e) => {
+                        if (e.deltaY === 0) {
+                            setTimeout(() => {
                                 slider.slideNext();
-                            }
+                            }, 500);
+                        } else {
+                            slider.slideNext();
                         }
-                    });
-                }, 1000);
+                    }
+                });
             };
 
             gsap.matchMedia().add('(min-width: 768px)', () => {
@@ -692,42 +705,48 @@ class HomePage {
             });
 
             const handleObserver = () => {
-                setTimeout(() => {
-                    _this.lockScroll();
+                ScrollTrigger.observe({
+                    target: section,
+                    type: 'wheel,touch',
+                    tolerance: 280,
+                    id: ID,
+                    onUp: (e) => {
+                        if (slider.isBeginning) {
+                            _this.unlockScroll();
+                        } else {
+                            e.disable();
+                            _this.locoScroll.scrollTo(section, {
+                                duration: 500,
+                                callback: () => {
+                                    _this.lockScroll();
+                                    slider.slidePrev();
+                                }
+                            });
 
-                    ScrollTrigger.observe({
-                        target: section,
-                        type: 'wheel,touch',
-                        tolerance: 280,
-                        id: ID,
-                        onUp: (e) => {
-                            if (slider.isBeginning) {
-                                _this.unlockScroll();
-                            } else {
-                                e.disable();
-                                _this.lockScroll();
-                                slider.slidePrev();
-
-                                setTimeout(() => {
-                                    e.enable();
-                                }, 1000);
-                            }
-                        },
-                        onDown: (e) => {
-                            if (slider.isEnd) {
-                                _this.unlockScroll();
-                            } else {
-                                e.disable();
-                                _this.lockScroll();
-                                slider.slideNext();
-
-                                setTimeout(() => {
-                                    e.enable();
-                                }, 1000);
-                            }
+                            setTimeout(() => {
+                                e.enable();
+                            }, 600);
                         }
-                    });
-                }, 1000);
+                    },
+                    onDown: (e) => {
+                        if (slider.isEnd) {
+                            _this.unlockScroll();
+                        } else {
+                            e.disable();
+                            _this.locoScroll.scrollTo(section, {
+                                duration: 500,
+                                callback: () => {
+                                    _this.lockScroll();
+                                    slider.slideNext();
+                                }
+                            });
+
+                            setTimeout(() => {
+                                e.enable();
+                            }, 600);
+                        }
+                    }
+                });
             };
 
             gsap.matchMedia().add('(min-width: 768px)', () => {
@@ -745,12 +764,14 @@ class HomePage {
                         start: 'top 35%',
                         bottom: 'bottom bottom',
                         onEnter: ({ progress }) => {
-                            if (progress !== 1) {
-                                _this.locoScroll.scrollTo(section);
-                                setTimeout(() => {
-                                    _this.lockScroll();
-                                    handleObserver();
-                                }, 1000);
+                            if (progress !== 1 && !mm.matches) {
+                                _this.locoScroll.scrollTo(section, {
+                                    duration: 500,
+                                    callback: () => {
+                                        _this.lockScroll();
+                                        handleObserver();
+                                    }
+                                });
 
                                 if (!_this.isActive(slider.slides[0])) {
                                     _this.animateSpeedometer();
@@ -759,11 +780,15 @@ class HomePage {
                             }
                         },
                         onEnterBack: () => {
-                            _this.locoScroll.scrollTo(section);
-                            setTimeout(() => {
-                                _this.lockScroll();
-                                handleObserver();
-                            }, 1000);
+                            if (!mm.matches) {
+                                _this.locoScroll.scrollTo(section, {
+                                    duration: 500,
+                                    callback: () => {
+                                        _this.lockScroll();
+                                        handleObserver();
+                                    }
+                                });
+                            }
                         },
                         onLeave: () => {
                             _this.locoScroll.update();
@@ -811,11 +836,13 @@ class HomePage {
 
         // locomotive scroll event & integration
         if (_this.locoScroll) {
-            _this.locoScroll.on('scroll', (args) => {
-                ScrollTrigger.update();
+            if (!mm.matches) {
+                _this.locoScroll.on('scroll', (args) => {
+                    ScrollTrigger.update();
 
-                gsap.to(document.body, { '--scrollY': `${args.scroll.y}px` });
-            });
+                    gsap.to(document.body, { '--scrollY': `${args.scroll.y}px` });
+                });
+            }
 
             // scroll trigger integration with locomotive scroll
             ScrollTrigger.addEventListener('refresh', () => _this.locoScroll.update());
@@ -830,3 +857,39 @@ class HomePage {
     }
 }
 new HomePage();
+
+const initRoutesModal = () => {
+    const routesBtn = document.querySelector('.routes__tabs-info-button');
+    if (routesBtn) {
+        routesBtn.addEventListener('click', function () {
+            const inputs = document.querySelectorAll('.routes__tabs-wrapper input');
+
+            if (inputs.length) {
+                inputs.forEach((input) => {
+                    if (input.checked) {
+                        const t = document.querySelector(`[data-routes-content="${input.dataset.routesTab}"`);
+                        document.querySelector('.attractions-modal__inner').innerHTML = t.innerHTML;
+
+                        new Swiper(document.querySelector('.attractions-modal__inner .swiper'), {
+                            modules: [Navigation, Pagination],
+                            slidesPerView: 1,
+                            spaceBetween: remToPx(4),
+                            speed: 1500,
+                            autoHeight: true,
+                            pagination: {
+                                el: '.attractions-modal__pagination',
+                                type: 'bullets',
+                                clickable: true,
+                                renderBullet: function (index, className) {
+                                    const indx = index >= 10 ? index : '0' + ++index;
+                                    return `<span class="${className}" data-index="${indx}"></span>`;
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    }
+};
+initRoutesModal();

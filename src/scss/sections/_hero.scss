@@ -19,14 +19,12 @@
         width: 110%;
         height: 92%;
 
-
         img {
             height: 100%;
             object-fit: cover;
             transform: translate3d(0, calc(var(--scrollY) / 4), 0);
             will-change: contents;
         }
-
 
         @media (max-width: 48em) {
             bottom: 0;
@@ -35,11 +33,10 @@
             height: 69%;
 
             img {
-                transform: translate3d(0, calc(var(--scrollY) / 8), 0);
+                transform: none;
             }
         }
     }
-
 
     // .hero__bg
 
@@ -123,12 +120,11 @@
         transform: translate3d(0, calc(var(--scrollY) * 0.5), 0);
         will-change: contents;
 
-
         @media (max-width: 48em) {
             max-width: 56rem;
             font-size: 3.6rem;
             transform: translate3d(0, calc(var(--scrollY) / 5), 0);
-            transition: transform 0.1s ease;
+            transform: none;
         }
     }
 
@@ -140,7 +136,6 @@
         transform: translate3d(0, calc(var(--scrollY) * 0.5), 0);
         will-change: contents;
 
-
         span {
             display: block;
         }
@@ -149,8 +144,7 @@
             margin-bottom: 4.2rem;
             max-width: none;
             font-size: 4.4rem;
-            transform: translate3d(0, calc(var(--scrollY) / 5), 0);
-            transition: transform 0.1s ease;
+            transform: none;
 
             span {
                 display: inline-block;
@@ -166,13 +160,11 @@
         transform: translate3d(0, calc(var(--scrollY) * 0.5), 0);
         will-change: contents;
 
-
         @media (max-width: 48em) {
             margin-bottom: 3.4rem;
             font-size: 3rem;
             line-height: 3.3rem;
-            transform: translate3d(0, calc(var(--scrollY) / 5), 0);
-            transition: transform 0.1s ease;
+            transform: none;
         }
     }
 
@@ -206,7 +198,6 @@
         left: 50%;
         width: 109%;
 
-
         @media (min-width: 48em) {
             width: 102rem;
             transform: translateY(9.5rem);
@@ -221,7 +212,7 @@
         will-change: contents;
 
         @media (max-width: 48em) {
-            transform: translate3d(0, calc(var(--scrollY) / 9), 0);
+            transform: none;
         }
     }
 
@@ -235,5 +226,4 @@
             display: none;
         }
     }
-
 }

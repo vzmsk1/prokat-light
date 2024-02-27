@@ -7,7 +7,7 @@
         <title>Условия проката</title>
     <script defer src="main.js"></script></head>
     <body>
-        <div class="wrapper rental-page">
+        <div class="wrapper rental-page _smooth-scroll">
             <header class="header">
     <div class="header__container container">
         <button type="button" class="header__hamburger icon">
@@ -93,7 +93,7 @@
 </header>
 
 
-            <main class="_smooth-scroll">
+            <main>
                 <section class="rental">
     <div class="container">
         <div class="rental__content">
@@ -357,36 +357,40 @@
             <div class="contacts__map" id="contacts-map"></div>
             <div class="contacts__wrapper">
                 <article class="contact-form contacts__form">
-                    <form class="contact-form__inner">
+                    <form data-dev="" action="#" class="contact-form__inner">
                         <h3 class="contact-form__title h h_3 _mobile-only">Оставьте заявку</h3>
 
                         <div class="contact-form__wrapper">
                             <div class="input">
                                 <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="фио" class="input__field">
-                                <span class="input__hint txt txt_14">Введите корректный ФИО</span>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                             <div class="input">
-                                <input data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
-                                <span class="input__hint txt txt_14">Введите корректный номер</span>
+                                <input data-tel-mask="" data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                             <div class="input">
                                 <input data-validate="" data-required="" autocomplete="off" type="email" name="form[]" placeholder="e-mail" class="input__field">
-                                <span class="input__hint txt txt_14">Введите корректный e-mail</span>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
-                            <div class="textarea">
-                                <textarea name="form[]" autocomplete="off" placeholder="Ваше сообщение" class="input__textarea"></textarea>
+                            <div class="textarea input">
+                                <textarea data-validate="" data-required="" name="form[]" autocomplete="off" placeholder="Ваше сообщение" class="input__textarea"></textarea>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                         </div>
                         <div class="contact-form__file">
                             <label for="file">
                                 <img src="../assets/images/icons/file-icon.svg" alt="">
 
-                                <span>Прикрепите документы (договор проката, водительское удостоверение,
+                                <span data-file-placeholder="Прикрепите документы (договор проката, водительское удостоверение,
+                                    паспорт)">Прикрепите документы (договор проката, водительское удостоверение,
                                     паспорт)
                                 </span>
                             </label>
 
-                            <input id="file" type="file" class="contact-form__file-input">
+                            <input data-file-input="" data-validate="" data-required="" id="file" type="file" class="contact-form__file-input">
+
+                            <span class="contact-form__file-input-hint field-hint txt txt_14"></span>
                         </div>
 
                         <div class="contact-form__footer">
@@ -443,15 +447,6 @@
 </section>
 
             </main>
-
-            <div class="loader">
-  <div class="loader__content">
-    <div class="loader__icon-wrap">
-      <div class="loader__icon-inner"><img src="./assets/images/components/loader/wheel.webp" alt="" class="loader__icon"></div>
-    </div>
-    <div class="loader__progress h h_2"><span id="percentVal">0</span></div>
-  </div>
-</div>
             <footer class="footer">
     <div class="container">
         <div class="footer__inner">
@@ -533,7 +528,27 @@
     </div>
 </footer>
 
-            
+            <div id="attractionsModal" aria-hidden="true" class="modal attractions-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close icon icon_white">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <div class="attractions-modal__inner"></div>
+                <div class="attractions-modal__pagination sl-pagination sl-pagination_mm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
             <div style="position: absolute; top: 0; left: 0; transform: translate(-100%, -100%)">
     <svg xmlns="http://www.w3.org/2000/svg" width="300%" height="300%">
         <linearGradient id="speedometerProgressGradient" x1="42%" y1="0%" x2="58%" y2="100%">

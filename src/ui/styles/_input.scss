@@ -11,6 +11,24 @@ input:focus {
     outline: none;
 }
 
+.input__hint,
+.field-hint {
+    position: absolute;
+    top: calc(100% + 0.8rem);
+    left: 0;
+    color: $red;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    ._has-error & {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 .input {
     position: relative;
     display: flex;
@@ -59,13 +77,6 @@ input:focus {
     // .input__hint
 
     &__hint {
-        position: absolute;
-        top: calc(100% + 0.8rem);
-        left: 0;
-        color: $red;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
     &._has-focus {
@@ -79,10 +90,6 @@ input:focus {
         }
         .input__textarea {
             border-bottom: 1px solid $red;
-        }
-        .input__hint {
-            opacity: 1;
-            visibility: visible;
         }
     }
 }

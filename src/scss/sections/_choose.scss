@@ -109,6 +109,7 @@
     // .choose__pagination
 
     &__pagination {
+        margin-bottom: 6rem;
         align-self: center;
 
         @media (min-width: 48em) {
@@ -232,13 +233,13 @@
                     transform 0.6s ease 0.3s;
             }
 
-            ._is-end._forward ._next-active,
-            ._is-end._reverse ._next-active {
+            &._is-end._forward ._next-active,
+            &._is-end._reverse ._next-active {
                 transform: scale(0.33) translate(199rem, 2rem);
                 opacity: 1;
             }
 
-            ._is-end._forward {
+            &._is-end._forward {
                 ._next-active {
                     transition:
                         opacity 0.3s ease,
@@ -246,7 +247,7 @@
                 }
             }
 
-            ._is-end._reverse {
+            &._is-end._reverse {
                 ._is-prev:not(._is-prev._next-active) {
                     transform: scale(0.4);
                     opacity: 0;
@@ -256,15 +257,15 @@
                 }
             }
 
-            ._is-beginning._forward,
-            ._is-beginning._reverse {
+            &._is-beginning._forward,
+            &._is-beginning._reverse {
                 ._prev-active {
                     transform: scale(0.4);
                     opacity: 0;
                 }
             }
 
-            ._is-beginning._forward {
+            &._is-beginning._forward {
                 ._prev-active {
                     transition:
                         opacity 0.3s ease 0.6s,

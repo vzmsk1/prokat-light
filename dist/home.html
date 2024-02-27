@@ -694,7 +694,7 @@
 
             <div class="routes__tabs">
                 <div class="routes__tabs-wrapper">
-                    <input checked="" id="tab-1" name="tab" type="radio">
+                    <input checked="" id="tab-1" data-routes-tab="1" name="tab" type="radio">
                     <div class="routes__tabs-button">
                         <label for="tab-1">юг</label>
                         <div class="routes__tabs-content">
@@ -703,7 +703,7 @@
                                 <img src="./assets/images/sections/routes/path-1-m.svg" alt="" class="_mobile-only">
                             </figure>
 
-                            <div class="routes__tabs-attractions _desktop-only">
+                            <div data-routes-content="1" class="routes__tabs-attractions _desktop-only">
                                 <span class="routes__tabs-attractions-title"> Достопримечательности </span>
 
                                 <p class="routes__tabs-attractions-text"></p>
@@ -776,7 +776,7 @@
                             </div>
                         </div>
                     </div>
-                    <input id="tab-2" name="tab" type="radio">
+                    <input id="tab-2" name="tab" data-routes-tab="2" type="radio">
                     <div class="routes__tabs-button">
                         <label for="tab-2">север</label>
                         <div class="routes__tabs-content">
@@ -784,7 +784,7 @@
                                 <img src="./assets/images/sections/routes/path-2.svg" alt="">
                             </figure>
 
-                            <div class="routes__tabs-attractions _desktop-only">
+                            <div data-routes-content="2" class="routes__tabs-attractions _desktop-only">
                                 <span class="routes__tabs-attractions-title"> Достопримечательности </span>
 
                                 <p class="routes__tabs-attractions-text"></p>
@@ -857,7 +857,7 @@
                             </div>
                         </div>
                     </div>
-                    <input id="tab-3" name="tab" type="radio">
+                    <input id="tab-3" name="tab" data-routes-tab="3" type="radio">
                     <div class="routes__tabs-button">
                         <label for="tab-3">запад</label>
                         <div class="routes__tabs-content">
@@ -865,7 +865,7 @@
                                 <img src="./assets/images/sections/routes/path-3.svg" alt="">
                             </figure>
 
-                            <div class="routes__tabs-attractions _desktop-only">
+                            <div data-routes-content="3" class="routes__tabs-attractions _desktop-only">
                                 <span class="routes__tabs-attractions-title"> Достопримечательности </span>
 
                                 <p class="routes__tabs-attractions-text"></p>
@@ -938,7 +938,7 @@
                             </div>
                         </div>
                     </div>
-                    <input id="tab-4" name="tab" type="radio">
+                    <input id="tab-4" name="tab" data-routes-tab="4" type="radio">
                     <div class="routes__tabs-button">
                         <label for="tab-4">восток</label>
                         <div class="routes__tabs-content">
@@ -946,7 +946,7 @@
                                 <img src="./assets/images/sections/routes/path-4.svg" alt="">
                             </figure>
 
-                            <div class="routes__tabs-attractions _desktop-only">
+                            <div data-routes-content="4" class="routes__tabs-attractions _desktop-only">
                                 <span class="routes__tabs-attractions-title"> Достопримечательности </span>
 
                                 <p class="routes__tabs-attractions-text"></p>
@@ -1070,7 +1070,7 @@
                         </li>
                     </ul>
 
-                    <button class="routes__tabs-info-button btn _mobile-only">
+                    <button data-modal="#attractionsModal" class="routes__tabs-info-button btn _mobile-only">
                         <span class="btn__txt">Достопримечательности</span>
                     </button>
                 </div>
@@ -1333,7 +1333,27 @@
     </div>
 </footer>
 
-            
+            <div id="attractionsModal" aria-hidden="true" class="modal attractions-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close icon icon_white">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <div class="attractions-modal__inner"></div>
+                <div class="attractions-modal__pagination sl-pagination sl-pagination_mm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
             <div style="position: absolute; top: 0; left: 0; transform: translate(-100%, -100%)">
     <svg xmlns="http://www.w3.org/2000/svg" width="300%" height="300%">
         <linearGradient id="speedometerProgressGradient" x1="42%" y1="0%" x2="58%" y2="100%">

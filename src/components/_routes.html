@@ -5,7 +5,7 @@
 
             <div class="routes__tabs">
                 <div class="routes__tabs-wrapper">
-                    <input checked id="tab-1" name="tab" type="radio" />
+                    <input checked id="tab-1" data-routes-tab="1" name="tab" type="radio" />
                     <div class="routes__tabs-button">
                         <label for="tab-1">юг</label>
                         <div class="routes__tabs-content">
@@ -22,7 +22,7 @@
                                 />
                             </figure>
 
-                            <div class="routes__tabs-attractions _desktop-only">
+                            <div data-routes-content="1" class="routes__tabs-attractions _desktop-only">
                                 <span class="routes__tabs-attractions-title"> Достопримечательности </span>
 
                                 <p class="routes__tabs-attractions-text"></p>
@@ -155,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-                    <input id="tab-2" name="tab" type="radio" />
+                    <input id="tab-2" name="tab" data-routes-tab="2" type="radio" />
                     <div class="routes__tabs-button">
                         <label for="tab-2">север</label>
                         <div class="routes__tabs-content">
@@ -163,7 +163,7 @@
                                 <img src="./assets/images/sections/routes/path-2.svg" alt="" />
                             </figure>
 
-                            <div class="routes__tabs-attractions _desktop-only">
+                            <div data-routes-content="2" class="routes__tabs-attractions _desktop-only">
                                 <span class="routes__tabs-attractions-title"> Достопримечательности </span>
 
                                 <p class="routes__tabs-attractions-text"></p>
@@ -296,7 +296,7 @@
                             </div>
                         </div>
                     </div>
-                    <input id="tab-3" name="tab" type="radio" />
+                    <input id="tab-3" name="tab" data-routes-tab="3" type="radio" />
                     <div class="routes__tabs-button">
                         <label for="tab-3">запад</label>
                         <div class="routes__tabs-content">
@@ -304,7 +304,7 @@
                                 <img src="./assets/images/sections/routes/path-3.svg" alt="" />
                             </figure>
 
-                            <div class="routes__tabs-attractions _desktop-only">
+                            <div data-routes-content="3" class="routes__tabs-attractions _desktop-only">
                                 <span class="routes__tabs-attractions-title"> Достопримечательности </span>
 
                                 <p class="routes__tabs-attractions-text"></p>
@@ -437,7 +437,7 @@
                             </div>
                         </div>
                     </div>
-                    <input id="tab-4" name="tab" type="radio" />
+                    <input id="tab-4" name="tab" data-routes-tab="4" type="radio" />
                     <div class="routes__tabs-button">
                         <label for="tab-4">восток</label>
                         <div class="routes__tabs-content">
@@ -445,7 +445,7 @@
                                 <img src="./assets/images/sections/routes/path-4.svg" alt="" />
                             </figure>
 
-                            <div class="routes__tabs-attractions _desktop-only">
+                            <div data-routes-content="4" class="routes__tabs-attractions _desktop-only">
                                 <span class="routes__tabs-attractions-title"> Достопримечательности </span>
 
                                 <p class="routes__tabs-attractions-text"></p>
@@ -629,7 +629,7 @@
                         </li>
                     </ul>
 
-                    <button class="routes__tabs-info-button btn _mobile-only">
+                    <button data-modal="#attractionsModal" class="routes__tabs-info-button btn _mobile-only">
                         <span class="btn__txt">Достопримечательности</span>
                     </button>
                 </div>
