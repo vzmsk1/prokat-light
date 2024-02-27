@@ -592,8 +592,12 @@ class HomePage {
                                 start: 'top 25%',
                                 onEnter: () => {
                                     if (!_this.isActive(section)) {
-                                        _this.locoScroll.scrollTo(section, { offset: '160%' });
-                                        setTimeout(() => _this.lockScroll(), 1000);
+                                        _this.locoScroll.scrollTo(section, {
+                                            offset: '155%',
+                                            callback: () => {
+                                                _this.lockScroll();
+                                            }
+                                        });
                                     }
                                 },
                                 onUpdate: () => {
@@ -862,12 +866,13 @@ const initRoutesModal = () => {
     const routesBtn = document.querySelector('.routes__tabs-info-button');
     if (routesBtn) {
         routesBtn.addEventListener('click', function () {
-            const inputs = document.querySelectorAll('.routes__tabs-wrapper input');
+            const tabs = document.querySelectorAll('.routes__tabs-navigation .tab');
 
-            if (inputs.length) {
-                inputs.forEach((input) => {
-                    if (input.checked) {
-                        const t = document.querySelector(`[data-routes-content="${input.dataset.routesTab}"`);
+            console.log(tabs);
+            if (tabs.length) {
+                tabs.forEach((tab) => {
+                    if (tab.classList.contains('_is-active')) {
+                        const t = document.querySelector(`[data-routes-content="${tab.dataset.routesTab}"`);
                         document.querySelector('.attractions-modal__inner').innerHTML = t.innerHTML;
 
                         new Swiper(document.querySelector('.attractions-modal__inner .swiper'), {

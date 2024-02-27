@@ -692,12 +692,16 @@
         <div class="routes__content">
             <h2 class="routes__title h h_2">Маршруты и ограничения по проезду</h2>
 
-            <div class="routes__tabs">
-                <div class="routes__tabs-wrapper">
-                    <input checked="" id="tab-1" data-routes-tab="1" name="tab" type="radio">
-                    <div class="routes__tabs-button">
-                        <label for="tab-1">юг</label>
-                        <div class="routes__tabs-content">
+            <div data-tabs="" class="routes__tabs tabs">
+                <nav data-tabs-titles="" class="routes__tabs-navigation tabs__navigation">
+                    <button data-routes-tab="1" type="button" class="tabs__title tab _is-active">юг</button>
+                    <button data-routes-tab="2" type="button" class="tabs__title tab">север</button>
+                    <button data-routes-tab="3" type="button" class="tabs__title tab">запад</button>
+                    <button data-routes-tab="4" type="button" class="tabs__title tab">восток</button>
+                </nav>
+                <div data-tabs-body="" class="routes__tabs-content tabs__content">
+                    <div class="routes__tabs-body tabs__body">
+                        <div class="routes__tabs-body-wrapper">
                             <figure class="routes__tabs-content-path">
                                 <img src="./assets/images/sections/routes/path-1.svg" alt="" class="_desktop-only">
                                 <img src="./assets/images/sections/routes/path-1-m.svg" alt="" class="_mobile-only">
@@ -774,14 +778,28 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <figure class="routes__tabs-map _desktop-only">
+                                <img src="./assets/images/sections/routes/routes-map.svg" alt="">
+                            </figure>
+
+                            <figure class="routes__tabs-map _mobile-only">
+                                <img src="./assets/images/sections/routes/routes-map-south.svg" alt="">
+                            </figure>
+
+                            <div class="routes__tabs-overlay"></div>
                         </div>
                     </div>
-                    <input id="tab-2" name="tab" data-routes-tab="2" type="radio">
-                    <div class="routes__tabs-button">
-                        <label for="tab-2">север</label>
-                        <div class="routes__tabs-content">
+
+                    <div class="routes__tabs-body tabs__body">
+                        <div class="routes__tabs-body-wrapper">
                             <figure class="routes__tabs-content-path">
-                                <img src="./assets/images/sections/routes/path-2.svg" alt="">
+                                <img src="./assets/images/sections/routes/path-2.svg" alt="" class="_desktop-only">
+                                <img src="./assets/images/sections/routes/path-2-m.svg" alt="" class="_mobile-only">
+                            </figure>
+
+                            <figure class="routes__tabs-map _mobile-only">
+                                <img src="./assets/images/sections/routes/routes-map.svg" alt="">
                             </figure>
 
                             <div data-routes-content="2" class="routes__tabs-attractions _desktop-only">
@@ -857,12 +875,16 @@
                             </div>
                         </div>
                     </div>
-                    <input id="tab-3" name="tab" data-routes-tab="3" type="radio">
-                    <div class="routes__tabs-button">
-                        <label for="tab-3">запад</label>
-                        <div class="routes__tabs-content">
+
+                    <div class="routes__tabs-body tabs__body">
+                        <div class="routes__tabs-body-wrapper">
                             <figure class="routes__tabs-content-path">
-                                <img src="./assets/images/sections/routes/path-3.svg" alt="">
+                                <img src="./assets/images/sections/routes/path-3.svg" alt="" class="_desktop-only">
+                                <img src="./assets/images/sections/routes/path-3-m.svg" alt="" class="_mobile-only">
+                            </figure>
+
+                            <figure class="routes__tabs-map _mobile-only">
+                                <img src="./assets/images/sections/routes/routes-map-north.svg" alt="">
                             </figure>
 
                             <div data-routes-content="3" class="routes__tabs-attractions _desktop-only">
@@ -938,12 +960,16 @@
                             </div>
                         </div>
                     </div>
-                    <input id="tab-4" name="tab" data-routes-tab="4" type="radio">
-                    <div class="routes__tabs-button">
-                        <label for="tab-4">восток</label>
-                        <div class="routes__tabs-content">
+
+                    <div class="routes__tabs-body tabs__body">
+                        <div class="routes__tabs-body-wrapper">
                             <figure class="routes__tabs-content-path">
-                                <img src="./assets/images/sections/routes/path-4.svg" alt="">
+                                <img src="./assets/images/sections/routes/path-4.svg" alt="" class="_desktop-only">
+                                <img src="./assets/images/sections/routes/path-4-m.svg" alt="" class="_mobile-only">
+                            </figure>
+
+                            <figure class="routes__tabs-map _mobile-only">
+                                <img src="./assets/images/sections/routes/routes-map-south.svg" alt="">
                             </figure>
 
                             <div data-routes-content="4" class="routes__tabs-attractions _desktop-only">
@@ -1019,14 +1045,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="routes__tabs-line"></div>
-
-                    <figure class="routes__tabs-map">
-                        <img src="./assets/images/sections/routes/routes-map.svg" alt="">
-                    </figure>
-
-                    <div class="routes__tabs-overlay"></div>
                 </div>
 
                 <div class="routes__tabs-info">

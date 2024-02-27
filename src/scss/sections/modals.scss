@@ -120,6 +120,11 @@
                 justify-content: center;
             }
 
+            .routes__tabs-attractions {
+                display: block;
+                position: static;
+            }
+
             .swiper-slide {
                 display: flex;
                 flex-direction: column;

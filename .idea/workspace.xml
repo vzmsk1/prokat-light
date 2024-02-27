@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4601fd0-39e0-436c-bd29-f24c106a33b0" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/scss/sections/modals.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/path-2-m.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/path-3-m.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/path-4-m.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/routes-map-north.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/routes-map-south.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/routes-map-west.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/fonts/DrukTextWideCyr_medium.woff2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/fonts/DrukWide_medium.woff2" beforeDir="false" />
@@ -108,20 +113,13 @@
       <change beforePath="$PROJECT_DIR$/dist/policy-processing.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/rental-conditions.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/terms-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_contact-rental.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_contact-rental.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/_routes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_routes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modals.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/dev/kie6er.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/kie6er.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/dev/ukik0.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/ukik0.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/forms.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/forms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/modals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/modals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news-detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/news-detailed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rental-conditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/rental-conditions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_choose.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_choose.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/styles/_input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_input.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_condition.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_condition.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_routes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_routes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/modals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/modals.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
