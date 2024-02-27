@@ -1,25 +1,32 @@
 .condition {
-    @include small-tablet{
+    .condition-info-swiper.swiper {
+        overflow: visible;
+    }
+
+    @include small-tablet {
         overflow: hidden;
     }
 
     &__pagination {
-        @include small-tablet{
+        @include small-tablet {
             justify-content: center;
         }
     }
 
     &__slider {
-        @include small-tablet{
+        @include small-tablet {
             overflow: visible !important;
         }
+    }
+
+    &__head {
+        margin-bottom: 6rem;
     }
 
     // .condition__inner
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: 8rem;
     }
     // .condition__content
     &__content {
@@ -27,7 +34,7 @@
         flex-direction: column;
         gap: 3rem;
 
-        @include small-tablet{
+        @include small-tablet {
             margin-top: 1rem;
         }
 
@@ -85,10 +92,10 @@
             display: grid;
             grid-template-columns: repeat(3, 37.9rem);
             justify-content: space-between;
-            margin-bottom: 6rem;
-            padding-top: 6rem;
+            margin-bottom: 5rem;
+            padding-top: 5rem;
 
-            @include small-tablet{
+            @include small-tablet {
                 margin-bottom: 5rem;
             }
 
@@ -114,7 +121,7 @@
                 flex-direction: column;
                 gap: 2rem;
 
-                @include small-tablet{
+                @include small-tablet {
                     max-width: 55.8rem;
                     gap: 1.6rem;
                 }
@@ -153,7 +160,7 @@
             top: -6rem;
             z-index: -1;
 
-            @include small-tablet{
+            @include small-tablet {
                 right: 1rem;
                 top: -6rem;
                 height: 16.8rem;
@@ -165,6 +172,8 @@
             }
         }
         &-read {
+            margin-bottom: 5rem;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -200,16 +209,15 @@
     }
     // .condition__footer
     &__footer {
-        padding: 5.8rem 0;
-        background-color: #24272a;
+        padding: 4rem 0;
         position: relative;
 
-        @include small-tablet{
+        @include small-tablet {
             padding: 8.6rem 0;
         }
 
         &-pagination {
-            @include small-tablet{
+            @include small-tablet {
                 justify-content: center;
                 margin-top: 6rem;
                 position: relative;
@@ -218,12 +226,14 @@
         }
 
         .swiper-slide {
-            &:hover {
-                .condition__slider-image {
-                    transform: scale(1.1);
-                }
-                .condition__slider-heading {
-                    color: $orange;
+            @media (any-hover: hover) {
+                &:hover {
+                    .condition__slider-image {
+                        transform: scale(1.1);
+                    }
+                    .condition__slider-heading {
+                        color: $orange;
+                    }
                 }
             }
 
@@ -231,26 +241,34 @@
                 white-space: nowrap;
                 transition: color 0.3s ease;
 
-                @include small-tablet{
+                @include small-tablet {
                     font-weight: 700;
                     font-size: 3rem;
                 }
             }
         }
 
+        &::before,
         &::after {
             content: '';
-            width: 100%;
-            height: 100%;
             position: absolute;
+            top: 0;
+            left: -14rem;
+            width: calc(100% + 28rem);
+            height: 100%;
+        }
+
+        &::after {
             background: url('../../assets/images/sections/condition/light-gray-concrete-wall.png') center /
                 cover no-repeat;
-
-            top: 0;
-            left: 0;
             z-index: 0;
             mix-blend-mode: color-burn;
         }
+
+        &::before {
+            background-color: #24272a;
+        }
+
         .container {
             position: relative;
         }
@@ -259,7 +277,7 @@
     &__slider-image {
         transition: 0.3s transform ease;
 
-        @include small-tablet{
+        @include small-tablet {
             width: 100%;
             height: 15rem;
 
@@ -292,7 +310,7 @@
         flex-direction: column;
         gap: 2.3rem;
 
-        @include small-tablet{
+        @include small-tablet {
             gap: 4rem;
         }
 

@@ -12,10 +12,12 @@ $num-of-tabs: 4;
                     left: calc((100% / #{$num-of-tabs}) * #{$i - 1});
                 }
 
-                + .routes__tabs-button {
-                    .routes__tabs-content-path {
-                        animation: fadeIn 5s forwards;
-                        animation-delay: 1.5s;
+                ._is-active & {
+                    + .routes__tabs-button {
+                        .routes__tabs-content-path {
+                            animation: fadeIn 5s forwards;
+                            animation-delay: 1.5s;
+                        }
                     }
                 }
             }
@@ -48,60 +50,62 @@ $num-of-tabs: 4;
             }
         }
 
-        &:nth-of-type(1) {
-            & + .routes__tabs-button {
-                &::before {
-                    opacity: 1;
+        ._is-active & {
+            &:nth-of-type(1) {
+                & + .routes__tabs-button {
+                    &::before {
+                        opacity: 1;
+                    }
                 }
-            }
 
-            ~ .routes__tabs-line {
-                + .routes__tabs-map {
-                    transform: scale(5.5) translate(20.7rem, -8.5rem) rotate(6deg);
+                ~ .routes__tabs-line {
+                    + .routes__tabs-map {
+                        transform: scale(5.5) translate(20.7rem, -8.5rem) rotate(6deg);
 
-                    @include small-tablet {
-                        transform: scale(4.4) translate(28rem, -4.5rem) rotate(6deg);
+                        @include small-tablet {
+                            transform: scale(4.4) translate(28rem, -4.5rem) rotate(6deg);
+                        }
                     }
                 }
             }
-        }
 
-        &:nth-of-type(2) {
-            ~ .routes__tabs-line {
-                + .routes__tabs-map {
-                    transform: scale(1.55) translate(-1.5rem, -3.5rem) rotate(0deg);
+            &:nth-of-type(2) {
+                ~ .routes__tabs-line {
+                    + .routes__tabs-map {
+                        transform: scale(1.55) translate(-1.5rem, -3.5rem) rotate(0deg);
 
-                    + .routes__tabs-overlay {
-                        opacity: 0;
+                        + .routes__tabs-overlay {
+                            opacity: 0;
+                        }
                     }
                 }
             }
-        }
 
-        &:nth-of-type(3) {
-            & + .routes__tabs-button {
-                &::before {
-                    opacity: 1;
+            &:nth-of-type(3) {
+                & + .routes__tabs-button {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+
+                ~ .routes__tabs-line {
+                    + .routes__tabs-map {
+                        transform: scale(2.45) translate(12rem, -8rem) rotate(7deg);
+                    }
                 }
             }
 
-            ~ .routes__tabs-line {
-                + .routes__tabs-map {
-                    transform: scale(2.45) translate(12rem, -8rem) rotate(7deg);
+            &:nth-of-type(4) {
+                & + .routes__tabs-button {
+                    &::before {
+                        opacity: 1;
+                    }
                 }
-            }
-        }
 
-        &:nth-of-type(4) {
-            & + .routes__tabs-button {
-                &::before {
-                    opacity: 1;
-                }
-            }
-
-            ~ .routes__tabs-line {
-                + .routes__tabs-map {
-                    transform: scale(5.3) translate(20.5rem, -8.5rem) rotate(6.5deg);
+                ~ .routes__tabs-line {
+                    + .routes__tabs-map {
+                        transform: scale(5.3) translate(20.5rem, -8.5rem) rotate(6.5deg);
+                    }
                 }
             }
         }
@@ -110,6 +114,12 @@ $num-of-tabs: 4;
 
 .routes {
     user-select: none;
+
+    @include desk {
+        .routes__tabs-map {
+            transform: scale(1.55) translate(-1.5rem, -3.5rem) rotate(0deg);
+        }
+    }
 
     &__title {
         text-align: center;
@@ -202,8 +212,10 @@ $num-of-tabs: 4;
                     font-size: 3.2rem;
                 }
 
-                &:hover {
-                    color: $orange;
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: $orange;
+                    }
                 }
             }
 
@@ -214,7 +226,7 @@ $num-of-tabs: 4;
                     width: 36.1rem;
                     height: 39.7rem;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         height: 46rem;
                         width: 41rem;
                         top: 48rem;
@@ -321,7 +333,7 @@ $num-of-tabs: 4;
                 gap: 3.2rem;
                 margin-top: auto;
 
-                @include small-tablet{
+                @include small-tablet {
                     gap: 4rem;
                     margin-bottom: 8rem;
                 }
@@ -332,7 +344,7 @@ $num-of-tabs: 4;
                 align-items: center;
                 gap: 1.6rem;
 
-                @include small-tablet{
+                @include small-tablet {
                     gap: 2.4rem;
                 }
 
@@ -340,7 +352,7 @@ $num-of-tabs: 4;
                     @include sizes(2.4rem, 2.4rem);
                     background: var(--color);
 
-                    @include small-tablet{
+                    @include small-tablet {
                         @include sizes(3.2rem, 3.2rem);
                     }
                 }
@@ -356,7 +368,7 @@ $num-of-tabs: 4;
                     font-size: 2rem;
                     line-height: 140%;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         font-size: 3.6rem;
                     }
                 }
@@ -366,7 +378,7 @@ $num-of-tabs: 4;
                     font-size: 1.8rem;
                     color: $gray;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         font-size: 3rem;
                     }
                 }
@@ -380,7 +392,7 @@ $num-of-tabs: 4;
         &-overlay {
             position: absolute;
             opacity: 1;
-            right: -68rem;
+            right: -69rem;
             top: -30rem;
             width: 99.5rem;
             height: 100rem;

@@ -1,19 +1,34 @@
 @mixin pseudo() {
-  content: '';
-  position: absolute;
-  @content;
+    content: '';
+    position: absolute;
+    @content;
 }
 
 @mixin small-tablet {
-  @media (max-width: 48em) {
-    @content;
-  }
+    @media (max-width: 48em) {
+        @content;
+    }
+}
+
+@mixin desk {
+    @media (min-width: 48em) {
+        @content;
+    }
 }
 
 @mixin sizes($width, $height) {
-  max-width: $width;
-  width: 100%;
-  height: $height;
+    max-width: $width;
+    width: 100%;
+    height: $height;
 
-  @content;
+    @content;
+}
+
+@mixin hideScrollbar() {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }

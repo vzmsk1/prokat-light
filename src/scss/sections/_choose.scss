@@ -1,9 +1,15 @@
 .choose {
     position: relative;
     padding-top: 0;
-    margin-bottom: 29rem;
+    margin-bottom: 20rem;
     --groundOpacity: 0;
     --whiteGradientOpacity: 0;
+
+    &._is-active {
+        &::before {
+            opacity: 1;
+        }
+    }
 
     &::before {
         content: '';
@@ -41,7 +47,6 @@
     }
 
     @media (min-width: 48em) {
-        margin-bottom: 0rem;
         padding-top: 22rem;
     }
 

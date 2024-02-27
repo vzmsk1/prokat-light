@@ -9,6 +9,7 @@ $white: #ffffff;
 $black: #111316;
 $bgColor: #191c20;
 $gray: #6f6f6f;
+$gray-secondary: rgba(255, 255, 255, 0.5);
 $orange: #ff6c01;
 $red: #e20707;
 
@@ -52,6 +53,16 @@ section {
 .wrapper {
     margin: 0 auto;
     max-width: 1920px;
+
+    &:not(.home-page) {
+        main {
+            padding-top: 20rem;
+
+            @include small-tablet {
+                padding-top: 22rem;
+            }
+        }
+    }
 }
 
 ._desktop-only {
@@ -66,6 +77,12 @@ section {
 }
 
 .three-scroll {
+    &__wrapper {
+        &.swiper-wrapper {
+            flex-direction: column;
+        }
+    }
+
     @media (min-width: 48em) {
         position: relative;
         z-index: 10;
@@ -92,16 +109,26 @@ section {
 
         &__wrapper {
             perspective: 1000rem;
+
+            &.swiper-wrapper {
+                flex-direction: row;
+            }
         }
 
-        .swiper-slide {
+        [data-three-slide] {
             opacity: 0;
             visibility: hidden;
             transform: translateZ(80rem);
+            pointer-events: none;
             transition:
                 transform 0.6s ease,
                 opacity 0.6s ease,
                 visibility 0.6s ease;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             &._is-prev {
                 transform: translateY(-40%) translateZ(-80rem);
@@ -114,6 +141,7 @@ section {
             &.swiper-slide-active {
                 opacity: 1;
                 visibility: visible;
+                pointer-events: all;
                 transform: translateZ(0);
             }
         }
