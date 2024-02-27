@@ -3,23 +3,33 @@
         <div class="routes__content">
             <h2 class="routes__title h h_2">Маршруты и ограничения по проезду</h2>
 
-            <div class="routes__tabs">
-                <div class="routes__tabs-wrapper">
-                    <input checked id="tab-1" name="tab" type="radio" />
-                    <div class="routes__tabs-button">
-                        <label for="tab-1">юг</label>
-                        <div class="routes__tabs-content">
+            <div data-tabs class="routes__tabs tabs">
+                <nav data-tabs-titles class="routes__tabs-navigation tabs__navigation">
+                    <button type="button" class="tabs__title tab _is-active">юг</button>
+                    <button type="button" class="tabs__title tab">север</button>
+                    <button type="button" class="tabs__title tab">запад</button>
+                    <button type="button" class="tabs__title tab">восток</button>
+                </nav>
+                <div data-tabs-body class="routes__tabs-content tabs__content">
+                    <div class="routes__tabs-body tabs__body">
+                        <div class="routes__tabs-body-wrapper">
                             <figure class="routes__tabs-content-path">
-                                <img src="./assets/images/sections/routes/path-1.svg" alt="" class="_desktop-only"/>
-                                <img src="./assets/images/sections/routes/path-1-m.svg" alt="" class="_mobile-only"/>
+                                <img
+                                    src="./assets/images/sections/routes/path-1.svg"
+                                    alt=""
+                                    class="_desktop-only"
+                                />
+                                <img
+                                    src="./assets/images/sections/routes/path-1-m.svg"
+                                    alt=""
+                                    class="_mobile-only"
+                                />
                             </figure>
 
                             <div class="routes__tabs-attractions _desktop-only">
                                 <span class="routes__tabs-attractions-title"> Достопримечательности </span>
 
-                                <p class="routes__tabs-attractions-text">
-
-                                </p>
+                                <p class="routes__tabs-attractions-text"></p>
 
                                 <div class="swiper routes__tabs-attractions-swiper">
                                     <div class="swiper-wrapper">
@@ -32,9 +42,9 @@
                                             </figure>
 
                                             <p class="routes__tabs-attractions-swiper-text">
-                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
-                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
-                                                города Корсаков и тд
+                                                На Юг острова автомобили предоставляются до поселка Новиково
+                                                Корсаковского района . По пути Можно посетить места Смотровая
+                                                площадка на Морской порт города Корсаков и тд
                                             </p>
                                         </div>
                                         <div class="swiper-slide">
@@ -46,7 +56,8 @@
                                             </figure>
 
                                             <p class="routes__tabs-attractions-swiper-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, quia?
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Atque, quia?
                                             </p>
                                         </div>
                                         <div class="swiper-slide">
@@ -58,7 +69,8 @@
                                             </figure>
 
                                             <p class="routes__tabs-attractions-swiper-text">
-                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, quis.
+                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Maiores, quis.
                                             </p>
                                         </div>
                                         <div class="swiper-slide">
@@ -70,9 +82,9 @@
                                             </figure>
 
                                             <p class="routes__tabs-attractions-swiper-text">
-                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
-                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
-                                                города Корсаков и тд
+                                                На Юг острова автомобили предоставляются до поселка Новиково
+                                                Корсаковского района . По пути Можно посетить места Смотровая
+                                                площадка на Морской порт города Корсаков и тд
                                             </p>
                                         </div>
                                     </div>
@@ -145,22 +157,42 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <figure class="routes__tabs-map _desktop-only">
+                                <img src="./assets/images/sections/routes/routes-map.svg" alt="" />
+                            </figure>
+
+                            <figure class="routes__tabs-map _mobile-only">
+                                <img src="./assets/images/sections/routes/routes-map-south.svg" alt="" />
+                            </figure>
+
+                            <div class="routes__tabs-overlay"></div>
                         </div>
                     </div>
-                    <input id="tab-2" name="tab" type="radio" />
-                    <div class="routes__tabs-button">
-                        <label for="tab-2">север</label>
-                        <div class="routes__tabs-content">
+
+                    <div class="routes__tabs-body tabs__body">
+                        <div class="routes__tabs-body-wrapper">
                             <figure class="routes__tabs-content-path">
-                                <img src="./assets/images/sections/routes/path-2.svg" alt="" />
+                                <img
+                                    src="./assets/images/sections/routes/path-2.svg"
+                                    alt=""
+                                    class="_desktop-only"
+                                />
+                                <img
+                                    src="./assets/images/sections/routes/path-2-m.svg"
+                                    alt=""
+                                    class="_mobile-only"
+                                />
+                            </figure>
+
+                            <figure class="routes__tabs-map _mobile-only">
+                                <img src="./assets/images/sections/routes/routes-map.svg" alt="" />
                             </figure>
 
                             <div class="routes__tabs-attractions _desktop-only">
                                 <span class="routes__tabs-attractions-title"> Достопримечательности </span>
 
-                                <p class="routes__tabs-attractions-text">
-
-                                </p>
+                                <p class="routes__tabs-attractions-text"></p>
 
                                 <div class="swiper routes__tabs-attractions-swiper">
                                     <div class="swiper-wrapper">
@@ -173,9 +205,9 @@
                                             </figure>
 
                                             <p class="routes__tabs-attractions-swiper-text">
-                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
-                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
-                                                города Корсаков и тд
+                                                На Юг острова автомобили предоставляются до поселка Новиково
+                                                Корсаковского района . По пути Можно посетить места Смотровая
+                                                площадка на Морской порт города Корсаков и тд
                                             </p>
                                         </div>
                                         <div class="swiper-slide">
@@ -187,7 +219,8 @@
                                             </figure>
 
                                             <p class="routes__tabs-attractions-swiper-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, quia?
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Atque, quia?
                                             </p>
                                         </div>
                                         <div class="swiper-slide">
@@ -199,7 +232,8 @@
                                             </figure>
 
                                             <p class="routes__tabs-attractions-swiper-text">
-                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, quis.
+                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Maiores, quis.
                                             </p>
                                         </div>
                                         <div class="swiper-slide">
@@ -211,291 +245,9 @@
                                             </figure>
 
                                             <p class="routes__tabs-attractions-swiper-text">
-                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
-                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
-                                                города Корсаков и тд
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="routes__tabs-attractions-navigation">
-                                        <button type="button" class="swiper-button-prev icon icon_white">
-                                            <svg
-                                                width="22"
-                                                height="22"
-                                                viewBox="0 0 22 22"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1"
-                                                    stroke="white"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                />
-                                            </svg>
-                                            <svg
-                                                width="22"
-                                                height="22"
-                                                viewBox="0 0 22 22"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1"
-                                                    stroke="white"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                />
-                                            </svg>
-                                        </button>
-                                        <button type="button" class="swiper-button-next icon icon_white">
-                                            <svg
-                                                width="22"
-                                                height="22"
-                                                viewBox="0 0 22 22"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21"
-                                                    stroke="white"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                />
-                                            </svg>
-                                            <svg
-                                                width="22"
-                                                height="22"
-                                                viewBox="0 0 22 22"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21"
-                                                    stroke="white"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <input id="tab-3" name="tab" type="radio" />
-                    <div class="routes__tabs-button">
-                        <label for="tab-3">запад</label>
-                        <div class="routes__tabs-content">
-                            <figure class="routes__tabs-content-path">
-                                <img src="./assets/images/sections/routes/path-3.svg" alt="" />
-                            </figure>
-
-                            <div class="routes__tabs-attractions _desktop-only">
-                                <span class="routes__tabs-attractions-title"> Достопримечательности </span>
-
-                                <p class="routes__tabs-attractions-text">
-
-                                </p>
-
-                                <div class="swiper routes__tabs-attractions-swiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <figure>
-                                                <img
-                                                    src="./assets/images/sections/routes/routes-slide-image.png"
-                                                    alt=""
-                                                />
-                                            </figure>
-
-                                            <p class="routes__tabs-attractions-swiper-text">
-                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
-                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
-                                                города Корсаков и тд
-                                            </p>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <figure>
-                                                <img
-                                                    src="./assets/images/sections/routes/routes-slide-image.png"
-                                                    alt=""
-                                                />
-                                            </figure>
-
-                                            <p class="routes__tabs-attractions-swiper-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, quia?
-                                            </p>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <figure>
-                                                <img
-                                                    src="./assets/images/sections/routes/routes-slide-image.png"
-                                                    alt=""
-                                                />
-                                            </figure>
-
-                                            <p class="routes__tabs-attractions-swiper-text">
-                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, quis.
-                                            </p>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <figure>
-                                                <img
-                                                    src="./assets/images/sections/routes/routes-slide-image.png"
-                                                    alt=""
-                                                />
-                                            </figure>
-
-                                            <p class="routes__tabs-attractions-swiper-text">
-                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
-                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
-                                                города Корсаков и тд
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="routes__tabs-attractions-navigation">
-                                        <button type="button" class="swiper-button-prev icon icon_white">
-                                            <svg
-                                                width="22"
-                                                height="22"
-                                                viewBox="0 0 22 22"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1"
-                                                    stroke="white"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                />
-                                            </svg>
-                                            <svg
-                                                width="22"
-                                                height="22"
-                                                viewBox="0 0 22 22"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1"
-                                                    stroke="white"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                />
-                                            </svg>
-                                        </button>
-                                        <button type="button" class="swiper-button-next icon icon_white">
-                                            <svg
-                                                width="22"
-                                                height="22"
-                                                viewBox="0 0 22 22"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21"
-                                                    stroke="white"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                />
-                                            </svg>
-                                            <svg
-                                                width="22"
-                                                height="22"
-                                                viewBox="0 0 22 22"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21"
-                                                    stroke="white"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <input id="tab-4" name="tab" type="radio" />
-                    <div class="routes__tabs-button">
-                        <label for="tab-4">восток</label>
-                        <div class="routes__tabs-content">
-                            <figure class="routes__tabs-content-path">
-                                <img src="./assets/images/sections/routes/path-4.svg" alt="" />
-                            </figure>
-
-                            <div class="routes__tabs-attractions _desktop-only">
-                                <span class="routes__tabs-attractions-title"> Достопримечательности </span>
-
-                                <p class="routes__tabs-attractions-text">
-
-                                </p>
-
-                                <div class="swiper routes__tabs-attractions-swiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <figure>
-                                                <img
-                                                    src="./assets/images/sections/routes/routes-slide-image.png"
-                                                    alt=""
-                                                />
-                                            </figure>
-
-                                            <p class="routes__tabs-attractions-swiper-text">
-                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
-                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
-                                                города Корсаков и тд
-                                            </p>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <figure>
-                                                <img
-                                                    src="./assets/images/sections/routes/routes-slide-image.png"
-                                                    alt=""
-                                                />
-                                            </figure>
-
-                                            <p class="routes__tabs-attractions-swiper-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, quia?
-                                            </p>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <figure>
-                                                <img
-                                                    src="./assets/images/sections/routes/routes-slide-image.png"
-                                                    alt=""
-                                                />
-                                            </figure>
-
-                                            <p class="routes__tabs-attractions-swiper-text">
-                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, quis.
-                                            </p>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <figure>
-                                                <img
-                                                    src="./assets/images/sections/routes/routes-slide-image.png"
-                                                    alt=""
-                                                />
-                                            </figure>
-
-                                            <p class="routes__tabs-attractions-swiper-text">
-                                                На Юг острова автомобили предоставляются до поселка Новиково Корсаковского
-                                                района . По пути Можно посетить места Смотровая площадка на Морской порт
-                                                города Корсаков и тд
+                                                На Юг острова автомобили предоставляются до поселка Новиково
+                                                Корсаковского района . По пути Можно посетить места Смотровая
+                                                площадка на Морской порт города Корсаков и тд
                                             </p>
                                         </div>
                                     </div>
@@ -571,25 +323,320 @@
                         </div>
                     </div>
 
-                    <div class="routes__tabs-line"></div>
+                    <div class="routes__tabs-body tabs__body">
+                        <div class="routes__tabs-body-wrapper">
+                            <figure class="routes__tabs-content-path">
+                                <img
+                                    src="./assets/images/sections/routes/path-3.svg"
+                                    alt=""
+                                    class="_desktop-only"
+                                />
+                                <img
+                                    src="./assets/images/sections/routes/path-3-m.svg"
+                                    alt=""
+                                    class="_mobile-only"
+                                />
+                            </figure>
 
-                    <figure class="routes__tabs-map">
-                        <img src="./assets/images/sections/routes/routes-map.svg" alt="" />
-                    </figure>
+                            <figure class="routes__tabs-map _mobile-only">
+                                <img src="./assets/images/sections/routes/routes-map-north.svg" alt="" />
+                            </figure>
 
-                    <div class="routes__tabs-overlay"></div>
+                            <div class="routes__tabs-attractions _desktop-only">
+                                <span class="routes__tabs-attractions-title"> Достопримечательности </span>
+
+                                <p class="routes__tabs-attractions-text"></p>
+
+                                <div class="swiper routes__tabs-attractions-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img
+                                                    src="./assets/images/sections/routes/routes-slide-image.png"
+                                                    alt=""
+                                                />
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково
+                                                Корсаковского района . По пути Можно посетить места Смотровая
+                                                площадка на Морской порт города Корсаков и тд
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img
+                                                    src="./assets/images/sections/routes/routes-slide-image.png"
+                                                    alt=""
+                                                />
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Atque, quia?
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img
+                                                    src="./assets/images/sections/routes/routes-slide-image.png"
+                                                    alt=""
+                                                />
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Maiores, quis.
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img
+                                                    src="./assets/images/sections/routes/routes-slide-image.png"
+                                                    alt=""
+                                                />
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково
+                                                Корсаковского района . По пути Можно посетить места Смотровая
+                                                площадка на Морской порт города Корсаков и тд
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="routes__tabs-attractions-navigation">
+                                        <button type="button" class="swiper-button-prev icon icon_white">
+                                            <svg
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 22 22"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1"
+                                                    stroke="white"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                            <svg
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 22 22"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1"
+                                                    stroke="white"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="swiper-button-next icon icon_white">
+                                            <svg
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 22 22"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21"
+                                                    stroke="white"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                            <svg
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 22 22"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21"
+                                                    stroke="white"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="routes__tabs-body tabs__body">
+                        <div class="routes__tabs-body-wrapper">
+                            <figure class="routes__tabs-content-path">
+                                <img
+                                    src="./assets/images/sections/routes/path-4.svg"
+                                    alt=""
+                                    class="_desktop-only"
+                                />
+                                <img
+                                    src="./assets/images/sections/routes/path-4-m.svg"
+                                    alt=""
+                                    class="_mobile-only"
+                                />
+                            </figure>
+
+                            <figure class="routes__tabs-map _mobile-only">
+                                <img src="./assets/images/sections/routes/routes-map-south.svg" alt="" />
+                            </figure>
+
+                            <div class="routes__tabs-attractions _desktop-only">
+                                <span class="routes__tabs-attractions-title"> Достопримечательности </span>
+
+                                <p class="routes__tabs-attractions-text"></p>
+
+                                <div class="swiper routes__tabs-attractions-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img
+                                                    src="./assets/images/sections/routes/routes-slide-image.png"
+                                                    alt=""
+                                                />
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково
+                                                Корсаковского района . По пути Можно посетить места Смотровая
+                                                площадка на Морской порт города Корсаков и тд
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img
+                                                    src="./assets/images/sections/routes/routes-slide-image.png"
+                                                    alt=""
+                                                />
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Atque, quia?
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img
+                                                    src="./assets/images/sections/routes/routes-slide-image.png"
+                                                    alt=""
+                                                />
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                asdaaLorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Maiores, quis.
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <img
+                                                    src="./assets/images/sections/routes/routes-slide-image.png"
+                                                    alt=""
+                                                />
+                                            </figure>
+
+                                            <p class="routes__tabs-attractions-swiper-text">
+                                                На Юг острова автомобили предоставляются до поселка Новиково
+                                                Корсаковского района . По пути Можно посетить места Смотровая
+                                                площадка на Морской порт города Корсаков и тд
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="routes__tabs-attractions-navigation">
+                                        <button type="button" class="swiper-button-prev icon icon_white">
+                                            <svg
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 22 22"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1"
+                                                    stroke="white"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                            <svg
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 22 22"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1"
+                                                    stroke="white"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="swiper-button-next icon icon_white">
+                                            <svg
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 22 22"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21"
+                                                    stroke="white"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                            <svg
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 22 22"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21"
+                                                    stroke="white"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="routes__tabs-info">
                     <p class="routes__tabs-info-text _desktop-only">
-                        Оптимальный тип автомобиля
-                        для данного маршрута
-                        внедорожник Suzuki Jimny
+                        Оптимальный тип автомобиля для данного маршрута внедорожник Suzuki Jimny
                     </p>
 
                     <p class="routes__tabs-info-text _mobile-only">
-                        Оптимальный тип автомобиля –
-                        внедорожник Suzuki Jimny
+                        Оптимальный тип автомобиля – внедорожник Suzuki Jimny
                     </p>
 
                     <ul class="routes__tabs-info-list">
@@ -597,7 +644,9 @@
                             <span style="--color: #ff6c01" class="routes__tabs-info-item-designation"> </span>
 
                             <div class="routes__tabs-info-item-text">
-                                <strong class="routes__tabs-info-item-title"> Асфальтированные дороги </strong>
+                                <strong class="routes__tabs-info-item-title">
+                                    Асфальтированные дороги
+                                </strong>
 
                                 <p class="routes__tabs-info-item-description">легковые и кроссоверы</p>
                             </div>
