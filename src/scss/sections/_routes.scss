@@ -233,8 +233,10 @@ figure {
         &-content {
             position: relative;
             min-height: 58rem;
+            margin-bottom: 10rem;
 
             @include small-tablet {
+                margin-bottom: 0;
                 min-height: 100rem;
             }
 

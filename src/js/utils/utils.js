@@ -1,4 +1,5 @@
 import Inputmask from 'inputmask';
+import { locoScroll } from '../dev/vzmsk1';
 import { modules } from '../modules';
 
 // --------------------------------------------------------------------------
@@ -164,6 +165,7 @@ export const bodyLockToggle = (delay = 500) => {
  * @param {number} delay
  */
 export const bodyUnlock = (delay = 500) => {
+    locoScroll ? locoScroll.start() : null;
     if (bodyLockStatus) {
         setTimeout(() => {
             document.documentElement.classList.remove('lock');
@@ -179,6 +181,8 @@ export const bodyUnlock = (delay = 500) => {
  * @param {number} delay
  */
 export const bodyLock = (delay = 500) => {
+    console.log(locoScroll ? true : false);
+    locoScroll ? locoScroll.stop() : null;
     if (bodyLockStatus) {
         document.documentElement.classList.add('lock');
 

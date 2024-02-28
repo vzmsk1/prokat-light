@@ -11,17 +11,35 @@
         height: 0.2rem;
         background-color: $white;
         //cursor: pointer;
-        transition: transform 0.3s ease, background-color 0.3s ease;
+        transition:
+            transform 0.3s ease,
+            background-color 0.3s ease;
         &::after {
             content: attr(data-index);
             transform: translateX(calc(100% + 1rem)) scale(0);
             transition: transform 0.3s ease;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $orange;
+            filter: blur(0.4rem);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         &.swiper-pagination-bullet-active {
             background-color: $orange;
             transform: scaleX(1.55);
             transform-origin: left;
+
+            &::before {
+                opacity: 1;
+            }
 
             &::after {
                 transform: translateX(calc(100% + 1rem)) scale(1);
@@ -39,6 +57,10 @@
                 height: 1.6rem;
                 border-radius: 50%;
                 background-color: rgba(56, 58, 61, 1);
+
+                &::before {
+                    content: none;
+                }
 
                 &.swiper-pagination-bullet-active {
                     transform: none;

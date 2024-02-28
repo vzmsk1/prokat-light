@@ -1,0 +1,75 @@
+.promotion-btn {
+    position: fixed;
+    z-index: 100;
+    top: 110.6rem;
+    right: 14rem;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 8rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-22.1rem);
+
+    @media (any-hover: hover) {
+        &:hover {
+            .promotion-btn__btn {
+                width: 21rem;
+                opacity: 1;
+                visibility: visible;
+
+                span {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    @media (max-width: 48em) {
+        top: auto;
+        right: 2.4rem;
+        bottom: 5rem;
+        height: 13rem;
+        pointer-events: none;
+        transform: none;
+    }
+
+    &__icon {
+        &.icon {
+            svg {
+                flex: 0 0 3.5rem;
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+
+            @media (max-width: 48em) {
+                flex: 0 0 12rem;
+                width: 12rem;
+                height: 12rem;
+                svg {
+                    flex: 0 0 6rem;
+                    width: 6rem;
+                    height: 6rem;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        padding: 0;
+        width: 0;
+        height: 6rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-2.4rem);
+        transition:
+            width 0.3s ease,
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        span {
+            opacity: 0;
+            white-space: nowrap;
+            transition: opacity 0.3s ease;
+        }
+    }
+}
