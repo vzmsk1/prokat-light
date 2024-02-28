@@ -724,7 +724,7 @@ class HomePage {
 
                                 setTimeout(() => {
                                     e.enable();
-                                }, 600);
+                                }, 500);
                             }
                         },
                         onDown: (e) => {
@@ -742,7 +742,7 @@ class HomePage {
 
                                 setTimeout(() => {
                                     e.enable();
-                                }, 600);
+                                }, 500);
                             }
                         }
                     });

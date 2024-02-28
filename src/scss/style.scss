@@ -30,15 +30,17 @@ $red: #e20707;
 // base scss file
 @import './set';
 
-// html
-html.lock,
-html.lock body {
-    overflow: hidden;
-    touch-action: none;
-}
 html,
 body {
-    overflow-x: clip;
+    overflow-x: hidden;
+}
+
+body,
+.wrapper {
+    .lock & {
+        overflow: hidden;
+        touch-action: none;
+    }
 }
 
 // main
