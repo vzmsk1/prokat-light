@@ -657,51 +657,6 @@ class HomePage {
             const routesSlide = section.querySelector('[data-three-slide="routes"]');
             const routesIndx = slides.indexOf(routesSlide);
 
-            const handleObserver = () => {
-                ScrollTrigger.observe({
-                    target: section,
-                    type: 'wheel,touch',
-                    tolerance: 280,
-                    id: ID,
-                    onUp: (e) => {
-                        if (slider.isBeginning) {
-                            _this.unlockScroll();
-                        } else {
-                            e.disable();
-                            _this.locoScroll.scrollTo(section, {
-                                duration: 500,
-                                callback: () => {
-                                    _this.lockScroll();
-                                    slider.slidePrev();
-                                }
-                            });
-
-                            setTimeout(() => {
-                                e.enable();
-                            }, 600);
-                        }
-                    },
-                    onDown: (e) => {
-                        if (slider.isEnd) {
-                            _this.unlockScroll();
-                        } else {
-                            e.disable();
-                            _this.locoScroll.scrollTo(section, {
-                                duration: 500,
-                                callback: () => {
-                                    _this.lockScroll();
-                                    slider.slideNext();
-                                }
-                            });
-
-                            setTimeout(() => {
-                                e.enable();
-                            }, 600);
-                        }
-                    }
-                });
-            };
-
             gsap.matchMedia().add('(min-width: 768px)', () => {
                 const slider = new Swiper('.three-scroll__swiper', {
                     observer: true,
@@ -747,6 +702,51 @@ class HomePage {
                         }
                     }
                 });
+
+                const handleObserver = () => {
+                    ScrollTrigger.observe({
+                        target: section,
+                        type: 'wheel,touch',
+                        tolerance: 280,
+                        id: ID,
+                        onUp: (e) => {
+                            if (slider.isBeginning) {
+                                _this.unlockScroll();
+                            } else {
+                                e.disable();
+                                _this.locoScroll.scrollTo(section, {
+                                    duration: 500,
+                                    callback: () => {
+                                        _this.lockScroll();
+                                        slider.slidePrev();
+                                    }
+                                });
+
+                                setTimeout(() => {
+                                    e.enable();
+                                }, 600);
+                            }
+                        },
+                        onDown: (e) => {
+                            if (slider.isEnd) {
+                                _this.unlockScroll();
+                            } else {
+                                e.disable();
+                                _this.locoScroll.scrollTo(section, {
+                                    duration: 500,
+                                    callback: () => {
+                                        _this.lockScroll();
+                                        slider.slideNext();
+                                    }
+                                });
+
+                                setTimeout(() => {
+                                    e.enable();
+                                }, 600);
+                            }
+                        }
+                    });
+                };
 
                 _this.setSlideClasses(slider);
 
