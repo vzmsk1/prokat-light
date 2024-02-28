@@ -1,0 +1,583 @@
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-1rem);
+    }
+    60% {
+        transform: translateY(-0.5rem);
+    }
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(-180deg);
+    }
+}
+
+.detailed {
+    margin-top: 18rem;
+
+    @include small-tablet {
+        margin-top: 24rem;
+    }
+
+    .swiper-slide {
+        width: auto;
+    }
+
+    &__articul {
+        display: block;
+        margin-bottom: 1.2rem;
+        font-size: 1.8rem;
+        line-height: 110%;
+        text-transform: uppercase;
+        color: $gray;
+
+        @include small-tablet {
+            margin-bottom: 0.6rem;
+            font-size: 3rem;
+        }
+    }
+
+    &__title {
+        margin-bottom: 4rem;
+
+        @include small-tablet {
+            margin-bottom: 7rem;
+            font-weight: 500;
+            font-size: 4.4rem;
+            line-height: 120%;
+            letter-spacing: 0.03em;
+        }
+    }
+
+    &__content {
+        display: flex;
+        gap: 2rem;
+
+        @include small-tablet {
+            flex-direction: column;
+            gap: 8rem;
+        }
+    }
+
+    &__gallery {
+        max-width: 53.4rem;
+
+        @include small-tablet {
+            max-width: 100%;
+        }
+
+        .detailed-gallery-swiper {
+            margin-bottom: 2rem;
+
+            @include small-tablet {
+                margin-bottom: 6.4rem;
+            }
+        }
+
+        .detailed__gallery-thumbnail {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.6rem;
+
+            @include small-tablet {
+                display: none;
+            }
+
+            .swiper-slide-thumb-active {
+                .detailed__gallery-thumbnail-image {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .swiper-button-disabled {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+
+            .swiper-slide {
+                cursor: pointer;
+            }
+        }
+
+        &-pagination {
+            @include small-tablet {
+                justify-content: center;
+            }
+        }
+
+        &-image {
+            @include sizes(53.3rem, 44.1rem);
+
+            @include small-tablet {
+                @include sizes(100%, 58.8rem);
+            }
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-thumbnail {
+            &-image {
+                @include sizes(11rem, 10rem);
+                position: relative;
+
+                &::after {
+                    @include pseudo {
+                        inset: 0;
+                        z-index: 1;
+                        background: rgba(25, 28, 32, 0.4);
+                        opacity: 0;
+                        transition: 0.3s opacity;
+                    }
+                }
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &-characteristics {
+            max-width: 67.2rem;
+
+            @include small-tablet {
+                max-width: 100%;
+            }
+
+            &-title {
+                font-size: 2rem;
+                line-height: 110%;
+                text-transform: uppercase;
+                margin-bottom: 2rem;
+                display: block;
+
+                @include small-tablet {
+                    font-size: 3.6rem;
+                    line-height: 140%;
+                }
+
+                &:first-child {
+                    margin-bottom: 0.9rem;
+
+                    @include small-tablet {
+                        margin-bottom: 3.2rem;
+                    }
+                }
+            }
+
+            &-block {
+                display: flex;
+                gap: 8rem;
+
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+
+                    @include small-tablet {
+                        margin-bottom: 6.4rem;
+                    }
+                }
+
+                @include small-tablet {
+                    flex-direction: column;
+                    gap: 2.4rem;
+                }
+            }
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+
+                @include small-tablet {
+                    gap: 2.4rem;
+                }
+            }
+
+            &-item {
+                font-size: 1.8rem;
+                line-height: 140%;
+                color: $gray;
+
+                @include small-tablet {
+                    font-size: 3rem;
+                }
+
+                span {
+                    color: $white;
+                }
+            }
+
+            &-description {
+                font-size: 1.8rem;
+                line-height: 140%;
+                color: $gray;
+
+                @include small-tablet {
+                    font-size: 3rem;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+
+                    @include small-tablet {
+                        margin-bottom: 6.4rem;
+                    }
+                }
+
+                span {
+                    color: $white;
+                }
+            }
+
+            &-dropdown {
+                margin-bottom: 2rem;
+                position: relative;
+                max-width: 57.4rem;
+
+                @include small-tablet {
+                    max-width: 100%;
+                    margin-bottom: 6.4rem;
+                }
+
+                &:not(&.--active) {
+                    .detailed__gallery-characteristics-dropdown-icon {
+                        animation: bounce 2s infinite;
+                    }
+                }
+
+                &.--active {
+                    .detailed__gallery-characteristics-dropdown-icon {
+                        animation: rotate 0.5s forwards;
+                    }
+                }
+
+                &-heading {
+                    padding: 2rem 0;
+                    border-bottom: 0.1rem solid $gray;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+
+                    @include small-tablet {
+                        padding: 0 0 3.2rem;
+                        border-width: 0.2rem;
+                    }
+
+                    .detailed__gallery-characteristics-dropdown-item {
+                        color: $orange;
+                    }
+                }
+
+                &-icon {
+                    transition: 0.3s transform ease;
+                    @include sizes(2rem, 2rem);
+
+                    @include small-tablet {
+                        @include sizes(3.2rem, 3.2rem);
+                    }
+                }
+
+                &-wrapper {
+                    position: absolute;
+                    top: 8rem;
+                    padding: 2rem;
+                    background: #24272a;
+                    width: 100%;
+
+                    @include small-tablet {
+                        padding: 3.2rem;
+                    }
+                }
+
+                &-body {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.6rem;
+                    max-height: 14.4rem;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+
+                    @include small-tablet {
+                        gap: 2.2rem;
+                        max-height: 28.8rem;
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 0.4rem;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background: $gray;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background: $orange;
+                    }
+                }
+
+                &-item {
+                    position: relative;
+                    padding-left: 4rem;
+                    font-size: 1.8rem;
+                    line-height: 133%;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: $gray-secondary;
+                    display: block;
+
+                    @include small-tablet {
+                        font-size: 3rem;
+                        line-height: 160%;
+                        padding-left: 6.4rem;
+                    }
+
+                    &.--selected {
+                        color: $orange;
+                    }
+
+                    &::after {
+                        @include pseudo {
+                            left: 0;
+                            top: 0;
+                            @include sizes(2.4rem, 2.4rem);
+                            border-radius: 50%;
+                            background: var(--color);
+
+                            @include small-tablet {
+                                @include sizes(4.8rem, 4.8rem);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-navigation {
+            &-button {
+                transition: 0.3s opacity;
+                pointer-events: auto;
+            }
+        }
+    }
+
+    &__rent {
+        max-width: 39.6rem;
+
+        @include small-tablet {
+            max-width: 100%;
+        }
+
+        &-title {
+            display: block;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            line-height: 140%;
+            text-transform: uppercase;
+
+            @include small-tablet {
+                margin-bottom: 4rem;
+                font-size: 3rem;
+            }
+        }
+
+        &-list {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 4rem;
+
+            @include small-tablet {
+                justify-content: space-between;
+            }
+        }
+
+        &-item {
+            padding: 1rem 0.85rem;
+            font-size: 1.8rem;
+            line-height: 110%;
+            background: #24272a;
+            white-space: nowrap;
+            transition:
+                0.3s background ease,
+                0.3s box-shadow ease;
+            border-radius: 0.8rem;
+            cursor: pointer;
+
+            @include small-tablet {
+                flex-shrink: 1;
+                padding: 1.6rem;
+                border-radius: 1.6rem;
+                font-size: 3rem;
+            }
+
+            &.--active {
+                box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+                background: linear-gradient(180deg, #ff6c01 0%, #b34f06 100%),
+                    radial-gradient(54% 100% at 49.96% 0%, rgb(255, 255, 255) 0%, rgb(0, 0, 0) 100%);
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+                    background: linear-gradient(180deg, #ff6c01 0%, #b34f06 100%),
+                        radial-gradient(54% 100% at 49.96% 0%, rgb(255, 255, 255) 0%, rgb(0, 0, 0) 100%);
+                }
+            }
+        }
+
+        &-info {
+            padding: 2rem;
+            background: #24272a;
+            margin-bottom: 4rem;
+
+            @include small-tablet {
+                padding: 3.2rem;
+            }
+
+            &-counter {
+                display: block;
+                margin-bottom: 1.2rem;
+                font-size: 1.8rem;
+                line-height: 110%;
+
+                @include small-tablet {
+                    font-size: 3rem;
+                    margin-bottom: 4rem;
+                }
+            }
+
+            &-total {
+                font-weight: 500;
+                font-size: 3.6rem;
+                line-height: 130%;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+                font-family: 'Druk Wide Cyr', sans-serif;
+
+                @include small-tablet {
+                    font-size: 3.6rem;
+                    margin-bottom: 3.2rem;
+                }
+
+                span {
+                    font-size: 2rem;
+
+                    @include small-tablet {
+                        font-size: 2.4rem;
+                    }
+                }
+            }
+
+            &-pledge {
+                font-size: 1.8rem;
+                line-height: 140%;
+                color: $gray;
+                margin-bottom: 4rem;
+
+                @include small-tablet {
+                    font-size: 3rem;
+                    margin-bottom: 6.4rem;
+                }
+
+                span {
+                    color: $white;
+                }
+            }
+        }
+
+        &-button {
+            width: 100%;
+        }
+
+        &-promotion {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.8rem;
+            position: relative;
+
+            @include small-tablet {
+                padding: 3.2rem;
+                gap: 3.2rem;
+            }
+
+            &::after {
+                @include pseudo {
+                    right: 0;
+                    bottom: 0;
+                    background: #1f2225 url('./assets/images/sections/detailed/rent-background.svg') no-repeat
+                        center;
+                    background-size: contain;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    background-position: 16rem;
+
+                    @include small-tablet {
+                        background-position: 23rem;
+                    }
+                }
+            }
+
+            &-title {
+                font-weight: 500;
+                font-size: 1.8rem;
+                line-height: 140%;
+                font-family: 'Druk Wide Cyr', sans-serif;
+
+                @include small-tablet {
+                    font-size: 3.6rem;
+                }
+            }
+
+            &-link {
+                display: flex;
+                align-items: center;
+                gap: 1.6rem;
+
+                @include small-tablet {
+                    gap: 3.2rem;
+                }
+
+                span {
+                    font-weight: 500;
+                    font-size: 1.8rem;
+                    line-height: 140%;
+                    color: $orange;
+
+                    @include small-tablet {
+                        font-size: 3rem;
+                    }
+                }
+
+                img {
+                    @include sizes(2rem, 2rem);
+                    transform: rotate(-90deg);
+
+                    @include small-tablet {
+                        @include sizes(3.2rem, 3.2rem);
+                    }
+                }
+            }
+        }
+    }
+}
