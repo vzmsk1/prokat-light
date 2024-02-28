@@ -5,50 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4601fd0-39e0-436c-bd29-f24c106a33b0" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/components/_detailed-menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/_detailed.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/_routes-is-active.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/_similar-cars.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/detailed.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/sections/_detailed-menu.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/sections/_detailed.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/sections/_similar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/sections/modals.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/sections/_similar-cars.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/car-park.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/car-park.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_car-park.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_car-park.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_contact-rental.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_contact-rental.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_routes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_routes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modals.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/error404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/error404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sections/routes/path-1-m.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/path-1-m.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sections/routes/path-1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/path-1.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sections/routes/path-2-m.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/path-2-m.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sections/routes/path-2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/path-2.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sections/routes/path-3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/path-3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sections/routes/path-4-m.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/path-4-m.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sections/routes/path-4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/sections/routes/path-4.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_similar-cars.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_similar-cars.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/dev/ukik0.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/ukik0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/libs/sipwer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/libs/sipwer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/forms.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/forms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/modals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/modals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news-detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/news-detailed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/policy-processing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/policy-processing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rental-conditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/rental-conditions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/dev/ukik0.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/dev/ukik0.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/libs/locomotive-scroll.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/libs/locomotive-scroll.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_choose.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_choose.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_contact.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_news.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_news.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_promotion.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_promotion.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_rental.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_rental.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_author.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_author.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_detailed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_detailed.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/sections/_routes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_routes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/terms-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/terms-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/styles/_input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_input.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_similar.scss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +52,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging Dima-M",
+    "git-widget-placeholder": "Dima-M",
     "last_opened_file_path": "/Users/annavyazemskaya/Documents/web/2024/prokat-light",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -138,6 +111,7 @@
       <workItem from="1708929043391" duration="14062000" />
       <workItem from="1709076938812" duration="71000" />
       <workItem from="1709114393683" duration="9931000" />
+      <workItem from="1709151281871" duration="2779000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />

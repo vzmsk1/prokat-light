@@ -4,22 +4,24 @@ figure {
 
 .routes {
     min-height: 90rem;
+    overflow: hidden;
 
     @include small-tablet {
-        margin-bottom: 36rem;
+        overflow: initial;
+        min-height: 185rem;
     }
 
     @include desk {
         &._is-active {
             .routes__tabs-map {
-                transform: scale(1.75) translate(62.7rem, -33.5rem) rotate(6deg);
+                transform: scale(1.75) translate(63rem, -33.5rem) rotate(6deg);
             }
         }
         .routes__tabs-map {
             transform: rotate(0deg) scale(0.51) translate(-2.3rem, -40.5rem);
 
             .detailed-page & {
-                transform: scale(1.75) translate(62.7rem, -33.5rem) rotate(6deg);
+                transform: scale(1.75) translate(63rem, -33.5rem) rotate(6deg);
             }
         }
     }
@@ -308,13 +310,13 @@ figure {
 
                 &:nth-of-type(2) {
                     .routes__tabs-map {
-                        transform: scale(1.65) translate(15rem, -7rem) rotate(4deg);
+                        transform: scale(1.65) translate(15rem, -6rem) rotate(5.5deg);
                     }
                 }
 
                 &:nth-of-type(3) {
                     .routes__tabs-map {
-                        transform: scale(1.55) translate(22rem, -23rem) rotate(2deg);
+                        transform: scale(1.55) translate(22rem, -24rem) rotate(1deg);
                     }
 
                     .routes__tabs-body-wrapper {
@@ -357,14 +359,14 @@ figure {
             &:nth-of-type(1) {
                 .routes__tabs-content-path {
                     top: 21rem;
-                    left: 61rem;
-                    width: 35.1rem;
+                    left: 59rem;
+                    width: 39.1rem;
                     height: 39.7rem;
 
                     @include small-tablet {
                         top: 39rem;
-                        left: 18rem;
-                        width: 42.1rem;
+                        left: 14rem;
+                        width: 53.1rem;
                         height: 39.7rem;
                     }
                 }
@@ -373,14 +375,14 @@ figure {
             &:nth-of-type(2) {
                 .routes__tabs-content-path {
                     top: 7rem;
-                    left: 40rem;
+                    left: 39rem;
                     width: 77.1rem;
                     height: 39.7rem;
 
                     @include small-tablet {
-                        top: 21rem;
-                        left: 0rem;
-                        width: 73.1rem;
+                        top: 22rem;
+                        left: 1rem;
+                        width: 116.1rem;
                         height: 39.7rem;
                     }
                 }
@@ -404,15 +406,15 @@ figure {
 
             &:nth-of-type(4) {
                 .routes__tabs-content-path {
-                    top: 18rem;
+                    top: 12rem;
                     left: 72rem;
-                    width: 23.1rem;
+                    width: 38.1rem;
                     height: 39.7rem;
 
                     @include small-tablet {
-                        top: 8rem;
-                        left: -1rem;
-                        width: 73.1rem;
+                        top: 31rem;
+                        left: 23rem;
+                        width: 48.1rem;
                         height: 39.7rem;
                     }
                 }

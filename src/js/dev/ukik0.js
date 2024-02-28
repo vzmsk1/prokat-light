@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         switch (index) {
             case 1:
-                map.style.transform = 'scale(1.75) translate(62.7rem, -33.5rem) rotate(6deg)';
+                map.style.transform = 'scale(1.75) translate(63rem, -33.5rem) rotate(6deg)';
                 overlay.style.opacity = 1;
                 break;
             case 2:
@@ -121,13 +121,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlay.style.opacity = 0;
                 break;
             case 3:
-                map.style.transform = 'rotate(5deg) scale(.8) translate(29.7rem, -46.5rem)';
+                map.style.transform = 'rotate(6deg) scale(.8) translate(29.7rem, -46.5rem)';
                 overlay.style.opacity = 1;
                 break;
 
             default:
                 overlay.style.opacity = 1;
-                map.style.transform = 'rotate(7deg) scale(1.75) translate(57.7rem, -41.5rem)';
+                map.style.transform = 'rotate(7deg) scale(1.75) translate(57.7rem, -41rem)';
         }
     }
 

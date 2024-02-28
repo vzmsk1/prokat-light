@@ -1,0 +1,57 @@
+.similar {
+    .swiper {
+        @media (min-width: 48em) {
+            overflow: visible !important;
+        }
+
+        @include small-tablet {
+            margin-bottom: 7rem;
+        }
+    }
+
+    &__pagination {
+        @include small-tablet {
+            justify-content: center;
+        }
+    }
+
+    .swiper-slide {
+        @media (min-width: 48em) {
+            width: auto !important;
+            flex: 1 1 100%;
+        }
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 7rem;
+
+        @include small-tablet {
+            margin-bottom: 14rem;
+        }
+    }
+
+    .item-card__image-wrap {
+        @include small-tablet {
+            height: 20.7rem;
+            margin-bottom: 5rem;
+        }
+    }
+
+    .item-card__heading {
+        @include small-tablet {
+            font-weight: 500;
+            font-size: 3.6rem;
+            line-height: 130%;
+            text-transform: uppercase;
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    .item-card__text {
+        @include small-tablet {
+            font-size: 3rem;
+            line-height: 140%;
+        }
+    }
+}
