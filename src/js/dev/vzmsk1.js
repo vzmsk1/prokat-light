@@ -14,7 +14,7 @@ import 'swiper/css';
 import Vivus from 'vivus';
 
 // utils
-import { setInnerContent, bodyLock, bodyUnlock, bodyLockStatus, remToPx } from '../utils/utils';
+import { setInnerContent, bodyLock, bodyUnlock, remToPx } from '../utils/utils';
 import { modules } from '../modules';
 
 // gsap plugins & defaults
@@ -26,24 +26,26 @@ gsap.defaults({
 
 // --------------------------------------------------------------------------
 
+let bodyLockStatus = true;
+
 // media query (mobile)
 const mm = window.matchMedia('(max-width: 768px)');
+
+// locomotive scroll instance
+export const locoScroll = new LocomotiveScroll({
+    el: document.querySelector('._smooth-scroll'),
+    smooth: true,
+    multiplier: 0.6,
+    smoothMobile: false,
+    smartphone: {
+        smooth: false
+    }
+});
 
 class HomePage {
     constructor() {
         this.docElement = document.documentElement;
         this.scroller = document.querySelector('._smooth-scroll');
-
-        // locomotive scroll instance
-        this.locoScroll = new LocomotiveScroll({
-            el: this.scroller,
-            smooth: true,
-            multiplier: 0.6,
-            smoothMobile: false,
-            smartphone: {
-                smooth: false
-            }
-        });
 
         // general classes
         this.classes = {
@@ -54,24 +56,42 @@ class HomePage {
             active: '_is-active',
             hovered: '_is-hovered',
             beginning: '_is-beginning',
-            end: '_is-end'
+            end: '_is-end',
+            loaded: '_is-loaded'
         };
 
         // special utils methods
         this.unlockScroll = () => {
             if (bodyLockStatus) {
-                bodyUnlock();
-                if (this.locoScroll) this.locoScroll.start();
+                if (bodyLockStatus) {
+                    setTimeout(() => {
+                        document.documentElement.classList.remove('lock');
+                        locoScroll ? locoScroll.start() : null;
+                    }, 500);
+                    bodyLockStatus = false;
+                    setTimeout(function () {
+                        bodyLockStatus = true;
+                    }, 500);
+                }
+                if (locoScroll) locoScroll.start();
             }
         };
         this.lockScroll = () => {
             if (bodyLockStatus) {
-                bodyLock();
-                if (this.locoScroll) this.locoScroll.stop();
+                if (bodyLockStatus) {
+                    document.documentElement.classList.add('lock');
+                    locoScroll ? locoScroll.stop() : null;
+
+                    bodyLockStatus = false;
+                    setTimeout(function () {
+                        bodyLockStatus = true;
+                    }, 500);
+                }
+                if (locoScroll) locoScroll.stop();
             }
         };
         this.updateScroll = () => {
-            if (this.locoScroll) this.locoScroll.update();
+            if (locoScroll) locoScroll.update();
         };
         this.setSlideClasses = (swiper) => {
             swiper.slides.forEach((slide, i) => {
@@ -130,7 +150,7 @@ class HomePage {
             mm.addEventListener('change', function () {
                 if (!mm.matches) {
                     closeMenu();
-                    _this.locoScroll.update();
+                    locoScroll.update();
                     setTimeout(() => {
                         if (modules.modal) {
                             const modals = document.querySelectorAll('.modal');
@@ -159,7 +179,7 @@ class HomePage {
 
                 anchors.forEach((anchor) => {
                     anchor.addEventListener('click', function () {
-                        _this.locoScroll.scrollTo(anchor.dataset.anchor, {
+                        locoScroll.scrollTo(anchor.dataset.anchor, {
                             duration: 2.5,
                             offset: anchor.dataset.anchorOffset.length ? anchor.dataset.anchorOffset : -40,
                             immediate: false
@@ -316,7 +336,25 @@ class HomePage {
                     },
                     {
                         scale: 1,
+                        opacity: 1,
+                        visibility: 'visible',
                         translateY: mm.matches ? 0 : '-6rem'
+                    },
+                    1.5
+                )
+                .fromTo(
+                    '.promotion-btn',
+                    {
+                        opacity: 0,
+                        visibility: 'hidden',
+                        scale: mm.matches ? 1 : 0.2,
+                        transformOrigin: '50% 50%'
+                    },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        visibility: 'visible',
+                        translateY: mm.matches ? 0 : '-22.1rem'
                     },
                     1.5
                 )
@@ -586,7 +624,7 @@ class HomePage {
                                 start: 'top 25%',
                                 onEnter: () => {
                                     if (!_this.isActive(section)) {
-                                        _this.locoScroll.scrollTo(section, {
+                                        locoScroll.scrollTo(section, {
                                             offset: '155%',
                                             callback: () => {
                                                 _this.lockScroll();
@@ -714,7 +752,7 @@ class HomePage {
                                 _this.unlockScroll();
                             } else {
                                 e.disable();
-                                _this.locoScroll.scrollTo(section, {
+                                locoScroll.scrollTo(section, {
                                     duration: 500,
                                     callback: () => {
                                         _this.lockScroll();
@@ -732,7 +770,7 @@ class HomePage {
                                 _this.unlockScroll();
                             } else {
                                 e.disable();
-                                _this.locoScroll.scrollTo(section, {
+                                locoScroll.scrollTo(section, {
                                     duration: 500,
                                     callback: () => {
                                         _this.lockScroll();
@@ -763,7 +801,7 @@ class HomePage {
                         bottom: 'bottom bottom',
                         onEnter: ({ progress }) => {
                             if (progress !== 1 && !mm.matches) {
-                                _this.locoScroll.scrollTo(section, {
+                                locoScroll.scrollTo(section, {
                                     duration: 500,
                                     callback: () => {
                                         _this.lockScroll();
@@ -779,7 +817,7 @@ class HomePage {
                         },
                         onEnterBack: () => {
                             if (!mm.matches) {
-                                _this.locoScroll.scrollTo(section, {
+                                locoScroll.scrollTo(section, {
                                     duration: 500,
                                     callback: () => {
                                         _this.lockScroll();
@@ -789,7 +827,7 @@ class HomePage {
                             }
                         },
                         onLeave: () => {
-                            _this.locoScroll.update();
+                            locoScroll.update();
                         }
                     }
                 });
@@ -816,6 +854,9 @@ class HomePage {
 
         // window load event
         window.addEventListener('load', function () {
+            // add loaded class
+            _this.docElement.classList.add(_this.classes.loaded);
+
             // fix footer cut off
             setTimeout(_this.updateScroll, 5000);
 
@@ -826,8 +867,8 @@ class HomePage {
             ScrollTrigger.scrollerProxy(_this.scroller, {
                 scrollTop(value) {
                     return arguments.length
-                        ? _this.locoScroll.scrollTo(value, 0, 0)
-                        : _this.locoScroll.scroll.instance.scroll.y;
+                        ? locoScroll.scrollTo(value, 0, 0)
+                        : locoScroll.scroll.instance.scroll.y;
                 },
                 getBoundingClientRect() {
                     return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
@@ -837,19 +878,24 @@ class HomePage {
         });
 
         // locomotive scroll event & integration
-        if (_this.locoScroll) {
+        if (locoScroll) {
             if (!mm.matches) {
-                _this.locoScroll.on('scroll', (args) => {
+                locoScroll.on('scroll', (args) => {
                     ScrollTrigger.update();
 
                     if (document.querySelector('.home-page')) {
                         gsap.to(document.body, { '--scrollY': `${args.scroll.y}px` });
                     }
+                    if (args.scroll.y >= 200) {
+                        gsap.to('.promotion-btn', { top: '110vh' });
+                    } else {
+                        gsap.to('.promotion-btn', { top: '110.6rem', translateY: '-22.1rem' });
+                    }
                 });
             }
 
             // scroll trigger integration with locomotive scroll
-            ScrollTrigger.addEventListener('refresh', () => _this.locoScroll.update());
+            ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
             ScrollTrigger.defaults({ scroller: _this.scroller });
         }
 

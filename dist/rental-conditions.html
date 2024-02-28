@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://api-maps.yandex.ru/v3/?apikey=24d298f1-151c-4481-9e4a-235c4db16ee9&lang=ru_RU"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+        <title>Условия проката</title>
+    <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+    <body>
+        <div class="wrapper rental-page _smooth-scroll">
+            <header class="header">
+    <div class="header__container container">
+        <button type="button" class="header__hamburger icon">
+            <span>
+                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.75" y1="1.25" x2="23.25" y2="1.25" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="square"></line>
+                    <line x1="0.75" y1="7.25" x2="23.25" y2="7.25" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="square"></line>
+                    <line x1="0.75" y1="13.25" x2="23.25" y2="13.25" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="square"></line>
+                </svg>
+                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.75" y1="1.25" x2="23.25" y2="1.25" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="square"></line>
+                    <line x1="0.75" y1="7.25" x2="23.25" y2="7.25" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="square"></line>
+                    <line x1="0.75" y1="13.25" x2="23.25" y2="13.25" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="square"></line>
+                </svg>
+            </span>
+            <span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.1998 0.799805L0.799805 15.1998" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M0.799805 0.799805L15.1998 15.1998" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.1998 0.799805L0.799805 15.1998" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M0.799805 0.799805L15.1998 15.1998" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </span>
+        </button>
+        <nav class="header__nav">
+            <a href="#" class="header__link txt">Парк автомобилей</a>
+            <a href="#" class="header__link txt">Условия</a>
+            <a href="#" class="header__link txt">Акции</a>
+        </nav>
+        <a href="#" class="header__logo"><img src="./assets/images/logo.svg" alt="" class="header__logo"></a>
+        <div class="header__group">
+            <a href="#" class="header__link txt">Контакты</a>
+            <div class="header__select-lang select-lang">
+                <select data-show-selection="">
+                    <option value="1" selected="">ru</option>
+                    <option value="2">eng</option>
+                </select>
+            </div>
+            <a href="tel:74242490725" class="header__tel"><span class="_desktop-only">+7 (4242) 490-725</span><span class="header__tel-icon icon">
+                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.96375 6.54475C4.58528 7.74804 5.62315 8.71854 6.90825 9.29814C7.00305 9.34022 7.1079 9.35843 7.21248 9.35099C7.31706 9.34354 7.41777 9.31069 7.5047 9.25567L9.3922 8.07362C9.4756 8.0206 9.57196 7.98824 9.6723 7.97958C9.77264 7.97092 9.87368 7.98622 9.966 8.02408L13.4994 9.44678C13.6202 9.4939 13.7211 9.57693 13.7865 9.68309C13.852 9.78924 13.8785 9.91264 13.8618 10.0343C13.7498 10.8537 13.3232 11.6069 12.6617 12.1527C12.0002 12.6986 11.1492 12.9998 10.268 13C7.54476 13 4.93305 11.9858 3.00743 10.1805C1.0818 8.37526 0 5.92679 0 3.37375C0.000198614 2.54759 0.32149 1.7498 0.903755 1.12967C1.48602 0.509533 2.28936 0.109549 3.16345 0.00455768C3.29319 -0.011066 3.42481 0.0137265 3.53804 0.0751176C3.65127 0.136509 3.73984 0.231094 3.7901 0.344308L5.30765 3.66395C5.34712 3.74913 5.36362 3.84211 5.35572 3.93468C5.34783 4.02726 5.31576 4.11659 5.26235 4.19481L4.0015 5.99265C3.94537 6.07397 3.91242 6.16743 3.90581 6.26409C3.8992 6.36075 3.91915 6.45738 3.96375 6.54475Z" fill="#FF6C01"></path>
+                    </svg>
+                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.96375 6.54475C4.58528 7.74804 5.62315 8.71854 6.90825 9.29814C7.00305 9.34022 7.1079 9.35843 7.21248 9.35099C7.31706 9.34354 7.41777 9.31069 7.5047 9.25567L9.3922 8.07362C9.4756 8.0206 9.57196 7.98824 9.6723 7.97958C9.77264 7.97092 9.87368 7.98622 9.966 8.02408L13.4994 9.44678C13.6202 9.4939 13.7211 9.57693 13.7865 9.68309C13.852 9.78924 13.8785 9.91264 13.8618 10.0343C13.7498 10.8537 13.3232 11.6069 12.6617 12.1527C12.0002 12.6986 11.1492 12.9998 10.268 13C7.54476 13 4.93305 11.9858 3.00743 10.1805C1.0818 8.37526 0 5.92679 0 3.37375C0.000198614 2.54759 0.32149 1.7498 0.903755 1.12967C1.48602 0.509533 2.28936 0.109549 3.16345 0.00455768C3.29319 -0.011066 3.42481 0.0137265 3.53804 0.0751176C3.65127 0.136509 3.73984 0.231094 3.7901 0.344308L5.30765 3.66395C5.34712 3.74913 5.36362 3.84211 5.35572 3.93468C5.34783 4.02726 5.31576 4.11659 5.26235 4.19481L4.0015 5.99265C3.94537 6.07397 3.91242 6.16743 3.90581 6.26409C3.8992 6.36075 3.91915 6.45738 3.96375 6.54475Z" fill="#FF6C01"></path>
+                    </svg> </span></a>
+        </div>
+    </div>
+    <div class="header__menu menu-header">
+        <nav class="menu-header__nav">
+            <a href="#" class="menu-header__nav-link h h_3">Парк автомобилей</a>
+            <a href="#" class="menu-header__nav-link h h_3">Условия</a>
+            <a href="#" class="menu-header__nav-link h h_3">Акции</a>
+            <a href="#" class="menu-header__nav-link h h_3">Контакты</a>
+        </nav>
+        <ul class="menu-header__contacts">
+            <li class="menu-header__icon-wrap">
+                <a href="#" target="_blank" class="menu-header__icon icon icon_white">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.8932 17C4.05996 17 0.162399 12.1201 0 4H3.42286C3.53529 9.95996 6.05871 12.4845 8.05747 13.005V4H11.2805V9.14014C13.2542 8.91892 15.3279 6.57658 16.0275 4H19.2505C18.9869 5.33629 18.4614 6.60153 17.7069 7.71661C16.9524 8.83168 15.9852 9.77259 14.8657 10.4805C16.1153 11.1273 17.2191 12.0428 18.1041 13.1666C18.9891 14.2904 19.6353 15.597 20 17H16.4522C16.1248 15.7814 15.4594 14.6905 14.5394 13.8641C13.6194 13.0376 12.4858 12.5125 11.2805 12.3544V17H10.8932V17Z" fill="#FF6C01"></path>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.8932 17C4.05996 17 0.162399 12.1201 0 4H3.42286C3.53529 9.95996 6.05871 12.4845 8.05747 13.005V4H11.2805V9.14014C13.2542 8.91892 15.3279 6.57658 16.0275 4H19.2505C18.9869 5.33629 18.4614 6.60153 17.7069 7.71661C16.9524 8.83168 15.9852 9.77259 14.8657 10.4805C16.1153 11.1273 17.2191 12.0428 18.1041 13.1666C18.9891 14.2904 19.6353 15.597 20 17H16.4522C16.1248 15.7814 15.4594 14.6905 14.5394 13.8641C13.6194 13.0376 12.4858 12.5125 11.2805 12.3544V17H10.8932V17Z" fill="#FF6C01"></path>
+                    </svg>
+                </a>
+            </li>
+            <li class="menu-header__icon-wrap">
+                <a href="#" target="_blank" class="menu-header__icon icon icon_white">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.0732 2.91667C15.1916 1.04167 12.6829 0 10.0348 0C4.52961 0 0.0696853 4.44444 0.0696853 9.93056C0.0696853 11.6667 0.557491 13.4028 1.39373 14.8611L0 20L5.29617 18.6111C6.75958 19.375 8.36237 19.7917 10.0348 19.7917C15.5401 19.7917 20 15.3472 20 9.86111C19.9303 7.29167 18.9547 4.79167 17.0732 2.91667ZM14.8432 13.4722C14.6341 14.0278 13.6585 14.5833 13.1707 14.6528C12.7526 14.7222 12.1951 14.7222 11.6376 14.5833C11.2892 14.4444 10.8014 14.3056 10.2439 14.0278C7.73519 12.9861 6.13241 10.4861 5.99303 10.2778C5.85366 10.1389 4.94774 8.95833 4.94774 7.70833C4.94774 6.45833 5.57491 5.90278 5.78397 5.625C5.99303 5.34722 6.27178 5.34722 6.48084 5.34722C6.62021 5.34722 6.82927 5.34722 6.96864 5.34722C7.10801 5.34722 7.31707 5.27778 7.52613 5.76389C7.73519 6.25 8.22299 7.5 8.29268 7.56944C8.36237 7.70833 8.36237 7.84722 8.29268 7.98611C8.22299 8.125 8.15331 8.26389 8.01393 8.40278C7.87456 8.54167 7.73519 8.75 7.6655 8.81944C7.52613 8.95833 7.38676 9.09722 7.52613 9.30555C7.6655 9.58333 8.15331 10.3472 8.91986 11.0417C9.89547 11.875 10.662 12.1528 10.9408 12.2917C11.2195 12.4306 11.3589 12.3611 11.4983 12.2222C11.6376 12.0833 12.1254 11.5278 12.2648 11.25C12.4042 10.9722 12.6132 11.0417 12.8223 11.1111C13.0314 11.1806 14.2857 11.8056 14.4948 11.9444C14.7735 12.0833 14.9129 12.1528 14.9826 12.2222C15.0523 12.4306 15.0523 12.9167 14.8432 13.4722Z" fill="#FF6C01"></path>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.0732 2.91667C15.1916 1.04167 12.6829 0 10.0348 0C4.52961 0 0.0696853 4.44444 0.0696853 9.93056C0.0696853 11.6667 0.557491 13.4028 1.39373 14.8611L0 20L5.29617 18.6111C6.75958 19.375 8.36237 19.7917 10.0348 19.7917C15.5401 19.7917 20 15.3472 20 9.86111C19.9303 7.29167 18.9547 4.79167 17.0732 2.91667ZM14.8432 13.4722C14.6341 14.0278 13.6585 14.5833 13.1707 14.6528C12.7526 14.7222 12.1951 14.7222 11.6376 14.5833C11.2892 14.4444 10.8014 14.3056 10.2439 14.0278C7.73519 12.9861 6.13241 10.4861 5.99303 10.2778C5.85366 10.1389 4.94774 8.95833 4.94774 7.70833C4.94774 6.45833 5.57491 5.90278 5.78397 5.625C5.99303 5.34722 6.27178 5.34722 6.48084 5.34722C6.62021 5.34722 6.82927 5.34722 6.96864 5.34722C7.10801 5.34722 7.31707 5.27778 7.52613 5.76389C7.73519 6.25 8.22299 7.5 8.29268 7.56944C8.36237 7.70833 8.36237 7.84722 8.29268 7.98611C8.22299 8.125 8.15331 8.26389 8.01393 8.40278C7.87456 8.54167 7.73519 8.75 7.6655 8.81944C7.52613 8.95833 7.38676 9.09722 7.52613 9.30555C7.6655 9.58333 8.15331 10.3472 8.91986 11.0417C9.89547 11.875 10.662 12.1528 10.9408 12.2917C11.2195 12.4306 11.3589 12.3611 11.4983 12.2222C11.6376 12.0833 12.1254 11.5278 12.2648 11.25C12.4042 10.9722 12.6132 11.0417 12.8223 11.1111C13.0314 11.1806 14.2857 11.8056 14.4948 11.9444C14.7735 12.0833 14.9129 12.1528 14.9826 12.2222C15.0523 12.4306 15.0523 12.9167 14.8432 13.4722Z" fill="#FF6C01"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <button type="button" class="menu-header__btn btn">
+            <span class="btn__txt">отправить заявку</span>
+        </button>
+    </div>
+</header>
+
+
+            <main>
+                <section class="rental">
+    <div class="container">
+        <div class="rental__content">
+            <h1 class="rental__title h h_1">Условия проката</h1>
+
+            <div data-tabs="" class="rental__tabs">
+                <nav data-tabs-titles="" class="rental__tabs-navigation">
+                    <button type="button" class="rental__tabs-title rental__tabs-button _is-active">
+                        Условия проката
+                    </button>
+                    <button type="button" class="rental__tabs-button">Бронирование</button>
+                    <button type="button" class="rental__tabs-button">Оплата за прокат</button>
+                    <button type="button" class="rental__tabs-button">Документы</button>
+                    <button type="button" class="rental__tabs-button">Место выдачи авто</button>
+                </nav>
+                <div data-tabs-body="" class="rental__tabs-content">
+                    <div class="rental__tabs-body">
+                        <h2 class="rental__tabs-body-title h h_2">Оплата за прокат</h2>
+
+                        <div class="rental__tabs-body-wrapper">
+                            <p class="rental__tabs-body-description _desktop-only">
+                                Все платежи осуществляются в национальной валюте <br>
+                                (русский рубль).
+                            </p>
+
+                            <ul class="rental__tabs-body-list">
+                                <li class="rental__tabs-body-item">
+                                    <span class="rental__tabs-body-item-title">способ оплаты</span>
+
+                                    <p class="rental__tabs-body-item-text">
+                                        - Наличный расчет <br>
+                                        - Безналичный расчет <br>
+                                        - Кредитные карты Visa, Master Card 
+                                    </p>
+                                </li>
+                                <li class="rental__tabs-body-item">
+                                    <span class="rental__tabs-body-item-title">территория использования</span>
+
+                                    <p class="rental__tabs-body-item-text">
+                                        Автомобили предоставляются по Сахалинской области в любом направлении
+                                        по асфальта-бетонному покрытию. Выезд в районы с грунтовым покрытием
+                                        возможен на внедорожниках по согласованию. 
+                                    </p>
+                                </li>
+                            </ul>
+
+                            <div class="rental__tabs-body-image">
+                                <figure class="rental__tabs-body-image-wrapper">
+                                    <img src="./assets/images/sections/rental/rental-image.webp" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rental__tabs-body">
+                        <h2 class="rental__tabs-body-title h h_2">Оплата за прокат</h2>
+
+                        <div class="rental__tabs-body-wrapper">
+                            <p class="rental__tabs-body-description _desktop-only">
+                                Все платежи осуществляются в национальной валюте <br>
+                                (русский рубль).
+                            </p>
+
+                            <ul class="rental__tabs-body-list">
+                                <li class="rental__tabs-body-item">
+                                    <span class="rental__tabs-body-item-title">способ оплаты</span>
+
+                                    <p class="rental__tabs-body-item-text">
+                                        - Наличный расчет <br>
+                                        - Безналичный расчет <br>
+                                        - Кредитные карты Visa, Master Card 
+                                    </p>
+                                </li>
+                                <li class="rental__tabs-body-item">
+                                    <span class="rental__tabs-body-item-title">территория использования</span>
+
+                                    <p class="rental__tabs-body-item-text">
+                                        Автомобили предоставляются по Сахалинской области в любом направлении
+                                        по асфальта-бетонному покрытию. Выезд в районы с грунтовым покрытием
+                                        возможен на внедорожниках по согласованию. 
+                                    </p>
+                                </li>
+                            </ul>
+
+                            <div class="rental__tabs-body-image">
+                                <figure class="rental__tabs-body-image-wrapper">
+                                    <img src="./assets/images/sections/rental/rental-image.webp" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rental__tabs-body">
+                        <h2 class="rental__tabs-body-title h h_2">Оплата за прокат</h2>
+
+                        <div class="rental__tabs-body-wrapper">
+                            <p class="rental__tabs-body-description _desktop-only">
+                                Все платежи осуществляются в национальной валюте <br>
+                                (русский рубль).
+                            </p>
+
+                            <ul class="rental__tabs-body-list">
+                                <li class="rental__tabs-body-item">
+                                    <span class="rental__tabs-body-item-title">способ оплаты</span>
+
+                                    <p class="rental__tabs-body-item-text">
+                                        - Наличный расчет <br>
+                                        - Безналичный расчет <br>
+                                        - Кредитные карты Visa, Master Card 
+                                    </p>
+                                </li>
+                                <li class="rental__tabs-body-item">
+                                    <span class="rental__tabs-body-item-title">территория использования</span>
+
+                                    <p class="rental__tabs-body-item-text">
+                                        Автомобили предоставляются по Сахалинской области в любом направлении
+                                        по асфальта-бетонному покрытию. Выезд в районы с грунтовым покрытием
+                                        возможен на внедорожниках по согласованию. 
+                                    </p>
+                                </li>
+                            </ul>
+
+                            <div class="rental__tabs-body-image">
+                                <figure class="rental__tabs-body-image-wrapper">
+                                    <img src="./assets/images/sections/rental/rental-image.webp" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rental__tabs-body">
+                        <h2 class="rental__tabs-body-title h h_2">Оплата за прокат</h2>
+
+                        <div class="rental__tabs-body-wrapper">
+                            <p class="rental__tabs-body-description _desktop-only">
+                                Все платежи осуществляются в национальной валюте <br>
+                                (русский рубль).
+                            </p>
+
+                            <ul class="rental__tabs-body-list">
+                                <li class="rental__tabs-body-item">
+                                    <span class="rental__tabs-body-item-title">способ оплаты</span>
+
+                                    <p class="rental__tabs-body-item-text">
+                                        - Наличный расчет <br>
+                                        - Безналичный расчет <br>
+                                        - Кредитные карты Visa, Master Card 
+                                    </p>
+                                </li>
+                                <li class="rental__tabs-body-item">
+                                    <span class="rental__tabs-body-item-title">территория использования</span>
+
+                                    <p class="rental__tabs-body-item-text">
+                                        Автомобили предоставляются по Сахалинской области в любом направлении
+                                        по асфальта-бетонному покрытию. Выезд в районы с грунтовым покрытием
+                                        возможен на внедорожниках по согласованию. 
+                                    </p>
+                                </li>
+                            </ul>
+
+                            <div class="rental__tabs-body-image">
+                                <figure class="rental__tabs-body-image-wrapper">
+                                    <img src="./assets/images/sections/rental/rental-image.webp" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rental__tabs-body">
+                        <h2 class="rental__tabs-body-title h h_2">Оплата за прокат</h2>
+
+                        <div class="rental__tabs-body-wrapper">
+                            <p class="rental__tabs-body-description _desktop-only">
+                                Все платежи осуществляются в национальной валюте <br>
+                                (русский рубль).
+                            </p>
+
+                            <ul class="rental__tabs-body-list">
+                                <li class="rental__tabs-body-item">
+                                    <span class="rental__tabs-body-item-title">способ оплаты</span>
+
+                                    <p class="rental__tabs-body-item-text">
+                                        - Наличный расчет <br>
+                                        - Безналичный расчет <br>
+                                        - Кредитные карты Visa, Master Card 
+                                    </p>
+                                </li>
+                                <li class="rental__tabs-body-item">
+                                    <span class="rental__tabs-body-item-title">территория использования</span>
+
+                                    <p class="rental__tabs-body-item-text">
+                                        Автомобили предоставляются по Сахалинской области в любом направлении
+                                        по асфальта-бетонному покрытию. Выезд в районы с грунтовым покрытием
+                                        возможен на внедорожниках по согласованию. 
+                                    </p>
+                                </li>
+                            </ul>
+
+                            <div class="rental__tabs-body-image">
+                                <figure class="rental__tabs-body-image-wrapper">
+                                    <img src="./assets/images/sections/rental/rental-image.webp" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="rental__documents">
+                <li class="rental__document">
+                    <a download="#">
+                        <figure class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.2591 16.25C14.2591 16.3018 14.2171 16.3438 14.1654 16.3438H13.332C13.2803 16.3438 13.2383 16.3018 13.2383 16.25V11.25C13.2383 11.1982 13.2803 11.1562 13.332 11.1562H14.1654C14.2171 11.1562 14.2591 11.1982 14.2591 11.25V16.25Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M12.0266 13.8056L13.7491 15.528L15.4715 13.8056C15.5081 13.769 15.5674 13.769 15.6041 13.8056L16.1933 14.3948C16.2299 14.4315 16.2299 14.4908 16.1933 14.5274L14.11 16.6108C13.9106 16.8101 13.5875 16.8101 13.3881 16.6108L11.3048 14.5274C11.2872 14.5098 11.2773 14.486 11.2773 14.4611C11.2773 14.4363 11.2872 14.4124 11.3048 14.3948L11.8941 13.8056C11.9307 13.769 11.99 13.769 12.0266 13.8056Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M8.01042 17.9167C8.01042 17.8649 7.96844 17.8229 7.91667 17.8229H3.33333C2.69475 17.8229 2.17708 17.3052 2.17708 16.6667V3.33333C2.17708 2.69475 2.69475 2.17708 3.33333 2.17708H8.10169C8.39098 2.17708 8.66975 2.28552 8.883 2.481L12.8646 6.13084C13.1036 6.34984 13.2396 6.65907 13.2396 6.98317V7.08333C13.2396 7.13511 13.2816 7.17708 13.3333 7.17708H14.1667C14.2184 7.17708 14.2604 7.13511 14.2604 7.08333V6.98317C14.2604 6.37292 14.0043 5.79068 13.5544 5.37832L9.5728 1.72849C9.17128 1.36043 8.64638 1.15625 8.10169 1.15625H3.33333C2.13096 1.15625 1.15625 2.13096 1.15625 3.33333V16.6667C1.15625 17.869 2.13096 18.8438 3.33333 18.8438H7.91667C7.96844 18.8438 8.01042 18.8018 8.01042 18.75V17.9167Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M8.33203 1.98975C8.28025 1.98975 8.23828 2.03172 8.23828 2.0835V4.5835C8.23828 5.78587 9.21299 6.76058 10.4154 6.76058H13.332C13.3838 6.76058 13.4258 6.71861 13.4258 6.66683V5.8335C13.4258 5.78172 13.3838 5.73975 13.332 5.73975H10.4154C9.77679 5.73975 9.25911 5.22208 9.25911 4.5835V2.0835C9.25911 2.03172 9.21714 1.98975 9.16536 1.98975H8.33203Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M9.67708 13.75C9.67708 11.5006 11.5006 9.67708 13.75 9.67708C15.9994 9.67708 17.8229 11.5006 17.8229 13.75C17.8229 15.9994 15.9994 17.8229 13.75 17.8229C11.5006 17.8229 9.67708 15.9994 9.67708 13.75ZM13.75 8.65625C10.9368 8.65625 8.65625 10.9368 8.65625 13.75C8.65625 16.5632 10.9368 18.8438 13.75 18.8438C16.5632 18.8438 18.8438 16.5632 18.8438 13.75C18.8438 10.9368 16.5632 8.65625 13.75 8.65625Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.2591 16.25C14.2591 16.3018 14.2171 16.3438 14.1654 16.3438H13.332C13.2803 16.3438 13.2383 16.3018 13.2383 16.25V11.25C13.2383 11.1982 13.2803 11.1562 13.332 11.1562H14.1654C14.2171 11.1562 14.2591 11.1982 14.2591 11.25V16.25Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M12.0266 13.8056L13.7491 15.528L15.4715 13.8056C15.5081 13.769 15.5674 13.769 15.6041 13.8056L16.1933 14.3948C16.2299 14.4315 16.2299 14.4908 16.1933 14.5274L14.11 16.6108C13.9106 16.8101 13.5875 16.8101 13.3881 16.6108L11.3048 14.5274C11.2872 14.5098 11.2773 14.486 11.2773 14.4611C11.2773 14.4363 11.2872 14.4124 11.3048 14.3948L11.8941 13.8056C11.9307 13.769 11.99 13.769 12.0266 13.8056Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M8.01042 17.9167C8.01042 17.8649 7.96844 17.8229 7.91667 17.8229H3.33333C2.69475 17.8229 2.17708 17.3052 2.17708 16.6667V3.33333C2.17708 2.69475 2.69475 2.17708 3.33333 2.17708H8.10169C8.39098 2.17708 8.66975 2.28552 8.883 2.481L12.8646 6.13084C13.1036 6.34984 13.2396 6.65907 13.2396 6.98317V7.08333C13.2396 7.13511 13.2816 7.17708 13.3333 7.17708H14.1667C14.2184 7.17708 14.2604 7.13511 14.2604 7.08333V6.98317C14.2604 6.37292 14.0043 5.79068 13.5544 5.37832L9.5728 1.72849C9.17128 1.36043 8.64638 1.15625 8.10169 1.15625H3.33333C2.13096 1.15625 1.15625 2.13096 1.15625 3.33333V16.6667C1.15625 17.869 2.13096 18.8438 3.33333 18.8438H7.91667C7.96844 18.8438 8.01042 18.8018 8.01042 18.75V17.9167Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M8.33203 1.98975C8.28025 1.98975 8.23828 2.03172 8.23828 2.0835V4.5835C8.23828 5.78587 9.21299 6.76058 10.4154 6.76058H13.332C13.3838 6.76058 13.4258 6.71861 13.4258 6.66683V5.8335C13.4258 5.78172 13.3838 5.73975 13.332 5.73975H10.4154C9.77679 5.73975 9.25911 5.22208 9.25911 4.5835V2.0835C9.25911 2.03172 9.21714 1.98975 9.16536 1.98975H8.33203Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M9.67708 13.75C9.67708 11.5006 11.5006 9.67708 13.75 9.67708C15.9994 9.67708 17.8229 11.5006 17.8229 13.75C17.8229 15.9994 15.9994 17.8229 13.75 17.8229C11.5006 17.8229 9.67708 15.9994 9.67708 13.75ZM13.75 8.65625C10.9368 8.65625 8.65625 10.9368 8.65625 13.75C8.65625 16.5632 10.9368 18.8438 13.75 18.8438C16.5632 18.8438 18.8438 16.5632 18.8438 13.75C18.8438 10.9368 16.5632 8.65625 13.75 8.65625Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                            </svg>
+                        </figure>
+
+                        <span>Договор аренды (ФЛ).pdf</span>
+                    </a>
+                </li>
+                <li class="rental__document">
+                    <a download="#">
+                        <figure class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.2591 16.25C14.2591 16.3018 14.2171 16.3438 14.1654 16.3438H13.332C13.2803 16.3438 13.2383 16.3018 13.2383 16.25V11.25C13.2383 11.1982 13.2803 11.1562 13.332 11.1562H14.1654C14.2171 11.1562 14.2591 11.1982 14.2591 11.25V16.25Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M12.0266 13.8056L13.7491 15.528L15.4715 13.8056C15.5081 13.769 15.5674 13.769 15.6041 13.8056L16.1933 14.3948C16.2299 14.4315 16.2299 14.4908 16.1933 14.5274L14.11 16.6108C13.9106 16.8101 13.5875 16.8101 13.3881 16.6108L11.3048 14.5274C11.2872 14.5098 11.2773 14.486 11.2773 14.4611C11.2773 14.4363 11.2872 14.4124 11.3048 14.3948L11.8941 13.8056C11.9307 13.769 11.99 13.769 12.0266 13.8056Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M8.01042 17.9167C8.01042 17.8649 7.96844 17.8229 7.91667 17.8229H3.33333C2.69475 17.8229 2.17708 17.3052 2.17708 16.6667V3.33333C2.17708 2.69475 2.69475 2.17708 3.33333 2.17708H8.10169C8.39098 2.17708 8.66975 2.28552 8.883 2.481L12.8646 6.13084C13.1036 6.34984 13.2396 6.65907 13.2396 6.98317V7.08333C13.2396 7.13511 13.2816 7.17708 13.3333 7.17708H14.1667C14.2184 7.17708 14.2604 7.13511 14.2604 7.08333V6.98317C14.2604 6.37292 14.0043 5.79068 13.5544 5.37832L9.5728 1.72849C9.17128 1.36043 8.64638 1.15625 8.10169 1.15625H3.33333C2.13096 1.15625 1.15625 2.13096 1.15625 3.33333V16.6667C1.15625 17.869 2.13096 18.8438 3.33333 18.8438H7.91667C7.96844 18.8438 8.01042 18.8018 8.01042 18.75V17.9167Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M8.33203 1.98975C8.28025 1.98975 8.23828 2.03172 8.23828 2.0835V4.5835C8.23828 5.78587 9.21299 6.76058 10.4154 6.76058H13.332C13.3838 6.76058 13.4258 6.71861 13.4258 6.66683V5.8335C13.4258 5.78172 13.3838 5.73975 13.332 5.73975H10.4154C9.77679 5.73975 9.25911 5.22208 9.25911 4.5835V2.0835C9.25911 2.03172 9.21714 1.98975 9.16536 1.98975H8.33203Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M9.67708 13.75C9.67708 11.5006 11.5006 9.67708 13.75 9.67708C15.9994 9.67708 17.8229 11.5006 17.8229 13.75C17.8229 15.9994 15.9994 17.8229 13.75 17.8229C11.5006 17.8229 9.67708 15.9994 9.67708 13.75ZM13.75 8.65625C10.9368 8.65625 8.65625 10.9368 8.65625 13.75C8.65625 16.5632 10.9368 18.8438 13.75 18.8438C16.5632 18.8438 18.8438 16.5632 18.8438 13.75C18.8438 10.9368 16.5632 8.65625 13.75 8.65625Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.2591 16.25C14.2591 16.3018 14.2171 16.3438 14.1654 16.3438H13.332C13.2803 16.3438 13.2383 16.3018 13.2383 16.25V11.25C13.2383 11.1982 13.2803 11.1562 13.332 11.1562H14.1654C14.2171 11.1562 14.2591 11.1982 14.2591 11.25V16.25Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M12.0266 13.8056L13.7491 15.528L15.4715 13.8056C15.5081 13.769 15.5674 13.769 15.6041 13.8056L16.1933 14.3948C16.2299 14.4315 16.2299 14.4908 16.1933 14.5274L14.11 16.6108C13.9106 16.8101 13.5875 16.8101 13.3881 16.6108L11.3048 14.5274C11.2872 14.5098 11.2773 14.486 11.2773 14.4611C11.2773 14.4363 11.2872 14.4124 11.3048 14.3948L11.8941 13.8056C11.9307 13.769 11.99 13.769 12.0266 13.8056Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M8.01042 17.9167C8.01042 17.8649 7.96844 17.8229 7.91667 17.8229H3.33333C2.69475 17.8229 2.17708 17.3052 2.17708 16.6667V3.33333C2.17708 2.69475 2.69475 2.17708 3.33333 2.17708H8.10169C8.39098 2.17708 8.66975 2.28552 8.883 2.481L12.8646 6.13084C13.1036 6.34984 13.2396 6.65907 13.2396 6.98317V7.08333C13.2396 7.13511 13.2816 7.17708 13.3333 7.17708H14.1667C14.2184 7.17708 14.2604 7.13511 14.2604 7.08333V6.98317C14.2604 6.37292 14.0043 5.79068 13.5544 5.37832L9.5728 1.72849C9.17128 1.36043 8.64638 1.15625 8.10169 1.15625H3.33333C2.13096 1.15625 1.15625 2.13096 1.15625 3.33333V16.6667C1.15625 17.869 2.13096 18.8438 3.33333 18.8438H7.91667C7.96844 18.8438 8.01042 18.8018 8.01042 18.75V17.9167Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M8.33203 1.98975C8.28025 1.98975 8.23828 2.03172 8.23828 2.0835V4.5835C8.23828 5.78587 9.21299 6.76058 10.4154 6.76058H13.332C13.3838 6.76058 13.4258 6.71861 13.4258 6.66683V5.8335C13.4258 5.78172 13.3838 5.73975 13.332 5.73975H10.4154C9.77679 5.73975 9.25911 5.22208 9.25911 4.5835V2.0835C9.25911 2.03172 9.21714 1.98975 9.16536 1.98975H8.33203Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                                <path d="M9.67708 13.75C9.67708 11.5006 11.5006 9.67708 13.75 9.67708C15.9994 9.67708 17.8229 11.5006 17.8229 13.75C17.8229 15.9994 15.9994 17.8229 13.75 17.8229C11.5006 17.8229 9.67708 15.9994 9.67708 13.75ZM13.75 8.65625C10.9368 8.65625 8.65625 10.9368 8.65625 13.75C8.65625 16.5632 10.9368 18.8438 13.75 18.8438C16.5632 18.8438 18.8438 16.5632 18.8438 13.75C18.8438 10.9368 16.5632 8.65625 13.75 8.65625Z" fill="#FF6C01" stroke="#FF6C01" stroke-width="0.1875" stroke-linejoin="round"></path>
+                            </svg>
+                        </figure>
+
+                        <span>Договор аренды (ЮЛ).pdf</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+                <section class="contacts">
+    <div class="container">
+        <div class="contacts__inner">
+            <h2 class="contacts__title h h_2">Свяжитесь с нами</h2>
+            <div class="contacts__map" id="contacts-map"></div>
+            <div class="contacts__wrapper">
+                <article class="contact-form contacts__form">
+                    <form data-dev="" action="#" class="contact-form__inner">
+                        <h3 class="contact-form__title h h_3 _mobile-only">Оставьте заявку</h3>
+
+                        <div class="contact-form__wrapper">
+                            <div class="input">
+                                <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="фио" class="input__field">
+                                <span class="input__hint txt txt_14">Заполните поле</span>
+                            </div>
+                            <div class="input">
+                                <input data-tel-mask="" data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
+                                <span class="input__hint txt txt_14">Заполните поле</span>
+                            </div>
+                            <div class="input">
+                                <input data-validate="" data-required="" autocomplete="off" type="email" name="form[]" placeholder="e-mail" class="input__field">
+                                <span class="input__hint txt txt_14">Заполните поле</span>
+                            </div>
+                            <div class="textarea input">
+                                <textarea data-validate="" data-required="" name="form[]" autocomplete="off" placeholder="Ваше сообщение" class="input__textarea"></textarea>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
+                            </div>
+                        </div>
+                        <div class="contact-form__file">
+                            <label for="file">
+                                <img src="../assets/images/icons/file-icon.svg" alt="">
+
+                                <span data-file-placeholder="Прикрепите документы (договор проката, водительское удостоверение,
+                                    паспорт)">Прикрепите документы (договор проката, водительское удостоверение,
+                                    паспорт)
+                                </span>
+                            </label>
+
+                            <input data-file-input="" data-validate="" data-required="" id="file" type="file" class="contact-form__file-input">
+
+                            <span class="contact-form__file-input-hint field-hint txt txt_14"></span>
+                        </div>
+
+                        <div class="contact-form__footer">
+                            <p>Отправляя заявку, Вы соглашаетесь на обработку своих данных</p>
+                            <div class="contact-form__btn">
+                                <button type="submit" class="btn">
+                                    <span class="btn__txt">Отправить заявку</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </article>
+                <div class="contacts__footer">
+                    <div class="contacts__info">
+                        <ul>
+                            <li><span>E-mail</span></li>
+                            <li><a href="mailto:prokat-light@bk.ru">prokat-light@bk.ru</a></li>
+                        </ul>
+                        <ul>
+                            <li><span>Телефон</span></li>
+                            <li><a href="tel:89248820330">+7 (924) 882-03-30</a></li>
+                        </ul>
+                        <ul>
+                            <li><span>Адрес</span></li>
+                            <li>г. Южно-Сахалинск, ул Ленина 395А, офис 3</li>
+                        </ul>
+                    </div>
+                    <div class="social">
+                        <div>
+                            <a href="#" target="_blank" class="icon icon_white">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.8932 17C4.05996 17 0.162399 12.1201 0 4H3.42286C3.53529 9.95996 6.05871 12.4845 8.05747 13.005V4H11.2805V9.14014C13.2542 8.91892 15.3279 6.57658 16.0275 4H19.2505C18.9869 5.33629 18.4614 6.60153 17.7069 7.71661C16.9524 8.83168 15.9852 9.77259 14.8657 10.4805C16.1153 11.1273 17.2191 12.0428 18.1041 13.1666C18.9891 14.2904 19.6353 15.597 20 17H16.4522C16.1248 15.7814 15.4594 14.6905 14.5394 13.8641C13.6194 13.0376 12.4858 12.5125 11.2805 12.3544V17H10.8932V17Z" fill="#fff"></path>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.8932 17C4.05996 17 0.162399 12.1201 0 4H3.42286C3.53529 9.95996 6.05871 12.4845 8.05747 13.005V4H11.2805V9.14014C13.2542 8.91892 15.3279 6.57658 16.0275 4H19.2505C18.9869 5.33629 18.4614 6.60153 17.7069 7.71661C16.9524 8.83168 15.9852 9.77259 14.8657 10.4805C16.1153 11.1273 17.2191 12.0428 18.1041 13.1666C18.9891 14.2904 19.6353 15.597 20 17H16.4522C16.1248 15.7814 15.4594 14.6905 14.5394 13.8641C13.6194 13.0376 12.4858 12.5125 11.2805 12.3544V17H10.8932V17Z" fill="#fff"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" target="_blank" class="icon icon_white">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.0732 2.91667C15.1916 1.04167 12.6829 0 10.0348 0C4.52961 0 0.0696853 4.44444 0.0696853 9.93056C0.0696853 11.6667 0.557491 13.4028 1.39373 14.8611L0 20L5.29617 18.6111C6.75958 19.375 8.36237 19.7917 10.0348 19.7917C15.5401 19.7917 20 15.3472 20 9.86111C19.9303 7.29167 18.9547 4.79167 17.0732 2.91667ZM14.8432 13.4722C14.6341 14.0278 13.6585 14.5833 13.1707 14.6528C12.7526 14.7222 12.1951 14.7222 11.6376 14.5833C11.2892 14.4444 10.8014 14.3056 10.2439 14.0278C7.73519 12.9861 6.13241 10.4861 5.99303 10.2778C5.85366 10.1389 4.94774 8.95833 4.94774 7.70833C4.94774 6.45833 5.57491 5.90278 5.78397 5.625C5.99303 5.34722 6.27178 5.34722 6.48084 5.34722C6.62021 5.34722 6.82927 5.34722 6.96864 5.34722C7.10801 5.34722 7.31707 5.27778 7.52613 5.76389C7.73519 6.25 8.22299 7.5 8.29268 7.56944C8.36237 7.70833 8.36237 7.84722 8.29268 7.98611C8.22299 8.125 8.15331 8.26389 8.01393 8.40278C7.87456 8.54167 7.73519 8.75 7.6655 8.81944C7.52613 8.95833 7.38676 9.09722 7.52613 9.30555C7.6655 9.58333 8.15331 10.3472 8.91986 11.0417C9.89547 11.875 10.662 12.1528 10.9408 12.2917C11.2195 12.4306 11.3589 12.3611 11.4983 12.2222C11.6376 12.0833 12.1254 11.5278 12.2648 11.25C12.4042 10.9722 12.6132 11.0417 12.8223 11.1111C13.0314 11.1806 14.2857 11.8056 14.4948 11.9444C14.7735 12.0833 14.9129 12.1528 14.9826 12.2222C15.0523 12.4306 15.0523 12.9167 14.8432 13.4722Z" fill="white"></path>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.0732 2.91667C15.1916 1.04167 12.6829 0 10.0348 0C4.52961 0 0.0696853 4.44444 0.0696853 9.93056C0.0696853 11.6667 0.557491 13.4028 1.39373 14.8611L0 20L5.29617 18.6111C6.75958 19.375 8.36237 19.7917 10.0348 19.7917C15.5401 19.7917 20 15.3472 20 9.86111C19.9303 7.29167 18.9547 4.79167 17.0732 2.91667ZM14.8432 13.4722C14.6341 14.0278 13.6585 14.5833 13.1707 14.6528C12.7526 14.7222 12.1951 14.7222 11.6376 14.5833C11.2892 14.4444 10.8014 14.3056 10.2439 14.0278C7.73519 12.9861 6.13241 10.4861 5.99303 10.2778C5.85366 10.1389 4.94774 8.95833 4.94774 7.70833C4.94774 6.45833 5.57491 5.90278 5.78397 5.625C5.99303 5.34722 6.27178 5.34722 6.48084 5.34722C6.62021 5.34722 6.82927 5.34722 6.96864 5.34722C7.10801 5.34722 7.31707 5.27778 7.52613 5.76389C7.73519 6.25 8.22299 7.5 8.29268 7.56944C8.36237 7.70833 8.36237 7.84722 8.29268 7.98611C8.22299 8.125 8.15331 8.26389 8.01393 8.40278C7.87456 8.54167 7.73519 8.75 7.6655 8.81944C7.52613 8.95833 7.38676 9.09722 7.52613 9.30555C7.6655 9.58333 8.15331 10.3472 8.91986 11.0417C9.89547 11.875 10.662 12.1528 10.9408 12.2917C11.2195 12.4306 11.3589 12.3611 11.4983 12.2222C11.6376 12.0833 12.1254 11.5278 12.2648 11.25C12.4042 10.9722 12.6132 11.0417 12.8223 11.1111C13.0314 11.1806 14.2857 11.8056 14.4948 11.9444C14.7735 12.0833 14.9129 12.1528 14.9826 12.2222C15.0523 12.4306 15.0523 12.9167 14.8432 13.4722Z" fill="white"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            </main>
+            <footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <div class="footer__main">
+                <div class="footer__main-left">
+                    <div class="footer__logo">
+                        <a href="#"><img src="../assets/images/logo.svg" alt=""></a>
+                    </div>
+                    <p>Прокат автомобилей в городе Южно-сахалинске</p>
+                </div>
+                <nav class="footer__main-block">
+                    <p>Меню</p>
+                    <ul>
+                        <li><a href="/">Парк автомобилей</a></li>
+                        <li><a href="/">Условия</a></li>
+                        <li><a href="/">Акции</a></li>
+                        <li><a href="/">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__main-block">
+                    <p>Контакты</p>
+                    <ul>
+                        <li><a href="mailto:prokat-light@bk.ru">prokat-light@bk.ru</a></li>
+                        <li><a href="tel:89248820330">+7 (924) 882-03-30</a></li>
+                        <li>г. Южно-Сахалинск, ул Ленина 395А, офис 3</li>
+                    </ul>
+                </div>
+                <div class="footer__main-subscription">
+                    <form data-dev="" action="#">
+                        <div class="input">
+                            <input data-tel-mask="" data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
+                        </div>
+                        <button type="submit" class="btn">
+                            <span class="btn__txt">Отправить заявку</span>
+                        </button>
+                    </form>
+                    <div class="footer__social social">
+                        <div>
+                            <a href="#" target="_blank" class="icon icon_white">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.8932 17C4.05996 17 0.162399 12.1201 0 4H3.42286C3.53529 9.95996 6.05871 12.4845 8.05747 13.005V4H11.2805V9.14014C13.2542 8.91892 15.3279 6.57658 16.0275 4H19.2505C18.9869 5.33629 18.4614 6.60153 17.7069 7.71661C16.9524 8.83168 15.9852 9.77259 14.8657 10.4805C16.1153 11.1273 17.2191 12.0428 18.1041 13.1666C18.9891 14.2904 19.6353 15.597 20 17H16.4522C16.1248 15.7814 15.4594 14.6905 14.5394 13.8641C13.6194 13.0376 12.4858 12.5125 11.2805 12.3544V17H10.8932V17Z" fill="#fff"></path>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.8932 17C4.05996 17 0.162399 12.1201 0 4H3.42286C3.53529 9.95996 6.05871 12.4845 8.05747 13.005V4H11.2805V9.14014C13.2542 8.91892 15.3279 6.57658 16.0275 4H19.2505C18.9869 5.33629 18.4614 6.60153 17.7069 7.71661C16.9524 8.83168 15.9852 9.77259 14.8657 10.4805C16.1153 11.1273 17.2191 12.0428 18.1041 13.1666C18.9891 14.2904 19.6353 15.597 20 17H16.4522C16.1248 15.7814 15.4594 14.6905 14.5394 13.8641C13.6194 13.0376 12.4858 12.5125 11.2805 12.3544V17H10.8932V17Z" fill="#fff"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" target="_blank" class="icon icon_white">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.0732 2.91667C15.1916 1.04167 12.6829 0 10.0348 0C4.52961 0 0.0696853 4.44444 0.0696853 9.93056C0.0696853 11.6667 0.557491 13.4028 1.39373 14.8611L0 20L5.29617 18.6111C6.75958 19.375 8.36237 19.7917 10.0348 19.7917C15.5401 19.7917 20 15.3472 20 9.86111C19.9303 7.29167 18.9547 4.79167 17.0732 2.91667ZM14.8432 13.4722C14.6341 14.0278 13.6585 14.5833 13.1707 14.6528C12.7526 14.7222 12.1951 14.7222 11.6376 14.5833C11.2892 14.4444 10.8014 14.3056 10.2439 14.0278C7.73519 12.9861 6.13241 10.4861 5.99303 10.2778C5.85366 10.1389 4.94774 8.95833 4.94774 7.70833C4.94774 6.45833 5.57491 5.90278 5.78397 5.625C5.99303 5.34722 6.27178 5.34722 6.48084 5.34722C6.62021 5.34722 6.82927 5.34722 6.96864 5.34722C7.10801 5.34722 7.31707 5.27778 7.52613 5.76389C7.73519 6.25 8.22299 7.5 8.29268 7.56944C8.36237 7.70833 8.36237 7.84722 8.29268 7.98611C8.22299 8.125 8.15331 8.26389 8.01393 8.40278C7.87456 8.54167 7.73519 8.75 7.6655 8.81944C7.52613 8.95833 7.38676 9.09722 7.52613 9.30555C7.6655 9.58333 8.15331 10.3472 8.91986 11.0417C9.89547 11.875 10.662 12.1528 10.9408 12.2917C11.2195 12.4306 11.3589 12.3611 11.4983 12.2222C11.6376 12.0833 12.1254 11.5278 12.2648 11.25C12.4042 10.9722 12.6132 11.0417 12.8223 11.1111C13.0314 11.1806 14.2857 11.8056 14.4948 11.9444C14.7735 12.0833 14.9129 12.1528 14.9826 12.2222C15.0523 12.4306 15.0523 12.9167 14.8432 13.4722Z" fill="white"></path>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.0732 2.91667C15.1916 1.04167 12.6829 0 10.0348 0C4.52961 0 0.0696853 4.44444 0.0696853 9.93056C0.0696853 11.6667 0.557491 13.4028 1.39373 14.8611L0 20L5.29617 18.6111C6.75958 19.375 8.36237 19.7917 10.0348 19.7917C15.5401 19.7917 20 15.3472 20 9.86111C19.9303 7.29167 18.9547 4.79167 17.0732 2.91667ZM14.8432 13.4722C14.6341 14.0278 13.6585 14.5833 13.1707 14.6528C12.7526 14.7222 12.1951 14.7222 11.6376 14.5833C11.2892 14.4444 10.8014 14.3056 10.2439 14.0278C7.73519 12.9861 6.13241 10.4861 5.99303 10.2778C5.85366 10.1389 4.94774 8.95833 4.94774 7.70833C4.94774 6.45833 5.57491 5.90278 5.78397 5.625C5.99303 5.34722 6.27178 5.34722 6.48084 5.34722C6.62021 5.34722 6.82927 5.34722 6.96864 5.34722C7.10801 5.34722 7.31707 5.27778 7.52613 5.76389C7.73519 6.25 8.22299 7.5 8.29268 7.56944C8.36237 7.70833 8.36237 7.84722 8.29268 7.98611C8.22299 8.125 8.15331 8.26389 8.01393 8.40278C7.87456 8.54167 7.73519 8.75 7.6655 8.81944C7.52613 8.95833 7.38676 9.09722 7.52613 9.30555C7.6655 9.58333 8.15331 10.3472 8.91986 11.0417C9.89547 11.875 10.662 12.1528 10.9408 12.2917C11.2195 12.4306 11.3589 12.3611 11.4983 12.2222C11.6376 12.0833 12.1254 11.5278 12.2648 11.25C12.4042 10.9722 12.6132 11.0417 12.8223 11.1111C13.0314 11.1806 14.2857 11.8056 14.4948 11.9444C14.7735 12.0833 14.9129 12.1528 14.9826 12.2222C15.0523 12.4306 15.0523 12.9167 14.8432 13.4722Z" fill="white"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <ul>
+                    <li>
+                        <a href="#"> Пользовательское соглашение </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Политики обработки персональных данных
+                        </a>
+                    </li>
+                    <li class="rd-logo">
+                        <a href="#">
+                            © 2016-2023 Права защищены
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+            <div style="position: absolute; top: 0; left: 0; transform: translate(-100%, -100%)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="300%" height="300%">
+        <linearGradient id="speedometerProgressGradient" x1="42%" y1="0%" x2="58%" y2="100%">
+            <stop offset="0%" style="stop-color: rgb(255, 108, 1); stop-opacity: 1"></stop>
+            <stop offset="90%" style="stop-color: rgb(255, 108, 1); stop-opacity: 0"></stop>
+        </linearGradient>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="filter0_d_755_76515" x="0.300884" y="0.0952835" width="129.74" height="442.188" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+            <feOffset dx="-17.8255"></feOffset>
+            <feGaussianBlur stdDeviation="17.8255"></feGaussianBlur>
+            <feComposite in2="hardAlpha" operator="out"></feComposite>
+            <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0 0 0 0 0 0.273973 0 0 0 1 0"></feColorMatrix>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_755_76515"></feBlend>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_755_76515" result="shape"></feBlend>
+        </filter>
+    </svg>
+</div>
+
+        </div>
+        <div id="attractionsModal" aria-hidden="true" class="modal attractions-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close icon icon_white">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <div class="attractions-modal__inner"></div>
+                <div class="attractions-modal__pagination sl-pagination sl-pagination_mm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- сезонная акция -->
+<div id="promotionModal" aria-hidden="true" class="modal promotion-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close icon icon_white">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <div class="promotion-modal__inner">
+                    <div class="banner">
+                        <a href="#" class="banner__inner">
+                            <div class="banner__container container">
+                                <div class="banner__content">
+                                    <span class="banner__subtitle">20 октября 2023 - 15 апреля 2024</span>
+                                    <span class="banner__heading h">СЕЗОННАЯ АКЦИЯ "23+7"</span>
+                                    <p class="banner__text">
+                                        Арендуйте TOYOTA RAV4 на 30 суток и получите Скидку в 37.100р! (7
+                                        суток Аренды бесплатно!)
+                                    </p>
+                                    <button type="button" class="banner__btn btn">
+                                        <span class="btn__txt">Подробнее</span>
+                                    </button>
+                                </div>
+                                <div class="banner__image-wrap">
+                                    <img src="./assets/images/cars/0DGG67-DA.webp" alt="" class="banner__image">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

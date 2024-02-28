@@ -1,7 +1,7 @@
 .hero {
     position: relative;
     margin-bottom: 0;
-    min-height: 110.6rem;
+    height: 110.6rem;
     overflow: hidden;
 
     @media (max-width: 48em) {
@@ -219,11 +219,13 @@
     // .hero__anchor
 
     &__anchor {
-        justify-self: end;
-        grid-column: 3/4;
-
         @media (max-width: 48em) {
             display: none;
         }
+    }
+
+    &__anchor {
+        justify-self: end;
+        grid-column: 3/4;
     }
 }

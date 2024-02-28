@@ -25,8 +25,8 @@ class Modal {
             closeEsc: true,
             bodyLock: true,
             hashSettings: {
-                location: true,
-                goHash: true
+                location: false,
+                goHash: false
             },
             on: {
                 beforeOpen: function () {},
@@ -224,10 +224,7 @@ class Modal {
                 if (!this._reopen) {
                     const m = document.querySelector(this.hash);
                     setTimeout(() => {
-                        (!this.bodyLock && !m.hasAttribute('data-bl-mobile')) ||
-                        (!this.bodyLock && window.innerWidth <= 768 && m.hasAttribute('data-bl-mobile'))
-                            ? bodyLock()
-                            : null;
+                        bodyLock();
                     }, 0);
                 } else this._reopen = false;
 

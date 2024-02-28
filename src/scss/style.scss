@@ -33,7 +33,9 @@ $red: #e20707;
 html,
 body {
     @media (min-width: 48em) {
-        overflow-x: hidden;
+        &:not(.modal-show &, &.modal-show) {
+            overflow-x: hidden;
+        }
     }
 }
 
@@ -56,11 +58,6 @@ main {
 
 section {
     margin-bottom: 20rem;
-}
-
-.wrapper {
-    margin: 0 auto;
-    max-width: 1920px;
 }
 
 ._desktop-only {
