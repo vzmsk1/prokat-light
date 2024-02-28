@@ -1,4 +1,5 @@
 import Inputmask from 'inputmask';
+import { modules } from '../modules';
 
 // --------------------------------------------------------------------------
 

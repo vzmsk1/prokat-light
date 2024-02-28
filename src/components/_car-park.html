@@ -1,4 +1,4 @@
-<section class="car-park">
+<section data-modal="#attractionsModal" class="car-park">
     <div class="car-park__container container">
         <div class="car-park__head">
             <span class="car-park__heading h h_1">Парк автомобилей</span>
@@ -7,31 +7,63 @@
             <div class="car-park__content-head">
                 <div data-select-single class="car-park__sort">
                     <div class="car-park__dropdown dropdown">
-                        <select data-sel-empty data-sel-scroll="18.4" data-sel-label="марка" data-show-selection="">
+                        <select
+                            data-sel-empty
+                            data-sel-scroll="18.4"
+                            data-sel-label="марка"
+                            data-show-selection=""
+                        >
                             <option value="1">Suzuki</option>
-                            <option value="2" >Lexus</option>
-                            <option value="3" >Subaru</option>
-                            <option value="4" >Toyota</option>
-                            <option value="5" >TLC</option>
-                            <option value="6" >KIA</option>
-                            <option value="7" >Hyundai</option>
-                            <option value="8" >Mitsubishi</option>
+                            <option value="2">Lexus</option>
+                            <option value="3">Subaru</option>
+                            <option value="4">Toyota</option>
+                            <option value="5">TLC</option>
+                            <option value="6">KIA</option>
+                            <option value="7">Hyundai</option>
+                            <option value="8">Mitsubishi</option>
                         </select>
                     </div>
                     <div class="car-park__dropdown dropdown">
-                        <select data-sel-empty data-sel-scroll="18.4" data-sel-label="тип авто" data-show-selection="">
+                        <select
+                            data-sel-empty
+                            data-sel-scroll="18.4"
+                            data-sel-label="тип авто"
+                            data-show-selection=""
+                        >
                             <option value="1">Асфальтированные дороги</option>
-                            <option value="2" >Грунтовые дороги</option>
-                            <option value="3" >Бездорожье</option>
+                            <option value="2">Грунтовые дороги</option>
+                            <option value="3">Бездорожье</option>
                         </select>
                     </div>
                 </div>
                 <button type="button" class="car-park__filters-btn icon">
-                    <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.92437 0C3.10015 0 0 3.10015 0 6.92437C0 8.86531 0.814628 10.7172 2.2454 12.0287L7.57929 16.9181C9.0194 18.2382 9.83934 20.1021 9.83934 22.0557V29.1081C9.83934 32.1607 13.3026 33.9243 15.7714 32.1288L18.9548 29.8135C20.4399 28.7335 21.3186 27.008 21.3186 25.1717V22.2517C21.3186 20.2016 22.2212 18.2555 23.7862 16.9312L29.5591 12.0464C31.0931 10.7484 31.9779 8.84087 31.9779 6.8314C31.9779 3.05852 28.9193 0 25.1465 0H6.92437ZM2.45984 6.92437C2.45984 4.45867 4.45868 2.45984 6.92437 2.45984H25.1465C27.5608 2.45984 29.518 4.41705 29.518 6.8314C29.518 8.1173 28.9519 9.33798 27.9702 10.1686L22.1973 15.0534C20.0799 16.845 18.8587 19.478 18.8587 22.2517V25.1717C18.8587 26.221 18.3567 27.207 17.508 27.8242L14.3246 30.1394C13.4816 30.7525 12.2992 30.1503 12.2992 29.1081V22.0557C12.2992 19.4126 11.1898 16.8908 9.24146 15.1048L3.90757 10.2154C2.98507 9.36979 2.45984 8.17581 2.45984 6.92437Z" fill="#FF6C01"/>
+                    <svg
+                        width="32"
+                        height="33"
+                        viewBox="0 0 32 33"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M6.92437 0C3.10015 0 0 3.10015 0 6.92437C0 8.86531 0.814628 10.7172 2.2454 12.0287L7.57929 16.9181C9.0194 18.2382 9.83934 20.1021 9.83934 22.0557V29.1081C9.83934 32.1607 13.3026 33.9243 15.7714 32.1288L18.9548 29.8135C20.4399 28.7335 21.3186 27.008 21.3186 25.1717V22.2517C21.3186 20.2016 22.2212 18.2555 23.7862 16.9312L29.5591 12.0464C31.0931 10.7484 31.9779 8.84087 31.9779 6.8314C31.9779 3.05852 28.9193 0 25.1465 0H6.92437ZM2.45984 6.92437C2.45984 4.45867 4.45868 2.45984 6.92437 2.45984H25.1465C27.5608 2.45984 29.518 4.41705 29.518 6.8314C29.518 8.1173 28.9519 9.33798 27.9702 10.1686L22.1973 15.0534C20.0799 16.845 18.8587 19.478 18.8587 22.2517V25.1717C18.8587 26.221 18.3567 27.207 17.508 27.8242L14.3246 30.1394C13.4816 30.7525 12.2992 30.1503 12.2992 29.1081V22.0557C12.2992 19.4126 11.1898 16.8908 9.24146 15.1048L3.90757 10.2154C2.98507 9.36979 2.45984 8.17581 2.45984 6.92437Z"
+                            fill="#FF6C01"
+                        />
                     </svg>
-                    <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.92437 0C3.10015 0 0 3.10015 0 6.92437C0 8.86531 0.814628 10.7172 2.2454 12.0287L7.57929 16.9181C9.0194 18.2382 9.83934 20.1021 9.83934 22.0557V29.1081C9.83934 32.1607 13.3026 33.9243 15.7714 32.1288L18.9548 29.8135C20.4399 28.7335 21.3186 27.008 21.3186 25.1717V22.2517C21.3186 20.2016 22.2212 18.2555 23.7862 16.9312L29.5591 12.0464C31.0931 10.7484 31.9779 8.84087 31.9779 6.8314C31.9779 3.05852 28.9193 0 25.1465 0H6.92437ZM2.45984 6.92437C2.45984 4.45867 4.45868 2.45984 6.92437 2.45984H25.1465C27.5608 2.45984 29.518 4.41705 29.518 6.8314C29.518 8.1173 28.9519 9.33798 27.9702 10.1686L22.1973 15.0534C20.0799 16.845 18.8587 19.478 18.8587 22.2517V25.1717C18.8587 26.221 18.3567 27.207 17.508 27.8242L14.3246 30.1394C13.4816 30.7525 12.2992 30.1503 12.2992 29.1081V22.0557C12.2992 19.4126 11.1898 16.8908 9.24146 15.1048L3.90757 10.2154C2.98507 9.36979 2.45984 8.17581 2.45984 6.92437Z" fill="#FF6C01"/>
+                    <svg
+                        width="32"
+                        height="33"
+                        viewBox="0 0 32 33"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M6.92437 0C3.10015 0 0 3.10015 0 6.92437C0 8.86531 0.814628 10.7172 2.2454 12.0287L7.57929 16.9181C9.0194 18.2382 9.83934 20.1021 9.83934 22.0557V29.1081C9.83934 32.1607 13.3026 33.9243 15.7714 32.1288L18.9548 29.8135C20.4399 28.7335 21.3186 27.008 21.3186 25.1717V22.2517C21.3186 20.2016 22.2212 18.2555 23.7862 16.9312L29.5591 12.0464C31.0931 10.7484 31.9779 8.84087 31.9779 6.8314C31.9779 3.05852 28.9193 0 25.1465 0H6.92437ZM2.45984 6.92437C2.45984 4.45867 4.45868 2.45984 6.92437 2.45984H25.1465C27.5608 2.45984 29.518 4.41705 29.518 6.8314C29.518 8.1173 28.9519 9.33798 27.9702 10.1686L22.1973 15.0534C20.0799 16.845 18.8587 19.478 18.8587 22.2517V25.1717C18.8587 26.221 18.3567 27.207 17.508 27.8242L14.3246 30.1394C13.4816 30.7525 12.2992 30.1503 12.2992 29.1081V22.0557C12.2992 19.4126 11.1898 16.8908 9.24146 15.1048L3.90757 10.2154C2.98507 9.36979 2.45984 8.17581 2.45984 6.92437Z"
+                            fill="#FF6C01"
+                        />
                     </svg>
                 </button>
             </div>
@@ -40,129 +72,241 @@
                     <li class="car-park__item">
                         <a href="#" class="car-park__item-card item-card">
                             <div class="item-card__image-wrap">
-                                <img src="./assets/images/sections/car-park/LexusRX350.webp" alt="" class="item-card__image" />
+                                <img
+                                    src="./assets/images/sections/car-park/LexusRX350.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
                             </div>
-                            <div class="item-card__content"><span class="item-card__heading subtitle">Lexus RX 350</span>
-                                <span class="item-card__text">от 27 400₽ \ сутки</span></div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">Lexus RX 350</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
                         </a>
                     </li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                        <div class="item-card__image-wrap">
-                            <img src="./assets/images/sections/car-park/SUZUKIJIMNY.webp" alt=""
-                                 class="item-card__image" />
-                        </div>
-                        <div class="item-card__content"><span class="item-card__heading subtitle">SUZUKI JIMNY</span>
-                            <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                    </a></li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                        <div class="item-card__image-wrap">
-                            <img src="./assets/images/sections/car-park/TLCPRADO19.webp" alt=""
-                                 class="item-card__image" />
-                        </div>
-                        <div class="item-card__content"><span class="item-card__heading subtitle">TLC PRADO 19</span>
-                            <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                    </a></li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                    <div class="item-card__image-wrap">
-                        <img src="./assets/images/sections/car-park/LexusRX350.webp" alt="" class="item-card__image" />
-                    </div>
-                    <div class="item-card__content"><span class="item-card__heading subtitle">Lexus RX 350</span>
-                        <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                </a></li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                        <div class="item-card__image-wrap">
-                            <img src="./assets/images/sections/car-park/TLCPRADO19.webp" alt=""
-                                 class="item-card__image" />
-                        </div>
-                        <div class="item-card__content"><span class="item-card__heading subtitle">TLC PRADO 19</span>
-                            <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                    </a></li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                        <div class="item-card__image-wrap">
-                            <img src="./assets/images/sections/car-park/LexusRX350.webp" alt="" class="item-card__image" />
-                        </div>
-                        <div class="item-card__content"><span class="item-card__heading subtitle">Lexus RX 350</span>
-                            <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                    </a></li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                        <div class="item-card__image-wrap">
-                            <img src="./assets/images/sections/car-park/SUZUKIJIMNY.webp" alt=""
-                                 class="item-card__image" />
-                        </div>
-                        <div class="item-card__content"><span class="item-card__heading subtitle">SUZUKI JIMNY</span>
-                            <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                    </a></li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/SUZUKIJIMNY.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">SUZUKI JIMNY</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/TLCPRADO19.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">TLC PRADO 19</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/LexusRX350.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">Lexus RX 350</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/TLCPRADO19.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">TLC PRADO 19</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/LexusRX350.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">Lexus RX 350</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/SUZUKIJIMNY.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">SUZUKI JIMNY</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
                     <li class="car-park__item">
                         <a href="#" class="car-park__item-card item-card">
                             <div class="item-card__image-wrap">
-                                <img src="./assets/images/sections/car-park/LexusRX350.webp" alt="" class="item-card__image" />
+                                <img
+                                    src="./assets/images/sections/car-park/LexusRX350.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
                             </div>
-                            <div class="item-card__content"><span class="item-card__heading subtitle">Lexus RX 350</span>
-                                <span class="item-card__text">от 27 400₽ \ сутки</span></div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">Lexus RX 350</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
                         </a>
                     </li>
                     <li class="car-park__item">
                         <a href="#" class="car-park__item-card item-card">
                             <div class="item-card__image-wrap">
-                                <img src="./assets/images/sections/car-park/LexusRX350.webp" alt="" class="item-card__image" />
+                                <img
+                                    src="./assets/images/sections/car-park/LexusRX350.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
                             </div>
-                            <div class="item-card__content"><span class="item-card__heading subtitle">Lexus RX 350</span>
-                                <span class="item-card__text">от 27 400₽ \ сутки</span></div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">Lexus RX 350</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
                         </a>
                     </li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                        <div class="item-card__image-wrap">
-                            <img src="./assets/images/sections/car-park/SUZUKIJIMNY.webp" alt=""
-                                 class="item-card__image" />
-                        </div>
-                        <div class="item-card__content"><span class="item-card__heading subtitle">SUZUKI JIMNY</span>
-                            <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                    </a></li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                        <div class="item-card__image-wrap">
-                            <img src="./assets/images/sections/car-park/TLCPRADO19.webp" alt=""
-                                 class="item-card__image" />
-                        </div>
-                        <div class="item-card__content"><span class="item-card__heading subtitle">TLC PRADO 19</span>
-                            <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                    </a></li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                        <div class="item-card__image-wrap">
-                            <img src="./assets/images/sections/car-park/LexusRX350.webp" alt="" class="item-card__image" />
-                        </div>
-                        <div class="item-card__content"><span class="item-card__heading subtitle">Lexus RX 350</span>
-                            <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                    </a></li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                        <div class="item-card__image-wrap">
-                            <img src="./assets/images/sections/car-park/TLCPRADO19.webp" alt=""
-                                 class="item-card__image" />
-                        </div>
-                        <div class="item-card__content"><span class="item-card__heading subtitle">TLC PRADO 19</span>
-                            <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                    </a></li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                        <div class="item-card__image-wrap">
-                            <img src="./assets/images/sections/car-park/LexusRX350.webp" alt="" class="item-card__image" />
-                        </div>
-                        <div class="item-card__content"><span class="item-card__heading subtitle">Lexus RX 350</span>
-                            <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                    </a></li>
-                    <li><a href="#" class="car-park__item-card item-card">
-                        <div class="item-card__image-wrap">
-                            <img src="./assets/images/sections/car-park/SUZUKIJIMNY.webp" alt=""
-                                 class="item-card__image" />
-                        </div>
-                        <div class="item-card__content"><span class="item-card__heading subtitle">SUZUKI JIMNY</span>
-                            <span class="item-card__text">от 27 400₽ \ сутки</span></div>
-                    </a></li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/SUZUKIJIMNY.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">SUZUKI JIMNY</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/TLCPRADO19.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">TLC PRADO 19</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/LexusRX350.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">Lexus RX 350</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/TLCPRADO19.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">TLC PRADO 19</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/LexusRX350.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">Lexus RX 350</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="car-park__item-card item-card">
+                            <div class="item-card__image-wrap">
+                                <img
+                                    src="./assets/images/sections/car-park/SUZUKIJIMNY.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
+                            </div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">SUZUKI JIMNY</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
+                        </a>
+                    </li>
                     <li class="car-park__item">
                         <a href="#" class="car-park__item-card item-card">
                             <div class="item-card__image-wrap">
-                                <img src="./assets/images/sections/car-park/LexusRX350.webp" alt="" class="item-card__image" />
+                                <img
+                                    src="./assets/images/sections/car-park/LexusRX350.webp"
+                                    alt=""
+                                    class="item-card__image"
+                                />
                             </div>
-                            <div class="item-card__content"><span class="item-card__heading subtitle">Lexus RX 350</span>
-                                <span class="item-card__text">от 27 400₽ \ сутки</span></div>
+                            <div class="item-card__content">
+                                <span class="item-card__heading subtitle">Lexus RX 350</span>
+                                <span class="item-card__text">от 27 400₽ \ сутки</span>
+                            </div>
                         </a>
                     </li>
                 </ul>

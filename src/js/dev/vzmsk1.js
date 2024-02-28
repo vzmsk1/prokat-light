@@ -105,13 +105,7 @@ class HomePage {
             return section.classList.contains(this.classes.active);
         };
 
-        // code will execute for home page only
-        if (document.querySelector('.home-page')) {
-            this.init();
-        } else {
-            // init hamburger menu
-            this.initHamburgerMenu(this);
-        }
+        this.init();
     }
 
     initHamburgerMenu(_this) {
@@ -663,51 +657,6 @@ class HomePage {
             const routesSlide = section.querySelector('[data-three-slide="routes"]');
             const routesIndx = slides.indexOf(routesSlide);
 
-            const slider = new Swiper('.three-scroll__swiper', {
-                observer: true,
-                speed: 600,
-                spaceBetween: 0,
-                preventInteractionOnTransition: true,
-                virtualTranslate: true,
-                enabled: false,
-                on: {
-                    init: (swiper) => {
-                        if (!mm.matches) _this.setSlideClasses(swiper);
-                    },
-                    slideChangeTransitionStart: (swiper) => {
-                        _this.delayClass(section, _this.classes.anim, SPEED, swiper);
-
-                        if (!mm.matches) {
-                            _this.setSlideClasses(swiper);
-                            swiper.wrapperEl.style.removeProperty('transform');
-                        }
-                    },
-                    slidePrevTransitionStart: (swiper) => {
-                        if (!mm.matches) {
-                            _this.delayClass(section, _this.classes.reverseSl, SPEED);
-                        }
-                    },
-                    slideNextTransitionStart: (swiper) => {
-                        if (!mm.matches) {
-                            _this.delayClass(section, _this.classes.forwardSl, SPEED);
-
-                            if (
-                                routesSlide &&
-                                swiper.activeIndex === routesIndx &&
-                                !_this.isActive(routesSlide)
-                            ) {
-                                routesSlide.classList.add(_this.classes.active);
-                            }
-                        }
-                    }
-                },
-                breakpoints: {
-                    768: {
-                        enabled: true
-                    }
-                }
-            });
-
             const handleObserver = () => {
                 ScrollTrigger.observe({
                     target: section,
@@ -754,6 +703,51 @@ class HomePage {
             };
 
             gsap.matchMedia().add('(min-width: 768px)', () => {
+                const slider = new Swiper('.three-scroll__swiper', {
+                    observer: true,
+                    speed: 600,
+                    spaceBetween: 0,
+                    preventInteractionOnTransition: true,
+                    virtualTranslate: true,
+                    enabled: false,
+                    on: {
+                        init: (swiper) => {
+                            if (!mm.matches) _this.setSlideClasses(swiper);
+                        },
+                        slideChangeTransitionStart: (swiper) => {
+                            _this.delayClass(section, _this.classes.anim, SPEED, swiper);
+
+                            if (!mm.matches) {
+                                _this.setSlideClasses(swiper);
+                                swiper.wrapperEl.style.removeProperty('transform');
+                            }
+                        },
+                        slidePrevTransitionStart: (swiper) => {
+                            if (!mm.matches) {
+                                _this.delayClass(section, _this.classes.reverseSl, SPEED);
+                            }
+                        },
+                        slideNextTransitionStart: (swiper) => {
+                            if (!mm.matches) {
+                                _this.delayClass(section, _this.classes.forwardSl, SPEED);
+
+                                if (
+                                    routesSlide &&
+                                    swiper.activeIndex === routesIndx &&
+                                    !_this.isActive(routesSlide)
+                                ) {
+                                    routesSlide.classList.add(_this.classes.active);
+                                }
+                            }
+                        }
+                    },
+                    breakpoints: {
+                        768: {
+                            enabled: true
+                        }
+                    }
+                });
+
                 _this.setSlideClasses(slider);
 
                 const tl = gsap.timeline({
@@ -803,7 +797,7 @@ class HomePage {
             gsap.matchMedia().add('(max-width: 768px)', () => {
                 Observer.getById(ID) ? Observer.getById(ID).kill() : null;
                 ScrollTrigger.getById(ID) ? ScrollTrigger.getById(ID) : null;
-                slider.wrapperEl.style.removeProperty('transform');
+                section.querySelector('.swiper-wrapper').style.removeProperty('transform');
 
                 _this.unlockScroll();
             });
@@ -813,8 +807,12 @@ class HomePage {
     init() {
         const _this = this;
 
-        // init page loader
-        this.initLoader(this);
+        if (document.querySelector('.home-page')) {
+            // init page loader
+            this.initLoader(this);
+        } else {
+            _this.initHamburgerMenu(this);
+        }
 
         // window load event
         window.addEventListener('load', function () {
@@ -844,7 +842,9 @@ class HomePage {
                 _this.locoScroll.on('scroll', (args) => {
                     ScrollTrigger.update();
 
-                    gsap.to(document.body, { '--scrollY': `${args.scroll.y}px` });
+                    if (document.querySelector('.home-page')) {
+                        gsap.to(document.body, { '--scrollY': `${args.scroll.y}px` });
+                    }
                 });
             }
 

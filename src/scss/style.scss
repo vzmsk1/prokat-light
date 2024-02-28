@@ -53,16 +53,6 @@ section {
 .wrapper {
     margin: 0 auto;
     max-width: 1920px;
-
-    &:not(.home-page) {
-        main {
-            padding-top: 20rem;
-
-            @include small-tablet {
-                padding-top: 22rem;
-            }
-        }
-    }
 }
 
 ._desktop-only {
