@@ -27,6 +27,10 @@ input:focus {
         opacity: 1;
         visibility: visible;
     }
+
+    @media (max-width: 48em) {
+        font-size: 2.5rem;
+    }
 }
 
 .input {

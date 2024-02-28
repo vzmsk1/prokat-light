@@ -53,9 +53,18 @@
                 gap: 1.2rem;
                 cursor: pointer;
 
+                @include small-tablet {
+                    align-items: flex-start;
+                }
+
                 img {
                     width: 4.4rem;
                     height: 4.4rem;
+
+                    @include small-tablet {
+                        width: 6.4rem;
+                        height: 6.4rem;
+                    }
                 }
 
                 span {
@@ -69,6 +78,14 @@
                     -webkit-line-clamp: 2;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
+                    @include small-tablet {
+                        font-size: 2.8rem;
+                        -webkit-line-clamp: unset;
+
+                        ._filled & {
+                            -webkit-line-clamp: 3;
+                        }
+                    }
                 }
             }
 

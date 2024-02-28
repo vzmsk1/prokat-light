@@ -113,9 +113,11 @@
       <change beforePath="$PROJECT_DIR$/dist/policy-processing.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/rental-conditions.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/terms-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/libs/locomotive-scroll.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/libs/locomotive-scroll.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_choose.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_choose.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_contact.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/styles/_input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_input.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +206,7 @@
       <workItem from="1708787353779" duration="7483000" />
       <workItem from="1708929043391" duration="14062000" />
       <workItem from="1709076938812" duration="71000" />
-      <workItem from="1709114393683" duration="8531000" />
+      <workItem from="1709114393683" duration="9931000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />

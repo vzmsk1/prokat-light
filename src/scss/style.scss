@@ -32,7 +32,9 @@ $red: #e20707;
 
 html,
 body {
-    overflow-x: hidden;
+    @media (min-width: 48em) {
+        overflow-x: hidden;
+    }
 }
 
 body,
@@ -46,6 +48,10 @@ body,
 // main
 main {
     position: relative;
+
+    @media (max-width: 48em) {
+        overflow: hidden;
+    }
 }
 
 section {

@@ -385,11 +385,51 @@
         // .choose__sl-arr_prev
 
         &_prev {
+            @media (min-width: 48em) {
+                &:not(._is-active &) {
+                    ._reverse._is-beginning._is-animating & {
+                        box-shadow:
+                            inset 0 -0.16rem 0.8rem #9e4504,
+                            inset 0.32rem 0.32rem 0.16rem #ff6c00;
+                        &::after {
+                            opacity: 1;
+                            background: rgba(255, 108, 1, 1);
+                        }
+                        &::before {
+                            opacity: 0;
+                        }
+
+                        svg path {
+                            fill: $white;
+                        }
+                    }
+                }
+            }
         }
 
         // .choose__sl-arr_next
 
         &_next {
+            @media (min-width: 48em) {
+                &:not(._is-active &) {
+                    ._forward._is-end._is-animating & {
+                        box-shadow:
+                            inset 0 -0.16rem 0.8rem #9e4504,
+                            inset 0.32rem 0.32rem 0.16rem #ff6c00;
+                        &::after {
+                            opacity: 1;
+                            background: rgba(255, 108, 1, 1);
+                        }
+                        &::before {
+                            opacity: 0;
+                        }
+
+                        svg path {
+                            fill: $white;
+                        }
+                    }
+                }
+            }
         }
     }
 
