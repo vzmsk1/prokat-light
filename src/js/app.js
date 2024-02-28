@@ -35,7 +35,7 @@ import './utils/tabs.js';
 import './utils/select.js';
 
 // // modals
-// import './utils/modals.js';
+import './utils/modals.js';
 
 // --------------------------------------------------------------------------
 

@@ -3,8 +3,25 @@ figure {
 }
 
 .routes {
+    min-height: 90rem;
+
     @include small-tablet {
         margin-bottom: 36rem;
+    }
+
+    @include desk {
+        &._is-active {
+            .routes__tabs-map {
+                transform: scale(1.75) translate(62.7rem, -33.5rem) rotate(6deg);
+            }
+        }
+        .routes__tabs-map {
+            transform: rotate(0deg) scale(0.51) translate(-2.3rem, -40.5rem);
+
+            .detailed-page & {
+                transform: scale(1.75) translate(62.7rem, -33.5rem) rotate(6deg);
+            }
+        }
     }
 
     &__title {
@@ -187,6 +204,10 @@ figure {
             &-button {
                 width: 100%;
                 padding: 5rem 8rem;
+
+                @include small-tablet {
+                    padding: 4.5rem 8rem;
+                }
             }
         }
 
@@ -248,18 +269,20 @@ figure {
             }
 
             @media (min-width: 48em) {
-                &[data-tabs-item] {
-                    &:not(&[hidden]) {
-                        .routes__tabs-content-path {
-                            display: block;
-                            animation: fadeIn 5s forwards;
-                            animation-delay: 1.5s;
-                        }
+                ._is-active & {
+                    &[data-tabs-item] {
+                        &:not(&[hidden]) {
+                            .routes__tabs-content-path {
+                                display: block;
+                                animation: fadeIn 5s forwards;
+                                animation-delay: 1.5s;
+                            }
 
-                        .routes__tabs-attractions {
-                            visibility: visible;
-                            animation: fadeIn 3s forwards;
-                            animation-delay: 1s;
+                            .routes__tabs-attractions {
+                                visibility: visible;
+                                animation: fadeIn 3s forwards;
+                                animation-delay: 1s;
+                            }
                         }
                     }
                 }

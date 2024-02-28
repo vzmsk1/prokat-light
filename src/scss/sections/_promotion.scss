@@ -1,5 +1,10 @@
 .promotion {
     margin-bottom: 24rem;
+    padding-top: 20.4rem;
+
+    @include small-tablet {
+        padding-top: 23rem;
+    }
 
     &__title {
         margin-bottom: 8rem;

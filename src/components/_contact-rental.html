@@ -5,7 +5,7 @@
             <div class="contacts__map" id="contacts-map"></div>
             <div class="contacts__wrapper">
                 <article class="contact-form contacts__form">
-                    <form class="contact-form__inner">
+                    <form data-dev action="#" class="contact-form__inner">
                         <h3 class="contact-form__title h h_3 _mobile-only">Оставьте заявку</h3>
 
                         <div class="contact-form__wrapper">
@@ -19,10 +19,11 @@
                                     placeholder="фио"
                                     class="input__field"
                                 />
-                                <span class="input__hint txt txt_14">Введите корректный ФИО</span>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                             <div class="input">
                                 <input
+                                    data-tel-mask=""
                                     data-validate
                                     data-required
                                     autocomplete="off"
@@ -31,7 +32,7 @@
                                     placeholder="номер телефона"
                                     class="input__field"
                                 />
-                                <span class="input__hint txt txt_14">Введите корректный номер</span>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                             <div class="input">
                                 <input
@@ -43,27 +44,42 @@
                                     placeholder="e-mail"
                                     class="input__field"
                                 />
-                                <span class="input__hint txt txt_14">Введите корректный e-mail</span>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
-                            <div class="textarea">
+                            <div class="textarea input">
                                 <textarea
+                                    data-validate
+                                    data-required
                                     name="form[]"
                                     autocomplete="off"
                                     placeholder="Ваше сообщение"
                                     class="input__textarea"
                                 ></textarea>
+                                <span class="input__hint txt txt_14">Заполните поле</span>
                             </div>
                         </div>
                         <div class="contact-form__file">
                             <label for="file">
                                 <img src="../assets/images/icons/file-icon.svg" alt="" />
 
-                                <span>Прикрепите документы (договор проката, водительское удостоверение,
+                                <span
+                                    data-file-placeholder="Прикрепите документы (договор проката, водительское удостоверение,
+                                    паспорт)"
+                                    >Прикрепите документы (договор проката, водительское удостоверение,
                                     паспорт)
                                 </span>
                             </label>
 
-                            <input id="file" type="file" class="contact-form__file-input" />
+                            <input
+                                data-file-input
+                                data-validate
+                                data-required
+                                id="file"
+                                type="file"
+                                class="contact-form__file-input"
+                            />
+
+                            <span class="contact-form__file-input-hint field-hint txt txt_14"></span>
                         </div>
 
                         <div class="contact-form__footer">
