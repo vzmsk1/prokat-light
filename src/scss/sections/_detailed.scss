@@ -24,10 +24,10 @@
 }
 
 .detailed {
-    margin-top: 18rem;
+    padding-top: 18rem;
 
     @include small-tablet {
-        margin-top: 24rem;
+        padding-top: 24rem;
     }
 
     .swiper-slide {

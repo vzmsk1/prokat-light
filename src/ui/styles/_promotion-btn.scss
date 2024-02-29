@@ -1,7 +1,7 @@
 .promotion-btn {
     position: fixed;
     z-index: 100;
-    top: 110.6rem;
+    top: 89.3rem;
     right: 14rem;
     display: inline-flex;
     flex-direction: row-reverse;
@@ -9,7 +9,6 @@
     height: 8rem;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-21.3rem);
 
     @media (any-hover: hover) {
         &:hover {

@@ -37,6 +37,9 @@ export const locoScroll = new LocomotiveScroll({
     smooth: true,
     multiplier: 0.6,
     smoothMobile: false,
+    tablet: {
+        smooth: true
+    },
     smartphone: {
         smooth: false
     }
@@ -353,8 +356,7 @@ class HomePage {
                     {
                         scale: 1,
                         opacity: 1,
-                        visibility: 'visible',
-                        translateY: mm.matches ? 0 : '-21.3rem'
+                        visibility: 'visible'
                     },
                     1.5
                 )
@@ -886,10 +888,10 @@ class HomePage {
                     if (document.querySelector('.home-page')) {
                         gsap.to(document.body, { '--scrollY': `${args.scroll.y}px` });
                     }
-                    if (args.scroll.y !== 0) {
-                        gsap.to('.promotion-btn', { top: '100vh', translateY: '-102%' });
+                    if (args.scroll.y === 0) {
+                        gsap.to('.promotion-btn', { top: '89.3rem', translateY: 0 });
                     } else {
-                        gsap.to('.promotion-btn', { top: '110.6rem', translateY: '-21.5rem' });
+                        gsap.to('.promotion-btn', { top: '100vh', translateY: '-105%' });
                     }
                 });
             }

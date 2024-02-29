@@ -124,7 +124,10 @@
       <change beforePath="$PROJECT_DIR$/dist/policy-processing.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/rental-conditions.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/terms-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/svg.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_detailed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_detailed.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/styles/_promotion-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_promotion-btn.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +221,7 @@
       <workItem from="1709076938812" duration="71000" />
       <workItem from="1709114393683" duration="21561000" />
       <workItem from="1709147912447" duration="463000" />
-      <workItem from="1709206418203" duration="3327000" />
+      <workItem from="1709206418203" duration="6293000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
