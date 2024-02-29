@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Swiper from 'swiper';
-import { EffectFade, Navigation, Pagination, Thumbs } from 'swiper/modules';
-import { _slideDown, _slideToggle, _slideUp, remToPx } from '../utils/utils';
+import {  Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { _slideToggle, _slideUp, remToPx } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', () => {
     function fade(activeSlide) {
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const wrapper = parent.querySelector('.detailed__gallery-characteristics-dropdown-wrapper');
 
-                _slideToggle(wrapper);
+                _slideToggle(wrapper, 300);
             });
     }
 
@@ -204,6 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dropdown.classList.remove('--active');
 
-        _slideUp(dropdown.querySelector('.detailed__gallery-characteristics-dropdown-wrapper'));
+        _slideUp(dropdown.querySelector('.detailed__gallery-characteristics-dropdown-wrapper'), 300);
     });
 });
