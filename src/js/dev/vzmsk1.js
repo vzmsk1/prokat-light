@@ -338,7 +338,7 @@ class HomePage {
                         scale: 1,
                         opacity: 1,
                         visibility: 'visible',
-                        translateY: mm.matches ? 0 : '-6rem'
+                        translateY: mm.matches ? 0 : '-5.5rem'
                     },
                     1.5
                 )
@@ -354,7 +354,7 @@ class HomePage {
                         scale: 1,
                         opacity: 1,
                         visibility: 'visible',
-                        translateY: mm.matches ? 0 : '-22.1rem'
+                        translateY: mm.matches ? 0 : '-21.5rem'
                     },
                     1.5
                 )
@@ -886,10 +886,10 @@ class HomePage {
                     if (document.querySelector('.home-page')) {
                         gsap.to(document.body, { '--scrollY': `${args.scroll.y}px` });
                     }
-                    if (args.scroll.y >= 200) {
-                        gsap.to('.promotion-btn', { top: '110vh' });
+                    if (args.scroll.y !== 0) {
+                        gsap.to('.promotion-btn', { top: '100vh', translateY: '-102%' });
                     } else {
-                        gsap.to('.promotion-btn', { top: '110.6rem', translateY: '-22.1rem' });
+                        gsap.to('.promotion-btn', { top: '110.6rem', translateY: '-21.5rem' });
                     }
                 });
             }
@@ -925,8 +925,7 @@ const initRoutesModal = () => {
                             modules: [Navigation, Pagination],
                             slidesPerView: 1,
                             spaceBetween: remToPx(4),
-                            speed: 1500,
-                            autoHeight: true,
+                            speed: 800,
                             pagination: {
                                 el: '.attractions-modal__pagination',
                                 type: 'bullets',

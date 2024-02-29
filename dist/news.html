@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
         <title>Акции/Новости</title>
-    <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+    <script defer src="main.js"></script></head>
     <body>
         <div class="wrapper news-page _smooth-scroll">
             <header class="header">
@@ -34,20 +34,20 @@
             </span>
         </button>
         <nav class="header__nav">
-            <a href="#" class="header__link txt">Парк автомобилей</a>
-            <a href="#" class="header__link txt">Условия</a>
-            <a href="#" class="header__link txt">Акции</a>
+            <a href="#" class="header__link txt link-w-hover">Парк автомобилей</a>
+            <a href="#" class="header__link txt link-w-hover">Условия</a>
+            <a href="#" class="header__link txt link-w-hover">Акции</a>
         </nav>
         <a href="#" class="header__logo"><img src="./assets/images/logo.svg" alt="" class="header__logo"></a>
         <div class="header__group">
-            <a href="#" class="header__link txt">Контакты</a>
+            <a href="#" class="header__link txt link-w-hover">Контакты</a>
             <div class="header__select-lang select-lang">
                 <select data-show-selection="">
                     <option value="1" selected="">ru</option>
                     <option value="2">eng</option>
                 </select>
             </div>
-            <a href="tel:74242490725" class="header__tel"><span class="_desktop-only">+7 (4242) 490-725</span><span class="header__tel-icon icon">
+            <a href="tel:74242490725" class="header__tel link-w-hover"><span class="_desktop-only">+7 (4242) 490-725</span><span class="header__tel-icon icon">
                     <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.96375 6.54475C4.58528 7.74804 5.62315 8.71854 6.90825 9.29814C7.00305 9.34022 7.1079 9.35843 7.21248 9.35099C7.31706 9.34354 7.41777 9.31069 7.5047 9.25567L9.3922 8.07362C9.4756 8.0206 9.57196 7.98824 9.6723 7.97958C9.77264 7.97092 9.87368 7.98622 9.966 8.02408L13.4994 9.44678C13.6202 9.4939 13.7211 9.57693 13.7865 9.68309C13.852 9.78924 13.8785 9.91264 13.8618 10.0343C13.7498 10.8537 13.3232 11.6069 12.6617 12.1527C12.0002 12.6986 11.1492 12.9998 10.268 13C7.54476 13 4.93305 11.9858 3.00743 10.1805C1.0818 8.37526 0 5.92679 0 3.37375C0.000198614 2.54759 0.32149 1.7498 0.903755 1.12967C1.48602 0.509533 2.28936 0.109549 3.16345 0.00455768C3.29319 -0.011066 3.42481 0.0137265 3.53804 0.0751176C3.65127 0.136509 3.73984 0.231094 3.7901 0.344308L5.30765 3.66395C5.34712 3.74913 5.36362 3.84211 5.35572 3.93468C5.34783 4.02726 5.31576 4.11659 5.26235 4.19481L4.0015 5.99265C3.94537 6.07397 3.91242 6.16743 3.90581 6.26409C3.8992 6.36075 3.91915 6.45738 3.96375 6.54475Z" fill="#FF6C01"></path>
                     </svg>
@@ -367,17 +367,21 @@
                 <nav class="footer__main-block">
                     <p>Меню</p>
                     <ul>
-                        <li><a href="/">Парк автомобилей</a></li>
-                        <li><a href="/">Условия</a></li>
-                        <li><a href="/">Акции</a></li>
-                        <li><a href="/">Контакты</a></li>
+                        <li><a href="/" class="footer__link link-w-hover">Парк автомобилей</a></li>
+                        <li><a href="/" class="footer__link link-w-hover">Условия</a></li>
+                        <li><a href="/" class="footer__link link-w-hover">Акции</a></li>
+                        <li><a href="/" class="footer__link link-w-hover">Контакты</a></li>
                     </ul>
                 </nav>
                 <div class="footer__main-block">
                     <p>Контакты</p>
                     <ul>
-                        <li><a href="mailto:prokat-light@bk.ru">prokat-light@bk.ru</a></li>
-                        <li><a href="tel:89248820330">+7 (924) 882-03-30</a></li>
+                        <li>
+                            <a href="mailto:prokat-light@bk.ru" class="footer__link link-w-hover">prokat-light@bk.ru</a>
+                        </li>
+                        <li>
+                            <a href="tel:89248820330" class="footer__link link-w-hover">+7 (924) 882-03-30</a>
+                        </li>
                         <li>г. Южно-Сахалинск, ул Ленина 395А, офис 3</li>
                     </ul>
                 </div>
@@ -420,14 +424,10 @@
                         <a href="#"> Пользовательское соглашение </a>
                     </li>
                     <li>
-                        <a href="#">
-                            Политики обработки персональных данных
-                        </a>
+                        <a href="#"> Политики обработки персональных данных </a>
                     </li>
                     <li class="rd-logo">
-                        <a href="#">
-                            © 2016-2023 Права защищены
-                        </a>
+                        <a href="#"> © 2016-2023 Права защищены </a>
                     </li>
                 </ul>
             </div>

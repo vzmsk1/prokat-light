@@ -167,16 +167,16 @@
     }
 
     &__articles {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6rem 2rem;
-        margin-bottom: 6rem;
+        gap: 4.8rem;
+        margin-bottom: 8rem;
 
-        @include small-tablet {
-            display: flex;
-            flex-direction: column;
-            gap: 4.8rem;
-            margin-bottom: 8rem;
+        @include desk {
+            &.swiper-wrapper {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6rem 2rem;
+                margin-bottom: 6rem;
+            }
         }
 
         &-button {

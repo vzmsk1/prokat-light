@@ -60,6 +60,11 @@ section {
     margin-bottom: 20rem;
 }
 
+// safari fix
+svg {
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
 ._desktop-only {
     @media (max-width: 48em) {
         display: none;

@@ -3,7 +3,6 @@ import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 
-
 $(document).ready(function () {
     $('#contacts-map').length ? initMap() : null;
     !!$('.condition').length && conditionSlider();
@@ -11,13 +10,8 @@ $(document).ready(function () {
 
 const markers = [
     {
-        address: 'Можайский вал, 10',
-        coordinate: [37.528583852499565, 55.73236309372132],
-        active: false
-    },
-    {
-        address: 'Можайский вал, 10',
-        coordinate: [37.639430799072265, 55.76706090220457],
+        address: 'Сахалинская область, Южно-Сахалинск, улица Ленина, 395А',
+        coordinate: [142.73513899999986, 46.93319357435639],
         active: true
     }
 ];
@@ -27,8 +21,8 @@ async function initMap() {
     const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
     const map = new YMap(document.getElementById('contacts-map'), {
         location: {
-            center: [37.588144, 55.733842],
-            zoom: 12,
+            center: [142.73513899999986, 46.93319357435639],
+            zoom: 14
         },
         behaviors: ['drag']
     });

@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4601fd0-39e0-436c-bd29-f24c106a33b0" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/ui/styles/_promotion-btn.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/styles/_link-w-hover.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/fonts/DrukTextWideCyr_medium.woff2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/fonts/DrukWide_medium.woff2" beforeDir="false" />
@@ -41,6 +41,7 @@
       <change beforePath="$PROJECT_DIR$/dist/assets/images/error404/mobbg.webp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/images/icons/arr-orange.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/images/icons/arr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/images/icons/arrow-down-white.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/images/icons/arrow-down.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/images/icons/file-icon.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/images/logo.png" beforeDir="false" />
@@ -73,6 +74,15 @@
       <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/toyota-v2.webp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/toyota.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/condition/toyota.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/detailed/gallery-image-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/detailed/gallery-image-1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/detailed/gallery-thumbnail-image-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/detailed/gallery-thumbnail-image-1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/detailed/gallery-thumbnail-image-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/detailed/gallery-thumbnail-image-2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/detailed/gallery-thumbnail-image-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/detailed/gallery-thumbnail-image-3.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/detailed/rent-background.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/footer/background-mobile.webp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/footer/background.webp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/news/article-image-1.png" beforeDir="false" />
@@ -105,42 +115,30 @@
       <change beforePath="$PROJECT_DIR$/dist/assets/images/sections/routes/routes-slide-image.webp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/car-park.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/contacts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/detailed.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/error404.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/home.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/news-detailed.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/news.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/policy-processing.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/rental-conditions.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/terms-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/car-park.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/car-park.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_car-park.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_car-park.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_hero.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modals.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/error404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/error404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_choose.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_choose.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/dev/kie6er.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/kie6er.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/modals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/modals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/tabs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news-detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/news-detailed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/policy-processing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/policy-processing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rental-conditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/rental-conditions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_choose.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_choose.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/sections/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_routes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_routes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sections/_news.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_news.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/sections/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/sections/modals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/modals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/set.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/set.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/terms-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/terms-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/styles/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/styles/_icon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_icon.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/styles/_info-item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_info-item.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/styles/_sl-pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_sl-pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/styles/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/styles/_promotion-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_promotion-btn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/styles/news-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_news-card.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/styles/ui.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/ui.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +163,9 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
@@ -180,7 +180,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/annavyazemskaya/Documents/web/2024/prokat-light/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -230,7 +230,9 @@
       <workItem from="1708787353779" duration="7483000" />
       <workItem from="1708929043391" duration="14062000" />
       <workItem from="1709076938812" duration="71000" />
-      <workItem from="1709114393683" duration="20975000" />
+      <workItem from="1709114393683" duration="21561000" />
+      <workItem from="1709147912447" duration="463000" />
+      <workItem from="1709206418203" duration="3027000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
