@@ -354,7 +354,7 @@ class HomePage {
                         scale: 1,
                         opacity: 1,
                         visibility: 'visible',
-                        translateY: mm.matches ? 0 : '-21.5rem'
+                        translateY: mm.matches ? 0 : '-21.3rem'
                     },
                     1.5
                 )

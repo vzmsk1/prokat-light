@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4601fd0-39e0-436c-bd29-f24c106a33b0" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/ui/styles/_link-w-hover.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/fonts/DrukTextWideCyr_medium.woff2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/assets/fonts/DrukWide_medium.woff2" beforeDir="false" />
@@ -119,27 +118,14 @@
       <change beforePath="$PROJECT_DIR$/dist/error404.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/home.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/news-detailed.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/news.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/policy-processing.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/rental-conditions.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/terms-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_choose.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_choose.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/dev/kie6er.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/kie6er.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/dev/vzmsk1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/_news.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/_news.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sections/modals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sections/modals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/styles/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_dropdown.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/styles/_promotion-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_promotion-btn.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/styles/news-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/_news-card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/styles/ui.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/styles/ui.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +218,7 @@
       <workItem from="1709076938812" duration="71000" />
       <workItem from="1709114393683" duration="21561000" />
       <workItem from="1709147912447" duration="463000" />
-      <workItem from="1709206418203" duration="3027000" />
+      <workItem from="1709206418203" duration="3327000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
