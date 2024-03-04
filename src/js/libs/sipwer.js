@@ -1,6 +1,7 @@
 import Swiper from 'swiper';
 import { remToPx } from '../utils/utils';
 import { Pagination } from 'swiper/modules';
+import 'swiper/css/effect-fade';
 
 document.addEventListener('DOMContentLoaded', () => {
     const resizableSwiper = (

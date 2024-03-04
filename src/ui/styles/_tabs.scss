@@ -1,64 +1,71 @@
 .tabs {
-  // .tabs__navigation
+    // .tabs__navigation
 
-  &__navigation {
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap;
+    &__navigation {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
 
-    @media (max-width: 48em) {
-      overflow-x: auto;
-      -ms-overflow-style: none; /* Internet Explorer 10+ */
-      scrollbar-width: none;
-      &::-webkit-scrollbar {
-        display: none; /* Safari and Chrome */
-      }
+        @media (max-width: 48em) {
+            overflow-x: auto;
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none; /* Safari and Chrome */
+            }
+        }
     }
-  }
 
-  // .tabs__title
+    // .tabs__title
 
-  &__title {
-  }
+    &__title {
+        @media (any-hover: hover) {
+            &:hover {
+                color: $gray-secondary;
+            }
+        }
+    }
 
-  // .tabs__content
+    // .tabs__content
 
-  &__content {
-  }
+    &__content {
+    }
 
-  // .tabs__body
+    // .tabs__body
 
-  &__body {
-  }
+    &__body {
+    }
 }
 
 .tab {
-  padding-left: 3.4rem;
-  padding-right: 3.4rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 0.3rem solid $gray;
-  font-size: 2rem;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: $gray;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-
-  &._is-active {
-    border-bottom: 0.3rem solid $orange;
-    color: $orange;
-  }
-
-  @media (max-width: 48em) {
-    padding-left: 5rem;
-    padding-right: 5rem;
-    padding-bottom: 3.6rem;
-    border-bottom: 0.4rem solid $gray;
-    font-size: 3.2rem;
+    padding-left: 3.4rem;
+    padding-right: 3.4rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.3rem solid $gray;
+    font-size: 2rem;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: $gray;
+    transition:
+        color 0.3s ease,
+        border-bottom 0.3s ease;
 
     &._is-active {
-      border-bottom: 0.4rem solid $orange;
+        border-bottom: 0.3rem solid $orange;
+        color: $orange;
     }
-  }
+
+    @media (max-width: 48em) {
+        padding-left: 5rem;
+        padding-right: 5rem;
+        padding-bottom: 3.6rem;
+        border-bottom: 0.4rem solid $gray;
+        font-size: 3.2rem;
+
+        &._is-active {
+            border-bottom: 0.4rem solid $orange;
+        }
+    }
 }

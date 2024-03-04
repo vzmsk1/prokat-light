@@ -1,7 +1,8 @@
 import $ from 'jquery';
 import Swiper from 'swiper';
-import {  Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { EffectCoverflow, EffectFade, Navigation, Pagination, Thumbs } from 'swiper/modules';
 import { _slideToggle, _slideUp, remToPx } from '../utils/utils';
+import { wrap } from 'gsap/gsap-core';
 
 document.addEventListener('DOMContentLoaded', () => {
     function fade(activeSlide) {
@@ -183,6 +184,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 _slideToggle(wrapper, 300);
             });
+
+        const prevEl = document.querySelector('.gallery__navigation-button.prev');
+        const nextEl = document.querySelector('.gallery__navigation-button.next');
+
+        new Swiper('.gallery-modal-swiper', {
+            modules: [Navigation, Thumbs],
+            thumbs: {
+                swiper: detailedGallery
+            },
+            slidesPerView: 1,
+            spaceBetween: remToPx(4.8),
+            speed: 1200,
+            navigation: {
+                prevEl,
+                nextEl
+            }
+        });
+
+        const wrapper = document.querySelector('.gallery__wrapper').querySelector('.swiper-wrapper');
+
+        const slides = Array.from(document.querySelectorAll('.detailed__gallery-image'), (slide) => {
+            const copy = slide.cloneNode(true);
+
+            copy.classList.replace('detailed__gallery-image', 'gallery__image');
+
+            return copy;
+        });
+
+        slides.forEach((slide) => {
+            const element = document.createElement('li');
+
+            element.classList.add('swiper-slide');
+
+            element.append(slide);
+
+            wrapper.append(element);
+        });
     }
 
     const clickOutside = (selector, callback) => {
@@ -205,5 +243,11 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdown.classList.remove('--active');
 
         _slideUp(dropdown.querySelector('.detailed__gallery-characteristics-dropdown-wrapper'), 300);
+    });
+
+    const datepicker = document.querySelector('.air-datepicker-global-container');
+
+    datepicker.addEventListener('click', (event) => {
+        event.stopPropagation();
     });
 });
