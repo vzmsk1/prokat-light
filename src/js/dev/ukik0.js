@@ -244,4 +244,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         _slideUp(dropdown.querySelector('.detailed__gallery-characteristics-dropdown-wrapper'), 300);
     });
+
+    const datepicker = document.querySelector('.air-datepicker-global-container');
+
+    datepicker.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
 });

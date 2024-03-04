@@ -97,7 +97,7 @@
         flex-direction: column;
 
         @media (max-width: 48em) {
-            margin-bottom: 16.6rem;
+            margin-bottom: 3.2rem;
         }
     }
 
@@ -109,7 +109,7 @@
         min-height: 8.5rem;
 
         @media (max-width: 48em) {
-            margin-bottom: 7.5rem;
+            margin-bottom: 4.8rem;
             max-width: 62rem;
             min-height: auto;
         }
@@ -167,6 +167,10 @@
         flex-direction: column;
         min-width: 0;
         width: 100%;
+
+        @include small-tablet {
+            margin-bottom: 3.2rem;
+        }
 
         ._is-hovered & {
             &::before {
@@ -454,13 +458,17 @@
             align-items: flex-end;
             height: 100%;
         }
+
+        @include small-tablet {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 6rem;
+        }
     }
 
     // .choose__characteristics
 
     &__characteristics {
-        display: none;
-
         @media (any-hover: hover) {
             &:hover {
                 .choose__characteristics-icon.icon {
@@ -485,6 +493,12 @@
             row-gap: 1.6rem;
             text-align: center;
         }
+
+        @include small-tablet {
+            display: flex;
+            align-items: center;
+            gap: 2.4rem;
+        }
     }
 
     // .choose__characteristics-icon
@@ -505,9 +519,9 @@
         }
 
         @media (max-width: 48em) {
-            flex: 0 0 10rem;
-            width: 10rem;
-            height: 10rem;
+            flex: 0 0 13rem;
+            width: 13rem;
+            height: 13rem;
         }
     }
 
@@ -515,6 +529,10 @@
 
     &__characteristics-txt {
         color: $gray;
+
+        @include small-tablet {
+            font-size: 3rem;
+        }
     }
     // .choose__btn
 

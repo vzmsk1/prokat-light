@@ -10,7 +10,7 @@
                     data-da=".choose__carousel,768,last"
                     class="choose__pagination sl-pagination sl-pagination_mm"
                 ></div>
-                <ul class="choose__list">
+                <ul data-da=".choose__aside,768,last" class="choose__list">
                     <li class="choose__info-item info-item">
                         <div class="info-item__icon icon _no-hover">
                             <svg
@@ -352,7 +352,12 @@
                 </div>
             </div>
             <div class="choose__aside">
-                <button data-modal="#characteristicsModal" type="button" class="choose__characteristics">
+                <button
+                    data-da=".choose__info,768,last"
+                    data-modal="#characteristicsModal"
+                    type="button"
+                    class="choose__characteristics"
+                >
                     <span class="choose__characteristics-icon icon">
                         <svg
                             width="45"

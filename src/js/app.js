@@ -20,6 +20,9 @@ import './libs/dd';
 // swiper
 import './libs/sipwer';
 
+// date-picker
+import './libs/datepircker';
+
 // ------------------------------- components -------------------------------
 
 // forms
