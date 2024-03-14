@@ -171,12 +171,15 @@
         margin-bottom: 8rem;
 
         @include desk {
-            &.swiper-wrapper {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 6rem 2rem;
-                margin-bottom: 6rem;
-            }
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6rem 2rem;
+            margin-bottom: 6rem;
+        }
+
+        @include small-tablet {
+            display: flex;
+            flex-direction: column;
         }
 
         &-button {
