@@ -47,7 +47,7 @@ figure {
             right: -1rem;
             max-width: 39.5rem;
             width: 100%;
-            top: 8rem;
+            top: 4rem;
             z-index: 10;
             visibility: hidden;
             opacity: 0;
@@ -149,7 +149,7 @@ figure {
                 display: flex;
                 flex-direction: column;
                 gap: 3.2rem;
-                margin-top: 55rem;
+                margin-top: 45rem;
 
                 @include small-tablet {
                     margin-top: 84rem;
