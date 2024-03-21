@@ -63,6 +63,12 @@
             transition: 0.5s all ease;
             position: relative;
 
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $orange;
+                }
+            }
+
             @include small-tablet {
                 padding: 0 4.8rem;
                 font-size: 3.2rem;
@@ -125,37 +131,46 @@
         &-content {
             position: relative;
             width: 100%;
+            max-width: 113.2rem;
         }
 
         &-body {
             position: absolute;
             top: -1rem;
-            right: 32rem;
+            width: 100%;
 
             @include small-tablet {
-                left: 0;
-                right: 0;
-                width: 100%;
-                top: 0;
+                position: initial;
             }
 
-            &[data-tabs-item] {
-                visibility: visible;
-                display: block;
-                opacity: 1;
-                transition:
-                    0.3s visibility ease,
-                    0.3s opacity ease;
+            @media (min-width: 48em) {
+                &[data-tabs-item] {
+                    visibility: visible;
+                    display: block;
+                    opacity: 1;
+                    transition:
+                        0.3s visibility ease,
+                        0.3s opacity ease;
+                }
+
+                &[hidden] {
+                    visibility: hidden;
+                    opacity: 0;
+                }
             }
 
-            &[hidden] {
-                visibility: hidden;
-                opacity: 0;
+            @include small-tablet {
+                &[data-tabs-item] {
+                    animation: fadeIn 1s;
+                }
             }
 
             &-wrapper {
                 max-width: 66rem;
                 width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
 
                 @include small-tablet {
                     max-width: 100%;
@@ -171,7 +186,7 @@
             }
 
             &-description {
-                margin-bottom: 4rem;
+                margin-bottom: 2rem;
                 font-size: 2rem;
                 line-height: 130%;
                 text-transform: uppercase;
@@ -180,7 +195,7 @@
             &-list {
                 display: flex;
                 flex-direction: column;
-                gap: 5rem;
+                gap: 3.2rem;
                 width: 100%;
 
                 @include small-tablet {
@@ -191,8 +206,8 @@
 
             &-item {
                 display: flex;
-                align-items: flex-start;
-                justify-content: space-between;
+                flex-direction: column;
+                gap: 2rem;
 
                 @include small-tablet {
                     flex-direction: column;
@@ -206,11 +221,8 @@
                     text-transform: uppercase;
                     color: $gray;
                     display: block;
-                    max-width: 17.5rem;
-                    width: 100%;
 
                     @include small-tablet {
-                        max-width: 100%;
                         font-size: 3.6rem;
                     }
                 }
@@ -219,8 +231,6 @@
                     font-size: 2rem;
                     line-height: 140%;
                     color: $gray;
-                    max-width: 38rem;
-                    width: 100%;
 
                     @include small-tablet {
                         font-size: 3rem;
@@ -235,7 +245,7 @@
                     transform-origin: center center;
                     transform-style: preserve-3d;
                     position: absolute;
-                    right: -44rem;
+                    right: -12rem;
                     top: -6rem;
                     perspective: 149.4rem;
                     z-index: -1;
@@ -244,12 +254,13 @@
                 @include small-tablet {
                     position: initial;
                     height: 55.6rem;
+                    margin-top: 6.4rem;
                 }
 
                 &-wrapper {
                     @media (min-width: 48em) {
-                        width: 85rem;
-                        height: 45rem;
+                        width: 90rem;
+                        height: 49rem;
                         transform: rotate3d(0, 1, 0, 130deg) scaleX(-1) scaleY(0.9);
                         box-shadow:
                             1.1rem -0.5rem 2.6rem 0 rgba(0, 0, 0, 0.1),
@@ -282,6 +293,16 @@
                 }
             }
         }
+
+        &-text {
+            font-size: 1.8rem;
+            line-height: 140%;
+            color: #6f6f6f;
+
+            @include small-tablet {
+                font-size: 3rem;
+            }
+        }
     }
 
     &__documents {
@@ -291,12 +312,14 @@
         gap: 2rem;
 
         @include small-tablet {
-            margin-top: 134rem;
             gap: 3.2rem;
+            margin-top: 8rem;
         }
     }
 
     &__document {
+        width: fit-content;
+
         a {
             display: flex;
             align-items: center;

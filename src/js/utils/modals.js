@@ -273,6 +273,11 @@ class Modal {
                 this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML =
                     '';
         }
+
+        if (document.querySelector('.air-datepicker-overlay.-active-')) {
+            return;
+        }
+
         this.previousOpen.element.classList.remove(this.options.classes.modalActive);
         // aria-hidden
         this.previousOpen.element.setAttribute('aria-hidden', 'true');

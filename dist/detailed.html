@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
         <title>Детальная авто</title>
-    <script defer src="main.js"></script></head>
+    <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
     <body>
         <div class="wrapper detailed-page _smooth-scroll">
             <header class="header">
@@ -88,6 +88,14 @@
         <button type="button" class="menu-header__btn btn">
             <span class="btn__txt">отправить заявку</span>
         </button>
+        <ul class="menu-header__languages">
+            <li class="menu-header__language --active">
+                <a href="#"> ru </a>
+            </li>
+            <li class="menu-header__language">
+                <a href="#"> en </a>
+            </li>
+        </ul>
     </div>
 </header>
 
@@ -101,12 +109,7 @@
         <div class="detailed__content">
             <div class="detailed__gallery">
                 <div class="swiper detailed-gallery-swiper">
-                    <ul class="swiper-wrapper">
-                        <li class="swiper-slide">
-                            <figure class="detailed__gallery-image">
-                                <img src="./assets/images/sections/detailed/gallery-image-1.webp" alt="">
-                            </figure>
-                        </li>
+                    <ul data-modal="#galleryModal" class="swiper-wrapper">
                         <li class="swiper-slide">
                             <figure class="detailed__gallery-image">
                                 <img src="../assets/images/sections/detailed/gallery-thumbnail-image-2.webp" alt="">
@@ -300,7 +303,7 @@
 
                     <p class="detailed__rent-info-pledge">Залог за автомобиль: <span>20 000 ₽</span></p>
 
-                    <button class="detailed__rent-button btn">
+                    <button data-modal="#reservationModal" class="detailed__rent-button btn">
                         <span class="btn__txt">забронировать</span>
                     </button>
                 </div>
@@ -965,6 +968,223 @@
                             </div>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- характеристики -->
+<div id="characteristicsModal" aria-hidden="true" class="modal characteristics-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close icon icon_white">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+
+                <div class="characteristics__wrapper">
+                    <h2 class="characteristics__title h h_3">характеристики</h2>
+
+                    <div class="detailed__gallery-characteristics-block">
+                        <ul class="detailed__gallery-characteristics-list">
+                            <li class="detailed__gallery-characteristics-item">
+                                <p>Год: <span>2022</span></p>
+                            </li>
+                            <li class="detailed__gallery-characteristics-item">
+                                <p>КПП: <span>АКПП</span></p>
+                            </li>
+                            <li class="detailed__gallery-characteristics-item">
+                                <p>Объем двигателя: <span>4.0 л</span></p>
+                            </li>
+                        </ul>
+
+                        <ul class="detailed__gallery-characteristics-list">
+                            <li class="detailed__gallery-characteristics-item">
+                                <p>Мощность: <span>149 л.с.</span></p>
+                            </li>
+                            <li class="detailed__gallery-characteristics-item">
+                                <p>Руль: <span>Левый</span></p>
+                            </li>
+                            <li class="detailed__gallery-characteristics-item">
+                                <p>Привод: <span>4WD</span></p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <span class="detailed__gallery-characteristics-title"> Комплектация </span>
+
+                    <p class="detailed__gallery-characteristics-description">
+                        <span>4.0 АТ Prestige</span> (Кожаный салон 5 мест, система контроля "Мёртвых зон",
+                        вентиляция/подогрев сидений, подогрев руля, система помощи трогании в гору, система
+                        помощи при спуске, камера заднего, переднего, бокового обзора, парктроники, hands free
+                        / Bluetooth, климат-контроль)
+                    </p>
+
+                    <span class="detailed__gallery-characteristics-title"> Дополнительная информация </span>
+
+                    <p class="detailed__gallery-characteristics-description">
+                        Данный тип автомобиля подходит для маршрутов на асфальтированных и грунтовых дорогах
+                    </p>
+
+                    <button class="characteristics__button btn">
+                        <span class="btn__txt"> Забронировать </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- слайдер картинок отдельного авто -->
+<div id="galleryModal" aria-hidden="true" class="modal gallery-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close icon icon_white">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+
+                <div class="gallery__wrapper">
+                    <div class="swiper gallery-modal-swiper">
+                        <ul class="swiper-wrapper"></ul>
+                    </div>
+
+                    <div class="gallery__navigation">
+                        <button class="gallery__navigation-button icon icon_white prev">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 11L1.83333 11M1.83333 11L11.8333 21M1.83333 11L11.8333 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+
+                        <button class="gallery__navigation-button icon icon_white next">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 11L20.1667 11M20.1667 11L10.1667 1M20.1667 11L10.1667 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- забронировать -->
+<div id="reservationModal" aria-hidden="true" class="modal reservation-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close icon icon_white">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+
+                <div class="reservation__wrapper">
+                    <h2 class="reservation__title h">Забронировать</h2>
+
+                    <form action="#" class="reservation__form">
+                        <div class="input">
+                            <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="фио" class="input__field">
+                            <span class="input__hint txt txt_14">Заполните поле</span>
+                        </div>
+                        <div class="input">
+                            <input data-tel-mask="" data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="номер телефона" class="input__field">
+                            <span class="input__hint txt txt_14">Заполните поле</span>
+                        </div>
+                        <div class="input datepicker">
+                            <input id="from" data-validate="" data-required="" type="text" readonly="" name="form[]" placeholder="Дата брони с какого числа" class="input__field">
+                            <span class="input__hint txt txt_14">Заполните поле</span>
+                        </div>
+                        <div class="input datepicker">
+                            <input id="to" data-validate="" data-required="" type="text" readonly="" name="form[]" placeholder="Дата брони до какого числа" class="input__field">
+                            <span class="input__hint txt txt_14">Заполните поле</span>
+                        </div>
+
+                        <div class="reservation__form-agree">
+                            <span class="reservation__form-agree-text">
+                                Отправляя заявку, Вы соглашаетесь на обработку своих данных
+                            </span>
+
+                            <button data-modal="#successModal" class="reservation__form-agree-button btn">
+                                <span class="btn__txt"> Забронировать </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- спасибо за заявку -->
+<div id="successModal" aria-hidden="true" class="modal success-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close icon icon_white">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 1.5L1.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1.5 1.5L14.5 14.5" stroke="white" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+
+                <div class="success__wrapper">
+                    <figure class="success__icon icon _no-hover">
+                        <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.5391 19.0002L18.8096 9.36278C19.0526 8.98186 19.3941 8.66795 19.8007 8.45163C20.2074 8.23531 20.6654 8.12396 21.1302 8.12842V8.12842C21.4962 8.11572 21.8611 8.1737 22.2034 8.29892C22.5457 8.42415 22.8585 8.61409 23.1231 8.85751C23.3878 9.10093 23.599 9.3929 23.7443 9.71616C23.8897 10.0394 23.9661 10.3874 23.9692 10.7396L23.9692 17.6472L34.8068 17.6472C35.2072 17.6597 35.6004 17.7535 35.9605 17.9226C36.3205 18.0916 36.6393 18.332 36.8958 18.628C37.1523 18.9239 37.3407 19.2688 37.4487 19.6398C37.5567 20.0108 37.5818 20.3995 37.5224 20.7805L35.5474 33.0291C35.4632 33.6837 35.1332 34.2862 34.6195 34.7233C34.1058 35.1604 33.4437 35.4021 32.7578 35.4029L16.5631 35.4029C15.7921 35.4058 15.0312 35.2351 14.3412 34.9044L12.5638 34.0498" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12.5391 19.0007L12.5391 33.9791" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M6.68748 19.0007L12.5383 19.0007L12.5383 33.9791L6.68748 33.9791C6.36011 33.9791 6.04615 33.8541 5.81466 33.6315C5.58317 33.4089 5.45313 33.107 5.45313 32.7922L5.45313 20.1876C5.45313 19.8728 5.58317 19.5709 5.81466 19.3484C6.04614 19.1258 6.36011 19.0007 6.68748 19.0007V19.0007Z" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+
+                        <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.5391 19.0002L18.8096 9.36278C19.0526 8.98186 19.3941 8.66795 19.8007 8.45163C20.2074 8.23531 20.6654 8.12396 21.1302 8.12842V8.12842C21.4962 8.11572 21.8611 8.1737 22.2034 8.29892C22.5457 8.42415 22.8585 8.61409 23.1231 8.85751C23.3878 9.10093 23.599 9.3929 23.7443 9.71616C23.8897 10.0394 23.9661 10.3874 23.9692 10.7396L23.9692 17.6472L34.8068 17.6472C35.2072 17.6597 35.6004 17.7535 35.9605 17.9226C36.3205 18.0916 36.6393 18.332 36.8958 18.628C37.1523 18.9239 37.3407 19.2688 37.4487 19.6398C37.5567 20.0108 37.5818 20.3995 37.5224 20.7805L35.5474 33.0291C35.4632 33.6837 35.1332 34.2862 34.6195 34.7233C34.1058 35.1604 33.4437 35.4021 32.7578 35.4029L16.5631 35.4029C15.7921 35.4058 15.0312 35.2351 14.3412 34.9044L12.5638 34.0498" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12.5391 19.0007L12.5391 33.9791" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M6.68748 19.0007L12.5383 19.0007L12.5383 33.9791L6.68748 33.9791C6.36011 33.9791 6.04615 33.8541 5.81466 33.6315C5.58317 33.4089 5.45313 33.107 5.45313 32.7922L5.45313 20.1876C5.45313 19.8728 5.58317 19.5709 5.81466 19.3484C6.04614 19.1258 6.36011 19.0007 6.68748 19.0007V19.0007Z" stroke="#FF6C01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </figure>
+
+                    <h2 class="success__title h">Спасибо за&nbsp;заявку</h2>
+
+                    <p class="success__description">
+                        Ваша заявка принята. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время (время обработки заявок с
+                        9:00 до 19:00 по местному времени)
+                    </p>
+
+                    <button class="success__button btn">
+                        <span class="btn__txt"> Вернуться на главную </span>
+                    </button>
                 </div>
             </div>
         </div>
