@@ -507,6 +507,7 @@ export class Select {
             option.selected && !relativeSel.hasAttribute('data-show-selection') && !relativeSel.multiple
                 ? `hidden`
                 : ``;
+        const optionLang = option.dataset.language ? ` ${option.dataset.language}` : '';
         const optionClass = option.dataset.optClass ? ` ${option.dataset.optClass}` : '';
         const optionLink = option.dataset.optionLink ? option.dataset.optionLink : false;
         const optionLinkTarget = option.hasAttribute('data-option-link-target') ? `target="_blank"` : '';
@@ -514,7 +515,7 @@ export class Select {
 
         optionHTML += optionLink
             ? `<a ${optionLinkTarget} ${showSelection} href="${optionLink}" data-opt-val="${option.value}" class="${this.classes.OPTION}${optionClass}${selections}">`
-            : `<button ${showSelection} class="${this.classes.OPTION}${optionClass}${selections}" data-opt-val="${option.value}" type="button">`;
+            : `<button data-language="${optionLang.trim()}" ${showSelection} class="${this.classes.OPTION}${optionClass}${selections}" data-opt-val="${option.value}" type="button">`;
         optionHTML += this.getContent(option);
         optionHTML += optionLink ? `</a>` : `</button>`;
         return optionHTML;
