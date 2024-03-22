@@ -247,7 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const datepicker = document.querySelector('.air-datepicker-global-container');
 
-    datepicker.addEventListener('click', (event) => {
-        event.stopPropagation();
-    });
+    if (datepicker) {
+        datepicker.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+    }
 });

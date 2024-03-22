@@ -47,7 +47,7 @@
         width: 102%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.2);
-        background-image: url(./assets/images/bg/hero-bg.webp);
+        background-image: url('./assets/images/bg/hero-bg.webp');
         transform: translate3d(0, calc(var(--scrollY) / 2), 0);
         background-position: 0 -29rem;
         background-size: cover;
